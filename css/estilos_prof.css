@@ -32,7 +32,9 @@
 body {
     background-image: url(/imagenes/image\ 1\ \(4\).png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    height: 900px;
+    overflow: hidden;
     background-position-y: -129px;
     object-fit: cover;
 }
@@ -609,6 +611,7 @@ table {
     font-weight: normal;
     width: 300px;
     height: 40px;
+    outline: none;
 }
 
 
@@ -625,6 +628,7 @@ table {
     font-weight: normal;
     width: 300px;
     height: 40px;
+    outline: none;
 }
 
 .cambio_contraseña input {
@@ -652,6 +656,7 @@ table {
     left: 90px;
     color: #ffffff;
     border: none;
+    cursor: pointer;
 }
 
 .regresar {
@@ -667,3 +672,33 @@ table {
 }
 
 /* Usuario del Profesor */
+
+.inf_basica_profesor {
+    border: 1px solid #ffffff70;
+    color: #fff;
+    font-family: miFuentePath;
+    width: 420px;
+    margin-left: 450px;
+    height: 400px;
+    margin-top: 100px;
+    
+}
+
+.inf_basica_profesor h2 {
+    text-align: center;
+    padding: 10px;
+    font-weight: normal;
+}
+
+.estudiante-img img {
+    border-radius: 50%;
+    width: 150px;
+    margin-left: 140px;
+}
+
+.estudiante-img .camara2 {
+    width: 30px;
+    top: -50px;
+    left: 30px;
+    position: relative;
+}
