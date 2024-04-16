@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información estudiante</title>
+    <link rel="stylesheet" href="css/estilos_prof.css">
+</head>
+<body>
+    <header>
+        <h1>ALPHA TEAM</h1>
+
+            <div class="container">
+            <button class="menu-btn">PROFESOR
+                <img src="imagenes/profesor.png" alt="profesor">
+            </button>
+            <div class="menu-items">
+                <h6 class="gestion"> <img src="imagenes/bx-moon.svg" alt="">Gestión perfil</h6>
+            
+            <a href="p_usuarioprofesor.html" >Lic. Carlos Acosta
+                <img src="imagenes/bxs-user-circle.svg" alt="nota">
+                <div class="camara">
+                <img src="imagenes/bx-camera.svg"  alt="">
+                </div>
+            </a>
+            <a href="p_contraseñaprofesor.html">Cambio de contraseña
+                <img src="imagenes/bxs-key1.svg" alt="nota">
+            </a>
+            <a href="p_idiomaprofesor.html">Preferencia de idioma
+                <img src="imagenes/bx-world.svg" alt="nota">
+            </a>
+                
+            </div>
+            </div>
+        <nav> 
+            <ul>
+                <li><img src="imagenes/bx-notepad.svg" alt="nota">
+                    <a href="p_calificaciones.html">CALIFICACIONES
+                </a></li>
+                <li><img src="imagenes/bx-calendar.svg" alt="calendario">
+                    <a href="p_horario.html">HORARIO ESCOLAR
+                </a></li>
+                <li><img src="imagenes/bxs-graduation.svg" alt="graduacion">
+                    <a href="p_informacionestudiante.html">INFORMACION ESTUDIANTE
+                </a></li>
+                <li><img src="imagenes/bxs-book-content.svg" alt="evaluar">
+                    <a href="p_cargarplanificacion.html">PLANIFICACION
+                </a></li>
+                <li><img src="imagenes/bx-help-circle.svg" alt="ayuda">
+                    <a href="p_ayuda.html">AYUDA
+                </a></li>
+                <li><img src="imagenes/bx-log-out.svg" alt="cerrar">
+                    <a href="index.html">CERRAR SESION
+                </a></li> 
+        </ul>
+        </nav>
+    </header>
+
+   
+    <main>    
+        <section>
+            <div class="calificaciones_docente2">
+                <!-- <h4 class="listado">LISTADO ESTUDIANTES DEL CURSO</h4> -->
+                <form>
+                    <fieldset>
+                        <legend>LISTADO ESTUDIANTES DEL CURSO</legend>
+                        <label for="cur">Cursos</label>
+                        <select name="cur" id="cur" required>
+                            <option value="">- Elija un curso - </option>
+                            <optgroup label="Nivel Primario"></optgroup>
+                            <option value="">Kinder</option>
+                            <option value="">Pre-primario</option>
+                            <option value="">1ro de primaria</option>
+                            <option value="">2do de primaria</option>
+                            <option value="">3ro de primaria</option>
+                            <option value="">4to de primaria</option>
+                            <option value="">5to de primaria</option>
+                            <option value="">6to de primaria</option>
+                            <optgroup label="Nivel Secundario"></optgroup>
+                            <option value="">1ro de secundaria</option>
+                            <option value="">2do de secundaria</option>
+                            <option value="">3ro de secundaria</option>
+                            <option value="">4to de secundaria</option>
+                            <option value="">5to de secundaria</option>
+                            <option value="">6to de secundaria</option>
+                        </select>
+
+                            <label for="prof" class="profe1" >Profesor</label>
+                            <select name="prof" id="prof" required>
+                                <option value="">- Elija una opción -</option>
+                                <option value="">Jose Candelario Rodríguez</option>
+                            </select>
+                    
+                        <label for="asig">Materia</label>
+                        <select name="asig" id="asig" required>
+                            <option value="">- Elija una materia -</option>
+                            <option value="">Lengua Española</option>
+                            <option value="">Matemáticas</option>
+                            <option value="">Ciencias Sociales</option>
+                            <option value="">Ciencias Naturales</option>
+                            <option value="">Física</option>
+                            <option value="">Educación financiera</option>
+                            <option value="">Inglés</option>
+                        </select>
+
+                        <input type="submit" value="CARGAR" class="boton9">
+                    </fieldset>
+                </form>
+            </div>
+
+
+                <div class="info_estudiante">  
+                    <table border="1" class="tabla2">
+                        <tr>
+                            <th>MATRICULA</th>
+                            <th>NOMBRE</th>
+                            <th>APELLIDO </th>
+                            <th>EDAD </th>
+                            <th>TUTOR </th>
+                            <th> TELEFONO TUTOR</th>
+                        </tr>
+                        <tr>
+                            <td>10061</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10062</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10063</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>  
+                        </tr>
+                        <tr>
+                            <td>10064</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10065</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10066</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10067</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10068</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10069</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10070</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10071</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    <tfoot>
+                        <tr>
+                            <td>TOTAL ESTUDIANTE</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                    </table>
+                </div>
+        </section>
+    </main>
+</body>
+</html>

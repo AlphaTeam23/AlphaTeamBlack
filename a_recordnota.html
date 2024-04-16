@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record De Notas</title>
+    <link rel="stylesheet" href="css/estilos_admin.css">
+</head>
+<body>
+  <header>
+      <h1>ALPHA TEAM <span>Educar es redimir</span></h1>
+
+      <div class="linea">
+
+      </div>
+      <div class="linea2">
+
+      </div>
+
+      <div class="admin">
+          <h4>Admin</h4>
+          
+          <figure>
+              <img src="imagenes/setting.svg" alt="ADMIN" width="25" height="25">
+          </figure>
+      </div>
+
+      <nav> 
+      <ul>
+
+          <li><img src="imagenes/bx-list-check.svg" alt="aprobacion">
+              <a href="a_aprobacion.html">APROBACION
+          </a></li>
+          
+          <li><img src="imagenes/bxs-school(1).svg" alt="cursos">
+              <a href="a_cursos.html">ADMINISTRACION CURSOS
+          </a></li>
+
+          <li><img src="imagenes/bxs-pencil.svg" alt="inscripcion">
+              <a href="a_inscripcion.html">INSCRIPCION 
+          </a></li>
+
+          <li> <img src="imagenes/bxs-book-content.svg" alt="planificacion">
+              <a href="a_planificacion.html">PLANIFICACION DOCENTE
+          </a></li>
+
+          <li><img src="imagenes/bx-file.svg" alt="record">
+              <a href="a_recordnota.html">RECORD DE NOTAS              
+          </a></li>
+              
+          </a></li> 
+          <li><img src="imagenes/bx-user.svg" alt="usuario">
+              <a href="a_usuarios.html">GESTION USUARIOS
+              
+          </a></li> 
+          <li><img src="imagenes/bxs-log-out.svg" alt="cerrar">
+              <a href="index.html">CERRAR SESION              
+          </a></li>
+
+      </ul>
+      </nav>
+  </header>
+  <main>
+        <section>
+            <div class="tit_pagina">
+                <h4>RECORD</h4>
+  
+            </div>
+            <form>
+                <fieldset class="barra3">
+                    <legend>BUSCAR RECORD DE NOTA</legend>
+
+                    <label for="busqueda">MATRICULA</label>
+                    <input type="search" class="referencia" id="busqueda" placeholder="1000045">
+                    <label for="curso">CURSO</label>
+                        <select name="curso" id="curso" required>
+                            <option value="">- Elija un curso -</option>
+                            <optgroup label="Nivel Primario">
+                            <option value="pp">Pre-primario</option>
+                            <option value="1p">1° Grado</option>
+                            <option value="2p">2° Grado</option>
+                            <option value="3p">3° Grado</option>
+                            <option value="4p">4° Grado</option>
+                            <option value="5p">5° Grado</option>
+                            <option value="6p">6° Grado</option>
+                            <optgroup label="Nivel Secundario">
+                            <option value="1s">1° Grado</option>
+                            <option value="2s">2° Grado</option>
+                            <option value="3s">3° Grado</option>
+                            <option value="4s">4° Grado</option>
+                            <option value="5s">5° Grado</option>
+                            <option value="6s">6° Grado</option>
+                            <option value="6s">Cargar Todo</option>
+
+                    </select>
+
+                    
+
+                    <label for="seccion">SECCION</label>
+                    <select name="seccion" id="seccion" required>
+
+                        <option value="ES">Elija una Seccion</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+
+                    </select>
+                    <label for="period">PERIODO</label>
+                    <select name="period" id="period" required>
+                        <option value="">- Elija un periodo -</option>
+                        <option value="">2022-2023</option>
+                        <option value="">2023-2024</option>
+                    </select>
+
+                    <input type="button" class="btcargar" name="cargar" value="Cargar">
+
+            
+                </fieldset>
+
+    
+            
+
+
+                
+            </form>
+        </section>
+    </main>
+
+    <table class="datosestudiante" border="1">
+        <thead>
+            <tr>
+                <th>NOMBRE: </th>
+                <td>Jose Miguel</td>
+                <th>APELLIDO:</th>
+                <td>Reyes</td>
+                <th>MATRICULA:</th>
+                <td>1000045</td>
+                <th>CURSO:</th>
+                <td>6° Grado</td>
+                <th>SECCION:</th>
+                <td>A</td>
+                <th>PERIODO:</th>
+                <td>2023-2024</td>
+
+            </tr>
+        </thead>
+    </table>
+
+    <table class="datosrecord1" border="1">
+        <thead> 
+            <th>PRIMER SEMESTRE</th>
+          <tr>
+            <th>ASIGNATURA</th>
+            <th>TAREA</th>
+            <th>EXAMEN</th>
+            <th>PARTICIPACION</th>
+            <th>ASITENCIA</th>
+            <th>PROMEDIO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LENGUA ESPAÑOLA</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>MATEMATICAS</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>CIENCIAS SOCIALES</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>CIENCIAS NATURALES</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>FISICA</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>EDUACACION FINANCIERA</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+    
+          </tr>
+          <tr>
+            <td>INGLES</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+           
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="datosrecord2" border="1">
+        <thead> 
+          <th>SEGUNDO SEMESTRE</th>
+          <tr>
+            <th>ASIGNATURA</th>
+            <th>TAREA</th>
+            <th>EXAMEN</th>
+            <th>PARTICIPACION</th>
+            <th>ASITENCIA</th>
+            <th>PROMEDIO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LENGUA ESPAÑOLA</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>MATEMATICAS</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>CIENCIAS SOCIALES</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>CIENCIAS NATURALES</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>FISICA</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>EDUACACION FINANCIERA</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+    
+          </tr>
+          <tr>
+            <td>INGLES</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+           
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="button" class="enviar" name="imprimir" value="IMPRIMIR">
+
+
+      
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Fuentes */
+@font-face {
+    font-family: miFuenteLime;
+    src: url(../fuentes/Limelight-Regular.ttf);
+}
+
+@font-face {
+    font-family: miFuenteJust;
+    src: url(../fuentes/JustAnotherHand-Regular.ttf);
+}
+
+ @font-face {
+    font-family: miFuentePath;
+    src: url(../fuentes/PathwayGothicOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: miPath2;
+    src: url(../fuentes/Pathway_Extreme.ttf);
+}
+
+@font-face {
+    font-family: miFuentePoppins;
+    src: url(../fuentes/Poppins..ttf);
+}
+
+body {
+    background-image: url(/imagenes/image\ 1\ \(4\).png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: -100px;
+    object-fit: cover;
+}
+
+h1 {
+    font-family: miFuenteLime;
+    font-weight: normal;
+    color: #fff;
+    margin-left: 530px;
+    padding: 40px;
+    font-size: 38px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    margin-top: 20px;
+}
+
+.iniciar_container {
+    margin-left: 480px;
+    border:  1px solid #ffffff70;
+    width: 420px;
+    border-radius: 20px;
+    height: 400px;
+}
+
+h2 {
+    font-family: miFuentePath;
+    font-size: 25px;
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    margin-left: 100px;
+    width: 700px;   
+}
+
+.titulo1 {
+    top: 20px;
+    margin-left: 150px;
+    width: 150px;
+    position: relative;
+}
+
+input {
+   background-color: #00000049;
+   font-size: 40px;
+   margin: 10px;
+   width: 321px;
+   height: 40px;
+   margin-left: 50px;
+   border: none;
+   bottom: -50px;
+   position: relative;
+   padding-left: 70px;
+   font-size: 16px;
+   border-bottom: 1px solid #fff;
+   outline: none;
+   border-radius: 15px;
+}
+
+.iniciar_container input {
+    color: #fff;
+}
+
+.iniciar_container img {
+    width: 20px;
+    margin-left: 380px;
+}
+
+.imagen {
+  width: 50px;
+  bottom: -13px;
+  right: 310px; 
+  position: relative;;
+}
+
+.cont {
+    width: 20px;
+    left: -310px;   
+    bottom: -13px;
+    position: relative;
+}
+
+::placeholder {
+    color: #ffffff83;
+    font-family: miFuentePath;
+    font-size: 22px;    
+}
+
+.btn {
+    width:220px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.btn2 {
+    position: absolute;
+    left: 260px;
+    top: 197px;
+    border-radius: 10px;
+    width: 220px;
+    font-size: 30px;
+    text-align: left;
+}
+
+aside {
+    margin-top: -150px;
+    margin-left: 615px;
+}
+
+aside a {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+aside h4 {
+    line-height: 6;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    bottom: -40px;
+    position: relative;
+}
+
+.contenedor {
+    display: flex;
+    position: absolute;
+    gap: 5px;
+}
+
+.container img {
+    width: 20px;
+}
+
+.container img {
+    margin-left: 23px;
+    
+}
+
+h4 {
+    font-family: miFuentePath;
+    font-weight: normal;
+}
+
+#contra {
+    font-family: miFuentePath;
+    font-weight: normal;
+}
+
+.access {
+    background-color: #0077ff96;
+    font-family: miFuentePath;
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    justify-content: center;
+    display: flex;
+    height: 28px;
+    width: 100px;
+    border-radius: 5px;
+    padding: 1px;   
+    bottom: -60px;
+    position: relative;
+    margin-left: 165px;
+    color: #ffffff;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.h1 {
+    font-family: miFuenteLime;
+}
+
+
+
+
+
+
+
