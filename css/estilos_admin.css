@@ -242,6 +242,7 @@ li img {
     display: inline-table;
 }
 
+
 .barra3 {
     position: absolute;
     top: -390px;
@@ -265,10 +266,12 @@ li img {
     padding: 0;
     bottom: -60px;
     position: relative;
-    left: 8px;
+    left: 100px;
     color: #000;
 
 }
+
+
 
 
 .datos {
