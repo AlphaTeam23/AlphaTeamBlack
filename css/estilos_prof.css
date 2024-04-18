@@ -744,3 +744,37 @@ hr {
     border-radius: 40px;
     cursor: pointer;
 }
+
+/* Movil */ 
+@media  screen and (max-width: 390px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .container {
+        left: 60px;
+        top: -15px;
+    }
+
+     .menu-items {
+        margin-right: 50px;
+        padding: 5px;
+    }
+
+    .container .menu-items {
+        background-color: #ffffff;
+       
+    }
+
+    .container .menu-items a {
+         border-top: solid 1px rgba(0, 0, 0, 0.397);
+    }
+
+    li a {
+        font-size: 25px;
+    }
+
+    li {
+        height: 40px;
+    }
+}
