@@ -32,8 +32,10 @@
 body {
     background-image: url(/imagenes/image\ 1\ \(4\).png);
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-position-y: -100px;
+    background-size: cover;
+    height: 900px;
+    overflow: hidden;
+    background-position-y: -129px;
     object-fit: cover;
 }
 
@@ -205,6 +207,44 @@ h4 {
 
 .h1 {
     font-family: miFuenteLime;
+}
+
+/* Movil */ 
+@media  screen and (max-width: 600px) {
+    h1 {
+        margin-left: 65px;
+        font-size: 30px;
+    }
+
+    .titulo1 {
+        margin-left: 110px;
+    }
+
+    .iniciar_container {
+        margin-left: 25px;
+        width: 340px;
+    }
+
+    input {
+        margin-left: 20px;
+        width: 300px;
+        padding-inline-start: 50px;
+    }
+
+    .iniciar_container img {
+        margin-left: 345px;
+    }
+
+    .access {
+        margin-left: 120px;
+    }
+
+    aside {
+        margin-left: 119px;
+        margin-top: -80px;
+    }
+
+
 }
 
 
