@@ -31,14 +31,18 @@
 }
 
 body {
+    
     background-image: url(/imagenes/image\ 1\ \(4\).png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 900px;
     overflow: hidden;
     background-position-y: -129px;
-    object-fit: cover;
+    object-fit: cover; 
+    
 }
+
+
 
 h1{
     font-family: miFuenteLime;
@@ -266,8 +270,9 @@ main {
    width: 350px;
    height: 350px;
    position: absolute;
-   top: 50px;
-   left: 100%;
+   top: 10px;
+   left: 90%;
+   object-fit: contain;
 
 
 }
