@@ -802,4 +802,32 @@ hr {
         top: -25px;
         position: relative;
     }
+
+    .cambio_contraseña {
+        margin-left: 25px;
+        width: 340px;
+    }
+
+    .botton1 {
+        right: 40px;
+        position: relative;
+        padding-left: 50px;
+    }
+
+    .botton2 {
+        right: 40px;
+        position: relative;
+        padding-left: 50px;
+    }
+
+    .cambio_contraseña img {
+        right: 30px;
+        position: relative;
+    }
+
+    .enviar {
+        left: 50px;
+        position: relative;
+    }
+
 }
