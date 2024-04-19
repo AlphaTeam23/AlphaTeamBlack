@@ -212,8 +212,9 @@ h4 {
 /* Movil */ 
 @media  screen and (max-width: 600px) {
     h1 {
-        margin-left: 65px;
-        font-size: 30px;
+        margin-left: 30px;
+        font-size: 40px;
+        width: 800px;
     }
 
     .titulo1 {

@@ -193,8 +193,6 @@ button {
     text-align: center;
     font-family: miFuentePath;
     font-weight: normal;
-   
-
 }
 
 .gestion img {
@@ -276,8 +274,7 @@ label {
     position: relative;
     left: 80px;
     border: none;
-    width: 120px;
-    
+    width: 120px;  
 }
 
 .imprimir:hover {
@@ -358,10 +355,6 @@ table {
     margin-top: -418px;
     cursor: pointer;
     z-index: 5;
-}
-
-.calificaciones_docente2 option {
-    padding: 0 auto;
 }
 
 .boton9 {
@@ -686,9 +679,7 @@ table {
     height: 380px;
     margin-top: 100px;
     border-radius: 40px;
-    cursor: pointer;
-    
-    
+    cursor: pointer;   
 }
 
 .inf_basica_profesor h2 {
@@ -709,7 +700,6 @@ table {
     left: 120px;
     position: relative;
 }
-
 
 hr {
     margin-top: -32px;
@@ -745,8 +735,20 @@ hr {
     cursor: pointer;
 }
 
+/* Responsive */
 /* Movil */ 
 @media  screen and (max-width: 390px) {
+
+    body {
+        background-image: url(/imagenes/image\ 1\ \(4\).png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 900px;
+        overflow: hidden;
+        background-position-y: -129px;
+        object-fit: cover;
+    }
+
     h1 {
         font-size: 40px;
         margin-top: 60px;
@@ -830,4 +832,25 @@ hr {
         position: relative;
     }
 
+    .cargar-imagen {
+        margin-left: 20px;
+        width: 350px;
+    }
+
+    .cargar-imagen h2 {
+        font-weight: normal;
+        margin-left: 100px;
+        padding: 20px;
+    }
+
+    #cargarfoto {
+        margin-top: 50px;
+        margin-left: 10px;
+    }
 }
+
+/* Tablets */ 
+@media  screen and (max-width: 390px) {
+   
+}
+
