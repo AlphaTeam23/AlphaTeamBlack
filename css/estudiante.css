@@ -169,7 +169,7 @@ button {
 .menu-items a {
    display: block;
    padding: 10px;
-
+   
    text-decoration: none;
    color: #000000;
    font-size: 17px;
@@ -185,6 +185,7 @@ button {
 .menu-btn:focus+.menu-items,
 .menu-items:hover {
    display: block;
+  
 }
 
 .menu-items img {
@@ -628,4 +629,196 @@ h6 {
    
     /* border-radius: 10px; */
   
+}
+
+
+
+.regresar {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+    margin-top: -120px;
+}
+
+.regresar img {
+    width: 22px;
+    height: 22px;
+}
+
+/* Usuario del Profesor */
+
+.inf_basica_estudiante {
+    border: 1px solid #ffffff70;
+    color: #fff;
+    font-family: miFuentePath;
+    width: 420px;
+    margin-left: 50px;
+    height: 380px;
+    margin-top: 540px;
+    border-radius: 40px;
+    cursor: pointer;
+
+
+}
+
+.ja img{
+    width: 0px;
+}
+
+.inf_basica_estudiante h2 {
+    text-align: center;
+    font-family: miFuentePath;
+    padding: 10px;
+    font-weight: normal;
+}
+
+.estudiante-img img {
+    border-radius: 50%;
+    width: 150px;
+   
+    margin-left: 140px;
+}
+
+.estudiante-img .camara2 {
+    width: 30px;
+    top: -150px;
+    left: 120px;
+    
+    position: relative;
+}
+
+
+hr {
+    margin-top: -32px;
+}
+
+.titinfo h4 {
+    background-color: #d9d9d931;
+    font-weight: normal;
+    display: flex;
+    margin: 10px;
+    justify-content: flex-start;
+    padding-inline-start: 15px;
+    padding: 5px;
+    height: 30px;
+    border-radius: 10px;
+    width: 370px;
+    margin-left: 22px;
+}
+
+.titinfo h4:hover {
+    background-color: gray;
+}
+
+.cargar-imagen {
+    border: 1px solid #ffffff70;
+    color: #fff;
+    font-family: miFuentePath;
+    width: 420px;
+    margin-left: 450px;
+    height: 380px;
+    margin-top: 100px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+
+/* Cambio de contraseña en Gestion Perfil */
+.cambio_contraseña h2 {
+    font-family: miFuentePath;
+    font-weight: normal;
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+
+}
+
+.cambio_contraseña {
+    margin-left: 500px;
+    border: 1px solid #ffffff70;
+    width: 420px;
+    border-radius: 20px;
+    height: 400px;
+    margin-top: 95px;
+}
+
+.cambio_contraseña img {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: -385px;
+    margin-top: -49px;
+    width: 18px;
+}
+
+.imagen {
+    margin-top: 24px;
+}
+
+.imagen2 {
+    bottom: 28px;
+    position: relative;
+}
+
+.botton1 {
+    background-color: #00000049;
+    border: none;
+    height: 30px;
+    margin: 50px;
+    margin-left: 1px;
+    padding-left: 30px;
+    border-bottom: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 22px;
+    font-family: miFuentePath;
+    font-weight: normal;
+    width: 300px;
+    height: 40px;
+    outline: none;
+}
+
+
+.botton2 {
+    background-color: #00000049;
+    border: none;
+    height: 40px;
+    padding-left: 30px;
+    border-radius: 10px;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 22px;
+    font-family: miFuentePath;
+    font-weight: normal;
+    width: 300px;
+    height: 40px;
+    outline: none;
+}
+
+.cambio_contraseña input {
+    margin-left: -390px;
+}
+
+.input_boton1 {
+    margin-top: -10px;
+}
+
+.input_boton1 label {
+    font-size: 22px;
+}
+
+.enviar {
+    font-family: miFuentePath;
+    background-color: #0077ff96;
+    font-size: 20px;
+    height: 25px;
+    width: 120px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -60px;
+    position: relative;
+    left: 90px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
 }
