@@ -106,7 +106,8 @@ button {
 
 .container_prueba {
     position: relative;
-    top: 550px;
+     top: 550px; 
+   
 
 }
 
@@ -318,7 +319,7 @@ h6 {
 .calificaciones h2 {
     transform: translate(100px);
     line-height: 2;
-    font-size: 30px;
+    font-size: 25px;
     width: 500px;
     font-family: miFuentePath;
     font-weight: normal;
@@ -333,13 +334,20 @@ h6 {
     color: #fff;
     font-family: miFuentePath;
     font-size: 20px;
+   background-color: #0000007a;
+  
 }
 
 
+td{
+    border: 1px solid #88888863;
+    padding-inline-start: 10px;
+}
 
 .ml th {
     text-align: center;
     font-weight: normal;
+    border: 0.5px solid #88888854;
 }
 
 .nav ul{
@@ -370,18 +378,22 @@ h6 {
    
 }
 
+.dir_tanda{
+    margin-top: -40px;
+}
 
 
 .num{
-    height: 510px;
+    height: 440px;
     position: relative;
     bottom: 10px;
-    color: #000000;
+    color: #fffefe;
     font-size: 18px;
     font-family: miFuentePath;
-    background-color: #fff;
+    background-color: #ffffff1f;
     overflow: hidden;
-   
+    border: none;
+    
    
     
 }
@@ -408,7 +420,7 @@ h6 {
     background-color: #00ccff;
     position: relative;
     left: 20px;
-    bottom: 66px;
+    bottom: 54px;
     padding: 6px;
     width: 20px;
     height: 33px;
@@ -421,7 +433,7 @@ h6 {
     font-size: 20px;
     font-family: miFuentePath;
     padding: 5px;
-    background-color: #023685;
+    background-color: #0077ff96;
     width: 750px;
     border-bottom: 22px 22px 22px  rgb(240, 28, 5);
     padding-left: 25px;
@@ -431,10 +443,11 @@ h6 {
 }
 
 .reinscripcion label{
-    color: #000000;
+    color: #ffffff;
     font-size: 17px;
     font-family: miFuentePath;
     padding-left: 10px;
+    font-weight: normal;
     
    
 }
@@ -461,22 +474,22 @@ h6 {
 
 .full{
    position: relative;
-   bottom: 39px;
+   bottom: 10px;
 }
 
 .full2 {
     position: relative;
-    bottom: 59px;
+   top: -45px;
 }
 
 .full3 {
     position: relative;
-    bottom: 79px;
+    bottom: 59px;
 }
 
 .full4 {
     position: relative;
-    bottom: 79px;
+    bottom: 59px;
 }
 
 .full5 {
@@ -486,7 +499,17 @@ h6 {
 
 .full6{
     position: relative;
-    bottom: 40px;
+    bottom: 59px;
+}
+
+.contacto{
+    position: relative;
+    bottom: 50px;
+}
+
+.nac_origen{
+    position: relative;
+    bottom: 20px;
 }
 
 #boton{
@@ -494,9 +517,11 @@ h6 {
     text-align: center;
     height: 30px;
     width: 120px; 
-    background-color: #023685;
+    background-color: #0077ff96;
     color: #fff;
     text-align: center;
+    border: none;
+   
 
 }
 
@@ -504,21 +529,14 @@ h6 {
     background-color: #00ccff;
     color: #050404;
     border-radius: 5px;
-    box-shadow: 0 0 5px #00ccff
-                0 0 25px #00ccff
-                0 0 50px #00ccff
-                0 0 200px #00ccff
-    ;
+    box-shadow: 0 0 5px #00ccff;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
 
-
-
-
 .cls{
     position: relative;
-    bottom: 33px;
+    bottom: 21px;
 }
 
 
@@ -527,9 +545,11 @@ h6 {
     color: #000000;
     margin: 15px;
     height: 10px;
-  padding: 10px;
-  padding-left: 4px;
-
+    padding: 10px;
+    padding-left: 4px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
 }
 
 
@@ -724,13 +744,20 @@ hr {
 
 
 /* Cambio de contraseña en Gestion Perfil */
+
+
 .cambio_contraseña h2 {
     font-family: miFuentePath;
     font-weight: normal;
     font-size: 25px;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    width: 420px;
+    margin-top: 20px;
+    
+   
+   
+    
 
 }
 
@@ -739,8 +766,8 @@ hr {
     border: 1px solid #ffffff70;
     width: 420px;
     border-radius: 20px;
-    height: 400px;
-    margin-top: 95px;
+     height: 400px; 
+    margin-top: 535px;
 }
 
 .cambio_contraseña img {
@@ -753,11 +780,13 @@ hr {
 
 .imagen {
     margin-top: 24px;
+    margin-left: -20px;
 }
 
 .imagen2 {
     bottom: 28px;
     position: relative;
+   right: 20px;
 }
 
 .botton1 {
@@ -796,11 +825,13 @@ hr {
 }
 
 .cambio_contraseña input {
-    margin-left: -390px;
+     margin-left: -410px; 
+  
 }
 
 .input_boton1 {
-    margin-top: -10px;
+    margin-top: 60px;
+    margin-left: -30px;
 }
 
 .input_boton1 label {
@@ -821,4 +852,39 @@ hr {
     color: #ffffff;
     border: none;
     cursor: pointer;
+}
+
+.preguntas_container h3 {
+    font-family: miFuentePath;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    /* margin-top: -450px; */
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-left: -300px;
+} 
+
+ 
+.preguntas_container {
+    color: #fff;
+    width: 100%;
+    max-width: 800px;
+    margin-left: 320px;
+}
+ 
+.preguntas h5 {
+    font-family: miFuentePath;
+    margin-left: -290px;
+    bottom: -80px;
+    position: relative;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.preguntas p {
+    font-family: miFuentePath;
+    display: none;
+    position: relative;
+    color: #fff;
 }

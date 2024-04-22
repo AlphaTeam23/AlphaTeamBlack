@@ -82,29 +82,32 @@
                 <label for="edad">Edad</label>
                 <input type="text" id="edad" required>
                     <br>
+
+                    <div class="nac_origen">
                 <label for="nac">Fecha de nacimiento</label>
                 <input type="date" id="nac" required>
                 
 
                  <label for="gen">Sexo</label>
-                <input type="radio" name="gen" value="Femenino">Femenino
-                <input type="radio" name="gen" value="Masculino">Masculino 
-                
+                <input type="radio" name="gen" id="gen" value="Femenino">Femenino
+                <input type="radio" name="gen" id="gen" value="Masculino">Masculino 
+                </div>
+            </div>
+            <div class="full2">
+                <label for="origen">Nacionalidad</label>
+                <input type="radio" name="origen" id="origen" value="Dominicana">Dominicana
+                <input type="radio" name="origen" value="Extranjera">Extranjera
+                <br><br> 
             </div>
 
+
                 <!-- <fieldset class="num2" > -->
-                   
+                   <div class="dir_tanda">
 
                     <legend class="cls" >DIRECCION</legend>
                     <div class="A"></div>
 
-                    <div class="full2">
-                    <label for="origen">Nacionalidad</label>
-                    <input type="radio" name="origen" id="origen" value="Dominicana">Dominicana
-                    <input type="radio" name="origen" value="Extranjera">Extranjera
-                    <br><br> 
-                        </div>
-
+                    
                         <div class="full3">
                     <label for="calle">Calle</label>
                     <input type="text" id="calle" required>
@@ -148,6 +151,8 @@
                     <label for="sec">Sector</label>
                     <input type="text" id="sec" placeholder="Digite aqui su sector" required >
                     </div>
+
+                    <legend class="contacto">INFORMACION DE CONTACTO</legend>
                 
                 
                     <div class="full4">
@@ -170,21 +175,6 @@
                     <label for="tele">Número telefónico de Tutor</label>
                     <input type="tel" id="tele" required>
               
-
-                
-                    
-                    <label for="curso1">Curso Promovido</label>
-                    <select name="curso1" id="curso1" required>
-                        <option value="">-Elija un curso-</option>
-                        <option value="1ro">1ro</option>
-                        <option value="2do">2do</option>
-                        <option value="3ro">3ro</option>
-                        <option value="4to">4to</option>
-                        <option value="5to">5to</option>
-                        <option value="6to">6to</option>
-                    </select>
-                    <br><br>
-
                <!--  </div>-->
                <legend>Tanda</legend>
             <div class="cu"></div>
@@ -198,7 +188,8 @@
                     <input type="submit" id="boton" value="Enviar Formulario">
                 </div>
             </div>
-                    </fieldset>
+             </div>       
+            </fieldset>
                 </form>
         </section>
     </main>
