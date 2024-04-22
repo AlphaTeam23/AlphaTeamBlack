@@ -724,13 +724,20 @@ hr {
 
 
 /* Cambio de contraseña en Gestion Perfil */
+
+
 .cambio_contraseña h2 {
     font-family: miFuentePath;
     font-weight: normal;
     font-size: 25px;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    width: 420px;
+    margin-top: 20px;
+    
+   
+   
+    
 
 }
 
@@ -739,8 +746,8 @@ hr {
     border: 1px solid #ffffff70;
     width: 420px;
     border-radius: 20px;
-    height: 400px;
-    margin-top: 95px;
+     height: 400px; 
+    margin-top: 535px;
 }
 
 .cambio_contraseña img {
@@ -753,11 +760,13 @@ hr {
 
 .imagen {
     margin-top: 24px;
+    margin-left: -20px;
 }
 
 .imagen2 {
     bottom: 28px;
     position: relative;
+   right: 20px;
 }
 
 .botton1 {
@@ -796,11 +805,13 @@ hr {
 }
 
 .cambio_contraseña input {
-    margin-left: -390px;
+     margin-left: -410px; 
+  
 }
 
 .input_boton1 {
-    margin-top: -10px;
+    margin-top: 60px;
+    margin-left: -30px;
 }
 
 .input_boton1 label {
