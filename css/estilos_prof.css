@@ -735,6 +735,53 @@ hr {
     cursor: pointer;
 }
 
+/* Reportar un problema */
+
+.reporte h2 {
+    font-family: miFuentepath;
+    font-weight: normal;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    font-size: 23px;
+}
+
+.reporte textarea {
+    background-color: #ffffff2d;
+    width: 500px;
+    height: 300px;
+    border-radius: 30px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;  
+    padding: 15px; 
+    outline: none;
+    border: 1px solid #ffffff8f;
+    color: #fff;
+    font-family: miFuentepath;
+    font-size: 18px;  
+}
+
+.reporte .report_ev {
+    background-color: #7fa4cedc;
+    color: #000000;
+    font-family: miFuentepath;
+    border: none;
+    font-weight: normal;
+    width: 80px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin: 2px;
+    font-size: 16px;
+}
+
+.report {
+    margin-top: 130px;
+}
+
+
 /* Responsive */
 /* Movil */ 
 @media  screen and (max-width: 390px) {
