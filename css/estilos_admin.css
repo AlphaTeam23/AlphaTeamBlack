@@ -52,6 +52,7 @@ ul {
     font-family: miFuentePath;
     margin: 50px;
     margin-top: 70px;
+    font-weight: normal;
 }
 
 li {
@@ -193,18 +194,22 @@ li img {
     text-align: center;
     height: 100%;
     text-transform: uppercase;
+    font-weight: normal;
 }
 
 
 .tit_pagina {
     color: #fff;
     font-family: miFuentePath;
-    font-weight: normal;
     position: absolute;
     top: -330px;
     left: 0px;
     transform: translate(-10%, -1000%);
     font-size: 20px;
+}
+
+.tit_pagina h4 {
+    font-weight: normal;
 }
 
 .barra {
@@ -239,10 +244,17 @@ li img {
     height: 100px;
     padding: 20px;
     color: #fff;
-   
-    
+    font-weight: normal;
+    font-family: miFuentePath;  
 }
 
+.barra2 label {
+    font-family: miFuentePath;
+}
+
+.barra2 legend {
+    text-align: center;
+}
 
 .barra3 {
     position: absolute;
@@ -357,6 +369,18 @@ li img {
     left: 395px;
     height: 20px;
     width: 807px;
+    font-family: miFuentePath;
+}
+
+legend {
+    font-family: miFuentePath;
+    font-weight: normal;
+    text-align: center;
+    font-size: 20px;
+}
+
+.datos th {
+    font-weight: normal;
 }
 
 .enviar {
