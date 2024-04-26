@@ -485,9 +485,40 @@ li img {
     height: 20px;
     width: 850px;
      border-radius: 5px;
-    
-
 }
+
+.nom, .sexoest, .nomt, .cedula, .correo, .ocupacion, .provincia, .calle {
+    margin-left: 50px;
+}
+
+.fechnac {
+    margin-left: 80px;
+}
+
+.curso {
+    margin-left: 50px;
+    top: 250px;
+}
+
+.inpcedula, .inpcorreo   {
+    margin-left: 45px;
+  
+}
+
+.inpnomt, .inpapet, .inpnumero{
+    margin-left: 38px;
+}
+
+.inpcalle {
+    margin-left: 52px;
+}
+
+.inpprovincia {
+    margin-left: 27px;
+}
+
+
+
 
 .inscripcion input {
     height: 20px;
