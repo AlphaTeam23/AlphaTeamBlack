@@ -223,7 +223,7 @@ li img {
 .barra1 {
     position: absolute;
     top: -370px;
-    left: 4%;
+    left: -15px;
     transform: translate(-10%, -100%);
     width: 847px;
     height: 120px;
@@ -239,7 +239,8 @@ li img {
     height: 100px;
     padding: 20px;
     color: #fff;
-    display: inline-table;
+   
+    
 }
 
 
@@ -253,6 +254,18 @@ li img {
     padding: 20px;
     color: #fff;
 }
+
+.barra4 {
+    position: absolute;
+    top: -370px;
+    left: -16px;
+    transform: translate(-10%, -100%);
+    width: 845px;
+    height: 120px;
+    padding: 20px;
+    color: #fff;
+}
+
 
 .btcargar {
     top: 0px;
@@ -315,7 +328,7 @@ li img {
     padding: 0;
     bottom: -60px;
     position: relative;
-    left: 600px;
+    left: 480px;
     color: #000;
 }
 
@@ -354,6 +367,38 @@ li img {
     font-size: 20px;
     height: 25px;
     width: 60px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -60px;
+    position: relative;
+    left: 750px;
+    color: #000;
+}
+
+.imprimir {
+    top: -410px;
+    height: 20px;
+    font-family: miFuentePath;
+    background-color: #fff;
+    font-size: 20px;
+    height: 23px;
+    width: 60px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -60px;
+    position: relative;
+    left: 750px;
+    color: #000;
+}
+
+.guarcambio {
+    top: -140px;
+    height: 20px;
+    font-family: miFuentePath;
+    background-color: #fff;
+    font-size: 20px;
+    height: 25px;
+    width: 110px;
     border-radius: 5px;
     padding: 0;
     bottom: -60px;
@@ -436,13 +481,44 @@ li img {
     color: #e0dada;
     position: relative;
     top: -35px;
-    left: -20px;
+    left: -25px;
     height: 20px;
     width: 850px;
      border-radius: 5px;
-    
-
 }
+
+.nom, .sexoest, .nomt, .cedula, .correo, .ocupacion, .provincia, .calle {
+    margin-left: 50px;
+}
+
+.fechnac {
+    margin-left: 80px;
+}
+
+.curso {
+    margin-left: 50px;
+    top: 250px;
+}
+
+.inpcedula, .inpcorreo   {
+    margin-left: 45px;
+  
+}
+
+.inpnomt, .inpapet, .inpnumero{
+    margin-left: 38px;
+}
+
+.inpcalle {
+    margin-left: 52px;
+}
+
+.inpprovincia {
+    margin-left: 27px;
+}
+
+
+
 
 .inscripcion input {
     height: 20px;
@@ -511,7 +587,7 @@ section {
     color: #0d0c0c;
     position: absolute;
     top: 315px;
-    left: 423px;
+    left: 400px;
     height: 20px;
     width: 847px;
 }
