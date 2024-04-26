@@ -571,16 +571,17 @@ td{
 
 .pay_form {
     position: relative;
-    bottom: 290px;
+    bottom: 300px;
 }
 
 .pay_form h2{
+    font-size: 20px;
     margin-bottom: 110px;
     font-family: miFuentemont;
     display: flex;
     justify-content:right;
     color: white;
-   transform: translate(-280px); 
+   transform: translate(-340px); 
 }
 
 
@@ -597,7 +598,7 @@ td{
 
 .pagos{
     position: relative;
-    left: 50px;
+    /* left: 50px; */
     bottom: 80px;
     font-size: 20px;
     color: #ffffff;
@@ -616,11 +617,12 @@ td{
 
 .pagos img{
     width: 60px;
-    height: 20px;
+    height: 50px;
     position: relative; 
-    left: 280px; 
+     left: 210px;  
     top: -20px; 
     display: flex;
+    
    
     
     /* flex-direction: row-reverse;
@@ -633,19 +635,20 @@ td{
     margin-left: 50px;
     padding: 5px;
     width: 620px;
-    height: 300px;
-    background-color: rgb(0, 0, 0, 43%);
-   border-radius: 10px;
+    height: 360px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #555;
+   border-radius: 45px;
 }
 .tarjeta img {
-    margin-top: -5px ;
+    margin-top: -5px;
     /* margin-left: -400px; */
     position: relative;
-    left: 400px;
+    left: 310px;
     border-bottom-right-radius:20px;
     border-top-right-radius:20px;
     width: 220px;
-    height: 300px;
+    height: 340px;
    
     /* border-radius: 10px; */
   
