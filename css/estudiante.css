@@ -30,6 +30,11 @@
     src: url(../fuentes/Poppins..ttf);
 }
 
+@font-face {
+    font-family: miFuenteMont;
+    src: url(../fuentes/Montserrat-ExtraBoldItalic.ttf);
+}
+
 body {
     
     background-image: url(/imagenes/image\ 1\ \(4\).png);
@@ -39,7 +44,6 @@ body {
     overflow: hidden;
     background-position-y: -129px;
     object-fit: cover; 
-    
 }
 
 
@@ -60,14 +64,13 @@ ul {
 }
 
 li {
-    background-color: #d9d9d931;
+     background-color: #d9d9d931; 
     margin: -5px;
     width: 310px;
     text-align: center;
     height: 47px;
     list-style-type: none;
     border-radius: 10px;
-
 }
 
 li:hover {
@@ -106,7 +109,7 @@ button {
 
 .container_prueba {
     position: relative;
-     top: 550px; 
+    top: 550px; 
    
 
 }
@@ -157,20 +160,15 @@ button {
    margin: 0;
    font-family: miFuentePath;
    border-top: solid 1px rgba(255, 255, 255, 0.705);
-
-
 }
 
 .menu-items li {
    border-bottom: 10px solid #555;
-
-
 }
 
 .menu-items a {
    display: block;
    padding: 10px;
-   
    text-decoration: none;
    color: #000000;
    font-size: 17px;
@@ -186,7 +184,6 @@ button {
 .menu-btn:focus+.menu-items,
 .menu-items:hover {
    display: block;
-  
 }
 
 .menu-items img {
@@ -199,8 +196,6 @@ button {
    text-align: center;
    font-family: miFuentePath;
    font-weight: normal;
-
-
 }
 
 .gestion img {
@@ -226,8 +221,6 @@ button {
     color: rgb(255, 255, 255);
     font-family: miFuentePath;
     font-weight: normal;
-
-
 }
 
 
@@ -236,7 +229,7 @@ main {
     display: grid;
     grid-gap: 2rem 5rem;
     grid-template-areas:
-        "figure";
+    "figure";
     grid-template-columns: 2fr 6fr 4fr;
     grid-template-rows: 3rem;
     margin: 0 25rem;
@@ -252,7 +245,6 @@ main {
     transform: translate(-135%);
     font-family: miFuentePath;
     margin-top: 60px;
-
 }
 
 .info_docente h4 {
@@ -263,20 +255,15 @@ main {
     transform: translate(10px);
     font-family: miFuentePath;
     font-weight: normal;
-
-
 }
 
 .info_docente img {
-
    width: 350px;
    height: 350px;
    position: absolute;
    top: 10px;
    left: 90%;
    object-fit: contain;
-
-
 }
 
 
@@ -300,7 +287,6 @@ main {
 
 .informacion img {
     width: 30px;
-
 }
 
 
@@ -335,7 +321,6 @@ h6 {
     font-family: miFuentePath;
     font-size: 20px;
    background-color: #0000007a;
-  
 }
 
 
@@ -375,7 +360,6 @@ td{
     width: 800px;
     margin-left: 70px; 
     margin-top: 30px;
-   
 }
 
 .dir_tanda{
@@ -393,16 +377,11 @@ td{
     background-color: #ffffff1f;
     overflow: hidden;
     border: none;
-    
-   
-    
 }
 
 .B{
     background-color: #00ccff;
- 
-    
-                                                                                                             
+                                                                                                    
 }
 
 .cu{
@@ -413,7 +392,6 @@ td{
     padding: 6px;
     width: 20px;
     height: 33px;
-    
 } 
 
 .A{
@@ -439,7 +417,6 @@ td{
     padding-left: 25px;
     margin-left:20px ;
     z-index: 1;
-   
 }
 
 .reinscripcion label{
@@ -448,8 +425,6 @@ td{
     font-family: miFuentePath;
     padding-left: 10px;
     font-weight: normal;
-    
-   
 }
 
 #edad{
@@ -521,8 +496,6 @@ td{
     color: #fff;
     text-align: center;
     border: none;
-   
-
 }
 
 #boton:hover{
@@ -556,7 +529,8 @@ td{
 /* pago */
 
 .pay_form p, h2{
-    font-family: miFuentemont;
+    font-family: miFuentePath;
+    font-weight: normal;
 }
  .pay_form img {
 
@@ -565,9 +539,9 @@ td{
     position: relative;
     left: -15px;
     margin: -5px; 
-    
-   
 } 
+
+
 
 .pay_form {
     position: relative;
@@ -576,12 +550,12 @@ td{
 
 .pay_form h2{
     font-size: 20px;
-    margin-bottom: 110px;
-    font-family: miFuentemont;
+    margin-bottom: 100px;
+    font-family: miFuentePath;
     display: flex;
-    justify-content:right;
+    justify-content:center;
     color: white;
-   transform: translate(-340px); 
+    margin-right: 270px;
 }
 
 
@@ -589,52 +563,42 @@ td{
     display: flex;
     justify-content: right;
     position: relative;
-    left: -330px;
+    left: -355px;
     bottom: 90px;
     font-size: 20px;
     color: white;
-   
 }
 
 .pagos{
     position: relative;
-    /* left: 50px; */
-    bottom: 80px;
+    bottom: 90px;
     font-size: 20px;
     color: #ffffff;
-    
+    font-family: miFuentePath;
 }
 
 .pagos input{
     margin: auto 10px;
-    width: 24px;
-    height: 24px;
-    
-    
+    width: 15px;
+    height: 15px;
 }
 
 
 
 .pagos img{
     width: 60px;
-    height: 50px;
+    height: 40px;
     position: relative; 
-     left: 210px;  
+    left: 210px;  
     top: -20px; 
     display: flex;
-    
-   
-    
-    /* flex-direction: row-reverse;
-    justify-content: center; */
-    /* margin: -20px; */
 }
 
 .opcion_pago{
     margin-top: 40px;
     margin-left: 50px;
     padding: 5px;
-    width: 620px;
+    width: 597px;
     height: 360px;
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #555;
@@ -642,16 +606,14 @@ td{
 }
 .tarjeta img {
     margin-top: -5px;
-    /* margin-left: -400px; */
     position: relative;
     left: 310px;
-    border-bottom-right-radius:20px;
-    border-top-right-radius:20px;
-    width: 220px;
-    height: 340px;
-   
-    /* border-radius: 10px; */
-  
+    border-bottom-right-radius:45px;
+    border-top-right-radius:45px;
+    width: 280px;
+    height: 358px;
+    opacity: 20px;
+    object-fit: cover;
 }
 
 
@@ -680,8 +642,6 @@ td{
     margin-top: 540px;
     border-radius: 40px;
     cursor: pointer;
-
-
 }
 
 .ja img{
@@ -698,7 +658,6 @@ td{
 .estudiante-img img {
     border-radius: 50%;
     width: 150px;
-   
     margin-left: 140px;
 }
 
@@ -706,7 +665,6 @@ td{
     width: 30px;
     top: -150px;
     left: 120px;
-    
     position: relative;
 }
 
@@ -757,11 +715,6 @@ hr {
     text-align: center;
     width: 420px;
     margin-top: 20px;
-    
-   
-   
-    
-
 }
 
 .cambio_contraseña {
@@ -769,7 +722,7 @@ hr {
     border: 1px solid #ffffff70;
     width: 420px;
     border-radius: 20px;
-     height: 400px; 
+    height: 400px; 
     margin-top: 535px;
 }
 
@@ -789,7 +742,7 @@ hr {
 .imagen2 {
     bottom: 28px;
     position: relative;
-   right: 20px;
+    right: 20px;
 }
 
 .botton1 {
@@ -828,8 +781,7 @@ hr {
 }
 
 .cambio_contraseña input {
-     margin-left: -410px; 
-  
+    margin-left: -410px;
 }
 
 .input_boton1 {
@@ -862,7 +814,6 @@ hr {
     color: #fff;
     text-align: center;
     font-size: 25px;
-    /* margin-top: -450px; */
     font-weight: normal;
     text-transform: uppercase;
     margin-left: -300px;
@@ -908,20 +859,47 @@ nav{
     display: none;
 }
 
+nav li a {
+    padding: 0px;
+    margin: 0px;
+    background-color: #000000;
+}
+
 .cout ul{
     margin-left: 220px;
+    padding: 5px;
+    width: 320px;
+    background-color: #000000;
+
 }
 
 .cout li {
-    text-align: left;
-   
+    text-align: left; 
+}
+
+
+.container {
+    position: relative;
+    left: 50px;
+    top: 10px;
+    width: 100%;
     
+
 }
 
 .cout li a{
     color: white;
     left: 50px;
     margin: -10px;
+   
+}
+
+li {
+    background-color: #00000031; 
+    margin: -5px;
+    width: 310px;
+    text-align: center;
+     border-radius: 10px;
 }
 
 .content {
@@ -941,14 +919,13 @@ nav{
 .content a {
   color: rgb(0, 0, 0);
    padding: 12px; 
-
   text-decoration: none;
   display: block;
 }
 
-.content a:hover {
+/* .content a:hover {
   background-color: #ddd;
-}
+} */
 
 .cout:focus-within .content,
 .cout:active .content {
@@ -960,11 +937,33 @@ nav{
   background-color: transparent;
   border: none;
   cursor: pointer;
-
   padding: 0;
   position: relative;
-  bottom: 80px;
+  bottom: 120px;
   
+}
+
+.body{
+    overflow: scroll;
+    height: 1290px;
+}
+
+h1 {
+    font-family: miFuenteLime;
+    color: #fff;
+     
+    margin-left: 110px; 
+    font-weight: normal;
+    font-size: 22px;
+}
+
+.info_docente h4{
+    margin-left: -100px;
+}
+
+.info_docente p{
+   margin-left: -90px;
+   width: 340px;
 }
 
 .menu img{
@@ -978,8 +977,19 @@ nav{
   
 }
 
+.info_docente img{
+    position: absolute;
+    top: 560px;
+    left: 20px;
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: #00ccff solid;
+}
+
+
 .informacion{
     position: relative;
-    top: 400px;
+    top: 850px;
 }
 }
