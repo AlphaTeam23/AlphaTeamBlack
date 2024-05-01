@@ -63,7 +63,6 @@ li {
     height: 47px;
     list-style-type: none;   
     border-radius: 10px;
-    
 }
 
 li:hover {
@@ -116,7 +115,9 @@ input {
     position: relative;
     padding-left: 70px;
     font-size: 16px;
+    font-family: miFuentePath;
 }
+
 
 .imagen {
     width: 20px;
@@ -223,6 +224,18 @@ li img {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    font-family: miFuentePath;
+    font-weight: normal;
+}
+
+th {
+    font-family: miFuentePath;
+    font-weight: normal;
+}
+
+td {
+    font-family: miFuentePath;
+    font-weight: normal;
 }
 
 .barra1 {
@@ -234,6 +247,8 @@ li img {
     height: 120px;
     padding: 20px;
     color: #fff;
+    font-family: miFuentePath;
+    font-weight: normal;
 }
 
 .barra2 {
@@ -252,10 +267,6 @@ li img {
     font-family: miFuentePath;
 }
 
-.barra2 legend {
-    text-align: center;
-}
-
 .barra3 {
     position: absolute;
     top: -370px;
@@ -265,6 +276,8 @@ li img {
     height: 120px;
     padding: 20px;
     color: #fff;
+    font-family: miFuentePath;
+    font-weight: normal
 }
 
 .barra4 {
@@ -344,6 +357,16 @@ li img {
     color: #000;
 }
 
+.planificacion-completa {
+    font-family: miFuentePath;
+
+}
+
+.plan-docente label {
+    font-family: miFuentePath;
+}
+
+
 .btcancelarrecord {
     top: 0px;
     height: 20px;
@@ -376,7 +399,7 @@ legend {
     font-family: miFuentePath;
     font-weight: normal;
     text-align: center;
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .datos th {
@@ -508,7 +531,9 @@ legend {
     left: -25px;
     height: 20px;
     width: 850px;
-     border-radius: 5px;
+    border-radius: 5px;
+    font-family: miFuentePath;
+    font-weight: normal;
 }
 
 .nom, .sexoest, .nomt, .cedula, .correo, .ocupacion, .provincia, .calle {
@@ -517,6 +542,10 @@ legend {
 
 .fechnac {
     margin-left: 80px;
+}
+
+.cursos-adm {
+    font-family: miFuentePath;
 }
 
 .curso {
