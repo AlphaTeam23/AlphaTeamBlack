@@ -242,8 +242,80 @@ h4 {
     aside {
        margin-left: 120px;
     }
+}
+
+/* Tablets */ 
+@media  screen and (min-width: 601px) and (max-width: 900px) {
+    html {
+        padding-bottom: 400px;
+    }
+
+    h1 {
+        font-size: 60px;
+        width: 530px;
+        margin-left: 180px;
+        margin-top: 40px;
+    }
+
+    .titulo1 {
+        margin-left: 180px;
+        font-size: 40px;
+        width: 430px;
+    }
+
+    .iniciar_container {
+        margin-left: 150px;
+        width: 540px;
+        height: 500px;
+        margin-top: 70px;
+    }
+
+    input {
+        margin-left: 60px;
+        width: 420px;
+        height: 60px;
+        padding-inline-start: 50px;
+    }
+
+    .iniciar_container img {
+        margin-left: 380px;
+        width: 28px;
+        margin-top: -50px;
+    }
+
+    ::placeholder {
+        color: #ffffff83;
+        font-family: miFuentePath;
+        font-size: 30px;   
+        padding-inline-start: 20px;
+    }
+    
+    .access {
+        margin-left: 220px;
+        font-size: 32px;
+        height: 40px;
+    }
+
+    aside {
+       margin-left: 310px;
+       font-size: 20px;
+       margin-top: -200px;
+    }
+
+    aside h4 {
+        font-size: 27px;
+        margin: -15px;
+    }
+
+    .container img {
+        width: 27px;
+        right: -10px;
+        position: relative;
+        
+    }
 
 
+   
 }
 
 
