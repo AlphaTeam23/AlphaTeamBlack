@@ -141,23 +141,24 @@ input {
 
 ul {
     font-family: miFuentePath;
-    margin: 100px;
-    margin-top: 150px;
+    margin: 50px;
+    margin-top: 95px;
 }
 
 li {
-    background-color: #d9d9d921;
-    margin: -10px;
-    width: 270px;
+    background-color: #d9d9d931;
+    margin: -5px;
+    width: 310px;
     text-align: center;
     height: 47px;
-    list-style-type: none;
+    list-style-type: none;   
+    border-radius: 10px;
 }
 
 li a {
     color: #fff;
     margin: 20px;
-    font-size: 25px;
+    font-size: 30px;
     text-decoration: none;
     bottom: 40px;
     position: relative;
@@ -342,7 +343,7 @@ td {
 }
 
 .btbuscarplan {
-    top: 0px;
+    top: -10px;
     height: 20px;
     font-family: miFuentePath;
     background-color: #fff;
@@ -388,7 +389,7 @@ td {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: relative;
-    top: -417px;
+    top: -410px;
     left: 395px;
     height: 20px;
     width: 807px;
@@ -516,7 +517,7 @@ legend {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 305px;
+    top: 278px;
     left: 395px;
     height: 20px;
     width: 807px;
@@ -605,7 +606,7 @@ section {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 315px;
+    top: 280px;
     left: 400px;
     height: 20px;
     width: 845px;
@@ -616,7 +617,7 @@ section {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 363px;
+    top: 310px;
     left: 400px;
     height: 20px;
     width: 845px;
@@ -628,7 +629,7 @@ section {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 570px;
+    top: 520px;
     left: 400px;
     height: 20px;
     width: 845px;
@@ -639,7 +640,7 @@ section {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 315px;
+    top: 280px;
     left: 400px;
     height: 20px;
     width: 847px;
