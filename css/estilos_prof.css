@@ -166,7 +166,6 @@ button {
 .menu-items  a {
     display: block;
     padding: 10px;
-   
     text-decoration: none;
     color: #000000;
     font-size: 17px;
@@ -200,12 +199,6 @@ button {
 .gestion img {
     float: right;
     width: 19px;
-}
-
-.camara img {
- margin: -6px;
- transform: translateY(-3px);
- width: 15px;
 }
 
 /* Página Calificaciones */
@@ -921,14 +914,24 @@ hr {
     }
 
     h1 {
-        font-size: 55px;
+        font-size: 65px;
     }
 
+    /* Menú desplegable gestión perfil */
+
     button {
-        font-size: 20px;
+        font-size: 27px;
         font-weight: normal;
         color: #fffefe;
         background-color: rgb(217, 217, 217, 33%);
+        text-align: center;
+        
+    }
+
+    .menu-btn {
+        width: 110px;
+        height: 32px;
+        margin-right: 120px;
     }
 
     .container {
@@ -943,24 +946,110 @@ hr {
     }
 
     .container .menu-items {
-        background-color: #ffffff;
-       
+        background-color: rgba(217, 217, 217, 0.979);
+        width: 320px;
+        margin-right: 60px;
     }
 
     .container .menu-items a {
-         border-top: solid 1px rgba(0, 0, 0, 0.397);
+        border-top: solid 1px rgba(0, 0, 0, 0.397);
     }
 
-    li a {
+    .menu-btn img {
+        left: 74px;
+        position: relative;
+        width: 35px;
+        top: -35px;
+    }
+
+    .menu-items a {
+        font-size: 28px;
+        width: 100%;
+    }
+
+    .gestion {
+        font-size: 32px;
+    }
+
+    .menu-items img {
+        width: 35px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    /* Perfil usuario */
+    .inf_basica_profesor {
+        margin-left: 140px;
+        width: 550px;
+        height: 565px;
+        margin-top: 170px;
+    }
+
+    .inf_basica_profesor h2 {
+        font-size: 37px;
+    }
+
+    hr {
+        margin-top: 10px;
+    }
+
+    .estudiante-img img {
+        width: 270px;
+    }
+
+    .estudiante-img .camara2 {
+        width: 50px;
+        margin-left: -150px;
+        top: -190px;
+        position: relative;
+    }
+
+    .titinfo h4 {
         font-size: 30px;
+        width: 530px;
+        margin-left: 10px;
+        height: 40px;
+        padding: 2px;
+        padding-left: 10px;
+    }
+
+    .regresar img {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Pagina cambio de contraseña */
+    .cambio_contraseña {
+        margin-top: 170px;
+        margin-left: 140px;
+        width: 550px;
+        height: 565px;
+    }
+
+    .cambio_contraseña h2 {
+        font-size: 37px;
+    }
+
+    
+
+    /* Menú principal */
+    li a {
+        font-size: 35px;
     }
 
     li {
-        height: 40px;
+        height: 58px;
+        width: 350px;
     }
-   
+
+    li img {
+        width: 30px;
+        top: 15px;
+        position: relative;
+    }
 
 }
+
 
 /* Desktop */ 
 @media  screen and (min-width: 901px) and (max-width: 1200px) {
