@@ -616,8 +616,230 @@ td{
     object-fit: cover;
 }
 
+.pagar{
+    position: relative;
+    bottom: 80px;
+    left: 90px;
+    
+}
+
+.pagar a {
+    font-family: miFuentePath;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: rgba(255, 68, 0, 0.788);
+}
+
+.pagar a:hover {
+    background-color: rgb(255, 68, 0);
+}
+    
 
 
+
+
+/* confirmacion de pago */
+
+.pay_form2 p, h2 {
+    font-family: miFuentePath;
+    font-weight: normal;
+}
+
+.pay_form2 img {
+
+    width: 34px;
+    height: 34px;
+    position: relative;
+    left: -15px;
+    margin: -5px;
+}
+
+
+
+.pay_form2 {
+    position: relative;
+    bottom: 350px;
+}
+
+.pay_form2 h2 {
+    font-size: 25px;
+    margin-bottom: 100px;
+    font-family: miFuentePath;
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-right: 270px;
+}
+
+
+
+.pay_form2 p {
+    display: flex;
+    justify-content: right;
+    position: relative;
+    left: -355px;
+    bottom: 90px;
+    font-size: 20px;
+    color: white;
+    font-family: miFuentePath;
+}
+
+.pagos2 {
+    position: relative;
+    bottom: 90px;
+    left: 30px;
+    font-size: 20px;
+    color: #ffffff;
+    font-family: miFuentePath;
+}
+
+.pagos2 input {
+    margin: auto 10px;
+    width: 15px;
+    height: 15px;
+   
+}
+
+
+
+.pagos2 img {
+    width: 60px;
+    height: 40px;
+    position: relative;
+    left: 150px;
+    top: -25px;
+    display: flex;
+}
+
+.opcion_pago2 {
+    margin-top: 540px;
+    margin-left: 50px;
+    padding: 5px;
+    width: 597px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #555;
+    border-radius: 45px;
+}
+
+.tarjeta2 img {
+    margin-top: -5px;
+    position: relative;
+    left: 310px;
+    border-bottom-right-radius: 45px;
+    border-top-right-radius: 45px;
+    width: 280px;
+    height: 399px;
+    opacity: 20px;
+    object-fit: cover;
+}
+
+.campos {
+    position: relative;
+    bottom: 99px;
+}
+
+.campos label {
+    color: #ffffff;
+    font-family: miFuentePath;
+    margin-left: 15px;
+}
+
+.campos input::placeholder {
+    text-align: center;
+}
+
+.campos input {
+    margin-left: 25px;
+    width: 160px;
+    background-color: #d9d9d921;
+    border: solid 0px #f1f1f10e;
+    color: #ffffff;
+   outline: none;
+}
+
+.campos2 {
+    position: relative;
+    bottom: 80px;
+}
+
+.campos2 label {
+    color: #ffffff;
+    font-family: miFuentePath;
+    margin-left: 19px;
+}
+
+.campos2 input {
+    margin-left: 70px;
+    width: 50px;
+    background-color: #d9d9d921;
+    border: solid 1px #f1f1f10e;
+    color: #ffffff;
+    outline: none;
+}
+
+.campos2 input::placeholder {
+   text-align: center;
+}
+
+.campos3 {
+    position: relative;
+    bottom: 60px;
+}
+
+.campos3 input {
+    margin-left: 58px;
+    width: 60px;
+    background-color: #d9d9d921;
+    border: solid 1px #f1f1f10e;
+    color: #ffffff;
+    outline: none;
+}
+
+.campos3 label {
+    color: #ffffff;
+    font-family: miFuentePath;
+    margin-left: 20px;
+    
+    
+}
+
+
+.valor {
+    position: relative;
+    bottom: 30px;
+    left: 143px;
+}
+
+.valor h4 {
+    color: #ffffff;
+    font-family: miFuentePath;
+    font-weight: normal;
+}
+
+
+.boton{
+    margin-left: 120px;
+}
+
+.boton a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 5px;
+    font-family: miFuentePath;
+    font-size: 20px;
+    background-color: #d9d9d915;
+}
+
+.boton a:hover {
+    background-color:#d9d9d920 ;
+}
+
+/* icono regresar */
 .regresar {
     display: flex;
     justify-content: flex-end;
@@ -842,6 +1064,10 @@ hr {
     position: relative;
     color: #fff;
 }
+
+
+
+
 
 
 .cout{
