@@ -14,14 +14,14 @@
 
     <main>
         <div class="iniciar_container">
-            <form>
+            <form id="loginForm">
                 <h2 class="titulo1">INICIO DE SESION</h2>
-                <input type="tel" placeholder="Matrícula" autofocus>
+                <input type="tel" placeholder="Matrícula" autofocus id="user" required  >
                 <img src="imagenes/bx-fingerprint.svg"  alt="" class="imagen">
 
-                <input type="password" name="contra" id="contra" placeholder= "Contraseña" required maxlength="15">
+                <input type="password" name="contra" id="contra" placeholder= "Contraseña" required maxlength="15" >
                 <img src="imagenes/bx-lock-alt.svg" alt="" class="cont">
-                <a href="p_alphaTeam.html" class="access">Acceder</a>
+                <button type="submit">Acceder</button>
             </form>
         </div>
     </main>
@@ -49,5 +49,7 @@
         </div>
 
     </aside>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

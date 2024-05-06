@@ -1,14 +1,14 @@
 function usuario() {
-    let user = document.getElementById("id").value;
+    let user = document.getElementById("user").value;
     let password = document.getElementById("contra").value;
 
 if(user === "admin" && password =="admin"){
-    window.location="a-home.html";
+    window.location="a_alphaTeam.html";
 
 } else if(user === "estudiante" && password === "estudiante"){
-        window.location="e_aphaTeam.html";
+        window.location="e_alphaTeam.html";
     }else if(user === "profesor" && password === "profesor"){
-        window.location = "p-home.html"
+        window.location = "p_alphaTeam.html"
     }else if(user === "" && password === "") {
         Swal.fire({
             html: '<span class="white">"Por favor, asegúrate de completar todos los campos necesarios para acceder al sistema!"</span',
