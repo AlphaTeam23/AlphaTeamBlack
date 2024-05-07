@@ -307,6 +307,8 @@ td {
     position: relative;
     left: 300px;
     color: #000;
+    cursor: pointer;
+    border: none;
 }
 
 .btcargarrecord {
@@ -323,6 +325,8 @@ td {
     position: relative;
     left: 10px;
     color: #000;
+    cursor: pointer;
+    border: none;
 
 }
 
@@ -340,6 +344,8 @@ td {
     position: relative;
     left: 65px;
     color: #000;
+    cursor: pointer;
+    border: none;
 }
 
 .btbuscarplan {
@@ -356,7 +362,7 @@ td {
     position: relative;
     left: 480px;
     color: #000;
-      cursor: pointer;
+    cursor: pointer;
     border: none;
 }
 
@@ -384,6 +390,8 @@ td {
     position: relative;
     left: 600px;
     color: #000;
+    cursor: pointer;
+    border: none;
 }
 
 .datos {
