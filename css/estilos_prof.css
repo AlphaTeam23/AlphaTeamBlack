@@ -46,12 +46,22 @@ h1 {
     margin-top: 30px;
     font-weight: normal;
     font-size: 42px;
+    margin-left: 100px;
 }
+
+.logo_pagina img {
+    width: 150px;
+    margin-left: -30px;
+    top: -135px;
+    position: relative;
+}
+
+
 
 ul {
     font-family: miFuentePath;
     margin: 50px;
-    margin-top: 70px;
+    margin-top: -130px;
 }
 
 li {
@@ -120,7 +130,7 @@ button {
 .container {
     position: relative;
     width: 100%;
-    margin-top: 80px;
+    margin-top: -100px;
    
 }
 
@@ -568,7 +578,7 @@ table {
     width: 420px;
     border-radius: 20px;
     height: 400px;
-    margin-top: 95px;
+    margin-top: 90px;
 }
 
 .cambio_contraseña img {
@@ -655,7 +665,7 @@ table {
     display: flex;
     justify-content: flex-end;
     margin-right: 40px;
-    margin-top: -120px;
+    margin-top: -240px;
 }
 
 .regresar img {
