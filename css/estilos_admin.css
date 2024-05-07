@@ -288,7 +288,7 @@ td {
     transform: translate(-10%, -100%);
     width: 845px;
     height: 120px;
-    padding: 20px;
+    padding: 1px;
     color: #fff;
 }
 
@@ -307,6 +307,8 @@ td {
     position: relative;
     left: 300px;
     color: #000;
+    cursor: pointer;
+    border: none;
 }
 
 .btcargarrecord {
@@ -323,6 +325,8 @@ td {
     position: relative;
     left: 10px;
     color: #000;
+    cursor: pointer;
+    border: none;
 
 }
 
@@ -340,10 +344,12 @@ td {
     position: relative;
     left: 65px;
     color: #000;
+    cursor: pointer;
+    border: none;
 }
 
 .btbuscarplan {
-    top: -10px;
+    top: 4px;
     height: 20px;
     font-family: miFuentePath;
     background-color: #fff;
@@ -356,6 +362,8 @@ td {
     position: relative;
     left: 480px;
     color: #000;
+    cursor: pointer;
+    border: none;
 }
 
 .planificacion-completa {
@@ -382,6 +390,8 @@ td {
     position: relative;
     left: 600px;
     color: #000;
+    cursor: pointer;
+    border: none;
 }
 
 .datos {
@@ -492,7 +502,7 @@ legend {
     padding: 0;
     bottom: -60px;
     position: relative;
-    left: 8px;
+    left: 510px;
     color: #000;
 }
 
