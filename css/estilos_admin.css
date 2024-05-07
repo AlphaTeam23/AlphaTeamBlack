@@ -288,7 +288,7 @@ td {
     transform: translate(-10%, -100%);
     width: 845px;
     height: 120px;
-    padding: 20px;
+    padding: 1px;
     color: #fff;
 }
 
@@ -343,7 +343,7 @@ td {
 }
 
 .btbuscarplan {
-    top: -10px;
+    top: 4px;
     height: 20px;
     font-family: miFuentePath;
     background-color: #fff;
@@ -356,6 +356,8 @@ td {
     position: relative;
     left: 480px;
     color: #000;
+      cursor: pointer;
+    border: none;
 }
 
 .planificacion-completa {
@@ -492,7 +494,7 @@ legend {
     padding: 0;
     bottom: -60px;
     position: relative;
-    left: 8px;
+    left: 510px;
     color: #000;
 }
 
