@@ -11,6 +11,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     } else if (username === "estudiante" && password === "estudiante123") {
         // Perfil de estudiante
         window.location.href = "e_alphaTeam.html";
+        // Si no introduce datos
     } else if (username === "profesor" && password === "profesor123") {
         // Perfil de profesor
         window.location.href = "p_alphaTeam.html";
