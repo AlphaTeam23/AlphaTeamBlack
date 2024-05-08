@@ -538,7 +538,7 @@ td{
     font-family: miFuentePath;
     font-weight: normal;
 }
- .pay_form img {
+.pay_form img {
     width: 34px;
     height: 34px;
     position: relative;
@@ -552,7 +552,9 @@ td{
 }
 
 .pay_form h2{
-    font-size: 20px;
+    position: relative;
+    bottom: 20px;
+    font-size: 25px;
     margin-bottom: 100px;
     font-family: miFuentePath;
     display: flex;
@@ -665,7 +667,7 @@ td{
 
 .pay_form2 {
     position: relative;
-    bottom: 350px;
+    bottom: 375px;
 }
 
 .pay_form2 h2 {
@@ -796,7 +798,7 @@ td{
 
 .campos3 input {
     margin-left: 58px;
-    width: 60px;
+    width: 75px;
     background-color: #d9d9d921;
     border: solid 1px #f1f1f10e;
     color: #ffffff;
@@ -835,11 +837,11 @@ td{
     padding: 5px;
     font-family: miFuentePath;
     font-size: 20px;
-    background-color: #d9d9d915;
+    background-color: rgba(255, 68, 0, 0.788);
 }
 
 .boton a:hover {
-    background-color:#d9d9d920 ;
+    background-color: rgb(255, 68, 0);
 }
 
 /* icono regresar */
