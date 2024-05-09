@@ -372,9 +372,15 @@ td{
     margin-top: -40px;
 }
 
+.tanda {
+    margin: 30px;
+}
 
-.num{
-    height: 440px;
+
+
+.num { 
+    margin-top: -90px;
+    height: 480px;
     position: relative;
     bottom: 10px;
     color: #fffefe;
@@ -383,33 +389,11 @@ td{
     background-color: #ffffff1f;
     overflow: hidden;
     border: none;
+    
 }
 
-.B{
-    background-color: #00ccff;
-                                                                                                    
-}
 
-.cu{
-    background-color: #00ccff;
-    position: relative;
-    left: 20px;
-    bottom: 33px;
-    padding: 6px;
-    width: 20px;
-    height: 33px;
-} 
 
-.A{
-    background-color: #00ccff;
-    position: relative;
-    left: 20px;
-    bottom: 54px;
-    padding: 6px;
-    width: 20px;
-    height: 33px;
-    z-index: 1;
-}
 
 .reinscripcion legend {
     
@@ -417,15 +401,16 @@ td{
     font-size: 20px;
     font-family: miFuentePath;
     padding: 5px;
-    background-color: #0077ff96;
+    /* background-color: #0077ff96; */
+    background-color: #81e6ff44;
     width: 750px;
-    border-bottom: 22px 22px 22px  rgb(240, 28, 5);
+   
     padding-left: 25px;
     margin-left:20px ;
     z-index: 1;
 }
 
-.reinscripcion label{
+.reinscripcion label {
     color: #ffffff;
     font-size: 17px;
     font-family: miFuentePath;
@@ -435,21 +420,35 @@ td{
 
 #edad{
     width: 50px;
+    background-color: #00000049;
+    border-bottom: 1px solid #fff;
+    color: #ffffff;
 }
 
 #tel{
     width: 103px;
+    background-color: #00000049;
+    border-bottom: 1px solid #fff;
+    color: #ffffff;
 }
 
-#tel::placeholder{
+#tel::placeholder {
     font-size: 11px;
 }
 
-#tele{
+#tele {
     width: 100px;
+    background-color: #00000049;
+    border-bottom: 1px solid #fff;
+    color: #ffffff;
 }
 
-#tele::placeholder{
+#provincia {
+    background-color: #00000049;
+    border-bottom: 1px solid #fff;
+}
+
+#tele::placeholder {
     font-size: 11px;
 }
 
@@ -498,7 +497,8 @@ td{
     text-align: center;
     height: 30px;
     width: 120px; 
-    background-color: #0077ff96;
+    /* background-color: #0077ff96; */
+    background-color: #81e6ff44;
     color: #fff;
     text-align: center;
     border: none;
@@ -516,12 +516,12 @@ td{
 .cls{
     position: relative;
     bottom: 21px;
+    margin-bottom: 40px;
 }
 
 
 
 .reinscripcion input{
-    color: #000000;
     margin: 15px;
     height: 10px;
     padding: 10px;
@@ -529,6 +529,9 @@ td{
     border-radius: 5px;
     outline: none;
     border: none;
+    background-color: #00000049;
+    border-bottom: 1px solid #fff;
+    color: #ffffff;
 }
 
 
