@@ -377,18 +377,18 @@ td {
 
 
 .btcancelarrecord {
-    top: 0px;
+    top: 280px;
     height: 20px;
     font-family: miFuentePath;
     background-color: #fff;
     font-size: 20px;
-    height: 23px;
+    height: 25px;
     width: 58px;
     border-radius: 5px;
     padding: 0;
     bottom: -60px;
     position: relative;
-    left: 600px;
+    left: 743px;
     color: #000;
     cursor: pointer;
     border: none;
@@ -418,7 +418,7 @@ legend {
 }
 
 .enviar {
-    top: -140px;
+    top: -120px;
     height: 20px;
     font-family: miFuentePath;
     background-color: #fff;
@@ -431,22 +431,44 @@ legend {
     position: relative;
     left: 750px;
     color: #000;
+    cursor: pointer;
+    border: none;
 }
 
 .imprimir {
-    top: -410px;
+    top: -120px;
     height: 20px;
     font-family: miFuentePath;
     background-color: #fff;
     font-size: 20px;
-    height: 23px;
+    height: 25px;
     width: 60px;
     border-radius: 5px;
     padding: 0;
     bottom: -60px;
     position: relative;
-    left: 750px;
+    left: 790px;
     color: #000;
+    cursor: pointer;
+    border: none;
+}
+
+.sigantrecord {
+    top: -120px;
+    height: 20px;
+    font-family: miFuentePath;
+    background-color: #fff;
+    font-size: 20px;
+    height: 25px;
+    width: 130px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -10px;
+    position: relative;
+    left: 285px;
+    color: #000;
+    cursor: pointer;
+    border: none;
 }
 
 .guarcambio {
@@ -463,6 +485,8 @@ legend {
     position: relative;
     left: 750px;
     color: #000;
+    cursor: pointer;
+    border: none;
 }
 
 .aprobar {
@@ -472,6 +496,8 @@ legend {
     left: 91%;
     width: auto;
     transform: translateX(-50%);
+    cursor: pointer;
+    border: none;
 
 }
 
@@ -504,6 +530,8 @@ legend {
     position: relative;
     left: 510px;
     color: #000;
+    cursor: pointer;
+    border: none;
 }
 
 .crear {
@@ -528,9 +556,9 @@ legend {
     color: #0d0c0c;
     position: absolute;
     top: 278px;
-    left: 395px;
+    left: 399px;
     height: 20px;
-    width: 807px;
+    width: 847px;
 }
 
 .inscripcion {
@@ -569,7 +597,7 @@ legend {
   
 }
 
-.inpnomt, .inpapet, .inpnumero{
+.inpnomt, .inpapet, .inpnumero, .foto2x2 {
     margin-left: 38px;
 }
 
@@ -639,7 +667,7 @@ section {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 520px;
+    top: 310px;
     left: 400px;
     height: 20px;
     width: 845px;
