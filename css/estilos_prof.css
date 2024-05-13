@@ -222,7 +222,8 @@ legend {
 form {
     width: 800px;
     margin-left: 450px;
-    margin-top: -80px;
+    top: 10px;
+    position: relative;
 }
 
 label {
@@ -240,7 +241,6 @@ label {
     font-weight: normal;
     bottom: 25px;
     position: relative;
-    
     border: none;
 }
 
@@ -253,7 +253,7 @@ label {
     color: #fff;
     font-family: miFuentePath;
     margin-left: 448px;
-    margin-top: 10px;
+    margin-top: 20px;
     background-color: #0000007a;
     width: 800px;
     border-radius: 5px;
@@ -356,7 +356,7 @@ table {
 }
 
 .calificaciones_docente2 {
-    margin-top: -418px;
+    margin-top: -417px;
     cursor: pointer;
     z-index: 5;
 }
