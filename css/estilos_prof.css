@@ -254,21 +254,41 @@ label {
     font-family: miFuentePath;
     margin-left: 448px;
     margin-top: 20px;
-    background-color: #0000007a;
     width: 800px;
     border-radius: 5px;
+    height: 340px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+table {
+    border-spacing: 4px;
+}
+
+.tabla1::-webkit-scrollbar {
+    display: none;
 }
 
 .tabla1 th {
     font-weight: normal;
-    background-color: #0000007a;
-    border-radius: 5px;
+    background-color: #ffffff2f;
+    border: none;
+    color: #ffffff;
+    height: 40px;
 }
 
 .tabla1 td {
-    border-radius: 5px;
     padding-inline-start: 8px;
+    border: none;
+    background-color: #ffffff28;
+    color: #ffffff;
+    height: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 3px;
+    width: 50px;
 }
+
 
 .imprimir {
     font-family: miFuentePath;
@@ -305,6 +325,10 @@ table {
     cursor: pointer;
 }
 
+.cal-tablet {
+    background-color: gray;
+}
+
 /* Página información estudiante */
 
 .tabla2 {
@@ -313,16 +337,19 @@ table {
     font-weight: normal;
     text-align: center;
     font-size: 19px;
-    background-color: #0000007a;
 }
 
 .tabla2 th {
     font-weight: normal;
-    border-radius: 5px;
+    border: none;
+    background-color: #ffffff2f;
+    height: 40px;
 }
 
 .tabla2 td {
-    border-radius: 5px;
+    border: none;
+    background-color: #ffffff2f;
+    height: 40px;
 }
 
 .h4 {
@@ -348,6 +375,10 @@ table {
     justify-content: center;
     margin-top: -400px;
     font-size: 22px;
+}
+
+.info-tablet {
+    background-color: gray;
 }
 
 .info_estudiante table {
@@ -408,6 +439,9 @@ table {
     cursor: pointer;
 }
 
+.horario-tablet {
+    background-color: gray;
+}
 .horas {
     background-color: #81e6ff44;
     border-radius: 5px;
@@ -486,6 +520,10 @@ table {
     text-align: center;
 }
 
+.plan-tablet {
+    background-color: gray;
+}
+
 #planificacion {
     color: #fff;
 }
@@ -558,6 +596,10 @@ table {
     display: none;
     position: relative;
     color: #fff;
+}
+
+.ayuda-tablet {
+    background-color: gray;
 }
 
 /* Cambio de contraseña en Gestion Perfil */
@@ -810,6 +852,14 @@ hr {
     h1 {
         font-size: 40px;
         margin-top: 60px;
+        width: 300px;
+    }
+
+    .logo_pagina img {
+        width: 90px;
+        height: 60px;
+        top: -125px;
+        position: relative;
     }
 
     .container {
@@ -909,7 +959,7 @@ hr {
     /* Reportar */
     .reporte textarea {
         margin-left: -399px;
-        margin-top: 90px;
+        margin-top: -10px;
         width: 300px;
     }
 
@@ -931,6 +981,13 @@ hr {
 
     h1 {
         font-size: 65px;
+    }
+
+    .logo_pagina img {
+        width: 130px;
+        height: 90px;
+        margin-left: -20px;
+        margin-top: -30px;
     }
 
     /* Menú desplegable gestión perfil */
