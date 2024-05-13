@@ -50,18 +50,17 @@ h1 {
 }
 
 .logo_pagina img {
-    width: 140px;
-    left: -15px;
-    top: -132px;
+    width: 100px;
+    height: 65px;
+    left: 10px;
+    top: -130px;
     position: relative;  
 }
 
-
-
 ul {
     font-family: miFuentePath;
-    margin: 50px;
-    margin-top: -130px;
+    margin: 40px;
+    margin-top: -80px;
 }
 
 li {
@@ -130,7 +129,7 @@ button {
 .container {
     position: relative;
     width: 100%;
-    margin-top: -100px;
+    margin-top: -50px;
    
 }
 
@@ -665,7 +664,7 @@ table {
     display: flex;
     justify-content: flex-end;
     margin-right: 40px;
-    margin-top: -240px;
+    margin-top: -180px;
 }
 
 .regresar img {

@@ -49,9 +49,9 @@ h1 {
 }
 
 header img {
-    width: 150px;
-    margin-left: 460px;
-    top: -110px;
+    width: 100px;
+    margin-left: 490px;
+    top: -105px;
     position: relative;
 }
 
@@ -69,7 +69,7 @@ main {
     width: 420px;
     border-radius: 20px;
     height: 400px;
-    margin-top: -140px;
+    margin-top: -90px;
 }
 
 h2 {
