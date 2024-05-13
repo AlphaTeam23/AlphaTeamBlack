@@ -59,9 +59,10 @@ h1 {
 }
 
 .logo_pagina img {
-    width: 150px;
-    margin-left: -30px;
-    top: -135px;
+    width: 100px;
+    height: 65;
+   left: 15px;
+    top: -125px;
     position: relative;
 }
 
@@ -345,19 +346,19 @@ td{
 }
 
 .nav ul{
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 .container_l{
     position: relative;
-    bottom: 10px;
+    top: 40px;
 }
 
 
-/* 
-.navar{
-    margin-top: 300%;
-} */
+
+/* .nav{
+    margin-top: 180px;
+}  */
 
 
 /* reinscripcion */
@@ -852,7 +853,7 @@ td{
     display: flex;
     justify-content: flex-end;
     margin-right: 40px;
-    margin-top: -240px;
+    margin-top: -180px;
 }
 
 .regresar img {
@@ -860,7 +861,7 @@ td{
     height: 22px;
 }
 
-/* Usuario del Profesor */
+/* Usuario del estudiante */
 
 .inf_basica_estudiante {
     border: 1px solid #ffffff70;

@@ -41,18 +41,26 @@ body {
 
 h1 {
     font-family: miFuenteLime;
-    color: #fff;
+    color: #ffffff;
     margin: 60px;
     margin-top: 30px;
     font-weight: normal;
-    font-size: 38px;
+    font-size: 42px;
+    margin-left: 100px;
+}
+
+.logo_pagina img {
+    width: 100px;
+    height: 65px;
+    left: 10px;
+    top: -130px;
+    position: relative;  
 }
 
 ul {
     font-family: miFuentePath;
-    margin: 50px;
-    margin-top: 70px;
-    font-weight: normal;
+    margin: 40px;
+    margin-top: -80px;
 }
 
 li {
@@ -63,6 +71,7 @@ li {
     height: 47px;
     list-style-type: none;   
     border-radius: 10px;
+    
 }
 
 li:hover {
@@ -142,7 +151,7 @@ input {
 ul {
     font-family: miFuentePath;
     margin: 50px;
-    margin-top: 95px;
+    margin-top: 5px;
 }
 
 li {
