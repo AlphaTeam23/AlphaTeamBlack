@@ -219,6 +219,10 @@ legend {
     text-align: center;
 }
 
+.calificaciones_docente fieldset {
+    height: 98px;
+}
+
 form {
     width: 800px;
     margin-left: 450px;
@@ -239,14 +243,16 @@ label {
     font-size: 16px;
     width: 50px;
     font-weight: normal;
-    bottom: 25px;
+    bottom: -5px;
     position: relative;
-    border: none;
+    border: 1px solid #81e6ff;
+    margin-right: 150px;
+    background-color: transparent;
+    color: #fff;
 }
 
 .boton:hover {
-    background-color: #81e6ff;
-    border-radius: 5px 1px 5px;
+    border: 1px solid #0077ff96;
 }
 
 .tabla1 {
@@ -283,27 +289,34 @@ table {
     background-color: #ffffff28;
     color: #ffffff;
     height: 40px;
-    margin-bottom: 30px;
     text-align: center;
     border-radius: 3px;
     width: 50px;
 }
 
+td:hover {
+    background-color: gray;
+}
 
+th:hover {
+    background-color: gray;
+}
 .imprimir {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #81e6ff;
     font-family: miFuentePath;
     font-size: 16px;
     font-weight: normal;
-    bottom: -30px;
+    bottom: 40px;
+    left: 500px;
     position: relative;
-    left: 80px;
-    border: none;
     width: 120px;  
+    margin: 10px;  
 }
 
 .imprimir:hover {
-    background-color: #81e6ff;
-    border-radius: 5px 1px 5px;
+    border: 1px solid #0077ff96;
 }
 
 .profe1 {
@@ -334,10 +347,31 @@ table {
 .tabla2 {
     color: #fff;
     font-family: miFuentePath;
-    font-weight: normal;
-    text-align: center;
-    font-size: 19px;
+    margin-left: 455px;
+    margin-top: 20px;
+    width: 850px;
+    border-radius: 5px;
+    height: 340px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
+
+.tabla2::-webkit-scrollbar {
+    background-color: transparent;
+    border: 1px solid #81e6ff;
+}
+
+.tabla2::-webkit-scrollbar-thumb {
+    background-image: url(/imagenes/bx-chevrons-down.svg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 18px;
+}
+
+/* .tabla2.tabla2::-webkit-scrollbar-button {
+    background-color: #0077ff3a;
+
+} */
 
 .tabla2 th {
     font-weight: normal;
@@ -350,6 +384,17 @@ table {
     border: none;
     background-color: #ffffff2f;
     height: 40px;
+    width: 40px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+td:hover {
+    background-color: gray;
+}
+
+th:hover {
+    background-color: gray;
 }
 
 .h4 {
@@ -360,30 +405,8 @@ table {
     width: 350px;
 }
 
-.listado {
-    color: #fff;
-    font-family: miFuentePath;
-    font-size: 24px;
-    font-weight: normal;
-    top: 84px;
-    left: 650px;
-    position: relative;
-}
-
-.info_estudiante {
-    display: flex;
-    justify-content: center;
-    margin-top: -400px;
-    font-size: 22px;
-}
-
 .info-tablet {
     background-color: gray;
-}
-
-.info_estudiante table {
-    margin-left: 350px;
-    margin-top: 410px;
 }
 
 .calificaciones_docente2 {
@@ -393,18 +416,25 @@ table {
 }
 
 .boton9 {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #81e6ff;
     font-family: miFuentePath;
     margin: 15px;
     font-size: 15px;
     width: 60px;
     font-weight: normal;
-    bottom: 36px;
+    bottom: -1px;
+    left: 20px;
     position: relative;
-    left: 720px;
+}
+
+.boton9:hover {
+    border: 1px solid #0077ff96;
 }
 
 .calificaciones_docente2 fieldset {
-    height: 60px;
+    height: 80px;
     width: 800px;
     right: -8px;
     position: relative;
