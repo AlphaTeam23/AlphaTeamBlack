@@ -426,8 +426,9 @@ legend {
     font-weight: normal;
 }
 
+
 .enviar {
-    top: -120px;
+    top: -83px;
     height: 20px;
     font-family: miFuentePath;
     background-color: #fff;
@@ -439,6 +440,40 @@ legend {
     bottom: -60px;
     position: relative;
     left: 750px;
+    color: #000;
+    cursor: pointer;
+    border: none;
+}
+
+.guardinscrip {
+    top: -20px;
+    height: 10px;
+    font-family: miFuentePath;
+    background-color: #fff;
+    font-size: 20px;
+    height: 10px;
+    width: 0px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -60px;
+    position: relative;
+    left: 230px;
+
+}
+
+.enviaraprob {
+    top: -396px;
+    height: 20px;
+    font-family: miFuentePath;
+    background-color: #fff;
+    font-size: 20px;
+    height: 25px;
+    width: 60px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -60px;
+    position: relative;
+    left: 730px;
     color: #000;
     cursor: pointer;
     border: none;
@@ -481,7 +516,7 @@ legend {
 }
 
 .guarcambio {
-    top: -140px;
+    top: -84px;
     height: 20px;
     font-family: miFuentePath;
     background-color: #fff;
@@ -507,6 +542,7 @@ legend {
     transform: translateX(-50%);
     cursor: pointer;
     border: none;
+    
 
 }
 
@@ -572,7 +608,7 @@ legend {
 
 .inscripcion {
     border-color: #363434;
-    background-color: #ffffff83;
+ 
     color: #e0dada;
     position: relative;
     top: -35px;
@@ -582,7 +618,18 @@ legend {
     border-radius: 5px;
     font-family: miFuentePath;
     font-weight: normal;
+    overflow: hidden;   
+    overflow-y: scroll;
+    height: 500px;
+    margin-left: 5px;
+    margin-top: 400px
+
 }
+
+
+
+
+
 
 .nom, .sexoest, .nomt, .cedula, .correo, .ocupacion, .provincia, .calle {
     margin-left: 50px;
