@@ -1263,10 +1263,11 @@ h1 {
 }
 
 .contenedor-imagen img {
-    width: 100px;
-  
-    display: flex;
-    justify-content: left;
+    width: 150px;
+  margin-left: -185px;
+  margin-top: -100px;
+    border-radius: 70%;
+    border-bottom-right-radius: -70%;
     
 }
 
@@ -1297,7 +1298,7 @@ h1 {
     justify-content: center;
     left: 0;
     position: absolute;
-    top: 0;
+    top: 100px;
     width: 100%;
 }
 
@@ -1305,6 +1306,8 @@ h1 {
 .parrafo {
     margin: 10px;
     padding: 5px;
+   
+    
 }
 
 .titulo {
@@ -1316,7 +1319,7 @@ h1 {
 
 .contenedor-imagen:hover .titulo {
     animation-delay: .3s;
-    left: 0;
+    left: 0px;
     transition: all .3s;
 
 }
