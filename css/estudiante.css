@@ -222,6 +222,11 @@ button {
 
 /* informacion docente */
 
+
+.profesor {
+    background-color: grey;
+}
+
 .docente {
     position: relative;
     left: 380px;
@@ -307,6 +312,10 @@ h6 {
 
 /* calificacaiones */
 
+.notas {
+    background-color: gray;
+}
+
 .calificaciones section {
     margin-top: -195px;
     margin-left: 50px;
@@ -356,15 +365,22 @@ td{
 
 
 
-/* .nav{
-    margin-top: 180px;
-}  */
 
 
 /* reinscripcion */
 
-.reinscripcion{
+.reins {
+    background-color: gray;
+}
+
+.datos {
+    position: relative;
+    top: 20px;
+}
+
+.reinscripcion {
     width: 800px;
+    
     margin-left: 70px; 
     margin-top: -155px;
 }
@@ -381,7 +397,7 @@ td{
 
 .num { 
     margin-top: -90px;
-    height: 480px;
+    height: 440px;
     position: relative;
     bottom: 10px;
     color: #fffefe;
@@ -404,8 +420,7 @@ td{
     padding: 5px;
     /* background-color: #0077ff96; */
     background-color: #81e6ff44;
-    width: 750px;
-   
+    width: 790px;
     padding-left: 25px;
     margin-left:20px ;
     z-index: 1;
@@ -455,12 +470,14 @@ td{
 
 .full{
    position: relative;
-   bottom: 10px;
+   top: 10px;
 }
 
 .full2 {
     position: relative;
-   top: -45px;
+   
+   left: 540px;
+   bottom: 55px;
 }
 
 .full3 {
@@ -537,6 +554,10 @@ td{
 
 
 /* pago */
+
+.pago {
+    background-color: gray;
+}
 
 .pay_form p, h2{
     font-family: miFuentePath;
@@ -1041,6 +1062,10 @@ hr {
 }
 
 /* Pagina ayuda */
+
+.ayuda {
+    background-color: gray;
+}
 
 .preguntas_container h3 {
     font-family: miFuentePath;
