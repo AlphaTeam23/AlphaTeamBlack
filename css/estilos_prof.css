@@ -230,6 +230,20 @@ form {
     position: relative;
 }
 
+.calificaciones_docente select {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #81e6ff63;
+}
+
+.calificaciones_docente option {
+    color: #000000;
+}
+
+.calificaciones_docente optgroup {
+    color: #000;
+}
+
 label {
     font-family: miFuentePath;
     color: #fff;
@@ -277,12 +291,14 @@ table {
     scroll-margin-left: -10px;
 }
 
+.tabla1::-webkit-scrollbar:hover {
+    border: 1px solid #0077ff96;
+}
+
 .tabla1::-webkit-scrollbar-thumb {
-    background-image: url(/imagenes/flecha-hacia-arriba\ \(2\).png);
-    background-repeat: no-repeat;
-    background-position-x: center;
+    background-image: url(/imagenes/bx-chevrons-down.svg);
+    background-position-x: 17px;
     background-size: 18px;
-    height: 50px;
 }
 
 .tabla1 th {
@@ -353,7 +369,19 @@ table {
 }
 
 /* Página información estudiante */
+.calificaciones_docente2 select {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #81e6ff63;
+}
 
+.calificaciones_docente2 option {
+    color: #000000;
+}
+
+.calificaciones_docente2 optgroup {
+    color: #000;
+}
 .tabla2 {
     color: #fff;
     font-family: miFuentePath;
@@ -371,10 +399,13 @@ table {
     border: 1px solid #81e6ff;
 }
 
+.tabla2::-webkit-scrollbar:hover {
+    border: 1px solid #0077ff96;
+}
+
 .tabla2::-webkit-scrollbar-thumb {
     background-image: url(/imagenes/bx-chevrons-down.svg);
-    background-repeat: no-repeat;
-    background-position-x: center;
+    background-position-x: 17px;
     background-size: 18px;
 }
 
@@ -568,6 +599,38 @@ th:hover {
     cursor: pointer;
 }
 
+.planificacion_docente select {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #81e6ff63;
+}
+
+.planificacion_docente option {
+    color: #000000;
+}
+
+.planificacion_docente optgroup {
+    color: #000;
+}
+
+.planificar {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #81e6ff;
+    cursor: pointer;
+    font-family: miFuentePath;
+    font-size: 10px;
+    margin: 0;
+    opacity: 0;
+    outline: 0 none;
+    padding: 0;
+    position: absolute;
+    right: -1000px;
+    top: -1000px;
+    
+}
+
+
 .prof5 {
     margin-left: 42px;
 }
@@ -583,17 +646,19 @@ th:hover {
 
 .enviar_borrar {
     font-family: miFuentePath;
-    width: 50px;
+    width: 70px;
     font-weight: normal;
     font-size: 16px;
     margin-top: 10px;
     cursor: pointer;
-    border: none;
+    border: 1px solid #81e6ff;
+    background-color: transparent;
+    color: #fff;
+
 }
 
 .enviar_borrar:hover {
-    border-radius: 5px 1px 5px;
-    background-color: #81e6ff;
+    border: 1px solid #0077ff96;
 }
 
 /* Página ayuda */
