@@ -30,7 +30,7 @@
 }
 
 body {
-    background-image: url(/imagenes/image\ 1\ \(4\).png);
+    background-image: url(/imagenes/imagendefondo.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 900px;
@@ -614,21 +614,9 @@ th:hover {
 }
 
 .planificar {
-    background-color: #000;
-    color: #fff;
-    border: 1px solid #81e6ff;
-    cursor: pointer;
-    font-family: miFuentePath;
-    font-size: 10px;
-    margin: 0;
-    opacity: 0;
-    outline: 0 none;
-    padding: 0;
-    position: absolute;
-    right: -1000px;
-    top: -1000px;
-    
+    margin-left: 15px;
 }
+
 
 
 .prof5 {
