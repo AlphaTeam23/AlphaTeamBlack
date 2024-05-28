@@ -37,7 +37,7 @@
 
 body {
     
-    background-image: url(/imagenes/image\ 1\ \(4\).png);
+    background-image: url(/imagenes/imagendefondo.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 900px;
@@ -312,12 +312,27 @@ h6 {
 
 /* calificacaiones */
 
-.notas {
+/* .notas {
     background-color: gray;
+} */
+
+table{
+    background-color: gray;
+    border-spacing: 4px;
+}
+
+table th {
+    background-color: #ffffff2f;
+    width: 50px;
+}
+
+table td {
+    background-color: #ffffff2f;
+    border-radius: 3px;
 }
 
 .calificaciones section {
-    margin-top: -195px;
+    margin-top: -170px;
     margin-left: 50px;
 }
 
@@ -344,14 +359,15 @@ h6 {
 
 
 td{
-    border: 1px solid #88888863;
+    border: none;
     padding-inline-start: 10px;
 }
+
 
 .ml th {
     text-align: center;
     font-weight: normal;
-    border: 0.5px solid #88888854;
+    border: none;
 }
 
 .nav ul{
