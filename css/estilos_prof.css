@@ -279,6 +279,20 @@ label {
     height: 340px;
     overflow: hidden;
     overflow-y: scroll;
+    cursor: pointer;
+}
+
+td input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 92%;
+    margin-left: -10px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+
 }
 
 table {
@@ -299,6 +313,7 @@ table {
     background-image: url(/imagenes/bx-chevrons-down.svg);
     background-position-x: 17px;
     background-size: 18px;
+    background-repeat: no-repeat;
 }
 
 .tabla1 th {
@@ -368,6 +383,23 @@ table {
     background-color: gray;
 }
 
+
+.publicar {
+    background-color: transparent;
+    color: #fff;
+    font-family: miFuentePath;
+    border: 1px solid #81e6ff;
+    width: 100px;
+    margin-left: 459px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.publicar:hover {
+    border: 1px solid #0077ff96;
+}
+ 
 /* Página información estudiante */
 .calificaciones_docente2 select {
     background-color: transparent;
@@ -392,7 +424,9 @@ table {
     height: 340px;
     overflow: hidden;
     overflow-y: scroll;
+    cursor: pointer;
 }
+
 
 .tabla2::-webkit-scrollbar {
     background-color: transparent;
