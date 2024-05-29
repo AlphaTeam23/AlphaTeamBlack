@@ -148,6 +148,11 @@ input {
     font-size: 20px;
 }
 
+nav {
+    position: relative;
+    bottom: 45px;
+}
+
 ul {
     font-family: miFuentePath;
     margin: 50px;
