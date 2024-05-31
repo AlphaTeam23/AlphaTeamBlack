@@ -282,6 +282,10 @@ label {
     cursor: pointer;
 }
 
+.complete {
+    width: 150px;
+}
+
 td input {
     background-color: transparent;
     border: none;
