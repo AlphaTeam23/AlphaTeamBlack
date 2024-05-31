@@ -605,7 +605,7 @@ legend {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 278px;
+    top: 290px;
     left: 399px;
     height: 20px;
     width: 847px;
@@ -632,10 +632,6 @@ legend {
 }
 
 
-
-
-
-
 .nom, .sexoest, .nomt, .cedula, .correo, .ocupacion, .provincia, .calle {
     margin-left: 50px;
 }
@@ -658,8 +654,32 @@ legend {
   
 }
 
+.inpeduc {
+    margin-left: 32px;
+}
+
+.inpparent {
+    margin-left: 28px;
+}
+
+.inpsector {
+    margin-left: 51px;
+}
+
+.inpedificio {
+    margin-left: 44px;
+}
+
+.inpfoto {
+    margin-left: 43px;  
+}
+
 .inpnomt, .inpapet, .inpnumero, .foto2x2 {
-    margin-left: 38px;
+    margin-left: 40px;
+}
+
+.inpocup {
+    margin-left: 25px;
 }
 
 .inpcalle {
@@ -667,11 +687,8 @@ legend {
 }
 
 .inpprovincia {
-    margin-left: 27px;
+    margin-left: 30px;
 }
-
-
-
 
 .inscripcion input {
     height: 20px;
@@ -680,10 +697,6 @@ legend {
     border-radius: 5px;
     display: inline-block;
     width: 25%;
-   
-   
-   
-
 }
 
 section {
@@ -705,7 +718,7 @@ section {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 280px;
+    top: 290px;
     left: 400px;
     height: 20px;
     width: 845px;
@@ -716,7 +729,7 @@ section {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 310px;
+    top: 320px;
     left: 400px;
     height: 20px;
     width: 845px;
@@ -728,7 +741,7 @@ section {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 310px;
+    top: 320px;
     left: 400px;
     height: 20px;
     width: 845px;
@@ -740,7 +753,7 @@ section {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 280px;
+    top: 290px;
     left: 400px;
     height: 20px;
     width: 847px;
