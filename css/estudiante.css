@@ -46,8 +46,6 @@ body {
     object-fit: cover; 
 }
 
-
-
 h1 {
     font-family: miFuenteLime;
     color: #fff;
@@ -120,8 +118,6 @@ button {
 .container_prueba {
     position: relative;
     top: 550px; 
-   
-
 }
 
 .menu-btn img {
@@ -137,7 +133,6 @@ button {
     bottom: 50px;
     width: 100%;
     margin-top: 80px;
-
 }
 
 .menu-btn {
@@ -223,10 +218,6 @@ button {
 
 /* informacion docente */
 
-
-
-
-
 main {
     display: grid;
     grid-gap: 2rem 5rem;
@@ -238,13 +229,16 @@ main {
     transform: translateY(-440px);
 } 
 
+.profesor {
+    background-color: gray;
+}
+
 .docente h2 {
     font-size: 25px;
     color: #ffffff;
     position: relative;
     bottom: 600px;
     left: 700px;
-   
 }
 
 
@@ -255,7 +249,6 @@ main {
    top: 10px;
    left: 90%;
    object-fit: contain;
-
 }
 
 
@@ -269,8 +262,6 @@ main {
     position: relative;
     bottom: 150px;
     left: 100px;
-    
-    
 }
 
 .contenedor-imagen {
@@ -280,21 +271,19 @@ main {
     overflow: hidden;
     position: relative;
     width: 45%;
-   border-radius: 10px;
+    border-radius: 10px;
 }
 
 
 .contenedor-imagen img {
     width: 170px;
     height: 170px;
-  margin-left: -190px;
-  margin-top: -6px;
+    margin-left: -190px;
+    margin-top: -6px;
     border-radius: 70%;
     border-bottom-right-radius: -70%;
     object-fit: cover;
-    
 }
-
 
 .contenedor-imagen:hover img {
     filter: blur(1.5px);
@@ -313,7 +302,6 @@ main {
 }
 
 .texto {
-    
     font-size: 15px;
     align-items: center;
     z-index: 3;
@@ -341,14 +329,12 @@ main {
     left: 100%;
     position: relative;
     transition: all .3s;
-
 }
 
 .contenedor-imagen:hover .titulo {
     animation-delay: .3s;
     left: 0px;
     transition: all .3s;
-
 }
 
 .contenedor-imagen:hover::before {
@@ -356,8 +342,6 @@ main {
     transition: all .3s;
     z-index: 2;
 }
-
-
 
 .contenedor-imagen::after {
     background-color: #fff;
@@ -377,9 +361,12 @@ main {
     transition: all .3s;
 }
 
-
-
 /* calificacaiones */
+
+
+.notas {
+    background-color: gray;
+}
 
 table{
     background-color: gray;
@@ -432,7 +419,6 @@ td{
     padding-inline-start: 10px;
 }
 
-
 .ml th {
     text-align: center;
     font-weight: normal;
@@ -447,9 +433,6 @@ td{
     position: relative;
     top: 40px;
 }
-
-
-
 
 
 /* reinscripcion */
@@ -478,9 +461,12 @@ td{
     margin: 30px;
 }
 
+
+
 .nac_origen .nac input {
     background-color: #fff;
 }
+
 
 
 .num { 
@@ -501,7 +487,6 @@ td{
 
 
 .reinscripcion legend {
-    
     color: #fff;
     font-size: 20px;
     font-family: miFuentePath;
@@ -625,8 +610,6 @@ td{
     margin-bottom: 40px;
 }
 
-
-
 .reinscripcion input{
     margin: 15px;
     height: 10px;
@@ -701,8 +684,6 @@ td{
     height: 15px;
 }
 
-
-
 .pagos img{
     width: 60px;
     height: 40px;
@@ -757,9 +738,6 @@ td{
 }
     
 
-
-
-
 /* confirmacion de pago */
 
 .pay_form2 p, h2 {
@@ -776,8 +754,6 @@ td{
     margin: -5px;
 }
 
-
-
 .pay_form2 {
     position: relative;
     bottom: 375px;
@@ -792,8 +768,6 @@ td{
     color: white;
     margin-right: 270px;
 }
-
-
 
 .pay_form2 p {
     display: flex;
@@ -821,8 +795,6 @@ td{
     height: 15px;
    
 }
-
-
 
 .pagos2 img {
     width: 60px;
@@ -922,8 +894,6 @@ td{
     color: #ffffff;
     font-family: miFuentePath;
     margin-left: 20px;
-    
-    
 }
 
 
@@ -1191,11 +1161,6 @@ hr {
     color: #fff;
 }
 
-
-
-
-
-
 .cout{
     display: none;
 }
@@ -1235,8 +1200,6 @@ nav li a {
     left: 50px;
     top: 10px;
     width: 100%;
-    
-
 }
 
 .cout li a{
