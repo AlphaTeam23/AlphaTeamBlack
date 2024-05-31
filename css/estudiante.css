@@ -238,6 +238,14 @@ main {
     transform: translateY(-440px);
 } 
 
+.docente h2 {
+    font-size: 25px;
+    color: #ffffff;
+    position: relative;
+    bottom: 600px;
+    left: 700px;
+   
+}
 
 
 .info_docente img {
@@ -247,6 +255,7 @@ main {
    top: 10px;
    left: 90%;
    object-fit: contain;
+
 }
 
 
@@ -258,27 +267,28 @@ main {
     width: 900%;
     cursor: pointer;
     position: relative;
-    bottom: 170px;
+    bottom: 150px;
     left: 100px;
+    
     
 }
 
 .contenedor-imagen {
-    border: 3px solid black;
+    border: 1px solid gray;
     height: 180px;
     margin: 10px;
     overflow: hidden;
     position: relative;
     width: 45%;
-    border-radius: 10px;
+   border-radius: 10px;
 }
 
 
 .contenedor-imagen img {
     width: 170px;
     height: 170px;
-  margin-left: -180px;
-  margin-top: -10px;
+  margin-left: -190px;
+  margin-top: -6px;
     border-radius: 70%;
     border-bottom-right-radius: -70%;
     object-fit: cover;
@@ -303,6 +313,8 @@ main {
 }
 
 .texto {
+    
+    font-size: 15px;
     align-items: center;
     z-index: 3;
     color: #fff;
@@ -312,20 +324,20 @@ main {
     justify-content: center;
     left: 0;
     position: absolute;
-    top: 20px;
+    top: -10px;
+    left: 20px;
     width: 100%;
 }
 
-.titulo,
-.parrafo {
-   
-    margin: 10px;
-    padding: 0px;
-   
-    
+.titulo, h3 {
+    width: 240px;
 }
 
+
+
 .titulo {
+    font-family: miFuentePath;
+    font-weight: normal;
     left: 100%;
     position: relative;
     transition: all .3s;
@@ -345,18 +357,7 @@ main {
     z-index: 2;
 }
 
-.parrafo {
-    position: relative;
-    right: 100%;
-    text-align: justify;
-    transition: all .3s;
-}
 
-.contenedor-imagen:hover .parrafo {
-    animation-delay: 0.3s;
-    right: 0;
-    transition: all .3s;
-}
 
 .contenedor-imagen::after {
     background-color: #fff;
@@ -655,7 +656,7 @@ td{
 
 .pay_form {
     position: relative;
-    bottom: 300px;
+    bottom: 330px;
 }
 
 .pay_form h2{
