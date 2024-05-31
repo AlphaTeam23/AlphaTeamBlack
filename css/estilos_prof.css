@@ -931,7 +931,7 @@ hr {
     width: 500px;
     height: 300px;
     border-radius: 30px;
-    margin-top: 90px;
+    margin-top: -10px;
     display: flex;
     justify-content: center;  
     padding: 15px; 
@@ -943,10 +943,10 @@ hr {
 }
 
 .reporte .report_ev {
-    background-color: #0077ff5d;
+    background-color: transparent;
+    border: 1px solid #81e6ff;
     color: #ffffff;
     font-family: miFuentepath;
-    border: none;
     font-weight: normal;
     width: 80px;
     height: 20px;
