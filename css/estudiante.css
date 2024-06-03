@@ -37,7 +37,7 @@
 
 body {
     
-    background-image: url(/imagenes/imagendefondo.png);
+    background-image: url(../imagenes/imagendefondo.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 900px;
@@ -338,14 +338,14 @@ main {
 }
 
 .contenedor-imagen:hover::before {
-    background-color: rgba(0, 0, 0, .4);
+     background-color: rgba(0, 0, 0, .4);
     transition: all .3s;
-    z-index: 2;
+    z-index: 2; 
 }
 
 .contenedor-imagen::after {
     background-color: #fff;
-    content: "";
+     content: ""; 
     height: 2px;
     left: -100%;
     position: absolute;
@@ -357,7 +357,7 @@ main {
 }
 
 .contenedor-imagen:hover::after {
-    left: 50%;
+     left: 50%; 
     transition: all .3s;
 }
 
@@ -1166,7 +1166,7 @@ hr {
 }
 
 
-@media  screen and (max-width: 600px) {
+@media  screen and (max-width: 375px) {
     .cout {
   position: relative;
   display: inline-block;
@@ -1254,7 +1254,7 @@ li {
   cursor: pointer;
   padding: 0;
   position: relative;
-  bottom: 120px;
+  bottom: 250px;
   
 }
 
@@ -1263,50 +1263,42 @@ li {
     height: 1290px;
 }
 
-h1 {
-    font-family: miFuenteLime;
-    color: #fff;
-     
-    margin-left: 110px; 
-    font-weight: normal;
-    font-size: 22px;
-}
-
-.info_docente h4{
-    margin-left: -100px;
-}
-
-.info_docente p{
-   margin-left: -90px;
-   width: 340px;
-}
 
 .menu img{
     width: 49px;
 }
 
+h1 {
+    font-size: 20px;
+}
+
 .info_docente {
  position: relative;
- top: 320px;
+ top: 450px;
  right: 400px;
   
 }
 
-.info_docente img{
-    position: absolute;
-    top: 560px;
-    left: 20px;
-    padding: 5px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    border: #00ccff solid;
-}
-
-
-.informacion{
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 500%;
+    cursor: pointer;
     position: relative;
-    top: 850px;
+    bottom: 150px;
+    left: 100px;
 }
+
+.contenedor-imagen {
+    margin: 50px;
+   display: flex;
+    justify-content: center;
+   flex-direction: row-reverse;
+   
+
+}
+
 }
 
 
