@@ -1259,7 +1259,8 @@ li {
 }
 
 .body{
-    overflow: scroll;
+    
+    overflow-x: hidden;
     height: 1290px;
 }
 
@@ -1272,6 +1273,8 @@ h1 {
     font-size: 20px;
 }
 
+
+
 .info_docente {
  position: relative;
  top: 450px;
@@ -1282,21 +1285,23 @@ h1 {
 .contenedor {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 500%;
+    justify-content: space-between;
+    width: 200%;
     cursor: pointer;
     position: relative;
     bottom: 150px;
-    left: 100px;
+    left: 0px;
+  
+   
 }
 
 .contenedor-imagen {
-    margin: 50px;
+    width: 150px;
+    margin: 10px;
    display: flex;
     justify-content: center;
    flex-direction: row-reverse;
-   
-
+    
 }
 
 }
