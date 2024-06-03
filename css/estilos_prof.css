@@ -30,7 +30,7 @@
 }
 
 body {
-    background-image: url(/imagenes/imagendefondo.png);
+    background-image: url(../imagenes/imagendefondo.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 900px;
@@ -729,14 +729,22 @@ th:hover {
 }
 
 /* Cambio de contraseña en Gestion Perfil */
+.input_boton1 .reset img {
+    width: 90px;
+    margin-left: -290px;
+    margin-top: -120px;
+}
+
 .cambio_contraseña h2 {
     font-family: miFuentePath;
     font-weight: normal;
-    font-size: 25px;
+    font-size: 22px;
     color: #fff;
     text-align: center;
     padding: 50px;
-    
+    top: 70px;
+    position: relative;
+
 }
 
 .cambio_contraseña {
@@ -879,17 +887,21 @@ hr {
 
 .titinfo h4 {
     background-color: #d9d9d931;
+    margin: 10px;
+    padding: 5px;
+    padding-inline-start: 15px;
     font-weight: normal;
     display: flex;
-    margin: 10px;
     justify-content: flex-start;
-    padding-inline-start: 15px;
-    padding: 5px;
     height: 30px;
-    border-radius: 10px;
     width: 370px;
     margin-left: 22px;
+    margin-top: -20px;
+    border-radius: 10px;
+    top: 35px;
+    position: relative;  
 }
+
 
 .titinfo h4:hover {
     background-color: gray;
@@ -897,9 +909,21 @@ hr {
 
 .titinfo img {
     position: absolute;
-    margin-left: 340px;
-    width: 16px;
-    opacity: 0.7;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2px;
+    margin-left: 170px;
+    width: 20px;
+}
+
+.titinfo p {
+    margin-left: 150px;
+    display: flex;
+    padding-left: 10px;
+    position: relative;
+    left: 50px;
+    top: -1px;
+    color: #ffffffbd;
 }
 
 .cargar-imagen {
@@ -912,6 +936,33 @@ hr {
     margin-top: 100px;
     border-radius: 40px;
     cursor: pointer;
+}
+
+.cargar-imagen h2 {
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+.cargar-imagen input {
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.cargar-imagen h3 {
+    border: 1px solid #81e6ff;
+    font-weight: normal;
+    font-size: 17px;
+    width: 90px;
+    text-align: center;
+    margin-left: 170px;
+    margin-top: 20px;
+}
+
+.cargar-imagen .estudiante-img  {
+    margin-top: 20px;
 }
 
 /* Reportar un problema */
