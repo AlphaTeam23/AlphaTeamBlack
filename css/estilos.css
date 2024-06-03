@@ -30,7 +30,7 @@
 }
 
 body {
-    background-image: url(/imagenes/imagendefondo.png);
+    background-image: url(../imagenes/imagendefondo.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 900px;
