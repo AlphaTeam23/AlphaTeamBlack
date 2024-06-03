@@ -30,7 +30,7 @@
 }
 
 body {
-    background-image: url(/imagenes/imagendefondo.png);
+    background-image: url(../imagenes/imagendefondo.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 900px;
@@ -729,13 +729,21 @@ th:hover {
 }
 
 /* Cambio de contraseña en Gestion Perfil */
+.input_boton1 .reset img {
+    width: 90px;
+    margin-left: -290px;
+    margin-top: -120px;
+}
+
 .cambio_contraseña h2 {
     font-family: miFuentePath;
     font-weight: normal;
-    font-size: 25px;
+    font-size: 22px;
     color: #fff;
     text-align: center;
     padding: 50px;
+    top: 70px;
+    position: relative;
 
 }
 
