@@ -7,7 +7,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     // Verificar el rol del usuario
     if (username === "admin" && password === "admin123") {
         // Perfil de administrador
-        window.location.href = "a_cursos.html";
+        window.location.href = "a_alphaTeam.html";
     } else if (username === "estudiante" && password === "estudiante123") {
         // Perfil de estudiante
         window.location.href = "e_alphaTeam.html";
