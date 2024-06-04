@@ -297,11 +297,11 @@ td {
 
 .barra4 {
     position: absolute;
-    top: -370px;
+    top: -427px;
     left: -16px;
     transform: translate(-10%, -100%);
     width: 845px;
-    height: 120px;
+    height: 60px;
     padding: 1px;
     color: #fff;
 }
@@ -363,7 +363,7 @@ td {
 }
 
 .btbuscarplan {
-    top: 4px;
+    top: -32px;
     height: 20px;
     font-family: miFuentePath;
     background-color: #fff;
@@ -374,7 +374,25 @@ td {
     padding: 0;
     bottom: -60px;
     position: relative;
-    left: 480px;
+    left: 760px;
+    color: #000;
+    cursor: pointer;
+    border: none;
+}
+
+.btbuscarcurso {
+    top: -32px;
+    height: 20px;
+    font-family: miFuentePath;
+    background-color: #fff;
+    font-size: 20px;
+    height: 23px;
+    width: 45px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -60px;
+    position: relative;
+    left: 760px;
     color: #000;
     cursor: pointer;
     border: none;
@@ -605,7 +623,7 @@ legend {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 290px;
+    top: 232px;
     left: 399px;
     height: 20px;
     width: 847px;
