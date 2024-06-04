@@ -730,8 +730,8 @@ th:hover {
 
 /* Cambio de contraseña en Gestion Perfil */
 .input_boton1 .reset img {
-    width: 90px;
-    margin-left: -290px;
+    width: 80px;
+    margin-left: -280px;
     margin-top: -120px;
 }
 
@@ -742,9 +742,8 @@ th:hover {
     color: #fff;
     text-align: center;
     padding: 50px;
-    top: 70px;
+    top: 50px;
     position: relative;
-
 }
 
 .cambio_contraseña {
@@ -765,11 +764,16 @@ th:hover {
 }
 
 .imagen {
-    margin-top: 24px;
+    margin-top: -60px;
+}
+
+.imagen1 {
+    top: -30px;
+    position: relative;
 }
 
 .imagen2 {
-    bottom: 28px;
+    bottom: -20px;
     position: relative;
 }
 
@@ -779,11 +783,11 @@ th:hover {
     height: 30px;
     margin: 50px;
     margin-left: 1px;
-    padding-left: 30px;
+    padding-left: 35px;
     border-bottom: 1px solid #fff;
     border-radius: 10px;
     color: #fff;
-    font-size: 22px;
+    font-size: 20px;
     font-family: miFuentePath;
     font-weight: normal;
     width: 300px;
@@ -796,11 +800,28 @@ th:hover {
     background-color: #00000049;
     border: none;
     height: 40px;
-    padding-left: 30px;
+    margin: 30px;
+    padding-left: 35px;
     border-radius: 10px;
     border-bottom: 1px solid #fff;
     color: #fff;
-    font-size: 22px;
+    font-size: 20px;
+    font-family: miFuentePath;
+    font-weight: normal;
+    width: 300px;
+    height: 40px;
+    outline: none;
+}
+
+.botton3 {
+    background-color: #00000049;
+    border: none;
+    height: 40px;
+    padding-left: 35px;
+    border-radius: 10px;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 20px;
     font-family: miFuentePath;
     font-weight: normal;
     width: 300px;
@@ -816,24 +837,24 @@ th:hover {
     margin-top: -50px;
 }
 
-.input_boton1 label {
-    font-size: 22px;
-}
-
 .enviar {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #81e6ff;
     font-family: miFuentePath;
-    background-color: #0077ff96;
-    font-size: 20px;
+    font-size: 17px;
     height: 25px;
-    width: 120px;
+    width: 130px;
     border-radius: 5px;
     padding: 0;   
     bottom: -60px;
     position: relative;
-    left: 90px;
-    color: #ffffff;
-    border: none;
+    left: 85px;
     cursor: pointer;
+}
+
+.enviar:hover {
+    border: 1px solid #0077ff96;
 }
 
 .regresar {
@@ -844,8 +865,8 @@ th:hover {
 }
 
 .regresar img {
-    width: 22px;
-    height: 22px;
+    width: 32px;
+    height: 32px;
 }
 
 /* Usuario del Profesor */
@@ -975,6 +996,12 @@ hr {
     justify-content: center;
     margin-top: 80px;
     font-size: 23px;
+}
+
+.reporte img {
+    width: 50px;
+    margin-right: 20px;
+    margin-top: -15px;
 }
 
 .reporte textarea {
