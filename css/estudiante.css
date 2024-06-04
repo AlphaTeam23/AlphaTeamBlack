@@ -262,6 +262,7 @@ main {
     position: relative;
     bottom: 150px;
     left: 100px;
+    
 }
 
 .contenedor-imagen {
@@ -272,6 +273,7 @@ main {
     position: relative;
     width: 45%;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 
@@ -1197,7 +1199,7 @@ nav li a {
 
 .container {
     position: relative;
-    left: 50px;
+    left: 20px;
     top: 10px;
     width: 100%;
 }
@@ -1259,9 +1261,9 @@ li {
 }
 
 .body{
-    
-    overflow-x: hidden;
-    height: 1290px;
+   margin-top: 0;
+    height: 900px;
+   
 }
 
 
@@ -1269,8 +1271,18 @@ li {
     width: 49px;
 }
 
+
+.logo_pagina img{
+    width: 100px;
+    position: relative;
+    top: -110px;
+    left: -10px;
+}
+
 h1 {
     font-size: 20px;
+    position: relative;
+    right: 30px;
 }
 
 
@@ -1279,10 +1291,11 @@ h1 {
  position: relative;
  top: 450px;
  right: 400px;
-  
+
 }
 
 .contenedor {
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
