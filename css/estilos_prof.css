@@ -1045,7 +1045,7 @@ th:hover {
 @media  screen and (max-width: 390px) {
 
     body {
-        background-image: url(/imagenes/image\ 1\ \(4\).png);
+        background-image: url(../imagenes/imagendefondo.png);
         background-repeat: no-repeat;
         background-size: cover;
         height: 900px;
@@ -1055,15 +1055,16 @@ th:hover {
     }
 
     h1 {
-        font-size: 40px;
+        font-size: 35px;
         margin-top: 60px;
         width: 300px;
     }
 
     .logo_pagina img {
-        width: 90px;
-        height: 60px;
-        top: -125px;
+        width: 80px;
+        height: 50px;
+        top: -116px;
+        left: 30px;
         position: relative;
     }
 
@@ -1096,30 +1097,54 @@ th:hover {
 
     /* Perfil usuario */
     .inf_basica_profesor {
-        margin-left: 18px;
+        margin-left: 12px;
         width: 350px;
+        margin-top: 105px;
     }
 
     .titinfo {
-        margin-left: -10px;
+        margin-left: -75px;
+        margin-top: 30px;
     }
 
-    .titinfo h4 {
-        width: 330px;
+    .titinfo p {
+        width: 180px;
     }
+
+    .direccion {
+        height: 44px;
+    }
+
 
     .estudiante-img img {
-        margin-left: 100px;
+        margin-left: 10px;
+        width: 120px;
     }
 
     .regresar img {
+        width: 25px;
+        height: 25px;
         left: 20px;
         top: -25px;
         position: relative;
     }
 
+    .estudiante-img .camara2 {
+        width: 25px;
+        margin-left: 50px;
+        top: -90px;
+    }
+
+    .estudiante-img h4 {
+        margin-left: 7px;
+    }
+
+
+
+    /* Cambiar Contraseña */
+
     .cambio_contraseña {
-        margin-left: 25px;
+        margin-left: 18px;
         width: 340px;
     }
 
@@ -1135,6 +1160,12 @@ th:hover {
         padding-left: 50px;
     }
 
+    .botton3 {
+        right: 40px;
+        position: relative;
+        padding-left: 50px;
+    }
+
     .cambio_contraseña img {
         right: 30px;
         position: relative;
@@ -1144,6 +1175,8 @@ th:hover {
         left: 50px;
         position: relative;
     }
+
+    /* Cambiar foto de perfil */
 
     .cargar-imagen {
         margin-left: 20px;
@@ -1163,13 +1196,25 @@ th:hover {
 
     /* Reportar */
     .reporte textarea {
-        margin-left: -399px;
+        margin-left: -410px;
         margin-top: -10px;
         width: 300px;
     }
 
+    .reporte h2 {
+        margin-left: 20px;
+    }
+
     .reporte .report_ev {
         left: -380px;
+        position: relative;
+    }
+
+    .reporte img {
+        width: 30px;
+        height: 30px;
+        margin-top: -5px;
+        left: 250px;
         position: relative;
     }
 
