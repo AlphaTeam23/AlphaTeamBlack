@@ -71,130 +71,85 @@
     <main>
         <section>
             <form class="reinscripcion">
-                <fieldset class="num">
-                    
-                    <legend class="datos">DATOS PERSONALES</legend>
-                    
+              <div class="datos_personales">
+                <label for="">Nombre</label>
+                <input type="text">
+                <label for="">Apellido</label>
+                <input type="text">
+                <label for="">Edad</label>
+                <input type="number">
+                <label for="">Nacimiento</label>
+                <input type="date">
+                <label for="">Sexo</label>
+                <select name="" id="">
+                    <option value="">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+                <label for="">Nacionalidad</label>
+                <select name="" id="">
+                    <option value="">Dominicano</option>
+                    <option value="">Extranjero</option>
+                </select>
 
-                    <div class="full">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" placeholder="Introduzca su nombre" required>
+                <label for="email">Email</label>
+                <input type="email" id="email">
+                <label for="">Telefono de Casa</label>
+                <input type="number">
+                <label for="">Celular</label>
+                <input type="number">
+                <label for="">Tutor/a</label>
+                <input type="number">
+                <label for="">Parentesco</label>
+                <input type="text">
+                <label for="">Numero del Tutor</label>
+                <input type="number">
+                <label for="">Calle</label>
+                <input type="text">
+                <label for="provincia">Provincia</label>
+                <select name="provincia" id="provincia">
+                    <option value="">- Elija una opción -</option>
+                    <option value="">Santiago</option>
+                    <option value="">La Vega</option>
+                    <option value="">Santiago Rodriguez</option>
+                    <option value="">Pedernales</option>
+                    <option value="">Barahona</option>
+                    <option value="">Santo Domingo</option>
+                    <option value="">Azua</option>
+                    <option value="">Baoruco</option>
+                    <option value="">Dajabón</option>
+                    <option value="">Distrito Nacional</option>
+                    <option value="">Duarte</option>
+                    <option value="">Elias Piña</option>
+                    <option value="">El Seibo</option>
+                    <option value="">Hato Mayor</option>
+                    <option value="">Espaillat</option>
+                    <option value="">Independencia</option>
+                    <option value="">La Altagracia</option>
+                    <option value="">La Romana</option>
+                    <option value="">Maria Trinidad Sánchez</option>
+                    <option value="">Monseñor Nouel</option>
+                    <option value="">Monte Cristi</option>
+                    <option value="">Monte Plata</option>
+                    <option value="">Valverde</option>
+                    <option value="">Peravia</option>
+                    <option value="">Puerto Plata</option>
+                    <option value="">Salcedo</option>
+                    <option value="">Samaná</option>
+                    <option value="">Sánchez Ramirez</option>
+                    <option value="">San Cristóbal</option>
+                    <option value="">San Jose De Ocoa</option>
+                    <option value="">San Juan</option>
+                </select>
 
-                    <label for="ape">Apellidos</label>
-                    <input type="text" id="ape" placeholder="Introduza sus apellidos" required>
-                    
+                <label for="">Sector</label>
+                <input type="text">
+
+                <h4>Tanda</h4>
+                <label for="">Elija Tanda</label>
+                <input type="radio" name="matutina" id="">Matutino
+                <input type="radio" name="matutina" id="">Vespertina
                 
-
-                <label for="edad">Edad</label>
-                <input type="text" id="edad" required placeholder="20">
-                    <br>
-
-                    <div class="nac_origen">
-                <label for="nac">Fecha de nacimiento</label>
-                <input type="date" id="nac" required>
-                
-
-                 <label for="gen">Sexo</label>
-                <input type="radio" name="gen" id="gen" value="Femenino">Femenino
-                <input type="radio" name="gen" id="gen" value="Masculino">Masculino 
-                </div>
-            </div>
-            <div class="full2">
-                <label for="origen">Nacionalidad</label>
-                <input type="radio" name="origen" id="origen" value="Dominicana">Dominicana
-                <input type="radio" name="origen" value="Extranjera">Extranjera
-                <br><br> 
-            </div>
-
-
-                <!-- <fieldset class="num2" > -->
-                   <div class="dir_tanda">
-
-                    <legend class="cls" >DIRECCION</legend>
-                    
-
-                        <div class="full3">
-                    <label for="calle">Calle</label>
-                    <input type="text" id="calle" required placeholder="Santiago de los caballeros">
-
-                    <label for="provincia">Provincia</label>
-                    <select name="provincia" id="provincia">
-                        <option value="">- Elija una opción -</option>
-                        <option value="">Santiago</option>    
-                        <option value="">La Vega</option> 
-                        <option value="">Santiago Rodriguez</option> 
-                        <option value="">Pedernales</option> 
-                        <option value="">Barahona</option> 
-                        <option value="">Santo Domingo</option> 
-                        <option value="">Azua</option> 
-                        <option value="">Baoruco</option> 
-                        <option value="">Dajabón</option> 
-                        <option value="">Distrito Nacional</option> 
-                        <option value="">Duarte</option> 
-                        <option value="">Elias Piña</option> 
-                        <option value="">El Seibo</option> 
-                        <option value="">Hato Mayor</option> 
-                        <option value="">Espaillat</option> 
-                        <option value="">Independencia</option> 
-                        <option value="">La Altagracia</option> 
-                        <option value="">La Romana</option> 
-                        <option value="">Maria Trinidad Sánchez</option> 
-                        <option value="">Monseñor Nouel</option> 
-                        <option value="">Monte Cristi</option> 
-                        <option value="">Monte Plata</option> 
-                        <option value="">Valverde</option> 
-                        <option value="">Peravia</option> 
-                        <option value="">Puerto Plata</option> 
-                        <option value="">Salcedo</option> 
-                        <option value="">Samaná</option> 
-                        <option value="">Sánchez Ramirez</option> 
-                        <option value="">San Cristóbal</option> 
-                        <option value="">San Jose De Ocoa</option> 
-                        <option value="">San Juan</option> 
-                        </select>
-
-                    <label for="sec">Sector</label>
-                    <input type="text" id="sec" placeholder="Digite aqui su sector" required >
-                    </div>
-
-                    <legend class="contacto">INFORMACION DE CONTACTO</legend>
-                
-                
-                    <div class="full4">
-                    <label for="mail">Correo electrónico</label>
-                    <input type="email" id="mail" placeholder="ej: maria05@gmail.com" required>
-                    
-
-                    <label for="tel">Telefono Residencial</label>
-                    <input type="text" id="tel" placeholder="Digite su telefono">
-
-                    <label for="tele">Celular</label>
-                    <input type="text" id="tele" placeholder="Digite su celular" required>
-                    <br><br>
-                    </div>
-
-                    <div class="full5">
-                    <label for="responsable">Tutor/a</label>
-                    <input type="text" id="responsable" placeholder="Introduza el nombre de su tutor" required>
-
-                    <label for="tele">Número telefónico de Tutor</label>
-                    <input type="tel" id="tele" required placeholder="tutor">
-              
-               <!--  </div>-->
-               <legend class="tanda">Tanda</legend>
-            <!-- <div class="cu"></div> -->
-                    <br>
-                    <div class="full6">
-                    <input  type="radio" name="hora" required value="Mañana">Matutina
-                    <input  type="radio" name="hora" required value="tarde">Vespertina 
-                    <!-- </fielsed> -->
-
-                    <input type="reset" id="boton" value="Borrar" >
-                    <input type="submit" id="boton" value="Enviar Formulario">
-                </div>
-            </div>
-             </div>       
-            </fieldset>
+              </div>
                 </form>
         </section>
     </main>

@@ -439,14 +439,9 @@ td{
 
 /* reinscripcion */
 
-.reins {
-    background-color: gray;
-}
 
-.datos {
-    position: relative;
-    top: 20px;
-}
+
+
 
 .reinscripcion {
     width: 800px;
@@ -455,51 +450,10 @@ td{
     margin-top: -155px;
 }
 
-.dir_tanda{
-    margin-top: -40px;
-}
-
-.tanda {
-    margin: 30px;
-}
-
-
-
-.nac_origen .nac input {
-    background-color: #fff;
-}
-
-
-
-.num { 
-    margin-top: -90px;
-    height: 440px;
-    position: relative;
-    bottom: 10px;
-    color: #fffefe;
-    font-size: 18px;
-    font-family: miFuentePath;
-    background-color: #ffffff1f;
-    overflow: hidden;
-    border: none;
-    
-}
 
 
 
 
-.reinscripcion legend {
-    color: #fff;
-    font-size: 20px;
-    font-family: miFuentePath;
-    padding: 5px;
-    /* background-color: #0077ff96; */
-    background-color: #81e6ff44;
-    width: 790px;
-    padding-left: 25px;
-    margin-left:20px ;
-    z-index: 1;
-}
 
 .reinscripcion label {
     color: #ffffff;
@@ -509,82 +463,23 @@ td{
     font-weight: normal;
 }
 
-#edad{
-    width: 50px;
-    background-color: #00000049;
-    border-bottom: 1px solid #fff;
-    color: #ffffff;
+.datos_personales {
+     width: 500px; 
+       /* display: flex;
+     flex-direction: column;     */
 }
 
-#tel{
-    width: 103px;
-    background-color: #00000049;
-    border-bottom: 1px solid #fff;
-    color: #ffffff;
+.datos_personales input{
+    width: 200px;
+    margin: 10px;
+    
+    
 }
 
-#tel::placeholder {
-    font-size: 11px;
+.datos_personales select {
+    width: 200px;
+    margin-left: 10px;
 }
-
-#tele {
-    width: 100px;
-    background-color: #00000049;
-    border-bottom: 1px solid #fff;
-    color: #ffffff;
-}
-
-#provincia {
-    background-color: #00000049;
-    border-bottom: 1px solid #fff;
-}
-
-#tele::placeholder {
-    font-size: 11px;
-}
-
-.full{
-   position: relative;
-   top: 10px;
-}
-
-.full2 {
-    position: relative;
-   
-   left: 540px;
-   bottom: 55px;
-}
-
-.full3 {
-    position: relative;
-    bottom: 59px;
-}
-
-.full4 {
-    position: relative;
-    bottom: 59px;
-}
-
-.full5 {
-    position: relative;
-    bottom: 100px;
-}
-
-.full6{
-    position: relative;
-    bottom: 59px;
-}
-
-.contacto{
-    position: relative;
-    bottom: 50px;
-}
-
-.nac_origen{
-    position: relative;
-    bottom: 20px;
-}
-
 #boton{
     padding: 5px; 
     text-align: center;
@@ -606,24 +501,9 @@ td{
 }
 
 
-.cls{
-    position: relative;
-    bottom: 21px;
-    margin-bottom: 40px;
-}
 
-.reinscripcion input{
-    margin: 15px;
-    height: 10px;
-    padding: 10px;
-    padding-left: 4px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    background-color: #00000049;
-    border-bottom: 1px solid #fff;
-    color: #ffffff;
-}
+
+
 
 
 /* pago */
