@@ -947,9 +947,10 @@ th:hover {
     position: relative;
     /* left: 50px; */
     top: -230px;
-    border-radius: 5px;
-    
+    border-radius: 5px; 
 }
+
+/* Cambiar foto de profesor */
 
 .cargar-imagen {
     border: 1px solid #fff;
@@ -1179,18 +1180,25 @@ th:hover {
     /* Cambiar foto de perfil */
 
     .cargar-imagen {
-        margin-left: 20px;
+        margin-left: 12px;
         width: 350px;
     }
 
     .cargar-imagen h2 {
         font-weight: normal;
+        text-align: center;
+    }
+
+    .cambio-img img {
         margin-left: 100px;
-        padding: 20px;
+    }
+
+    .cargar-imagen h3 {
+        margin-left: 130px;
     }
 
     #cargarfoto {
-        margin-top: 50px;
+        margin-top: 30px;
         margin-left: 10px;
     }
 
