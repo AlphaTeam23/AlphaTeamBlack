@@ -58,21 +58,21 @@ h1 {
 
 .logo_pagina img {
     width: 100px;
-    height: 65;
-   left: 15px;
-    top: -125px;
+    height: 65px;
+    left: 10px;
+    top: -130px;
     position: relative;
 }
 
 ul {
     font-family: miFuentePath;
     margin: 50px;
-    top: -185px;
+    top: -175px;
     position: relative;
 }
 
 li {
-     background-color: #d9d9d931; 
+    background-color: #d9d9d931; 
     margin: -5px;
     width: 310px;
     text-align: center;

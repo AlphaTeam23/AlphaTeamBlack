@@ -1,2 +1,2 @@
 # AlphaTeamBlack
-En este reposiitorio se va desarrolla el trabajo final del curso, Dise y Creacion de Software Version Oscura
+En este repositorio se va a desarrollar el proyecto final del curso Diseño y Creacion de Software.
