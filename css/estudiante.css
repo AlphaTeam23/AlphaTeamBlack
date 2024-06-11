@@ -439,22 +439,14 @@ td{
 
 /* reinscripcion */
 
-
-
-
-
 .reinscripcion {
     width: 800px;
-    
     margin-left: 70px; 
     margin-top: -155px;
 }
 
 
-
-
-
-
+ 
 .reinscripcion label {
     color: #ffffff;
     font-size: 17px;
@@ -464,21 +456,36 @@ td{
 }
 
 .datos_personales {
-     width: 500px; 
-       /* display: flex;
-     flex-direction: column;     */
+    width: 700px; 
+    height: 300px;
+    border: 1px solid black;
+    overflow: hidden;
+    overflow-y: scroll;
+     display: flex;
+    flex-direction: column;  
+   
 }
 
 .datos_personales input{
     width: 200px;
     margin: 10px;
-    
-    
 }
+
+ .datos_personales input, label {
+    position: relative;
+    left: 200px; 
+} 
+
+/* #nacimiento {
+    width: 200px;
+    height: 100px;
+} */
 
 .datos_personales select {
     width: 200px;
     margin-left: 10px;
+    position: relative;
+    left: 200px;
 }
 #boton{
     padding: 5px; 
