@@ -1050,177 +1050,174 @@ hr {
 
 @media  screen and (max-width: 312px) {
     .cout {
-  position: relative;
-  display: inline-block;
-}
-
-nav{
-    display: none;
-}
-
-nav li a {
-    padding: 0px;
-    margin: 0px;
-    background-color: #000000;
-}
-
-.cout ul{
-    margin-left: 220px;
-    padding: 5px;
-    width: 320px;
-    background-color: #000000;
-
-}
-
-.cout li {
-    text-align: left; 
-}
-
-
-.container {
     position: relative;
-    left: 90px;
-    top: -20px;
-    width: 100%;
-}
+    display: inline-block;
+    }
 
-.cout li a{
-    color: white;
-    left: 50px;
-    margin: -10px;
-   
-}
+    nav{
+        display: none;
+    }
 
-li {
-    background-color: #00000031; 
-    margin: -5px;
-    width: 310px;
-    text-align: center;
-     border-radius: 10px;
-}
+    nav li a {
+        padding: 0px;
+        margin: 0px;
+        background-color: #000000;
+    }
 
-.content {
-  display: none;
-  position: absolute;
-  left: -220px;
-  top: -160px;
-  padding: 5px;
-  width: 300px;
-  height: 700px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+    .cout ul{
+        margin-left: 220px;
+        padding: 5px;
+        width: 320px;
+        background-color: #000000;
+
+    }
+
+    .cout li {
+        text-align: left; 
+    }
 
 
-.content a {
-  color: rgb(0, 0, 0);
-   padding: 12px; 
-  text-decoration: none;
-  display: block;
-}
+    .container {
+        position: relative;
+        left: 90px;
+        top: -20px;
+        width: 100%;
+    }
 
-/* .content a:hover {
-  background-color: #ddd;
-} */
-
-.cout:focus-within .content,
-.cout:active .content {
-  display: block;
-}
-
-.menu {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  position: relative;
-  bottom: 320px;
-  left: 10px;
-  
-}
-
-.body{
-   margin-top: 0;
-    height: 900px;
-   
-}
-
-
-.menu img{
-    width: 24px;
-    height: 24px;
-}
-
-
-.logo_pagina img{
-    width: 80px;
-    position: relative;
-    top: -90px;
-    left: 33px;
-}
-
-h1 {
-    width: 400px;
-    font-size: 29px;
-    position: relative;
-    left: 10px;
-    top: 20px;
-}
-
-
-
-.info_docente {
- position: relative;
- top: 450px;
- right: 400px;
-
-}
-
-.contenedor {
+    .cout li a{
+        color: white;
+        left: 50px;
+        margin: -10px;
     
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 200%;
-    cursor: pointer;
-    position: relative;
-    bottom: 150px;
-    left: 0px;
-  
-   
-}
+    }
 
-.contenedor-imagen {
-    width: 130px;
-    margin: 10px;
-   display: flex;
-    justify-content: center;
-   flex-direction: row-reverse;
+    li {
+        background-color: #00000031; 
+        margin: -5px;
+        width: 310px;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .content {
+        display: none;
+        position: absolute;
+        left: -220px;
+        top: -160px;
+        padding: 5px;
+        width: 300px;
+        height: 700px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+
+    .content a {
+        color: rgb(0, 0, 0);
+        padding: 12px; 
+        text-decoration: none;
+        display: block;
+    }
+
+    /* .content a:hover {
+    background-color: #ddd;
+    } */
+
+    .cout:focus-within .content,
+    .cout:active .content {
+        display: block;
+    }
+
+    .menu {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        bottom: 320px;
+        left: 10px;
     
-}
+    }
 
-.contenedor-imagen img {
-    width: 120px;
-    height: 120px;
-    margin-left: -110px;
-    margin-top: 10px;
-}
+    .body{
+        margin-top: 0;
+        height: 900px;
+    
+    }
 
-.contenedor-imagen:hover .titulo {
-    animation-delay: .3s;
-    left: 40px;
-    transition: all .3s;
-}
 
-.titulo {
-    font-family: miFuentePath;
-    font-weight: normal;
-    left: 180px;
-    position: relative;
-    transition: all .3s;
-}
+    .menu img{
+        width: 24px;
+        height: 24px;
+    }
 
-}
+
+    .logo_pagina img{
+        width: 80px;
+        position: relative;
+        top: -90px;
+        left: 33px;
+    }
+
+    h1 {
+        width: 400px;
+        font-size: 29px;
+        position: relative;
+        left: 10px;
+        top: 20px;
+    }
+
+    .info_docente {
+        position: relative;
+        top: 450px;
+        right: 400px;
+
+    }
+
+    .contenedor {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 200%;
+        cursor: pointer;
+        position: relative;
+        bottom: 150px;
+        left: 0px;
+    
+    
+    }
+
+    .contenedor-imagen {
+        width: 130px;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+        
+    }
+
+    .contenedor-imagen img {
+        width: 120px;
+        height: 120px;
+        margin-left: -110px;
+        margin-top: 10px;
+    }
+
+    .contenedor-imagen:hover .titulo {
+        animation-delay: .3s;
+        left: 40px;
+        transition: all .3s;
+    }
+
+    .titulo {
+        font-family: miFuentePath;
+        font-weight: normal;
+        left: 180px;
+        position: relative;
+        transition: all .3s;
+    }
+
+    }
 
 
 
