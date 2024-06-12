@@ -544,6 +544,8 @@ th:hover {
     margin-top: -380px;
     margin-left: 450px;
     cursor: pointer;
+    color: #fff;
+    font-weight: normal;
 }
 
 .horario-tablet {
@@ -557,35 +559,23 @@ th:hover {
     font-size: 2rem;
 }
 
-.horas_horario {
+.horario th {
+    background-color: #87ccdd69;
     color: #ffffff;
     font-family: miFuentePath;
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-    width: 120px;
+    font-size: 22px;
     right: 5px;
     top: -15px;
     position: relative;
-}
-
-.horario_clases h4 {
-    font-size: 22px;
-    color: #ffffffda;
     font-weight: normal;
-    display: flex;
-    justify-content: center;
-    margin-left: 2px;
-    color: #ffffff;
-}
-
-.hora_entrada {
-    background-color: #87ccdd69;
-    margin: 5px;
+    height: 35px;
     border-radius: 5px;
-    padding: 12px; 
-    font-weight: normal;
 }
+
+
+
+
+
 
 .hora_entrada h2 {
     color: #ffffff;
@@ -593,7 +583,7 @@ th:hover {
     font-weight: normal;
     text-align: center;
 }
-
+/* 
 .horas_materias {
     display: flex;
     flex-direction: column;
@@ -601,20 +591,13 @@ th:hover {
     right: 5px;
     top: -15px;
     position: relative; 
-}
+} */
 
-.horas_materias h4 {
+.horario td {
+    background-color: #ffffffbb;
     color: #031D45;
     font-size: 15px;
     font-weight: normal;
-    margin-left: 2px;
-    display: flex;
-    justify-content: center;
-  
-}
-
-.hora_asignatura {
-    background-color: #ffffffbb;
     margin: 5px;
     border-radius: 5px;
     padding: 12px; 
@@ -1056,16 +1039,15 @@ th:hover {
         display: none;
     }
 
-    nav li a {
-        padding: 0px;
-        margin: 0px;
+    .nav li a {
         background-color: #000000;
     }
 
     .cout ul{
         margin-left: 220px;
         padding: 5px;
-        width: 320px;
+        width: 305px;
+        height: 390px;
         background-color: #000000;
 
     }
@@ -1115,10 +1097,6 @@ th:hover {
         text-decoration: none;
         display: block;
     }
-
-    /* .content a:hover {
-    background-color: #ddd;
-    } */
 
     .cout:focus-within .content,
     .cout:active .content {
@@ -1322,7 +1300,20 @@ th:hover {
     }
 
     /* Menú desplegable */
-    
+
+    /* Calificaciones */
+    .tabla1 {
+        left: 1px;
+        top: 250px;
+        width: 500px;
+        height: 340px;
+    }
+
+
+
+    .complete {
+        width: 90px;
+    }
     
 }
 
