@@ -79,7 +79,7 @@
                 <label for="">Edad</label>
                 <input type="number">
                 <label for="nacimiento">Nacimiento</label>
-                <input type="datetime" id="nacimiento">
+                <input type="date" id="nacimiento">
                 <label for="">Sexo</label>
                 <select name="" id="">
                     <option value="">Masculino</option>
@@ -143,14 +143,18 @@
 
                 <label for="">Sector</label>
                 <input type="text">
-
                 <h4>Tanda</h4>
-                <label for="">Elija Tanda</label>
-                <input type="radio" name="matutina" id="">Matutino
-                <input type="radio" name="matutina" id="">Vespertina
-                
+
+                <div class="radio">
+                <label for="tanda"></label>
+                <input type="radio" name="matutina" id="tanda">Matutino
+                <input type="radio" name="Vespertina" id="tanda">Vespertina
+                </div>
               </div>
                 </form>
+                <div class="conten-imag">
+                    <img src="imagenes/estudianteFormulario.png" alt="">
+                </div>
         </section>
     </main>
 </body>

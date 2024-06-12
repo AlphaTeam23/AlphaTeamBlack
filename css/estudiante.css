@@ -456,9 +456,9 @@ td{
 }
 
 .datos_personales {
-    width: 700px; 
-    height: 300px;
-    border: 1px solid black;
+    width: 550px; 
+    height: 360px;
+    border: 1px solid #D9D9D9;
     overflow: hidden;
     overflow-y: scroll;
      display: flex;
@@ -473,20 +473,77 @@ td{
 
  .datos_personales input, label {
     position: relative;
-    left: 200px; 
+    left: 300px; 
 } 
-
-/* #nacimiento {
-    width: 200px;
-    height: 100px;
-} */
 
 .datos_personales select {
     width: 200px;
     margin-left: 10px;
     position: relative;
-    left: 200px;
+    left: 300px;
+    
 }
+
+.datos_personales h4 {
+    text-align: center;
+     margin-left: 290px; 
+     line-height: 2;
+    font-size: 20px;
+    color: #fffdfd;
+    font-family: miFuentePath;
+   font-weight: normal;
+}
+
+.conten-imag {
+    position: relative;
+    bottom: 358px;
+    left: 71px;
+  
+}
+
+
+.conten-imag img {
+    width: 300px;
+    height: 357px;
+    position: fixed;
+}
+
+
+
+.radio label {
+    font-size: 20px;
+    width:0px;
+    height: 0px;
+   position: relative;
+   bottom: 50px;
+    font-family: miFuentePath;
+}
+
+
+
+
+#tanda{
+   
+    width: 20px;
+    margin:  10px;
+    margin-top: 50px;
+    position: relative;
+    left: -205px;
+    bottom: 45px;
+    
+}
+
+#tanda,.radio {
+    color: #ffffff;
+    font-family: miFuentePath;
+    display: flex;
+ transform: translate(290px);
+   
+   
+}
+
+
+
 #boton{
     padding: 5px; 
     text-align: center;
