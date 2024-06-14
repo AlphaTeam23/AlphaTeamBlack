@@ -537,12 +537,9 @@ th:hover {
 
 .horario {
     font-family: miFuentePath;
-    display: grid;
-    grid-template-columns: repeat(6,100px);
-    gap: 20px;
     text-align: center;
-    margin-top: -380px;
-    margin-left: 450px;
+    margin-top: -390px;
+    margin-left: 440px;
     cursor: pointer;
     color: #fff;
     font-weight: normal;
@@ -551,31 +548,20 @@ th:hover {
 .horario-tablet {
     background-color: gray;
 }
-.horas {
-    background-color: #81e6ff44;
-    border-radius: 5px;
-    padding: 5px;
-    width: 110px;
-    font-size: 2rem;
-}
 
 .horario th {
-    background-color: #87ccdd69;
+    background-color: #87ccdd46;
     color: #ffffff;
     font-family: miFuentePath;
     font-size: 22px;
-    right: 5px;
-    top: -15px;
-    position: relative;
     font-weight: normal;
     height: 35px;
     border-radius: 5px;
 }
 
-
-
-
-
+.horario-profesor {
+    border-spacing: 10px;
+}
 
 .hora_entrada h2 {
     color: #ffffff;
@@ -583,24 +569,36 @@ th:hover {
     font-weight: normal;
     text-align: center;
 }
-/* 
-.horas_materias {
-    display: flex;
-    flex-direction: column;
-    width: 120px;
-    right: 5px;
-    top: -15px;
-    position: relative; 
-} */
+
+.horario-profesor .horas {
+    background-color: #87ccdd69;
+    color: #fff;
+}
 
 .horario td {
     background-color: #ffffffbb;
     color: #031D45;
     font-size: 15px;
     font-weight: normal;
-    margin: 5px;
     border-radius: 5px;
     padding: 12px; 
+}
+
+.boton-horario {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #81e6ff;
+    font-family: miFuentePath;
+    font-weight: normal;
+    font-size: 16px;
+    width: 80px;
+    left: -70px;
+    position: relative;
+    cursor: pointer;
+}
+
+.boton-horario:hover {
+    border: 1px solid #0077ff96;
 }
 
 /* Página planificación docente  */
