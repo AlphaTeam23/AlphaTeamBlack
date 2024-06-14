@@ -1052,6 +1052,7 @@ th:hover {
 
     .cout li {
         text-align: left; 
+        background-color: #d9d9d900; 
     }
 
     .container {
@@ -1069,7 +1070,6 @@ th:hover {
     }
 
     li {
-        background-color: #00000031; 
         margin: -5px;
         width: 310px;
         text-align: center;
@@ -1107,13 +1107,23 @@ th:hover {
         cursor: pointer;
         padding: 0;
         position: relative;
-        bottom: 270px;
+        top: -260px;
         left: 20px;
     }
 
     .menu img{
         width: 24px;
         height: 24px;
+    }
+
+    .menu-planificacion {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        bottom: 270px;
+        left: 20px;
     }
     
     body {
@@ -1159,13 +1169,7 @@ th:hover {
          border-top: solid 1px rgba(0, 0, 0, 0.397);
     }
 
-    /* li a {
-        font-size: 25px;
-    }
-
-    li {
-        height: 40px;
-    } */
+    
 
     /* Perfil usuario */
     .inf_basica_profesor {
@@ -1301,18 +1305,22 @@ th:hover {
 
     /* Calificaciones */
     .tabla1 {
-        left: 1px;
+        left: 2px;
         top: 250px;
-        width: 500px;
+        width: 380px;
         height: 340px;
+        overflow-x: scroll;
     }
-
-
 
     .complete {
         width: 90px;
+    } 
+
+    .publicar {
+        margin-left: 140px;
+        top: 250px;
+        position: relative;
     }
-    
 }
 
 /* Tablets */ 
