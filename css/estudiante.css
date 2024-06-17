@@ -372,12 +372,12 @@ main {
 
 table{
     background-color: gray;
-    border-spacing: 5px;
+    border-spacing: 4px;
 }
 
 table th {
     background-color: #ffffff2f;
-    width: 50px;
+    width: 10px;
     height: 40px;
 }
 
@@ -386,7 +386,8 @@ table td {
     border-radius: 3px;
     height: 40px;
     text-transform: uppercase;
-    font-size: 17px;
+    font-size: 16px;
+    width: 30px;
 }
 
 .calificaciones section {
@@ -395,14 +396,13 @@ table td {
 }
 
 .calificaciones h2 {
-    transform: translate(100px);
     line-height: 2;
-    font-size: 25px;
+    font-size: 22px;
     width: 500px;
     font-family: miFuentePath;
     font-weight: normal;
     text-align: center;
-    margin-left: 70px;
+    margin-left: 150px;
     color: #ffffff;
 }
 
@@ -411,10 +411,9 @@ table td {
     height: 300px;
     color: #fff;
     font-family: miFuentePath;
-    font-size: 20px;
+    font-size: 16px;
     background-color: #0000001e;
 }
-
 
 td{
     border: none;

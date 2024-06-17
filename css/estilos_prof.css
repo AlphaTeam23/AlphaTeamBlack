@@ -252,17 +252,21 @@ label {
 }
 
 .boton {
-    font-family: miFuentePath;
-    margin: 15px;
-    font-size: 16px;
-    width: 50px;
-    font-weight: normal;
-    bottom: -5px;
-    position: relative;
-    border: 1px solid #81e6ff;
-    margin-right: 150px;
     background-color: transparent;
     color: #fff;
+    border: 1px solid #81e6ff;
+    font-family: miFuentePath;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 15px;
+    margin-right: 150px;
+    width: 50px;
+    bottom: -5px;
+    position: relative;
+    
+    
+    
+    
 }
 
 .boton:hover {
@@ -1027,7 +1031,8 @@ th:hover {
 
 /* Responsive */
 /* Movil */ 
-@media  screen and (max-width: 390px) {
+@media  screen and (max-width: 600px) {
+
     .cout {
         position: relative;
         display: inline-block;
@@ -1319,6 +1324,13 @@ th:hover {
     .publicar {
         margin-left: 140px;
         top: 250px;
+        position: relative;
+    }
+
+    /* Horario */
+    .horario {
+        margin-top: 50px;
+        left: -440px;
         position: relative;
     }
 }
