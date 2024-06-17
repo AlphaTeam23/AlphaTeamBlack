@@ -480,18 +480,65 @@ td{
     margin-left: 10px;
     position: relative;
     left: 300px;
+    margin: 10px;
     
 }
 
 .datos_personales h4 {
     text-align: center;
-     margin-left: 290px; 
-     line-height: 2;
+    margin-left: 290px; 
+    line-height: 2;
     font-size: 20px;
     color: #fffdfd;
     font-family: miFuentePath;
    font-weight: normal;
 }
+
+/* .datos_personales button{
+    
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 40px; 
+    margin-left: 250px;
+    padding: 5px;
+    text-align: center;
+    width: 100px;
+    background-color: #81e6ff44;
+    color: #fff;
+    border: none;
+}  */
+
+ .deshacer  {
+    font-size: 16px;
+    font-family: miFuentePath;
+    display: flex;
+    margin: 10px;
+    display: flex;
+    margin-left: 305px;
+    padding: 5px;
+    text-align: center;
+    width: 70px;
+    background-color: transparent;
+    border: solid 1px #81e6ff;
+    color: #fff;
+}
+
+
+.enviar_formulario {
+    font-size: 16px;
+    font-family: miFuentePath;
+    position: relative;
+    left: 105px;
+    margin-left: 310px;
+    bottom: 40px;
+    padding: 5px;
+    text-align: center;
+    width: 110px;
+    background-color: transparent; 
+    border: solid 1px  #81e6ff;
+    color: #fff;
+} 
 
 .conten-imag {
     position: relative;
@@ -508,14 +555,23 @@ td{
 }
 
 
+.conten-imag h4 {
+    z-index: 5;
+    color: rgb(204, 204, 204);
+    font-size: 40px;
+    position: relative;
+    left: 40px;
+    font-family: miFuentePath;
+}
+
 
 .radio label {
     font-size: 20px;
     width:0px;
     height: 0px;
-   position: relative;
-   bottom: 50px;
-    font-family: miFuentePath;
+    position: relative;
+    bottom: 50px;
+    
 }
 
 
@@ -536,7 +592,7 @@ td{
     color: #ffffff;
     font-family: miFuentePath;
     display: flex;
- transform: translate(290px);
+    transform: translate(290px);
    
    
 }
