@@ -837,7 +837,10 @@ td{
 .campos label {
     color: #ffffff;
     font-family: miFuentePath;
-    margin-left: 15px;
+    position: relative;
+     left: 20px; 
+   
+   
 }
 
 .campos input::placeholder {
@@ -861,7 +864,8 @@ td{
 .campos2 label {
     color: #ffffff;
     font-family: miFuentePath;
-    margin-left: 19px;
+    position: relative;
+    left: 50px;
 }
 
 .campos2 input {
@@ -894,7 +898,8 @@ td{
 .campos3 label {
     color: #ffffff;
     font-family: miFuentePath;
-    margin-left: 20px;
+    position: relative;
+    left: 50px;
 }
 
 
@@ -926,6 +931,65 @@ td{
 
 .boton a:hover {
     background-color: rgb(255, 68, 0);
+}
+
+
+
+
+
+/* confirmacion pago Peypal */
+
+.pago_peypal {
+    margin-top: 540px;
+    margin-left: 50px;
+    padding: 5px;
+    width: 480px;
+    height: 350px; 
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #555;
+   
+}
+
+.pago_peypal img{
+    width: 150px;
+    position: relative;
+    left: 150px;
+    bottom: 40px;
+   
+}
+
+.pago_peypal input {
+    display: flex;
+    margin: 10px;
+    position: relative;
+    left: 30px;
+    bottom: 50px;
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #0199dc ;
+}
+
+.pago_peypal button {
+    position: relative;
+    left: 42px;
+    background-color: #0199dc;
+    padding: 5px;
+    border: none;
+    width: 400px;
+    height: 45px;
+    font-size: 25px;
+    cursor: pointer;
+
+}
+
+
+.pago_peypal button:hover {
+    background-color: #019adce8;
+}
+
+.pago_peypal ::placeholder {
+    padding-left: 10px;
 }
 
 /* icono regresar */
