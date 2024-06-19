@@ -24,12 +24,15 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
 
 
+document.getElementById('pago').addEventListener('submit', function(event) {
+  event.preventDefault();
 
-document.getElementById("pago").addEventListener("submit", function(event) {
-    var gmail = document.getElementById('gmail')
-    var password = document.getElementById('cons').value;
+  var password = document.getElementById('cons').value;
 
-  if(gmail === "josemiguel@gmail") {
-    alert("not")
+  if (password === '123') {
+    alert('Por favor ingresa tu contraseña.');
+  } else {
+    alert('Pago autorizado correctamente.');
+   
   }
 });
