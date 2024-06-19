@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-06-2024 a las 23:36:26
+-- Tiempo de generación: 19-06-2024 a las 23:43:24
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -104,7 +104,7 @@ CREATE TABLE `calificacion_final` (
 CREATE TABLE `cursos` (
   `id_curso` int(5) NOT NULL,
   `Id_profesor` int(5) NOT NULL,
-  `nivel` char(2) COLLATE utf32_spanish2_ci NOT NULL,
+  `nivel` varchar(20) COLLATE utf32_spanish2_ci NOT NULL,
   `seccion` char(1) COLLATE utf32_spanish2_ci NOT NULL,
   `total_estudiante` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish2_ci;
@@ -125,35 +125,24 @@ CREATE TABLE `estudiante` (
   `id_curso` int(5) NOT NULL,
   `Id_profesor` int(5) NOT NULL,
   `seccion` char(1) COLLATE utf32_spanish2_ci NOT NULL,
-  `nombre_tutor` varchar(30) COLLATE utf32_spanish2_ci NOT NULL,
-  `apellido_tutor` varchar(30) COLLATE utf32_spanish2_ci NOT NULL,
-  `cedula_tutor` varchar(11) COLLATE utf32_spanish2_ci NOT NULL,
-  `tel_tutor` varchar(12) COLLATE utf32_spanish2_ci NOT NULL,
-  `correo_tutor` varchar(30) COLLATE utf32_spanish2_ci DEFAULT NULL,
-  `educacion_tutor` varchar(11) COLLATE utf32_spanish2_ci NOT NULL,
-  `ocupacion_tutor` varchar(30) COLLATE utf32_spanish2_ci NOT NULL,
-  `parentesco_tutor` varchar(10) COLLATE utf32_spanish2_ci NOT NULL,
-  `provincia_tutor` varchar(15) COLLATE utf32_spanish2_ci NOT NULL,
-  `sector_tutor` varchar(15) COLLATE utf32_spanish2_ci NOT NULL,
-  `calle_tutor` varchar(15) COLLATE utf32_spanish2_ci NOT NULL,
-  `edificio_tutor` varchar(15) COLLATE utf32_spanish2_ci NOT NULL
+  `id_tutor` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `estudiante`
 --
 
-INSERT INTO `estudiante` (`id_estudiante`, `nombre_estudiante`, `apellidop_estudiante`, `apellidom_estudiante`, `sexo_estudinate`, `nacimiento_estudiante`, `id_curso`, `Id_profesor`, `seccion`, `nombre_tutor`, `apellido_tutor`, `cedula_tutor`, `tel_tutor`, `correo_tutor`, `educacion_tutor`, `ocupacion_tutor`, `parentesco_tutor`, `provincia_tutor`, `sector_tutor`, `calle_tutor`, `edificio_tutor`) VALUES
-(1, 'Faury', 'García', 'Rodríguez', 'Masculino', '2004-09-17', 0, 0, '', 'Eridania', 'Rodríguez', '40285964536', '8299658756', 'eridania@gmail.com', 'Universitar', 'Licenciada en Contabilidad', 'Madre', 'Santiago', 'La Joya', '16 Agosto', '236'),
-(2, 'Jose Miguel', 'Bello', 'Acosta', 'Masculino', '2003-09-04', 0, 0, '', 'Margarita', 'Acosta', '40296385218', '8498592526', 'margarita@gmail.com', 'Universitar', 'Estadistica en Hospital', 'Madre', 'Montecristi', 'Castañuela', '20 de Junio', '22'),
-(3, 'Jose Miguel', 'Reyes', '', 'Masculino', '1996-11-08', 0, 0, '', 'Sonia', 'Reyes', '13045015295', '8498592529', 'sonia@gmail.com', '3ro primari', 'Empleada', 'Madre', 'Santiago', 'Villa Progreso', 'Principal', '15'),
-(4, 'Massiel', 'Rodriguez', 'Rodriguez', 'Femenino', '2004-01-04', 0, 0, '', 'Eduardo', 'Rodriguez', '04600246666', '8294195674', 'eduardor@gmail.com', 'Licenciado', 'Profesor en Ciencias Sociales', 'Padre', 'Santiago', 'Los Llanos', 'A', '30'),
-(5, 'Manuel De Jesus', 'Diaz', 'Diaz', 'Masculino', '1999-01-13', 0, 0, '', 'Adela ', 'Diaz', '40214155106', '8295596936', 'adelad@gmail.com', 'primaria', 'Ama de casa', 'Madre', 'Santiago', 'La Herradura', '26 de Febrero', '15'),
-(6, 'Albiery', 'Rodriguez', 'Almonte', 'Masculino', '2004-08-19', 0, 0, '', 'Fior', 'Almonte', '04600246644', '8294199874', 'fior@gmail.com', 'primaria', 'empleada', 'Madre', 'Santiago', 'Los Ciruelitos', 'Principal', '2'),
-(7, 'Smailyn', 'Gutiérrez', 'Burgos', 'Femenino', '2003-03-04', 0, 0, '', 'Angelica', 'Burgos', '04621565623', '829-546-7521', 'angelica@gmail.com', 'secundaria', 'Ama de casa', 'Madre', 'Santiago', 'Licey', 'Pinguito', '4'),
-(8, 'Gissel Esmeralda', 'Velez', 'Cruz', 'Femenino', '1999-09-27', 0, 0, '', 'Yenny', 'Cruz', '13054568968', '8292215636', 'yenny@gmail.com', 'Secundaria', 'Empleada', 'Madre', 'Santiago', 'La Herradura', '30 de Marzo', '7'),
-(9, 'Marilin', 'Gil', 'Paulino', 'Femenino', '2005-01-28', 0, 0, '', 'Maria ', 'Paulino', '40275848596', '8095465712', 'maria@gmail.com', 'Secundaria', 'Empleada', 'Madre', 'Santiago', 'Licey', 'Borojoy', '15'),
-(10, 'Tiara', 'Peña', 'Peña', 'Femenino', '2003-12-11', 0, 0, '', 'Yohan', 'Perez', '40259634518', '8092219494', 'yohanp@gmail.com', 'Universitar', 'Estudiante', 'Amigo', 'Santiago', 'Los Padros', '5 de Abril', '14');
+INSERT INTO `estudiante` (`id_estudiante`, `nombre_estudiante`, `apellidop_estudiante`, `apellidom_estudiante`, `sexo_estudinate`, `nacimiento_estudiante`, `id_curso`, `Id_profesor`, `seccion`, `id_tutor`) VALUES
+(1, 'Faury', 'García', 'Rodríguez', 'Masculino', '2004-09-17', 0, 0, '', 2),
+(2, 'Jose Miguel', 'Bello', 'Acosta', 'Masculino', '2003-09-04', 0, 0, '', 4),
+(3, 'Jose Miguel', 'Reyes', '', 'Masculino', '1996-11-08', 0, 0, '', 5),
+(4, 'Massiel', 'Rodriguez', 'Rodriguez', 'Femenino', '2004-01-04', 0, 0, '', 8),
+(5, 'Manuel De Jesus', 'Diaz', 'Diaz', 'Masculino', '1999-01-13', 0, 0, '', 6),
+(6, 'Albiery', 'Rodriguez', 'Almonte', 'Masculino', '2004-08-19', 0, 0, '', 1),
+(7, 'Smailyn', 'Gutiérrez', 'Burgos', 'Femenino', '2003-03-04', 0, 0, '', 9),
+(8, 'Gissel Esmeralda', 'Velez', 'Cruz', 'Femenino', '1999-09-27', 0, 0, '', 3),
+(9, 'Marilin', 'Gil', 'Paulino', 'Femenino', '2005-01-28', 0, 0, '', 7),
+(10, 'Tiara', 'Peña', 'Peña', 'Femenino', '2003-12-11', 0, 0, '', 10);
 
 -- --------------------------------------------------------
 
@@ -185,6 +174,60 @@ INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `nombre`, `apellidos`,
 (5, 7, 'Apolinar', 'Rivas Genao', '1960-04-15', 'apolinar@gmail.com', '829-565-3215', '130-5426315-6', 'La Barranquita, Avenida Olímpica, #12'),
 (6, 4, 'Jose', 'De La Cruz', '1950-01-16', 'delacruz@gmail.com', '849-424-2424', '046-5526321-6', 'Las Colinas #05'),
 (7, 2, 'Faustina', 'Rodriguez', '1979-05-04', 'fausrodriguez@gmail.com', '849-478-9863', '130-1548963-9', 'Los Jardines #40');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `roles`
+--
+
+CREATE TABLE `roles` (
+  `id_roles` int(5) NOT NULL,
+  `tipo_rol` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id_roles`, `tipo_rol`) VALUES
+(1, 'administrador'),
+(2, 'profesor'),
+(3, 'estudiante');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tutor`
+--
+
+CREATE TABLE `tutor` (
+  `id_tutor` int(5) NOT NULL,
+  `nombre` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `apellidos` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `cedula` char(13) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `telefono` char(12) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `correo` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `ocupacion` varchar(30) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `parentesco` varchar(15) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `direccion` text COLLATE utf8mb4_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tutor`
+--
+
+INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellidos`, `cedula`, `telefono`, `correo`, `ocupacion`, `parentesco`, `direccion`) VALUES
+(1, 'Fior', 'Almonte', '04600246644', '8294199874', 'fior@gmail.com', 'Empleada', 'Madre', 'Los Ciruelitos\r\nCalle Principal\r\n# 2\r\nSantiago'),
+(2, 'Eridania', 'Rodríguez', '40285964536', '8299658756', 'eridania@gmail.com', 'Licenciada en Contabilidad', 'Madre', 'La Joya\r\nCalle 16 Agosto\r\n# 36\r\nSantiago'),
+(3, 'Yenny', 'Cruz', '13054568968', '8292215636', 'yenny@gmail.com', 'Empleada', 'Madre', 'La Herradura\r\nCalle 30 de Marzo\r\n# 7\r\nSantiagp'),
+(4, 'Margarita', 'Acosta', '40296385218', '8498592526', 'margarita@gmail.com', 'Estadistica en Hospital', 'Madre', 'Castañuela\r\nCalle 20 de Junio\r\n# 22\r\nMonteCristi'),
+(5, 'Sonia ', 'Reyes', '13045015295', '8498592529', 'sonia@gmail.com', 'Empleada', 'Madre', 'Villa Progreso\r\nCalle Principal\r\n# 15\r\nSantiago'),
+(6, 'Adela De Jesus', 'Diaz Trinidad', '40214155106', '8295596936', 'adelad@gmail.com', 'Ama de casa', 'Madre', 'La Herradura\r\nCalle 26 de Febrero\r\n# 15\r\nSantiago'),
+(7, 'Maria', 'Paulino', '40275848596', '8095465712', 'maria@gmail.com', 'Empleada', 'Madre', 'Licey\r\nCalle Borojoy\r\n# 15\r\nSantiago'),
+(8, 'Eduardo ', 'Rodriguez', '04600246666', '8294195674', 'eduardor@gmail.com', 'Profesor', 'Padre', 'Los Llanos de La Herradura\r\nCalle A\r\n# 30\r\nSantiago'),
+(9, 'Angelica', 'Burgos', '04621565623', '8295467521', 'angelica@gmail.com', 'Ama de Casa', 'Madre', 'Licey\r\nCalle Pinguito\r\n# 4\r\nSantiago'),
+(10, 'Yohan', 'Perez', '40259634518', '8092219494', '8092219494', 'Estudiante', 'Amigo', 'Los Padros\r\nCalle 5 de Abril\r\n# 14\r\nSantiago');
 
 --
 -- Índices para tablas volcadas
@@ -227,6 +270,18 @@ ALTER TABLE `profesores`
   ADD PRIMARY KEY (`id_profesor`);
 
 --
+-- Indices de la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id_roles`);
+
+--
+-- Indices de la tabla `tutor`
+--
+ALTER TABLE `tutor`
+  ADD PRIMARY KEY (`id_tutor`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -265,6 +320,18 @@ ALTER TABLE `estudiante`
 --
 ALTER TABLE `profesores`
   MODIFY `id_profesor` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id_roles` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `tutor`
+--
+ALTER TABLE `tutor`
+  MODIFY `id_tutor` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
