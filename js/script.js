@@ -20,3 +20,16 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         alert("Nombre de usuario o contraseña incorrectos.");
     }
 });
+
+
+
+
+
+document.getElementById("pago").addEventListener("submit", function(event) {
+    var gmail = document.getElementById('gmail')
+    var password = document.getElementById('cons').value;
+
+  if(gmail === "josemiguel@gmail") {
+    alert("not")
+  }
+});
