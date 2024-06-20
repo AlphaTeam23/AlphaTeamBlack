@@ -24,15 +24,21 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
 
 
-document.getElementById('pago').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  var password = document.getElementById('cons').value;
-
-  if (password === '123') {
-    alert('Por favor ingresa tu contraseña.');
-  } else {
-    alert('Pago autorizado correctamente.');
-   
-  }
-});
+//  document.getElementById('passwordForm').addEventListener('submit', function(event) {
+//                 event.preventDefault();
+                
+//                 var oldPassword = document.getElementById('oldPassword').value;
+//                 var newPassword = document.getElementById('newPassword').value;
+//                 var confirmPassword = document.getElementById('confirmPassword').value;
+    
+//                 if( oldPassword === "estudiante" &&  newPassword === confirmPassword) {
+//                    alert('Contraseña cambiada exitosamente.');
+//                     return;
+//                 }else{
+//                      alert('Error: La nueva contraseña y la confirmación no coinciden.');
+//                 }
+    
+               
+                
+               
+//             });
