@@ -52,22 +52,32 @@
 
     
         <script>
-            document.getElementById('passwordForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                
-                var oldPassword = document.getElementById('oldPassword').value;
-                var newPassword = document.getElementById('newPassword').value;
-                var confirmPassword = document.getElementById('confirmPassword').value;
-    
-                if (newPassword !== confirmPassword) {
-                    alert('Error: La nueva contraseña y la confirmación no coinciden.');
-                    return;
-                }
-    
-                // Simulación de cambio de contraseña
-                alert('Contraseña cambiada exitosamente.');
-                // Aquí podrías agregar la lógica para enviar los datos al servidor
-            });
+           
+           document.getElementById('passwordForm').addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    var oldPassword = document.getElementById('oldPassword').value;
+                    var newPassword = document.getElementById('newPassword').value;
+                    var confirmPassword = document.getElementById('confirmPassword').value;
+
+                    var mensaje = '';
+
+                    if (oldPassword !== "estudiante") {
+                        mensaje += 'Error: La contraseña antigua es incorrecta.\n';
+                    }
+
+                   
+                    if (newPassword !== confirmPassword) {
+                        mensaje += 'Error: La nueva contraseña y la confirmación no coinciden.\n';
+                    }
+
+                    if (mensaje === '') {
+                        alert('Contraseña cambiada exitosamente.');
+                    } else {
+                        alert(mensaje);
+                    }
+                });
+
         </script>
     
 </body>

@@ -137,6 +137,7 @@ input {
     width:220px;
     border-radius: 10px;
     font-size: 30px;
+    
 }
 
 .btn2 {
@@ -147,6 +148,7 @@ input {
     width: 220px;
     font-size: 30px;
     text-align: left;
+    
 }
 
 aside {
@@ -211,6 +213,11 @@ h4 {
     text-decoration: none;
     list-style-type: none;
     border: none;
+    cursor: pointer;
+}
+
+.access:hover {
+    background-color: #0077ffc0;
 }
 
 .h1 {
