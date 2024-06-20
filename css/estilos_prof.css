@@ -1059,7 +1059,7 @@ th:hover {
         width: 80px;
         height: 50px;
         top: -116px;
-        left: 22%;
+        left: 18%;
         position: relative;
     }
     .cout {
@@ -1304,15 +1304,14 @@ th:hover {
     .tabla1 {
         left: 2px;
         top: 250px;
-        width: 380px;
+        width: 80%;
         height: 340px;
-        /* overflow-x: scroll; */
     }
 
     .calificaciones_docente{
         margin-left: 5px;
         margin-top: -50px;
-        width: 380px;
+        width: 70%;
     }
 
     .calificaciones_docente form {
