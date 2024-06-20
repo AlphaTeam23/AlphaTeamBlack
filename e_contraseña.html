@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="css/estudiante.css">
     <link rel="icon" href="imagenes/icono_pagina.png">
 </head>
-
 <body>
     <header>
         <h1>ALPHA TEAM</h1>
@@ -29,28 +27,48 @@
 
     <main class="cambio_contraseña">
         <h2>CAMBIO DE CONTRASEÑA</h2>
-        <form class="input_boton1">
+        <form class="input_boton1" id="passwordForm">
             <figure class="reset">
-                <img src="imagenes/reset-password.png" alt="">
+                <img src="imagenes/reset-password.png" alt="Reset Password">
             </figure>
         
-            <input type="password" class="botton1" placeholder="Contraseña Antigua" required maxlength="10" autofocus>
+            <input type="password" id="oldPassword" class="botton1" placeholder="Contraseña Antigua" required maxlength="10" autofocus>
             <div class="imagen1">
-                <img src="imagenes/bx-lock-alt.svg" alt="">
+                <img src="imagenes/bx-lock-alt.svg" alt="Old Password">
             </div>
-            <input type="password" class="botton3" placeholder="Nueva Contraseña" required maxlength="10">
+            <input type="password" id="newPassword" class="botton3" placeholder="Nueva Contraseña" required maxlength="10">
             <div class="imagen2">
-                <img src="imagenes/contrasena.png" alt="">
+                <img src="imagenes/contrasena.png" alt="New Password">
             </div>
         
             <br>
-            <input type="password" class="botton2" placeholder="Confirmar Contraseña" required maxlength="10">
+            <input type="password" id="confirmPassword" class="botton2" placeholder="Confirmar Contraseña" required maxlength="10">
             <div class="imagen">
-                <img src="imagenes/confirmar.png" alt="">
+                <img src="imagenes/confirmar.png" alt="Confirm Password">
             </div>
             <input type="submit" value="CAMBIAR CONTRASEÑA" class="enviar">
         </form>
     </main>
-</body>
 
+    
+        <script>
+            document.getElementById('passwordForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                var oldPassword = document.getElementById('oldPassword').value;
+                var newPassword = document.getElementById('newPassword').value;
+                var confirmPassword = document.getElementById('confirmPassword').value;
+    
+                if (newPassword !== confirmPassword) {
+                    alert('Error: La nueva contraseña y la confirmación no coinciden.');
+                    return;
+                }
+    
+                // Simulación de cambio de contraseña
+                alert('Contraseña cambiada exitosamente.');
+                // Aquí podrías agregar la lógica para enviar los datos al servidor
+            });
+        </script>
+    
+</body>
 </html>
