@@ -20,25 +20,3 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         alert("Nombre de usuario o contraseña incorrectos.");
     }
 });
-
-
-
-
-//  document.getElementById('passwordForm').addEventListener('submit', function(event) {
-//                 event.preventDefault();
-                
-//                 var oldPassword = document.getElementById('oldPassword').value;
-//                 var newPassword = document.getElementById('newPassword').value;
-//                 var confirmPassword = document.getElementById('confirmPassword').value;
-    
-//                 if( oldPassword === "estudiante" &&  newPassword === confirmPassword) {
-//                    alert('Contraseña cambiada exitosamente.');
-//                     return;
-//                 }else{
-//                      alert('Error: La nueva contraseña y la confirmación no coinciden.');
-//                 }
-    
-               
-                
-               
-//             });
