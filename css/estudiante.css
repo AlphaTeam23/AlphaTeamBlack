@@ -1364,7 +1364,7 @@ td{
 }
 
 
-@media  screen and (max-width: 312px) {
+@media  screen and (max-width: 600px) {
     .cout {
     position: relative;
     display: inline-block;
@@ -1395,7 +1395,7 @@ td{
 
     .container {
         position: relative;
-        left: 90px;
+        left: -120px;
         top: -20px;
         width: 100%;
     }
@@ -1455,6 +1455,10 @@ td{
     
     }
 
+    .menu-items {
+        margin-right: 50px;
+    }
+
     .body{
         margin-top: 0;
         height: 900px;
@@ -1497,8 +1501,8 @@ td{
         width: 200%;
         cursor: pointer;
         position: relative;
-        bottom: 150px;
-        left: 0px;
+        bottom: 150%;
+        left: 60%;
     
     
     }
