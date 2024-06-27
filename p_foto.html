@@ -7,36 +7,37 @@
     <title>Cambiar Foto</title>
     <link rel="stylesheet" href="css/estilos_prof.css">
     <link rel="icon" href="imagenes/icono_pagina.png">
+    <script src="js/cambiofoto.js" defer></script> <!-- Incluye el archivo JavaScript -->
 </head>
 <body>
     <header>
         <h1>ALPHA TEAM</h1>
-         <a href="p_alphaTeam.html">
+        <a href="p_alphaTeam.html">
             <figure class="logo_pagina">
                 <img src="imagenes/logo.png" alt="">
             </figure>
         </a>
-
-            <div class="regresar">
-                <figure>
-                    <a href="javascript:history.back()">
-                        <img src="imagenes/flecharegresar.png" alt=""></a>
-                </figure>
-            </div>
+        <div class="regresar">
+            <figure>
+                <a href="javascript:history.back()">
+                    <img src="imagenes/flecharegresar.png" alt="">
+                </a>
+            </figure>
+        </div>
     </header>
 
     <main>
-        
         <form class="cargar-imagen">
             <h2>Carga aquí tu foto</h2>
             <figure class="cambio-img">
-                <img src="imagenes/imagenprofesor.jpg" alt=""><a href="p_foto.html"></a>
+                <img id="imagenPrevia" src="imagenes/imagenprofesor.jpg" alt="Imagen previa">
             </figure>
             <label for="cargarfoto"></label>
-            <input type="file" id="cargarfoto">
-            <button type="submit">Subir foto</button>
+            <input type="file" id="cargarfoto" accept="image/*">
+            <button type="button" id="btnSubirFoto">Subir foto</button>
         </form>
-        
     </main>
 </body>
 </html>
+
+
