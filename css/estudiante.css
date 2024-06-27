@@ -261,7 +261,7 @@ main {
     cursor: pointer;
     position: relative;
     bottom: 150px;
-    left: 100px;
+    left: 20%;
     
 }
 
@@ -377,7 +377,7 @@ table{
 
 table th {
     background-color: #ffffff2f;
-    width: 10px;
+    width: 5%;
     height: 40px;
 }
 
@@ -392,7 +392,7 @@ table td {
 
 .calificaciones section {
     margin-top: -20%;
-    margin-left: 50px;
+    margin-left: 10%;
 }
 
 .calificaciones h2 {
@@ -427,7 +427,7 @@ td{
 }
 
 .nav ul{
-    margin-top: 6%;
+    margin-top: 8%;
 }
 
 .container_l{
@@ -439,9 +439,9 @@ td{
 /* reinscripcion */
 
 .reinscripcion {
-    width: 800px;
-    margin-left: 70px; 
-    margin-top: -140px;
+    width: 100%;
+    margin-left: 9%; 
+    margin-top: -30%;
 }
 
 
@@ -477,7 +477,7 @@ td{
 
 .datos_personales select {
     width: 200px;
-    margin-left: 10px;
+    margin-left: 10%;
     position: relative;
     left: 300px;
     margin: 10px;
@@ -486,7 +486,7 @@ td{
 
 .datos_personales h4 {
     text-align: center;
-    margin-left: 290px; 
+    margin-left: 50%; 
     line-height: 2;
     font-size: 20px;
     color: #fffdfd;
@@ -543,24 +543,25 @@ td{
 .conten-imag {
     position: relative;
     bottom: 358px;
-    left: 71px;
+    left: 9%;
   
 }
 
 
 .conten-imag img {
-    width: 300px;
+    width: 54%;
     height: 357px;
     position: fixed;
 }
 
 
-.conten-imag h4 {
+.inscribete  {
     z-index: 5;
-    color: rgb(24, 24, 24);
+    color: rgb(255, 255, 255);
     font-size: 40px;
     position: relative;
-    left: 40px;
+    left: 40%;
+    bottom: 190px;
     font-family: miFuentePath;
 }
 
@@ -695,8 +696,8 @@ td{
 }
 
 .opcion_pago{
-    margin-top: -140px;
-    margin-left: 50px;
+    margin-top: -20%;
+    margin-left: 20%;
     padding: 5px;
     width: 597px;
     height: 360px;
@@ -807,8 +808,8 @@ td{
 }
 
 .opcion_pago2 {
-    margin-top: 540px;
-    margin-left: 50px;
+    margin-top: 90%;
+    margin-left: 0%;
     padding: 5px;
     width: 597px;
     height: 400px;
@@ -838,7 +839,7 @@ td{
     color: #ffffff;
     font-family: miFuentePath;
     position: relative;
-     left: 20px; 
+    left: 20px; 
    
    
 }
@@ -996,8 +997,8 @@ td{
 .regresar {
     display: flex;
     justify-content: flex-end;
-    margin-right: 40px;
-    margin-top: -180px;
+    margin-right: 4%;
+    margin-top: -13%;
 }
 
 .regresar img {
@@ -1011,7 +1012,7 @@ td{
     color: #fff;
     font-family: miFuentePath;
     width: 490px;
-    margin-left: 50px;
+    margin-left: 10%;
     height: 375px;
     position: relative;
     top: 540px;
@@ -1088,18 +1089,18 @@ td{
     border-radius: 5px;
 }
 
-/* Cambiar foto de profesor */
+/* Cambiar foto de estudiante */
 
 .cargar-imagen {
     border: 1px solid #fff;
     color: #fff;
     font-family: miFuentePath;
     width: 450px;
-    margin-left: 450px;
+    margin-left: 50%;
     height: 380px;
     margin-top: 100px;
     border-radius: 40px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .cargar-imagen h2 {
@@ -1165,6 +1166,7 @@ td{
 
 .cargar-imagen input {
     cursor: pointer;
+   
 }
 
 .cambio-img img {
@@ -1206,7 +1208,7 @@ td{
 .cambio_contraseña {
     position: relative;
     top: 440px;
-    margin-left: 500px;
+    margin-left: 40%;
     border: 1px solid #ffffff70;
     width: 420px;
     border-radius: 20px;
@@ -1319,44 +1321,50 @@ td{
 }
 /* Pagina ayuda */
 
-.ayuda {
-    background-color: gray;
-}
-
-.preguntas_container h3 {
+.preguntas h3 {
     font-family: miFuentePath;
-    color: #fff;
     text-align: center;
-    font-size: 25px;
+    bottom: 70px;
+    position: relative;
+    font-size: 22px;
     font-weight: normal;
     text-transform: uppercase;
-    margin-left: -300px;
-    top: -190px;
-    position: relative;
-} 
+}
 
- 
+summary {
+    background-color: transparent;
+    font-family: miFuentePath;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+.preguntas summary {
+    margin: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+
 .preguntas_container {
     color: #fff;
-    width: 100%;
-    max-width: 800px;
-    margin-left: 320px;
+    width: 500px;
+    max-width: 500px;
+    margin-left: 20%;
+    margin-top: -23%;
 }
- 
-.preguntas h5 {
-    font-family: miFuentePath;
-    margin-left: -290px;
-    bottom: 110px;
-    position: relative;
-    font-size: 20px;
-    font-weight: normal;
-}
+
 
 .preguntas p {
     font-family: miFuentePath;
-    display: none;
-    position: relative;
-    color: #fff;
+    color: #ffffffc5;
+    margin-left: 10px;
+}
+
+.ayuda-tablet {
+    background-color: gray;
 }
 
 .cout{
@@ -1364,7 +1372,7 @@ td{
 }
 
 
-@media  screen and (max-width: 600px) {
+@media  screen and (max-width: 480px) {
     .cout {
     position: relative;
     display: inline-block;
@@ -1395,7 +1403,7 @@ td{
 
     .container {
         position: relative;
-        left: -10%;
+        left: 25%;
         bottom: 95%;
         width: 100%;
     }
@@ -1475,7 +1483,7 @@ td{
     .logo_pagina img{
         width: 80px;
         position: relative;
-        top: -90px;
+        top: -99px;
         left: 33px;
     }
 
@@ -1483,7 +1491,7 @@ td{
         width: 400px;
         font-size: 29px;
         position: relative;
-        left: 10px;
+        left: 70px;
         top: 20px;
     }
 
@@ -1502,13 +1510,13 @@ td{
         cursor: pointer;
         position: relative;
         bottom: 150%;
-        left: 30%;
+        left: 50%;
     
     
     }
 
     .contenedor-imagen {
-        width: 130px;
+        width: 170px;
         margin: 10px;
         display: flex;
         justify-content: center;
@@ -1518,20 +1526,21 @@ td{
 
     .contenedor-imagen img {
         width: 100%;
-        height: 70%;
+        height: 90%;
         margin-left: -90%;
         margin-top: 2%;
     }
 
     .contenedor-imagen:hover .titulo {
         animation-delay: .3s;
-        left: 40px;
+        left: 2px;
         transition: all .3s;
     }
 
     .titulo {
         font-family: miFuentePath;
         font-weight: normal;
+        top: 20px;
         left: 180px;
         position: relative;
         transition: all .3s;
