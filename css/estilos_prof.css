@@ -31,12 +31,11 @@
 
 body {
     background-image: url(../imagenes/imagendefondo.png);
-    background-repeat: no-repeat;
     background-size: cover;
-    height: 900px;
-    overflow: hidden;
-    background-position-y: -129px;
-    object-fit: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-position-y: -129px; */
+    min-height: 100%;
 }
 
 h1 {
@@ -220,14 +219,12 @@ legend {
 }
 
 .calificaciones_docente fieldset {
-    height: 98px;
+    padding: -20%;
 }
 
 form {
-    width: 800px;
-    margin-left: 450px;
-    top: 10px;
-    position: relative;
+    width: 58%;
+    margin-left: 33%;
 }
 
 .calificaciones_docente select {
@@ -259,14 +256,11 @@ label {
     font-size: 16px;
     font-weight: normal;
     margin: 15px;
-    margin-right: 150px;
-    width: 50px;
-    bottom: -5px;
+    margin-right: 100%;
+    width: 8%;
+    top: 28%;
     position: relative;
-    
-    
-    
-    
+
 }
 
 .boton:hover {
@@ -277,10 +271,10 @@ label {
     color: #fff;
     font-family: miFuentePath;
     position: relative;
-    left: 448px;
-    margin-top: 20px;
-    width: 850px;
-    border-radius: 5px;
+    left: 32.8%;
+    margin-top: 1%;
+    width: 60.8%;
+    border-radius: 1%;
     height: 340px;
     overflow: hidden;
     overflow-y: scroll;
@@ -288,7 +282,7 @@ label {
 }
 
 .complete {
-    width: 150px;
+    width: 35%;
 }
 
 td input {
@@ -297,7 +291,7 @@ td input {
     outline: none;
     width: 100%;
     height: 92%;
-    margin-left: -10px;
+    margin-left: -10%;
     text-align: center;
     color: #fff;
     cursor: pointer;
@@ -311,7 +305,7 @@ table {
 .tabla1::-webkit-scrollbar {
     background-color: transparent;
     border: 1px solid #81e6ff;
-    scroll-margin-left: -10px;
+    scroll-margin-left: -10%;
 }
 
 .tabla1::-webkit-scrollbar:hover {
@@ -320,8 +314,8 @@ table {
 
 .tabla1::-webkit-scrollbar-thumb {
     background-image: url(/imagenes/bx-chevrons-down.svg);
-    background-position-x: 17px;
-    background-size: 18px;
+    background-position-x: 15%;
+    background-size: 100%;
 }
 
 .tabla1 th {
@@ -333,14 +327,14 @@ table {
 }
 
 .tabla1 td {
-    padding-inline-start: 8px;
+    padding-inline-start: -1%;
     border: none;
     background-color: #ffffff28;
     color: #ffffff;
     height: 40px;
     text-align: center;
-    border-radius: 3px;
-    width: 50px;
+    border-radius: 5%;
+    width: 10%;
 }
 
 td:hover {
@@ -357,10 +351,10 @@ th:hover {
     font-family: miFuentePath;
     font-size: 16px;
     font-weight: normal;
-    bottom: 40px;
-    left: 500px;
+    top: -20%;
+    left: 60%;
     position: relative;
-    width: 120px;  
+    width: 15%;  
     margin: 10px;  
 }
 
@@ -368,22 +362,18 @@ th:hover {
     border: 1px solid #0077ff96;
 }
 
-.profe1 {
-    margin-left: 30px;
-}
-
 fieldset {
     height: 130px;
 }
 
 table {
-    width: 805px;
+    width: 100%;
     border: #fff;
     cursor: pointer;
 }
 
 .calificaciones_docente {
-    margin-top: -419px;
+    margin-top: -30%;
     cursor: pointer;
 }
 
@@ -397,9 +387,9 @@ table {
     color: #fff;
     font-family: miFuentePath;
     border: 1px solid #81e6ff;
-    width: 100px;
-    margin-left: 459px;
-    margin-top: 10px;
+    width: 7%;
+    margin-left: 33%;
+    margin-top: 1%;
     font-size: 16px;
     cursor: pointer;
 }
@@ -409,6 +399,7 @@ table {
 }
  
 /* Página información estudiante */
+
 .calificaciones_docente2 select {
     background-color: transparent;
     color: #fff;
@@ -426,9 +417,9 @@ table {
     color: #fff;
     font-family: miFuentePath;
     margin-left: 455px;
-    margin-top: 20px;
-    width: 850px;
-    border-radius: 5px;
+    margin-top: 1%;
+    width: 60.8%;
+    border-radius: 1%;
     height: 340px;
     overflow: hidden;
     overflow-y: scroll;
@@ -447,8 +438,8 @@ table {
 
 .tabla2::-webkit-scrollbar-thumb {
     background-image: url(/imagenes/bx-chevrons-down.svg);
-    background-position-x: 17px;
-    background-size: 18px;
+    background-position-x: 15%;
+    background-size: 100%;
 }
 
 .tabla2 th {
@@ -459,7 +450,7 @@ table {
 }
 
 .cuadro-edad {
-    width: 50px;
+    width: 8%;
 }
 
 .tabla2 td {
@@ -492,7 +483,7 @@ th:hover {
 }
 
 .calificaciones_docente2 {
-    margin-top: -417px;
+    margin-top: -30%;
     cursor: pointer;
 }
 
@@ -516,7 +507,7 @@ th:hover {
 
 .calificaciones_docente2 fieldset {
     height: 80px;
-    width: 800px;
+    width: 100%;
     right: -8px;
     position: relative;
 }
@@ -538,6 +529,10 @@ th:hover {
     justify-content: center;
     margin-left: 200px;
 } 
+
+.horario_clases {
+    width: 90%;
+}
 
 .horario {
     font-family: miFuentePath;
@@ -566,6 +561,7 @@ th:hover {
 
 .horario-profesor {
     border-spacing: 10px;
+    width: 100%;
 }
 
 .hora_entrada h2 {
@@ -673,39 +669,46 @@ th:hover {
 
 /* Página ayuda */
 
-.preguntas_container h3 {
+.preguntas h3 {
     font-family: miFuentePath;
-    color: #fff;
     text-align: center;
-    font-size: 25px;
-    margin-top: -450px;
+    bottom: 70px;
+    position: relative;
+    font-size: 22px;
     font-weight: normal;
     text-transform: uppercase;
-    margin-left: 50px;
+}
+
+summary {
+    background-color: transparent;
+    font-family: miFuentePath;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    margin-left: 100px;
+    cursor: pointer;
 } 
 
- 
+.preguntas summary {
+    margin: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+
 .preguntas_container {
     color: #fff;
     width: 100%;
-    max-width: 800px;
-    margin-left: 320px;
+    max-width: 500px;
+    margin-left: 420px;
+    margin-top: -380px;
 }
- 
-.preguntas h5 {
-    font-family: miFuentePath;
-    margin-left: 120px;
-    bottom: -80px;
-    position: relative;
-    font-size: 20px;
-    font-weight: normal;
-}
+
 
 .preguntas p {
     font-family: miFuentePath;
-    display: none;
-    position: relative;
-    color: #fff;
+    color: #ffffffc5;
+    margin-left: 10px;
 }
 
 .ayuda-tablet {
@@ -1049,7 +1052,7 @@ th:hover {
     }
 
     h1 {
-        font-size: 35px;
+        font-size: 30px;
         margin-top: 10%;
         width: 60%;
         margin-left: 34%;
@@ -1335,11 +1338,12 @@ th:hover {
 
     /* Horario */
 
-    .horario-profesor {
+    /* .horario-profesor {
         left: -440px;
         top: 320px;
         position: relative;
         overflow-x: scroll;
+        
     }
     .horario table {
         border-spacing: 4px;
@@ -1353,7 +1357,8 @@ th:hover {
 
     .horario th {
         font-size: 18px;
-    }
+        width: 5%;
+    } */
 
 
 
@@ -1376,6 +1381,10 @@ th:hover {
         height: 90px;
         margin-left: -20px;
         margin-top: -30px;
+    }
+
+    .imprimir {
+        display: none;
     }
 
     /* Menú desplegable gestión perfil */
