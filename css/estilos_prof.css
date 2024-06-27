@@ -30,12 +30,13 @@
 }
 
 body {
-    background-image: url(../imagenes/imagendefondo.png);
-    background-size: cover;
+   background-image: url(../imagenes/imagendefondo.png);
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* background-position-y: -129px; */
-    min-height: 100%;
+    background-size: cover;
+    height: 900px;
+    overflow: hidden;
+    background-position-y: -129px;
+    object-fit: cover;
 }
 
 h1 {
@@ -389,7 +390,7 @@ table {
     border: 1px solid #81e6ff;
     width: 7%;
     margin-left: 33%;
-    margin-top: 1%;
+    margin-top: -5%;
     font-size: 16px;
     cursor: pointer;
 }
@@ -979,6 +980,7 @@ summary {
 .cambio-img img {
     border-radius: 50%;
     width: 160px;
+    height: 160px;
     margin-left: 150px;
     margin-top: 30px;
 }
@@ -1050,14 +1052,14 @@ summary {
         background-position-y: -129px;
         object-fit: cover;
     }
-
+/* Titulo */
     h1 {
         font-size: 30px;
         margin-top: 10%;
         width: 60%;
         margin-left: 34%;
     }
-
+/* Logo de las paginas */
     .logo_pagina img {
         width: 80px;
         height: 50px;
@@ -1065,6 +1067,7 @@ summary {
         left: 18%;
         position: relative;
     }
+    /* Menu barra lateral izquierda */
     .cout {
         position: relative;
         display: inline-block;
@@ -1152,21 +1155,21 @@ summary {
         width: 24px;
         height: 24px;
     }
-
     
-    
+/* Menú desplegable IBP */
     .container {
-        left: 60px;
-        top: -30px;
+        left: 10%;
+        top: 50%;   
     }
 
      .menu-items {
-        margin-right: 50px;
+        margin-right: 52px;
         padding: 5px;
+        margin-top: -4%;
     }
 
     .container .menu-items {
-        background-color: rgba(217, 217, 217, 0.979) 
+        background-color: rgba(217, 217, 217, 0.979);
        
     }
 
@@ -1311,40 +1314,63 @@ summary {
         height: 340px;
     }
 
-    .calificaciones_docente{
-        margin-left: 5px;
-        margin-top: -50px;
-        width: 70%;
+    .calificaciones_docente {
+        margin-left: 1%;
+        margin-top: -5%;
+        width: 98%;        
     }
 
-    .calificaciones_docente form {
-        height: 20px;
+    .calificaciones_docente label {
+        font-size: 17px;
     }
+
+    .calificaciones_docente select {
+        width: 17px;
+    }
+
+    .calificaciones_docente fieldset {
+        height: 60px;
+    }
+
 
     .imprimir {
         display: none;
     }
+
+    .boton {
+        top: -100%;
+        position: relative;
+        margin-left: 90%;
+    }
     
 
-    .complete {
+    /* .complete {
         width: 90px;
-    } 
+    }  */
 
     .publicar {
-        margin-left: 140px;
+        margin-left: 1%;
         top: 250px;
         position: relative;
+        width: 18%;
     }
+
+    /* Tabla de Calificaciones */
+    .tabla1 {
+        margin-top: -40%;
+        width: 99%;
+    }
+
 
     /* Horario */
 
-    /* .horario-profesor {
-        left: -440px;
+    .horario-profesor {
+        left: -75%;
         top: 320px;
         position: relative;
-        overflow-x: scroll;
-        
+        overflow-x: scroll;        
     }
+    
     .horario table {
         border-spacing: 4px;
         overflow: hidden;
@@ -1357,9 +1383,11 @@ summary {
 
     .horario th {
         font-size: 18px;
-        width: 5%;
-    } */
+    }
 
+    .horario {
+        width: 100%;
+    }
 
 
 
@@ -1525,4 +1553,3 @@ summary {
 @media  screen and (min-width: 901px) and (max-width: 1200px) {
    
 }
-
