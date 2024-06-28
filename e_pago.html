@@ -109,14 +109,14 @@
             }
 
             if (selectedOption === 'visa') {
-                this.action = 'https://www.visa.com.do/';
+                window.location.href = 'e_confirmacionpago.html';
             } else if (selectedOption === 'paypal') {
-                this.action = 'https://www.paypal.com/do/home';
+                window.location.href = 'https://www.paypal.com/signin';
             } else {
                 alert('Por favor, seleccione una opción de pago.');
                 return;
             }
-            this.submit();
+            
         });
     </script>
 </body>

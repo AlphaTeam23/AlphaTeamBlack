@@ -52,14 +52,14 @@ h1 {
     margin: 60px;
     margin-top: 2%;
     font-weight: normal;
-    font-size: 42px;
+    font-size: 222%;
     margin-left: 7%;
 }
 
 .logo_pagina img {
     width: 100px;
     height: 65px;
-    left: 10px;
+    left: 0%;
     top: -130px;
     position: relative;
 }
@@ -110,14 +110,14 @@ button {
     font-size: 15px;
     font-family: miFuentePath;
     font-weight: normal;
-    margin-right: 90px;
+    margin-right: 10%;
     color: #fffefe;
     background-color: rgb(217, 217, 217, 33%);
 }
 
 .container_prueba {
     position: relative;
-    top: 550px; 
+    top: 50%;  
 }
 
 .menu-btn img {
@@ -138,8 +138,8 @@ button {
 .menu-btn {
     position: absolute;
     top: -220px;
-    right: 0;
-    width: 0;
+    right: -2%;
+    width: 0%;
     color: #fff;
     border: none;
     width: 60px;
@@ -724,18 +724,19 @@ td{
     
 }
 
-.pagar a {
+.pagar button {
     font-family: miFuentePath;
     font-size: 20px;
     text-decoration: none;
     color: rgb(255, 255, 255);
     padding: 5px;
+    border: none;
     padding-left: 50px;
     padding-right: 50px;
     background-color: rgba(255, 68, 0, 0.788);
 }
 
-.pagar a:hover {
+.pagar button:hover {
     background-color: rgb(255, 68, 0);
 }
     
@@ -1098,7 +1099,7 @@ td{
     width: 450px;
     margin-left: 50%;
     height: 380px;
-    margin-top: 100px;
+    margin-top: 20%;
     border-radius: 40px;
     /* cursor: pointer; */
 }
@@ -1124,6 +1125,7 @@ td{
 .cambio-img img {
     border-radius: 50%;
     width: 160px;
+    height: 160px;
     margin-left: 150px;
     margin-top: 30px;
 }
@@ -1372,7 +1374,7 @@ summary {
 }
 
 
-@media  screen and (max-width: 480px) {
+@media  screen and (max-width: 600px) {
     .cout {
     position: relative;
     display: inline-block;
@@ -1403,7 +1405,7 @@ summary {
 
     .container {
         position: relative;
-        left: 25%;
+        left: -25%;
         bottom: 95%;
         width: 100%;
     }
@@ -1485,6 +1487,7 @@ summary {
         position: relative;
         top: -99px;
         left: 33px;
+       margin: 0;
     }
 
     h1 {
@@ -1510,7 +1513,7 @@ summary {
         cursor: pointer;
         position: relative;
         bottom: 150%;
-        left: 50%;
+        left: 10%;
     
     
     }

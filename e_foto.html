@@ -30,13 +30,14 @@
         <form class="cargar-imagen">
             <h2>Carga aquí tu foto</h2>
             <figure class="cambio-img">
-                <img src="imagenes/imagenprofesor.jpg" alt=""><a href="p_foto.html"></a>
+                <img src="imagenes/imagenprofesor.jpg" alt="" id="imagenPrevia"><a href="p_foto.html"></a>
             </figure>
             <label for="cargarfoto"></label>
-            <input type="file" id="cargarfoto">
-            <button type="submit">Subir foto</button>
+            <input type="file" id="cargarfoto"  accept="image/*">
+            <button type="submit" id="btnSubirFoto">Subir foto</button>
         </form>
         
     </main>
+    <script src="js/cambiofoto.js"></script>
 </body>
 </html>
