@@ -74,7 +74,7 @@
                 <figure class="tarjeta">
                     <img src="imagenes/bidencash-filtra-base-tarjetas-credito-debito (2).jpg" alt="">
                 </figure>
-                <form class="pay_form">
+                <form class="pay_form" id="paymentForm" method="post">
                     <h2>FORMAS DE PAGO</h2>
                     <p>Elije una opción de pago</p>
                     <div class="pagos">
@@ -88,11 +88,36 @@
                     </div>
 
                     <div class="pagar">
-                        <a href="e_confirmacionpago.html">PAGAR</a>
+                        <button onclick="handlePayment()">PAGAR</button>
                     </div>
                 </form>
             </div>
         </section>
     </main>
+
+    
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const paymentOptions = document.getElementsByName('pay');
+            let selectedOption;
+            for (const option of paymentOptions) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+
+            if (selectedOption === 'visa') {
+                this.action = 'https://www.visa.com.do/';
+            } else if (selectedOption === 'paypal') {
+                this.action = 'https://www.paypal.com/do/home';
+            } else {
+                alert('Por favor, seleccione una opción de pago.');
+                return;
+            }
+            this.submit();
+        });
+    </script>
 </body>
 </html>
