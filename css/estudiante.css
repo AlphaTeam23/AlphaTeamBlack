@@ -1378,10 +1378,11 @@ summary {
     .cout {
     position: relative;
     display: inline-block;
+   
     }
 
     nav{
-        display: none;
+        display: none; 
     }
 
     nav li a {
@@ -1405,7 +1406,7 @@ summary {
 
     .container {
         position: relative;
-        left: -25%;
+        left: 19%;
         bottom: 95%;
         width: 100%;
     }
@@ -1460,8 +1461,8 @@ summary {
         cursor: pointer;
         padding: 0;
         position: relative;
-        bottom: 320px;
-        left: 10px;
+        bottom: 198px;
+        left: 39%;
     
     }
 
@@ -1477,26 +1478,38 @@ summary {
 
 
     .menu img{
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
     }
 
 
     .logo_pagina img{
         width: 80px;
+        height: 50px;
         position: relative;
-        top: -99px;
+        top: -50px;
         left: 33px;
-       margin: 0;
+        margin: 0;
+         padding: 0;
     }
+    
+   
 
     h1 {
         width: 400px;
         font-size: 29px;
         position: relative;
-        left: 70px;
-        top: 20px;
+        left: 10%;
+        top: 60px;
     }
+
+
+
+    /* reinscripcion responsive */
+
+
+
+    /* informacion decente resposive */
 
     .info_docente {
         position: relative;
