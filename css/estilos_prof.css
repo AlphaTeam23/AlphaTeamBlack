@@ -47,6 +47,7 @@ h1 {
     font-weight: normal;
     font-size: 42px;
     margin-left: 100px;
+    width: 100%;
 }
 
 .logo_pagina img {
@@ -89,6 +90,7 @@ li a {
     justify-content: flex-start;
     display: flex;
     left: 12%;
+    width: -100%;
 }
 
 li img {
@@ -120,7 +122,6 @@ button {
     left: 45px;
     bottom: 18px;
 }
-
 
 .container {
     position: relative;
@@ -268,9 +269,9 @@ label {
     color: #fff;
     font-family: miFuentePath;
     position: relative;
-    left: 32.8%;
+    left: 32.6%;
     margin-top: 1%;
-    width: 60.8%;
+    width: 60%;
     border-radius: 1%;
     height: 340px;
     overflow: hidden;
@@ -635,8 +636,8 @@ th:hover {
 }
 
 .planificar {
-    bottom: 59px;
-    left: 65%;
+    bottom: 40px;
+    left: 50%;
     position: relative;
 }
 
@@ -657,7 +658,7 @@ th:hover {
 }
 
 .cargar-plan {
-    margin-left: 415px;
+    left: 400px;
     bottom: 39px;
     position: relative;
 }
@@ -1179,19 +1180,29 @@ summary {
     }
 
     /* Perfil usuario */
-    /* .inf_basica_profesor {
-        margin-left: 12px;
+    .inf_basica_profesor {
+        margin-left: 14.50%;
         width: 350px;
         margin-top: 105px;
     }
 
     .titinfo {
-        margin-left: -75px;
-        margin-top: 30px;
+        margin-left: -70px;
+        margin-top: 12%;
     }
 
+    .titinfo h4 {
+        margin-left: 55%;
+    }
     .titinfo p {
         width: 180px;
+        margin-left: 55%;
+    }
+
+    .titinfo img {
+        width: 3%;
+        margin-top: -50%;
+        margin-left: 45%;
     }
 
     .direccion {
@@ -1204,22 +1215,20 @@ summary {
     }
 
     .regresar img {
-        width: 25px;
+        width: 100%;
         height: 25px;
-        left: 20px;
-        top: -25px;
+        left: 20%;
+        top: 1%;
         position: relative;
     }
 
     .estudiante-img .camara2 {
-        width: 25px;
-        margin-left: 50px;
+        width: 7%;
+        margin-left: 8%;
         top: -90px;
     }
 
-    .estudiante-img h4 {
-        margin-left: 7px;
-    } */
+   
 
     /* Cambiar Contraseña */
 
@@ -1444,7 +1453,7 @@ summary {
 
 .planificar {
     left: 43%;
-    margin-top: 5%;
+    margin-top: -5%;
     position: relative;
 }
 
@@ -1498,6 +1507,7 @@ summary {
         font-size: 4.5vh;
         padding: 1%;
         margin: 5%;
+        width: 100%;
     }
 
     li {
@@ -1573,7 +1583,7 @@ summary {
     }
 
     /* Perfil usuario */
-    /* .inf_basica_profesor {
+    .inf_basica_profesor {
         margin-left: 140px;
         width: 550px;
         height: 565px;
@@ -1611,7 +1621,7 @@ summary {
     .regresar img {
         width: 35px;
         height: 35px;
-    } */
+    }
 
     /* Pagina cambio de contraseña */
     .cambio_contraseña {
