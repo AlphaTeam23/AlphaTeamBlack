@@ -1072,7 +1072,8 @@ summary {
         position: relative;
     }
 
-    /* Menu barra lateral izquierda */
+
+/* Menu barra lateral izquierda */
     .cout {
         position: relative;
         display: inline-block;
@@ -1310,11 +1311,11 @@ summary {
         left: 1%;
     }
 
-
     /* Cambiar foto de perfil */
 
     .cargar-imagen {
-        margin-left: 12px;
+        margin-left: 15%;
+        margin-top: 25%;
         width: 350px;
     }
 
@@ -1338,13 +1339,13 @@ summary {
 
     /* Reportar */
     .reporte textarea {
-        margin-left: -410px;
+        margin-left: -22%;
         margin-top: -10px;
         width: 300px;
     }
 
     .reporte h2 {
-        margin-left: 20px;
+        margin-left: -10%;
     }
 
     .reporte .report_ev {
