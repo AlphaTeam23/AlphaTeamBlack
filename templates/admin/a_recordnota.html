@@ -3,45 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion Usuario</title>
-    <link rel="stylesheet" href="css/estilos_admin.css">
-    <link rel="icon" href="imagenes/logo.png">
+    <title>Record De Notas</title>
+    <link rel="stylesheet" href="/css/estilos_admin.css">
+    <link rel="icon" href="/imagenes/logo.png">
 </head>
 <body>
   <header>
       <h1>ALPHA TEAM</h1>
 
             <figure class="logo_pagina">
-                <img src="imagenes/logo.png" alt="">
+                <img src="/imagenes/logo.png" alt="">
             </figure>
         </a>
 
-      
+     
 
       <nav> 
       <ul>
 
-          <li><img src="imagenes/bxs-school(1).svg" alt="cursos">
+          <li><img src="/imagenes/bxs-school(1).svg" alt="cursos">
               <a href="a_cursos.html">ADMINISTRACION CURSOS
           </a></li>
 
-          <li><img src="imagenes/bxs-pencil.svg" alt="inscripcion">
-              <a href="a_inscripcion.html">INSCRIPCION              
+          <li><img src="/imagenes/bxs-pencil.svg" alt="inscripcion">
+              <a href="a_inscripcion.html">INSCRIPCION 
           </a></li>
 
-          <li> <img src="imagenes/bxs-book-content.svg" alt="planificacion">
+          <li> <img src="/imagenes/bxs-book-content.svg" alt="planificacion">
               <a href="a_planificacion.html">PLANIFICACION DOCENTE
           </a></li>
 
-          <li><img src="imagenes/bx-file.svg" alt="record">
+          <li><img src="/imagenes/bx-file.svg" alt="record">
               <a href="a_recordnota.html">RECORD DE NOTAS              
           </a></li>
-
-          <li><img src="imagenes/bx-user.svg" alt="usuario">
-              <a href="a_usuarios.html">GESTION USUARIOS   
+              
           </a></li> 
-
-          <li><img src="imagenes/bxs-log-out.svg" alt="cerrar">
+          <li><img src="/imagenes/bx-user.svg" alt="usuario">
+              <a href="a_usuarios.html">GESTION USUARIOS
+              
+          </a></li> 
+          <li><img src="/imagenes/bxs-log-out.svg" alt="cerrar">
               <a href="index.html">CERRAR SESION              
           </a></li>
 
@@ -51,13 +52,12 @@
   <main>
         <section>
             <div class="tit_pagina">
-                <h4>GESTION USUARIOS</h4>
-                
-                
+                <h4>RECORD</h4>
+  
             </div>
             <form>
-                <fieldset class="barra1">
-                    <legend>BUSCAR USUARIO</legend>
+                <fieldset class="barra3">
+                    <legend>BUSCAR RECORD DE NOTA</legend>
 
                     <label for="busqueda">MATRICULA</label>
                     <input type="search" class="referencia" id="busqueda" placeholder="1000045">
@@ -97,22 +97,21 @@
                         <option value="F">F</option>
 
                     </select>
-                    <label for="period">Tipo Usuario</label>
+                    <label for="period">PERIODO</label>
                     <select name="period" id="period" required>
-                        <option value="">- Tipo Usuario -</option>
-                        <option value="">Administrador</option>
-                        <option value="">Direccion</option>
-                        <option value="">Estudiante</option>
-                        <option value="">Docente</option>
+                        <option value="">- Elija un periodo -</option>
+                        <option value="">2022-2023</option>
+                        <option value="">2023-2024</option>
                     </select>
 
-              
+                    <input type="button" class="btcargarrecord" name="cargar" value="Cargar">
+                     <input type="reset" class="btcancelarrecord" name="Cancelar" value="Cancelar">
 
-                    <input type="button" class="btcargar" name="cargar" value="Cargar">
             
                 </fieldset>
 
-
+    
+            
 
 
                 
@@ -120,113 +119,108 @@
         </section>
     </main>
 
-    
+    <table class="datosestudiante" border="1">
+        <thead>
+            <tr>
+                <th>NOMBRE: </th>
+                <td>Jose Miguel</td>
+                <th>APELLIDO:</th>
+                <td>Reyes</td>
+                <th>MATRICULA:</th>
+                <td>1000045</td>
+                <th>CURSO:</th>
+                <td>6° Grado</td>
+                <th>SECCION:</th>
+                <td>A</td>
+                <th>PERIODO:</th>
+                <td>2023-2024</td>
 
-    <table class="datosusuarios" border="1">
+            </tr>
+        </thead>
+    </table>
+
+    <table class="datosrecord1" border="1">
         <thead> 
-       
+            <th>PRIMER SEMESTRE</th>
           <tr>
-            <th>ID</th>
-            <th>NOMBRE</th>
-            <th>APELLIDO</th>
-            <th>USUARIO</th>
-            <th>TIPO USUARIO</th>
-            <th>DEFINIR ROLES</th>
-           
+            <th>ASIGNATURA</th>
+            <th>TAREA</th>
+            <th>EXAMEN</th>
+            <th>PARTICIPACION</th>
+            <th>ASISTENCIA</th>
+            <th>PROMEDIO</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>LENGUA ESPAÑOLA</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>Cambiar Roles</td>
           </tr>
           <tr>
+            <td>MATEMATICAS</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>Cambiar Roles</td>
           </tr>
           <tr>
+            <td>CIENCIAS SOCIALES</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>Cambiar Roles</td>
           </tr>
           <tr>
+            <td>CIENCIAS NATURALES</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>Cambiar Roles</td>
           </tr>
           <tr>
+            <td>FISICA</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>Cambiar Roles</td>
           </tr>
           <tr>
+            <td>EDUACACION FINANCIERA</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>Cambiar Roles</td>
     
           </tr>
           <tr>
+            <td>INGLES</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>Cambiar Roles</td>
-           
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Cambiar Roles</td>
-           
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Cambiar Roles</td>
-           
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Cambiar Roles</td>
            
           </tr>
         </tbody>
-      
-      <input type="button" class="enviar" name="guardar" value="Guardar">
-
+      </table>
 
       
+      </table>
+
+      <input type="button" class="imprimir" name="imprimir" value="Imprimir">
+      <a href="a_recordnota2.html"><input type="button" class="sigantrecord" name="sigantrecord" value="Siguiente Semestre" > </a>
+
+        
+     
     
 
 
