@@ -1485,8 +1485,8 @@ summary {
 
 
     .menu img{
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
     }
 
 
@@ -1495,10 +1495,19 @@ summary {
         height: 50px;
         position: relative;
         top: -50px;
-        left: 33px;
+        left: 17%;
         margin: 0;
          padding: 0;
     }
+
+    .logo_pagina figure {
+        padding: 0;
+        margin: 0;
+        width: 0;
+        height: 0;
+        z-index: -1;
+    }
+    
     
    
 
@@ -1506,8 +1515,15 @@ summary {
         width: 400px;
         font-size: 29px;
         position: relative;
-        left: 10%;
+        left: 23%;
         top: 60px;
+    }
+
+
+    .menu-btn  {
+        position: relative;
+        left: 80%;
+        top: -160px;
     }
 
 
@@ -1518,7 +1534,7 @@ summary {
       
          /* display: flex;  */
         position: relative;
-        top: 60%;
+        top: 55%;
         right: 85%;
     }
 
@@ -1528,8 +1544,17 @@ summary {
 
 
     .calificaciones h2 {
-      transform: translate(20%);
+      transform: translate(-20%);
     }
+
+    /* pagina reinscripcion resposive */
+
+    .reinscripcion {
+        position: relative;
+        top: 300px;
+    }
+
+
     /* informacion decente resposive */
 
     .info_docente {
