@@ -3,49 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administracion de Cursos</title>
-    <link rel="stylesheet" href="css/estilos_admin.css">
-    <link rel="icon" href="imagenes/logo.png">
+    <title>Planificacion Docente</title>
+    <link rel="stylesheet" href="/css/estilos_admin.css">
+    <link rel="icon" href="/imagenes/logo.png">
 </head>
 <body>
     <header>
         <h1>ALPHA TEAM</h1>
 
-                    <figure class="logo_pagina">
-                <img src="imagenes/logo.png" alt="">
+            <figure class="logo_pagina">
+                <img src="/imagenes/logo.png" alt="">
             </figure>
         </a>
 
-        
-
-        
+       
 
         <nav> 
         <ul>
 
-            <li><img src="imagenes/bxs-school(1).svg" alt="cursos">
+            <li><img src="/imagenes/bxs-school(1).svg" alt="cursos">
                 <a href="a_cursos.html">ADMINISTRACION CURSOS
             </a></li>
 
-            <li><img src="imagenes/bxs-pencil.svg" alt="inscripcion">
+            <li><img src="/imagenes/bxs-pencil.svg" alt="inscripcion">
                 <a href="a_inscripcion.html">INSCRIPCION
             </a></li>
 
-            <li> <img src="imagenes/bxs-book-content.svg" alt="planificacion">
+            <li> <img src="/imagenes/bxs-book-content.svg" alt="planificacion">
                 <a href="a_planificacion.html">PLANIFICACION DOCENTE
             </a></li>
 
-            <li><img src="imagenes/bx-file.svg" alt="record">
-                <a href="a_recordnota.html">RECORD DE NOTAS   
+            <li><img src="/imagenes/bx-file.svg" alt="record">
+                <a href="a_recordnota.html">RECORD DE NOTAS               
             </a></li>
-                
             
-            <li><img src="imagenes/bx-user.svg" alt="usuario">
-                <a href="a_usuarios.html">GESTION USUARIOS
+             
+            <li><img src="/imagenes/bx-user.svg" alt="usuario">
+                <a href="a_usuarios.html">GESTION USUARIOS  
             </a></li> 
 
-            <li><img src="imagenes/bxs-log-out.svg" alt="cerrar">
-                <a href="index.html">CERRAR SESION
+            <li><img src="/imagenes/bxs-log-out.svg" alt="cerrar">
+                <a href="index.html">CERRAR SESION               
             </a></li>
 
         </ul>
@@ -54,13 +52,15 @@
     <main>
         <section>
             <div class="tit_pagina">
-                <h4>BUSCAR CURSOS</h4>
+                <h4>BUSCAR PLANIFICACION</h4>
+            
+
             </div>
 
-
-<form>
+           
+            <form>
                 <fieldset class="barra4">
-                    <legend>Buscar  Cursos</legend>
+                    <legend>Buscar  Planificacion</legend>
                     <label for="curso">Nivel</label>
                         <select name="curso" id="curso" required>
                             <option value="">- Elija un curso -</option>
@@ -107,7 +107,7 @@
                         <option value=""></option>
                         <option value=""></option>
                     </select>
-                   
+                
                     <label class="periodplan" for="period">Periodo</label>
                     <select name="period" id="period" required>
                         <option value="">- Elija un periodo -</option>
@@ -115,7 +115,7 @@
                         <option value="">2023-2024</option>
                     </select>
 
-                    <input type="button" class="btbuscarcurso" name="Buscar" value="Buscar">
+                    <input type="button" class="btbuscarplan" name="Buscar" value="Buscar">
                    
 
                 </fieldset>
@@ -129,16 +129,17 @@
         </section>
     </main>
 
-    <table class="datoscurs" border="1">
-        <thead>
+    <table class="datosplan" border="1">
+        <thead> 
+       
           <tr>
-            <th>Curso</th>
-            <th>Profesor</th>
-            <th>Nivel</th>
-            <th>Seccion</th>
-            <th>Total Estudiante</th>
-            <th>Mas Detalle</th>
-            <th>Modificar</th>
+            <th>MATRICULA</th>
+            <th>PROFESOR</th>
+            <th>NIVEL</th>
+            <th>PERIODO</th>
+            <th>VER PLANIFICACION</th>
+          
+           
           </tr>
         </thead>
         <tbody>
@@ -147,113 +148,93 @@
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
+    
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
+           
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
+           
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
+           
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
+           
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
+           
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td>Modificar Informacion</td>
+            <td>Ver Planificacion</td>
+           
           </tr>
-          
         </tbody>
-      </table>
-      <input type="button" class="guarcambio" name="enviar" value="Guardar Cambios">
-
+        
 </body>
 </html>

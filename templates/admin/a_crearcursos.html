@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planificacion Docente</title>
-    <link rel="stylesheet" href="css/estilos_admin.css">
+    <title>Administracion de Cursos</title>
+    <link rel="stylesheet" href="/css/estilos_admin.css">
     <link rel="icon" href="imagenes/logo.png">
 </head>
 <body>
@@ -16,18 +16,17 @@
             </figure>
         </a>
 
-        
 
         <nav> 
         <ul>
-            
+
             <li><img src="imagenes/bxs-school(1).svg" alt="cursos">
                 <a href="a_cursos.html">ADMINISTRACION CURSOS
             </a></li>
 
             <li><img src="imagenes/bxs-pencil.svg" alt="inscripcion">
                 <a href="a_inscripcion.html">INSCRIPCION
-            </a></li>
+             </a></li>
 
             <li> <img src="imagenes/bxs-book-content.svg" alt="planificacion">
                 <a href="a_planificacion.html">PLANIFICACION DOCENTE
@@ -36,14 +35,14 @@
             <li><img src="imagenes/bx-file.svg" alt="record">
                 <a href="a_recordnota.html">RECORD DE NOTAS
             </a></li>
-                
+
+           
             <li><img src="imagenes/bx-user.svg" alt="usuario">
                 <a href="a_usuarios.html">GESTION USUARIOS
             </a></li> 
 
             <li><img src="imagenes/bxs-log-out.svg" alt="cerrar">
                 <a href="index.html">CERRAR SESION
-                
             </a></li>
 
         </ul>
@@ -52,15 +51,15 @@
     <main>
         <section>
             <div class="tit_pagina">
-                <h4>CARGAR PLANIFICACION</h4>
+                <h4>AGREGANDO NUEVOS CURSOS</h4>
+                
             </div>
-            
-            <form class="planificacion-completa">
-                <fieldset class="plan-docente">
-                    <legend>Cargar  Planificacion</legend>
+            <form class="cursos-adm">
+                <fieldset>
+                    <legend>Creando Nuevos Cursos</legend>
                     <label for="curso">Nivel</label>
                         <select name="curso" id="curso" required>
-                            <option value="">- Elija un curso -</option>
+                            <option value="">- Elija un Nivel -</option>
                             <optgroup label="Nivel Primario">
                             <option value="pp">Pre-primario</option>
                             <option value="1p">1° Grado</option>
@@ -78,16 +77,17 @@
                             <option value="6s">6° Grado</option>
                     </select>
 
-                    <label for="prof">Profesor</label>
+                    <label for="prof">Asignar Profesor</label>
                     <select name="prof" id="prof" required>
 
-                        <option value="">Seleccione un Profesor</option>
+                        <option value="">Asigne un Profesor</option>
                         <option value="">Profesor 1</option>
                         <option value="">Profesor 2</option>
                         <option value="">Profesor 3</option>
                         <option value="">Profesor 4</option>
                         <option value="">Profesor 5</option>
                         <option value="">Profesor 6</option>
+                        <a href="a_usuarios.html">Crear<option value="">Crear Profesor</option></a>
                     </select>
 
                     <label for="seccion">Seccion</label>
@@ -109,18 +109,15 @@
                         <option value="">2022-2023</option>
                         <option value="">2023-2024</option>
                     </select>
-                    <label for="planificacion">Cargar Archivo</label>
-                    <input type="file" id="planificacion" class="file1">
-
-
 
                 </fieldset>
 
-                <input type="button" name="enviar" value="Enviar">
+                <input type="button" name="guardar" value="Guardar">
                 <input type="reset" value="Cancelar">
-
             </form>
         </section>
     </main>
+
+
 </body>
 </html>
