@@ -1552,7 +1552,7 @@ summary {
 /* Menú principal */
 
     li a {
-        font-size: 3.2vh;
+        font-size: 200%;
         top: -45px;
         position: relative;
         margin: 5%;
@@ -1560,7 +1560,8 @@ summary {
     }
 
     ul li {
-        width: 42%;
+        min-width: 60%;
+        width: 10%;
     }
 
     li {
@@ -1696,5 +1697,26 @@ summary {
 
 /* Desktop */ 
 @media  screen and (min-width: 901px) and (max-width: 1200px) {
-   
+    .logo_pagina {
+        width: 150%;
+    }
+
+    ul {
+        width: 128%;
+    }
+
+    .calificaciones_docente {
+        top: -32%;
+        left: 7%;
+        position: relative;
+    }
+
+    .tabla1 {
+        left: 39%;
+        position: relative;
+    }
+
+    .publicar {
+        margin-left:  40%;
+    }
 }
