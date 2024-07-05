@@ -1345,7 +1345,7 @@ summary {
     }
 
     .reporte h2 {
-        margin-left: -10%;
+        margin-left: -5%;
     }
 
     .reporte .report_ev {
@@ -1357,7 +1357,7 @@ summary {
         width: 30px;
         height: 30px;
         margin-top: -5px;
-        left: 250px;
+        left: 2%;
         position: relative;
     }
 
@@ -1536,7 +1536,7 @@ summary {
     }
 
     h1 {
-        font-size: 6vh;
+        font-size: 4vh;
     }
 
     .logo_pagina img {
@@ -1550,11 +1550,17 @@ summary {
     }
 
 /* Menú principal */
+
     li a {
-        font-size: 4.5vh;
-        padding: 1%;
+        font-size: 3.2vh;
+        top: -45px;
+        position: relative;
         margin: 5%;
-        width: 100%;
+        width: 400px;
+    }
+
+    ul li {
+        width: 42%;
     }
 
     li {
@@ -1563,9 +1569,10 @@ summary {
     }
 
     li img {
-        width: 25px;
+        width: 8%;
         top: 25%;
         position: relative;
+        left: -2%;
     }
 
 /* Menú desplegable gestión perfil */
