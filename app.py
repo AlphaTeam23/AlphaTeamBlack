@@ -21,9 +21,10 @@ mysql.init_app(app)
 
 @app.route('/')
 
-def inicio():
+def iniciosesion():
 
     return render_template('index.html')
+
 
 
 if __name__ == '__main__':
