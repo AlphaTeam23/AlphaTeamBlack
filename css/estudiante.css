@@ -1550,18 +1550,40 @@ summary {
     /* pagina reinscripcion resposive */
 
     .reinscripcion {
+       
         position: relative;
-        top: 480px;
-        right: 426px;
+        top: 500px;
+        right: 90%;
        
     }
 
-    .datos_personales input {
+    
+    .datos_personales  {
         width: 450px;
-        position: relative;
-        right: 130px;
     }
 
+    .datos_personales input {
+       transform: translate(-50%);
+      
+    }
+
+    .datos_personales label {
+        transform: translate(-23%);
+       
+      
+    }
+
+    .datos_personales select {
+        transform: translate(-90px);
+     }
+
+    .conten-imag img{
+        position: relative;
+        right: 90%;
+        top: 300px;
+        width: ;
+        display: none;
+    }
 
     /* informacion decente resposive */
 
