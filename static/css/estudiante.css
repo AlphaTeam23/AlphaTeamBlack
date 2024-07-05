@@ -1551,6 +1551,7 @@ summary {
 
     .reinscripcion {
         position: relative;
+
         top: 500px;
         right: 93%;
        
@@ -1600,6 +1601,8 @@ summary {
         position: relative;
         left: 1%;
     }
+
+
 
     /* informacion decente resposive */
 
@@ -1655,6 +1658,3 @@ summary {
     }
 
     }
-
-
-
