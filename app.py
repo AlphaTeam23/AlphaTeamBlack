@@ -19,11 +19,26 @@ app.config['MYSQL_DATABASE_DB']='alphateam'
 
 mysql.init_app(app)
 
+# Página index
 @app.route('/')
-
 def iniciosesion():
+   return render_template('index.html')
 
-    return render_template('index.html')
+# Redireccionar a profesor
+@app.route('/alphaTeam/profesor')
+def p_alphaTeam():
+    return render_template('./profesor/p_alphaTeam.html')
+
+# Redireccionar a estudiante
+@app.route('/alphaTeam/estudiante')
+def e_alphaTeam():
+    return render_template('./estudiante/e_alphaTeam.html')
+
+# Redireccionar a administrador
+@app.route('/alphaTeam/admin')
+def a_alphaTeam():
+    return render_template('./admin/a_alphaTeam.html')
+
 
 @app.route('/a_alphaTeam')
 def a_alphaTeam():
@@ -56,4 +71,4 @@ def a_usuarios():
 
 if __name__ == '__main__':
    
-    app.run(debug=True)
+    app.run( port = 5501, debug=True)
