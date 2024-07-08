@@ -1550,10 +1550,58 @@ summary {
     /* pagina reinscripcion resposive */
 
     .reinscripcion {
-       
         position: relative;
-        right: 130px;
+
+        top: 500px;
+        right: 93%;
+       
     }
+
+    
+    .datos_personales  {
+        width: 450px;
+    }
+
+    .datos_personales input {
+       transform: translate(-50%);
+      
+    }
+
+    .datos_personales label {
+        transform: translate(-23%);
+       
+      
+    }
+
+    .datos_personales select {
+        transform: translate(-50%);
+     }
+
+    .conten-imag img{
+        position: relative;
+        right: 93%;
+        top: 499px;
+        width:45% ; 
+        object-fit: cover;
+        
+    }
+
+
+    .radio  {
+        position: relative;
+        right: 20%;
+    }
+
+    .deshacer {
+        position: relative;
+        right: 18%;
+    }
+
+    .enviar_formulario {
+        position: relative;
+        left: 1%;
+    }
+
 
 
     /* informacion decente resposive */
