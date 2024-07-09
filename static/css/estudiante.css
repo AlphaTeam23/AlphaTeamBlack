@@ -229,6 +229,8 @@ main {
     transform: translateY(-440px);
 } 
 
+
+
 .profesor {
     background-color: gray;
 }
@@ -260,8 +262,8 @@ main {
     width: 500px;
     cursor: pointer;
     position: relative;
-    bottom: 150px;
-    left: 20%;
+    bottom: -150px;
+    left: 20px;
     
 }
 
@@ -1657,4 +1659,29 @@ summary {
         transition: all .3s;
     }
 
+
+    /* pagina de pago */
+
+    .opcion_pago {
+        position: relative;
+        top: 530px;
+        right: 440px;
+        width: 440px;
+        height: 300px;
+        
+    }
+
+    .tarjeta img {
+        width: 170px;
+        height: 300px;
+      transform: translate(-40px);
+    }
+
+    .pay_form {
+        position: relative;
+        bottom: 260px;
+    }
+
+   
+    
     }
