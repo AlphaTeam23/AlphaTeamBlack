@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calificaciones</title>
-    <link rel="stylesheet" href="/static/css/estilos_prof.css">
-    <link rel="icon" href="/static/imagenes/icono_pagina.png">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/estilos_prof.css') }}">
+    <link rel="icon" href="{{ url_for ('static', filename= 'imagenes/icono_pagina.png') }}">
 </head>
 <body>
     <header>
         <h1>ALPHA TEAM</h1>
-         <a href="p_alphaTeam.html">
+         <a href="{{ url_for ('templates', filename='alphaTeam.html') }}">
             <figure class="logo_pagina">
-                <img src="/static/imagenes/logo.png" alt="">
+                <img src="{{ url_for ('static', filename='imagenes/logo.png') }}" alt="">
             </figure>
         </a>
 
             <div class="container">
             <button class="menu-btn">PROFESOR
-                <img src="/static/imagenes/profesor.png" alt="profesor">
+                <img src="{{ url_for ('static', filename='imagenes/profesor.png') }}" alt="profesor">
             </button>
             <div class="menu-items">
                 <h6 class="gestion">Gestión perfil</h6>
@@ -38,7 +38,7 @@
         <nav class="nav"> 
             <ul>
                 <li class="cal-tablet"><img src="/static/imagenes/bx-notepad.svg" alt="nota">
-                    <a href="p_calificaciones.html">CALIFICACIONES
+                    <a href="/profesor/calificaciones">CALIFICACIONES
                 </a></li>
                 <li><img src="/static/imagenes/bx-calendar.svg" alt="calendario">
                     <a href="p_horario.html">HORARIO ESCOLAR

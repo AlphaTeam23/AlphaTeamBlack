@@ -34,14 +34,19 @@ def p_alphaTeam():
 def e_alphaTeam():
     return render_template('./estudiante/e_alphaTeam.html')
 
+@app.route('/alphaTeam/estudiante/calificaciones')
+def e_miscalificaciones():
+    return render_template('./estudiante/e_miscalificaciones.html')
+
+@app.route('/alphaTeam/estudiante/ayuda')
+def e_ayuda():
+    return render_template('./estudiante/e_ayuda.html')
+
+
 # Redireccionar a administrador
 @app.route('/alphaTeam/admin')
 def a_alphaTeam():
     return render_template('./admin/a_alphaTeam.html')
 
-
-
-
 if __name__ == '__main__':
-   
     app.run( port = 5501, debug=True)
