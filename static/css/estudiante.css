@@ -1665,12 +1665,14 @@ summary {
     .opcion_pago {
         position: relative;
         top: 530px;
-        right: 440px;
+        right: 460px;
         width: 440px;
         height: 300px;
         
     }
-
+    html img{
+        object-fit: cover;
+    }
     .tarjeta img {
         width: 170px;
         height: 300px;
@@ -1682,6 +1684,14 @@ summary {
         bottom: 260px;
     }
 
-   
+    .pay_form h2{
+        margin-left: 10%;
+        width: 50%;
+    }
+
+    .pay_form p {
+        position: relative;
+        left: -45%;
+    }
     
     }
