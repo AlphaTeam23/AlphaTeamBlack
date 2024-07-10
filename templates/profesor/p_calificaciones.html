@@ -4,38 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calificaciones</title>
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/estilos_prof.css') }}">
-    <link rel="icon" href="{{ url_for ('static', filename= 'imagenes/icono_pagina.png') }}">
+    <link rel="stylesheet" href="/static/css/estilos_prof.css">
+    <link rel="icon" href="static/imagenes/icono_pagina.png">
 </head>
 <body>
     <header>
         <h1>ALPHA TEAM</h1>
-         <a href="{{ url_for ('templates', filename='alphaTeam.html') }}">
+         <a href="templates/alphaTeam.html">
             <figure class="logo_pagina">
-                <img src="{{ url_for ('static', filename='imagenes/logo.png') }}" alt="">
+                <img src="/static/imagenes/logo.png" alt="">
             </figure>
         </a>
 
             <div class="container">
             <button class="menu-btn">PROFESOR
-                <img src="{{ url_for ('static', filename='imagenes/profesor.png') }}" alt="profesor">
+                <img src="/static/imagenes/profesor.png" alt="profesor">
             </button>
             <div class="menu-items">
                 <h6 class="gestion">Gestión perfil</h6>
             
-            <a href="p_usuarioprofesor.html" >Lic. Carlos Acosta
+            <a href="/alphaTeam/profesor/usuario" >Lic. Carlos Acosta
                 <img src="/static/imagenes/bxs-user-circle.svg" alt="nota">
             </a>
-            <a href="p_contraseñaprofesor.html">Cambio de contraseña
+            <a href="/alphaTeam/profesor/contraseña">Cambio de contraseña
                 <img src="/static/imagenes/bxs-key1.svg" alt="nota">
             </a>
-            <a href="p_reportar_problema.html">Reportar un problema
+            <a href="/alphaTeam/profesor/reportar">Reportar un problema
                 <img src="/static/imagenes/bx-comment-error.svg" alt="nota">
             </a>
                 
             </div>
             </div>
-        <nav class="nav"> 
+        <!-- <nav class="nav"> 
             <ul>
                 <li class="cal-tablet"><img src="/static/imagenes/bx-notepad.svg" alt="nota">
                     <a href="/profesor/calificaciones">CALIFICACIONES
@@ -56,7 +56,7 @@
                     <a href="/templates/index.html">CERRAR SESION
                 </a></li> 
             </ul>
-        </nav>
+        </nav> -->
         </header>
         <div class="cout">
             <button class="menu">
@@ -65,22 +65,22 @@
             <div class="content">
                 <ul>
                     <li><img src="/static/imagenes/bx-notepad.svg" alt="nota">
-                        <a href="p_calificaciones.html">CALIFICACIONES
+                        <a href="/alphaTeam/profesor/calificaciones">CALIFICACIONES
                     </a></li>
                     <li><img src="/static/imagenes/bx-calendar.svg" alt="calendario">
-                        <a href="p_horario.html">HORARIO ESCOLAR
+                        <a href="/alphaTeam/profesor/horario">HORARIO ESCOLAR
                     </a></li>
                     <li><img src="/static/imagenes/bxs-graduation.svg" alt="graduacion">
-                        <a href="p_informacionestudiante.html">INFORMACION ESTUDIANTE
+                        <a href="/alphaTeam/profesor/informacion">INFORMACION ESTUDIANTE
                     </a></li>
                     <li><img src="/static/imagenes/bxs-book-content.svg" alt="evaluar">
-                        <a href="p_cargarplanificacion.html">PLANIFICACION
+                        <a href="/alphaTeam/profesor/planificacion">PLANIFICACION
                     </a></li>
                     <li><img src="/static/imagenes/bx-help-circle.svg" alt="ayuda">
-                        <a href="p_ayuda.html">AYUDA
+                        <a href="/alphaTeam/profesor/ayuda">AYUDA
                     </a></li>
                     <li><img src="/static/imagenes/bx-log-out.svg" alt="cerrar">
-                        <a href="/templates/">CERRAR SESION
+                        <a href="/alphaTeam/templates/cerrarsesion">CERRAR SESION
                     </a></li> 
                 </ul>
             </div>

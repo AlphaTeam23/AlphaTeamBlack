@@ -28,7 +28,48 @@ def iniciosesion():
 @app.route('/alphaTeam/profesor')
 def p_alphaTeam():
     return render_template('./profesor/p_alphaTeam.html')
+# Página Alpha Team
+@app.route('/alphaTeam/profesor/calificaciones')
+def p_calificaciones():
+    return render_template('./profesor/p_calificaciones.html')
 
+@app.route('/alphaTeam/profesor/ayuda')
+def p_ayuda():
+    return render_template('./profesor/p_ayuda.html')
+
+@app.route('/alphaTeam/profesor/horario')
+def p_horario():
+    return render_template('./profesor/p_horario.html')
+
+@app.route('/alphaTeam/profesor/planificacion')
+def p_planificacion():
+    return render_template('./profesor/p_cargarplanificacion.html')
+
+@app.route('/alphaTeam/profesor/informacion')
+def p_informacion():
+    return render_template('./profesor/p_informacionestudiante.html')
+
+@app.route('/alphaTeam/profesor/foto')
+def p_foto():
+    return render_template('./profesor/p_foto.html')
+
+@app.route('/alphaTeam/profesor/reportar')
+def p_reportar():
+    return render_template('./profesor/p_reportar_problema.html')
+
+@app.route('/alphaTeam/profesor/usuario')
+def p_usuario():
+    return render_template('./profesor/p_usuarioprofesor.html')
+
+@app.route('/alphaTeam/profesor/contraseña')
+def p_contraseña():
+    return render_template('./profesor/p_contraseñaprofesor.html')
+
+@app.route('/alphaTeam/templates/cerrarsesion')
+def p_cerrarsesion():
+    return render_template('./index.html')
+
+    
 # Redireccionar a estudiante
 @app.route('/alphaTeam/estudiante')
 def e_alphaTeam():

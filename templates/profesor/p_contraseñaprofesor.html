@@ -27,27 +27,57 @@
 
     <main class="cambio_contraseña">
         <h2>CAMBIO DE CONTRASEÑA</h2>
-        <form class="input_boton1">
+        <form class="input_boton1" id="passwordForm">
             <figure class="reset">
-                <img src="/static/imagenes/reset-password.png" alt="">
+                <img src="/static/imagenes/reset-password.png" alt="Reset Password">
             </figure>
 
-            <input type="password" class="botton1" placeholder="Contraseña Antigua" required maxlength="10" autofocus>
+            <input type="password" id="oldPassword" class="botton1" placeholder="Contraseña Antigua" required maxlength="10" autofocus>
             <div class="imagen1">
-                <img src="/static/imagenes/bx-lock-alt.svg" alt="">
+                <img src="/static/imagenes/bx-lock-alt.svg" alt="Old Password">
             </div>
-            <input type="password" class="botton3" placeholder="Nueva Contraseña" required maxlength="10">
+            <input type="password" id="newPassword" class="botton3" placeholder="Nueva Contraseña" required maxlength="10">
                 <div class="imagen2">
-            <img src="/static/imagenes/contrasena.png" alt="">
+            <img src="/static/imagenes/contrasena.png" alt="New Password">
             </div>
 
             <br>
-            <input type="password" class="botton2" placeholder="Confirmar Contraseña" required maxlength="10">
+            <input type="password" id="confirmPassword" class="botton2" placeholder="Confirmar Contraseña" required maxlength="10">
             <div class="imagen">
-                <img src="/static/imagenes/confirmar.png" alt="">
+                <img src="/static/imagenes/confirmar.png" alt="Confirm Password">
             </div>
             <input type="submit" value="CAMBIAR CONTRASEÑA" class="enviar">
         </form>
     </main>
+
+    <script>
+           
+           document.getElementById('passwordForm').addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    var oldPassword = document.getElementById('oldPassword').value;
+                    var newPassword = document.getElementById('newPassword').value;
+                    var confirmPassword = document.getElementById('confirmPassword').value;
+
+                    var mensaje = '';
+
+                    if (oldPassword != "profesor123") {
+                        mensaje += 'Error: La contraseña antigua es incorrecta.\n';
+                    }
+
+                   
+                    if (newPassword !== confirmPassword) {
+                        mensaje += 'Error: La nueva contraseña y la confirmación no coinciden.\n';
+                    }
+
+                    if (mensaje === '') {
+                        alert('Contraseña cambiada exitosamente.');
+                    } else {
+                        alert(mensaje);
+                    }
+                });
+
+        </script>
+    
 </body>
 </html>

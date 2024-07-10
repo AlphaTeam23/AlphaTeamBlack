@@ -101,8 +101,8 @@ li img {
    margin: 20px;
 }
 
-.menu_responsive {
-    display: none;
+.menu {
+    background-color: transparent;
 }
 
 /* Página Gestión Perfil (Menú desplegable) */
@@ -1040,9 +1040,7 @@ summary {
 #nombre::placeholder {
     text-align: center;
 }
-.cout {
-    display: none;
-}
+
 
 /* Responsive */
 /* Movil */ 
@@ -1081,11 +1079,7 @@ summary {
         height: 0;
     }
 
-    .nav{
-        display: none;
-    }
-
-    .nav li a {
+    nav li a {
         background-color: #000000;
     }
 
