@@ -89,5 +89,9 @@ def e_ayuda():
 def a_alphaTeam():
     return render_template('./admin/a_alphaTeam.html')
 
+@app.route('/alphaTeam/admin/planificacion')
+def a_planificacion():
+    return render_template('./admin/a_cargarplanificacion.html')
+
 if __name__ == '__main__':
     app.run( port = 5501, debug=True)
