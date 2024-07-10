@@ -28,6 +28,7 @@ def iniciosesion():
 @app.route('/alphaTeam/profesor')
 def p_alphaTeam():
     return render_template('./profesor/p_alphaTeam.html')
+
 # Página Alpha Team
 @app.route('/alphaTeam/profesor/calificaciones')
 def p_calificaciones():
@@ -88,6 +89,34 @@ def e_ayuda():
 @app.route('/alphaTeam/admin')
 def a_alphaTeam():
     return render_template('./admin/a_alphaTeam.html')
+
+@app.route('/alphaTeam/admin/cursos')
+def a_cursos():
+    return render_template('./admin/a_cursos.html')
+
+@app.route('/alphaTeam/admin/inscripcion')
+def a_inscripcion():
+    return render_template('./admin/a_inscripcion.html')
+
+@app.route('/alphaTeam/admin/planificacion')
+def a_planificacion():
+    return render_template('./admin/a_planificacion.html')
+
+@app.route('/alphaTeam/admin/recordnota')
+def a_recordnota():
+    return render_template('./admin/a_recordnota.html')
+
+@app.route('/alphaTeam/admin/recordnota2')
+def a_recordnota2():
+    return render_template('./admin/a_recordnota2.html')
+
+@app.route('/alphaTeam/admin/usuarios')
+def a_usuarios():
+    return render_template('./admin/a_usuarios.html')
+
+@app.route('/alphaTeam/templates/cerrarsesion')
+def p_cerrarsesion():
+    return render_template('./index.html')
 
 if __name__ == '__main__':
     app.run( port = 5501, debug=True)
