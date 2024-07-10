@@ -101,8 +101,8 @@ li img {
    margin: 20px;
 }
 
-.menu {
-    background-color: transparent;
+.menu-button {
+   display: none;
 }
 
 /* Página Gestión Perfil (Menú desplegable) */
@@ -1041,10 +1041,14 @@ summary {
     text-align: center;
 }
 
+.menu {
+    display: none;
+}
+
 
 /* Responsive */
 /* Movil */ 
-@media  screen and (max-width: 600px) {
+@media  screen and (max-width: 1200px) {
     body {
         background-image: url(../imagenes/imagendefondo.png);
         background-repeat: no-repeat;
@@ -1145,6 +1149,7 @@ summary {
     }
 
     .menu {
+        display: inline-block;
         background-color: transparent;
         border: none;
         cursor: pointer;
@@ -1524,7 +1529,7 @@ summary {
 }
 
 /* Tablets */ 
-@media  screen and (min-width: 601px) and (max-width: 900px) {
+/* @media  screen and (min-width: 601px) and (max-width: 900px) {
     html {
         padding-bottom: 400px;
     }
@@ -1541,11 +1546,11 @@ summary {
 
     .imprimir {
         display: none;
-    }
+    } */
 
 /* Menú principal */
 
-    li a {
+    /* li a {
         font-size: 200%;
         top: -45px;
         position: relative;
@@ -1568,11 +1573,11 @@ summary {
         top: 25%;
         position: relative;
         left: -2%;
-    }
+    } */
 
 /* Menú desplegable gestión perfil */
 
-    button {
+    /* button {
         font-size: 27px;
         font-weight: normal;
         color: #fffefe;
@@ -1629,10 +1634,10 @@ summary {
         width: 35px;
         display: flex;
         justify-content: flex-start;
-    }
+    } */
 
     /* Perfil usuario */
-    .inf_basica_profesor {
+    /* .inf_basica_profesor {
         margin-left: 140px;
         width: 550px;
         height: 565px;
@@ -1670,10 +1675,10 @@ summary {
     .regresar img {
         width: 35px;
         height: 35px;
-    }
+    } */
 
     /* Pagina cambio de contraseña */
-    .cambio_contraseña {
+    /* .cambio_contraseña {
         margin-top: 170px;
         margin-left: 140px;
         width: 550px;
@@ -1686,11 +1691,11 @@ summary {
 
     
 
-}
+} */
 
 
 /* Desktop */ 
-@media  screen and (min-width: 901px) and (max-width: 1200px) {
+/* @media  screen and (min-width: 901px) and (max-width: 1200px) {
     .logo_pagina {
         width: 150%;
     }
@@ -1713,4 +1718,4 @@ summary {
     .publicar {
         margin-left:  40%;
     }
-}
+} */
