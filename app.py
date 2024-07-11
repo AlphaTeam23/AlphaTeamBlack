@@ -1,14 +1,10 @@
 import os
 from flask import Flask
-
 from flask import render_template, request, redirect, session
-
-from flaskext.mysql import MySQL
-
+from flask_mysqldb import MySQL
 from datetime import datetime
 
 app=Flask(__name__)
-
 app.secret_key="alphateam"
 
 mysql=MySQL()
@@ -115,7 +111,7 @@ def a_usuarios():
     return render_template('./admin/a_usuarios.html')
 
 @app.route('/alphaTeam/templates/cerrarsesion')
-def p_cerrarsesion():
+def p_cerrar():
     return render_template('./index.html')
 
 if __name__ == '__main__':
