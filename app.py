@@ -104,6 +104,10 @@ def e_contraseña():
 def e_reporte():
     return render_template('./estudiante/e_reportarproblema.html')
 
+@app.route('/alphaTeam/estudiante/usuario')
+def e_usuario():
+    return render_template('./estudiante/e_usuario.html')
+
 @app.route('/alphaTeam/templates/cerrarsesion')
 def e_cerrarsesion():
     return render_template('./index.html')
