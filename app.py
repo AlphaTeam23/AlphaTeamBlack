@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 from flask import render_template, request, redirect, session
-from flask_mysqldb import MySQL
+from flaskext.mysql import MySQL
 from datetime import datetime
 
 app=Flask(__name__)
