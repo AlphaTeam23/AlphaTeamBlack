@@ -1693,5 +1693,17 @@ summary {
         position: relative;
         left: -45%;
     }
+
+
+    /* pagina responsiv de ayuda */
+
+    .preguntas {
+        position: relative;
+        bottom: -620px;
+        right: 460px;
+        
+    }
+
+   
     
     }
