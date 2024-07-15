@@ -86,9 +86,9 @@ def e_reinscripcion():
 
 @app.route('/alphaTeam/estudiante/info_docente')
 def e_info_docente():
-    return render_template('./estudiante/e_pago.html')
+    return render_template('./estudiante/e_informaciondocente.html')
 
-@app.route('/alphaTeam/estudiante/ayuda')
+@app.route('/alphaTeam/estudiante/pago')
 def e_pago():
     return render_template('./estudiante/e_pago.html')
 
