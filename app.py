@@ -88,7 +88,7 @@ def e_reinscripcion():
 def e_info_docente():
     return render_template('./estudiante/e_informaciondocente.html')
 
-@app.route('/alphaTeam/estudiante/ayuda')
+@app.route('/alphaTeam/estudiante/pago')
 def e_pago():
     return render_template('./estudiante/e_pago.html')
 
@@ -143,7 +143,10 @@ def a_usuarios():
 
 @app.route('/alphaTeam/templates/cerrarsesion')
 def p_cerrar():
-    return render_template('./index.html')
+    session.clear()
+    return redirect('./index.html')
+
+
 
 if __name__ == '__main__':
     app.run( port = 5501, debug=True)
