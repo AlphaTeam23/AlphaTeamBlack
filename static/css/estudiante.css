@@ -1704,6 +1704,17 @@ summary {
         
     }
 
-   
+    /* usuario pagina */
+    .inf_basica_estudiante {
+        width: 450px;
+        height: 400px;
+        position: relative;
+        right: 420px;
+        top: 480px;
+    }
+
+   .titinfo p{
+    width: 200px;
+   }
     
     }
