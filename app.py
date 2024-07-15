@@ -80,6 +80,37 @@ def e_miscalificaciones():
 def e_ayuda():
     return render_template('./estudiante/e_ayuda.html')
 
+@app.route('/alphaTeam/estudiante/reinscripcion')
+def e_reinscripcion():
+    return render_template('./estudiante/e_reinscripcion.html')
+
+@app.route('/alphaTeam/estudiante/info_docente')
+def e_info_docente():
+    return render_template('./estudiante/e_pago.html')
+
+@app.route('/alphaTeam/estudiante/ayuda')
+def e_pago():
+    return render_template('./estudiante/e_pago.html')
+
+@app.route('/alphaTeam/estudiante/foto')
+def e_foto():
+    return render_template('./estudiante/e_foto.html')
+
+@app.route('/alphaTeam/estudiante/contraseña')
+def e_contraseña():
+    return render_template('./estudiante/e_contraseña.html')
+
+@app.route('/alphaTeam/estudiante/reporte')
+def e_reporte():
+    return render_template('./estudiante/e_reportarproblema.html')
+
+@app.route('/alphaTeam/estudiante/usuario')
+def e_usuario():
+    return render_template('./estudiante/e_usuario.html')
+
+@app.route('/alphaTeam/templates/cerrarsesion')
+def e_cerrarsesion():
+    return render_template('./index.html')
 
 # Redireccionar a administrador
 @app.route('/alphaTeam/admin')
