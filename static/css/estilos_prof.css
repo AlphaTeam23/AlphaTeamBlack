@@ -258,7 +258,6 @@ label {
     width: 8%;
     top: 28%;
     position: relative;
-
 }
 
 .boton:hover {
@@ -268,9 +267,8 @@ label {
 .tabla1 {
     color: #fff;
     font-family: miFuentePath;
-    position: relative;
-    left: 32.6%;
-    margin-top: 1%;
+    margin-left: 32.70%;
+    margin-top: 0%;
     width: 60%;
     border-radius: 1%;
     height: 340px;
@@ -411,6 +409,7 @@ table {
 .calificaciones_docente2 optgroup {
     color: #000;
 }
+
 .tabla2 {
     color: #fff;
     font-family: miFuentePath;
@@ -1048,7 +1047,7 @@ summary {
 
 /* Responsive */
 /* Movil */ 
-@media  screen and (max-width: 1200px) {
+@media  screen and (max-width: 900px) {
     body {
         background-image: url(../imagenes/imagendefondo.png);
         background-repeat: no-repeat;
@@ -1363,21 +1362,30 @@ summary {
     /* Menú desplegable */
 
     /* Calificaciones */
+
     .tabla1 {
-        left: 2px;
-        top: 250px;
-        width: 80%;
+        left: -31%;
+        top: 10px;
+        position: relative;
+        width: 96%;
         height: 340px;
+    }
+
+    .calificaciones_docente1 {
+        top: 20%;
+        position: relative;
     }
 
     .tabla1::-webkit-scrollbar {
         display: none;
     }
 
-    .calificaciones_docente {
-        margin-left: 1%;
-        margin-top: -5%;
-        width: 98%;        
+
+    .calificaciones_docente1 form {
+        margin-top: -18%;
+        margin-left: 2.5%;
+        width: 95%;
+        
     }
 
     .calificaciones_docente label {
@@ -1416,10 +1424,10 @@ summary {
     }
 
     /* Tabla de Calificaciones */
-    .tabla1 {
+    /* .tabla1 {
         margin-top: -49%;
         width: 99%;
-    }
+    } */
 
 
     /* Horario */
