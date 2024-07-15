@@ -143,7 +143,10 @@ def a_usuarios():
 
 @app.route('/alphaTeam/templates/cerrarsesion')
 def p_cerrar():
-    return render_template('./index.html')
+    session.clear()
+    return redirect('./index.html')
+
+
 
 if __name__ == '__main__':
     app.run( port = 5501, debug=True)
