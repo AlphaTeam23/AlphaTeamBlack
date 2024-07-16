@@ -112,6 +112,7 @@ def e_usuario():
 def e_cerrarsesion():
     return render_template('./index.html')
 
+
 # Redireccionar a administrador
 @app.route('/alphaTeam/admin')
 def a_alphaTeam():
