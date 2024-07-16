@@ -1431,7 +1431,7 @@ summary {
 }
 
 
-@media  screen and (max-width: 600px) {
+@media  screen and (max-width: 900px) {
     .cout {
     position: relative;
     display: inline-block;
@@ -1765,5 +1765,29 @@ summary {
    .titinfo p{
     width: 200px;
    }
-    
-    }
+   
+
+   /* pagina foto responsiv */
+   .cargar-imagen {
+    position: relative;
+    right: 85%;
+   top: 390px;
+   }
+
+
+   /* pagina de resportar problema */
+   .reporte textarea{
+    position: relative;
+    right: 85%;
+    width: 420px;
+    bottom: 60px;
+   }
+
+  
+    .reporte  input{
+    position: relative;
+    bottom: 50px;
+    transform: translate(-350px);
+   } 
+
+}
