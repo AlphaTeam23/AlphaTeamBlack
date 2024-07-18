@@ -410,11 +410,15 @@ table {
     color: #000;
 }
 
+.calificaciones_docente2 {
+    margin-top: -29%;
+}
+
 .tabla2 {
     color: #fff;
     font-family: miFuentePath;
     margin-left: 33.3%;
-    margin-top: 15%;
+    margin-top: 0%;
     width: 60%;
     border-radius: 1%;
     height: 340px;
@@ -478,8 +482,6 @@ th:hover {
 .info-tablet {
     background-color: gray;
 }
-
-
 
 .boton9 {
     background-color: transparent;
@@ -845,6 +847,7 @@ summary {
     border: 1px solid #0077ff96;
 }
 
+/* Boton de regresar */
 .regresar {
     display: flex;
     justify-content: flex-end;
@@ -1058,9 +1061,10 @@ summary {
     h1 {
         font-size: 5vh;
         width: 60%;
-        display: flex;
+        margin-left: 30%;
+        /* display: flex;
         justify-content: center;
-        align-content: center;
+        align-content: center; */
     }
     
 /* Logo de las paginas */
@@ -1183,7 +1187,7 @@ summary {
 
     .inf_basica_profesor {
         margin-left: 14.50%;
-        width: 80%;
+        width: 390px;
         margin-top: 25%;
     }
 
@@ -1217,27 +1221,26 @@ summary {
     }
 
     .estudiante-img img {
-        margin-left: 10px;
-        width: 120px;
-        top: 40px;
+        margin-left: 10%;
+        width: 30%;
+        top: 20%;
         position: relative;
     }
 
-    .regresar img {
-        width: 100%;
-        height: 25px;
-        left: 20%;
-        top: 1%;
-        position: relative;
-    }
-
-    .estudiante-img .camara2 {
+     .estudiante-img .camara2 {
         width: 7%;
         margin-left: 8%;
         top: -50px;
     }
 
-   
+    .regresar {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 40px;
+        top: 85px;
+        position: relative;
+    }
+
 
 /* Cambiar Contraseña */
 

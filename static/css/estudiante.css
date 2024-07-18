@@ -1187,9 +1187,7 @@ td{
 
 
 #cargarfoto {
-    margin-left: 30px;
-   
-    
+    margin-left: 30px;    
 }
 
 /* Cambio de contraseña en Gestion Perfil */
@@ -1583,10 +1581,10 @@ summary {
 
     .calificaciones {
       
-         /* display: flex;  */
+          /* display: flex;   */
         position: relative;
         top: 55%;
-        right: 85%;
+       margin-left: 170px;
     }
 
     .calificaciones .tabla {
