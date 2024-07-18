@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-06-2024 a las 23:43:24
+-- Tiempo de generación: 18-07-2024 a las 21:02:07
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -126,6 +126,7 @@ CREATE TABLE `estudiante` (
   `Id_profesor` int(5) NOT NULL,
   `seccion` char(1) COLLATE utf32_spanish2_ci NOT NULL,
   `id_tutor` int(5) NOT NULL
+  `imagen_perfil` text COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish2_ci;
 
 --
@@ -147,6 +148,17 @@ INSERT INTO `estudiante` (`id_estudiante`, `nombre_estudiante`, `apellidop_estud
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `nivel`
+--
+
+CREATE TABLE `nivel` (
+  `id_nivel` int(5) NOT NULL,
+  `nivel` varchar(10) COLLATE utf8mb4_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `profesores`
 --
 
@@ -160,6 +172,8 @@ CREATE TABLE `profesores` (
   `telefono` char(12) COLLATE utf8mb4_spanish_ci NOT NULL,
   `cedula` char(13) COLLATE utf8mb4_spanish_ci NOT NULL,
   `direccion` text COLLATE utf8mb4_spanish_ci NOT NULL
+  `imagen_perfil` text COLLATE utf8mb4_spanish_ci NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -179,7 +193,7 @@ INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `nombre`, `apellidos`,
 
 --
 -- Estructura de tabla para la tabla `roles`
---
+--a
 
 CREATE TABLE `roles` (
   `id_roles` int(5) NOT NULL,
@@ -194,7 +208,7 @@ INSERT INTO `roles` (`id_roles`, `tipo_rol`) VALUES
 (1, 'administrador'),
 (2, 'profesor'),
 (3, 'estudiante');
-
+ 
 -- --------------------------------------------------------
 
 --
@@ -228,6 +242,28 @@ INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellidos`, `cedula`, `telefono`, `c
 (8, 'Eduardo ', 'Rodriguez', '04600246666', '8294195674', 'eduardor@gmail.com', 'Profesor', 'Padre', 'Los Llanos de La Herradura\r\nCalle A\r\n# 30\r\nSantiago'),
 (9, 'Angelica', 'Burgos', '04621565623', '8295467521', 'angelica@gmail.com', 'Ama de Casa', 'Madre', 'Licey\r\nCalle Pinguito\r\n# 4\r\nSantiago'),
 (10, 'Yohan', 'Perez', '40259634518', '8092219494', '8092219494', 'Estudiante', 'Amigo', 'Los Padros\r\nCalle 5 de Abril\r\n# 14\r\nSantiago');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(5) NOT NULL,
+  `nombre` varchar(30) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `apellido` varchar(30) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `usuario` varchar(10) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `id_roles` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `usuario`, `id_roles`) VALUES
+(1, 'Jose Miguel', 'Reyes', 'P00001', 2),
+(2, 'Alexander', 'Salaman', 'E00001', 3);
 
 --
 -- Índices para tablas volcadas
@@ -264,6 +300,12 @@ ALTER TABLE `estudiante`
   ADD PRIMARY KEY (`id_estudiante`);
 
 --
+-- Indices de la tabla `nivel`
+--
+ALTER TABLE `nivel`
+  ADD PRIMARY KEY (`id_nivel`);
+
+--
 -- Indices de la tabla `profesores`
 --
 ALTER TABLE `profesores`
@@ -280,6 +322,12 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `tutor`
   ADD PRIMARY KEY (`id_tutor`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -316,6 +364,12 @@ ALTER TABLE `estudiante`
   MODIFY `id_estudiante` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT de la tabla `nivel`
+--
+ALTER TABLE `nivel`
+  MODIFY `id_nivel` int(5) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `profesores`
 --
 ALTER TABLE `profesores`
@@ -332,6 +386,12 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `tutor`
   MODIFY `id_tutor` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
