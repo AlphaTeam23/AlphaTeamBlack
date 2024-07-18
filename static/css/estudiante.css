@@ -1583,10 +1583,10 @@ summary {
 
     .calificaciones {
       
-         /* display: flex;  */
+          /* display: flex;   */
         position: relative;
         top: 55%;
-        right: 85%;
+       margin-left: 170px;
     }
 
     .calificaciones .tabla {
