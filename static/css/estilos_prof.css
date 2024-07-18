@@ -1061,10 +1061,10 @@ summary {
     h1 {
         font-size: 5vh;
         width: 60%;
-        margin-left: 30%;
-        /* display: flex;
+        display: flex;
         justify-content: center;
-        align-content: center; */
+        align-content: center;
+        margin: 0 auto;
     }
     
 /* Logo de las paginas */
@@ -1186,9 +1186,10 @@ summary {
     /* Perfil usuario */
 
     .inf_basica_profesor {
-        margin-left: 14.50%;
+        margin-left: 30%;
+        position: relative;
         width: 390px;
-        margin-top: 25%;
+        top: 25px;
     }
 
     .inf_basica_profesor h4 {
