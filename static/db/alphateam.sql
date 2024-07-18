@@ -126,6 +126,7 @@ CREATE TABLE `estudiante` (
   `Id_profesor` int(5) NOT NULL,
   `seccion` char(1) COLLATE utf32_spanish2_ci NOT NULL,
   `id_tutor` int(5) NOT NULL
+  `imagen_perfil` text COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish2_ci;
 
 --
@@ -160,6 +161,8 @@ CREATE TABLE `profesores` (
   `telefono` char(12) COLLATE utf8mb4_spanish_ci NOT NULL,
   `cedula` char(13) COLLATE utf8mb4_spanish_ci NOT NULL,
   `direccion` text COLLATE utf8mb4_spanish_ci NOT NULL
+  `imagen_perfil` text COLLATE utf8mb4_spanish_ci NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -179,7 +182,7 @@ INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `nombre`, `apellidos`,
 
 --
 -- Estructura de tabla para la tabla `roles`
---
+--a
 
 CREATE TABLE `roles` (
   `id_roles` int(5) NOT NULL,
@@ -194,7 +197,7 @@ INSERT INTO `roles` (`id_roles`, `tipo_rol`) VALUES
 (1, 'administrador'),
 (2, 'profesor'),
 (3, 'estudiante');
-
+ 
 -- --------------------------------------------------------
 
 --
