@@ -36,7 +36,6 @@
 }
 
 body {
-    
     background-image: url(../imagenes/imagendefondo.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -1329,6 +1328,56 @@ td{
 .enviar:hover {
     border: 1px solid #0077ff96;
 }
+
+/* Pagina Reportar problema */
+
+.reporte h2 {
+    font-family: miFuentepath;
+    font-weight: normal;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    font-size: 23px;
+}
+
+.reporte img {
+    width: 50px;
+    margin-right: 20px;
+    margin-top: -15px;
+}
+
+.reporte textarea {
+    background-color: #ffffff11;
+    width: 500px;
+    height: 300px;
+    border-radius: 30px;
+    margin-top: 450px;
+    display: flex;
+    justify-content: center;  
+    padding: 15px; 
+    outline: none;
+    border: 1px-1solid #ffffff8f;
+    color: #fff;
+    font-family: miFuentepath;
+    font-size: 18px;  
+}
+
+.reporte .report_ev {
+    background-color: transparent;
+    border: 1px solid #81e6ff;
+    color: #ffffff;
+    font-family: miFuentepath;
+    font-weight: normal;
+    width: 80px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 10px;
+    font-size: 16px;
+    left: 30px;
+    position: relative;
+}
+
 /* Pagina ayuda */
 
 .preguntas h3 {
@@ -1382,7 +1431,7 @@ summary {
 }
 
 
-@media  screen and (max-width: 600px) {
+@media  screen and (max-width: 900px) {
     .cout {
     position: relative;
     display: inline-block;
@@ -1704,6 +1753,41 @@ summary {
         
     }
 
-   
-    
+    /* usuario pagina */
+    .inf_basica_estudiante {
+        width: 450px;
+        height: 400px;
+        position: relative;
+        right: 420px;
+        top: 480px;
     }
+
+   .titinfo p{
+    width: 200px;
+   }
+   
+
+   /* pagina foto responsiv */
+   .cargar-imagen {
+    position: relative;
+    right: 85%;
+   top: 390px;
+   }
+
+
+   /* pagina de resportar problema */
+   .reporte textarea{
+    position: relative;
+    right: 85%;
+    width: 420px;
+    bottom: 60px;
+   }
+
+  
+    .reporte  input{
+    position: relative;
+    bottom: 50px;
+    transform: translate(-350px);
+   } 
+
+}

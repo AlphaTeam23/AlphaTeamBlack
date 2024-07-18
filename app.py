@@ -84,11 +84,11 @@ def e_ayuda():
 def e_reinscripcion():
     return render_template('./estudiante/e_reinscripcion.html')
 
-@app.route('/alphaTeam/estudiante/info_docente')
+@app.route('/alphaTeam/estudiante/e_informaciondocente')
 def e_info_docente():
-    return render_template('./estudiante/e_pago.html')
+    return render_template('./estudiante/e_informaciondocente.html')
 
-@app.route('/alphaTeam/estudiante/ayuda')
+@app.route('/alphaTeam/estudiante/pago')
 def e_pago():
     return render_template('./estudiante/e_pago.html')
 
@@ -111,6 +111,7 @@ def e_usuario():
 @app.route('/alphaTeam/templates/cerrarsesion')
 def e_cerrarsesion():
     return render_template('./index.html')
+
 
 # Redireccionar a administrador
 @app.route('/alphaTeam/admin')
