@@ -225,7 +225,7 @@ main {
     grid-template-columns: 2fr 6fr 4fr;
     grid-template-rows: 3rem;
     margin: 0 25rem;
-    transform: translateY(-440px);
+     transform: translateY(-440px); 
 } 
 
 
@@ -238,16 +238,21 @@ main {
     font-size: 25px;
     color: #ffffff;
     position: relative;
-    bottom: 600px;
-    left: 700px;
+    top: 200px;
+    left: 100px;
+}
+
+.info_docente {
+   position: relative;
+   top: -160px;
 }
 
 
 .info_docente img {
-   width: 350px;
+   width: 850px;
    height: 350px;
    position: absolute;
-   top: 10px;
+   top: 20px;
    left: 90%;
    object-fit: contain;
 }
@@ -261,12 +266,11 @@ main {
     width: 500px;
     cursor: pointer;
     position: relative;
-    bottom: -150px;
-    left: 20px;
     
 }
 
 .contenedor-imagen {
+    position: relative;
     border: 1px solid gray;
     height: 180px;
     margin: 10px;
@@ -363,6 +367,9 @@ main {
      left: 50%; 
     transition: all .3s;
 }
+
+
+
 
 /* calificacaiones */
 
@@ -1436,11 +1443,11 @@ summary {
    
     }
 
-    nav{
+    .nav{
         display: none; 
     }
 
-    nav li a {
+    .nav li a {
         padding: 0px;
         margin: 0px;
         background-color: #000000;
