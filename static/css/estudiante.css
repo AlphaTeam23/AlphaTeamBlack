@@ -1028,7 +1028,7 @@ td{
     font-family: miFuentePath;
     width: 490px;
     margin-left: 10%;
-    height: 375px;
+    height: 410px;
     position: relative;
     top: 540px;
     border-radius: 30px;
@@ -1041,25 +1041,56 @@ td{
     font-weight: normal;
 }
 
-.inf_basica_estudiante h4 {
-    font-weight: normal;
-    margin-left: 45px;
-    color: #ffffffa2;
-}
+
+
 
 .estudiante-img img {
     border-radius: 50%;
     width: 150px;
+    height: 150px;
     margin-left: 40px;
     margin-top: 55px;
 }
 
-.estudiante-img .camara2 {
+.estudiante-img input {
+    z-index: 90;
+   display: flex;
+    position: relative;
+    left: 11%;
+    margin-top: 2%;
+   color: white;
+    width: 136px;
+}
+
+.estudiante-img button {
+   position: relative;
+   
+    z-index: 150;
+    margin-left: 15%;
+    margin-top: 3%;
+    padding: 5px;
+    width: 90px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #81e6ff;
+    font-weight: normal;
+    font-size: 17px;
+}
+
+.estudiante-img .borrar {
     width: 30px;
+    height: 30px;
     top: -115px;
     right: 75px;
     position: relative;
 }
+
+.titinfo {
+    position: relative;
+    bottom: 30px;
+    
+}
+
 
 .titinfo h4 {
     margin: 30px;

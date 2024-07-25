@@ -23,33 +23,35 @@
 // });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-        const input = document.getElementById('cargarfoto');
-        const imagenPrevia = document.getElementById('imagenPrevia');
+
+document.getElementById('uploadButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    const input = document.getElementById('imageInput');
+    if (input.files && input.files[0]) {
+        const file = input.files[0];
+        const reader = new FileReader();
         
-        // Verificar si hay una imagen almacenada en localStorage al cargar la página
-        const imagenLocalStorage = localStorage.getItem('imagenPrevia');
-        if (imagenLocalStorage) {
-            imagenPrevia.src = imagenLocalStorage;
-        }
+        reader.onload = function(event) {
+            const base64Image = event.target.result;
+            localStorage.setItem('uploadedImage', base64Image);
+            document.getElementById('imagenPrevia').src = base64Image;
+        };
+        
+        reader.readAsDataURL(file);
+    }
+});
 
-        input.addEventListener('change', function() {
-            const file = this.files[0];
+// Al cargar la página, verifica si hay una imagen en localStorage y la muestra
+document.addEventListener('DOMContentLoaded', function() {
+    const storedImage = localStorage.getItem('uploadedImage');
+    if (storedImage) {
+        document.getElementById('imagenPrevia').src = storedImage;
+    }
+});
 
-            if (file) {
-                const reader = new FileReader();
-
-                reader.onload = function(e) {
-                    // Mostrar la imagen previa
-                    imagenPrevia.src = e.target.result;
-
-                    // Guardar la imagen en localStorage
-                    localStorage.setItem('imagenPrevia', e.target.result);
-                };
-
-                reader.readAsDataURL(file);
-            }
-        });
-    });
-
-
+// Añade un evento de clic a la imagen de borrar para eliminar la foto
+document.querySelector('.borrar').addEventListener('click', function() {
+    localStorage.removeItem('uploadedImage');
+    document.getElementById('imagenPrevia').src = '/static/imagenes/usuario.svg';
+    alert("se elimino la imagen del pelfil.")
+});
