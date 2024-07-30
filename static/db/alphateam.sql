@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-07-2024 a las 23:19:11
+-- Tiempo de generación: 30-07-2024 a las 20:53:01
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -133,7 +133,6 @@ CREATE TABLE `estudiante` (
   `Id_profesor` int(5) NOT NULL,
   `id_seccion` int(5) NOT NULL,
   `id_tutor` int(5) NOT NULL
-  `imagen_perfil` text COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish2_ci;
 
 --
@@ -141,16 +140,16 @@ CREATE TABLE `estudiante` (
 --
 
 INSERT INTO `estudiante` (`id_estudiante`, `nombre_estudiante`, `apellidop_estudiante`, `apellidom_estudiante`, `sexo_estudinate`, `nacimiento_estudiante`, `id_curso`, `Id_profesor`, `id_seccion`, `id_tutor`) VALUES
-(1, 'Faury', 'García', 'Rodríguez', 'Masculino', '2004-09-17', 0, 0, 0, 2),
-(2, 'Jose Miguel', 'Bello', 'Acosta', 'Masculino', '2003-09-04', 0, 0, 0, 4),
-(3, 'Jose Miguel', 'Reyes', '', 'Masculino', '1996-11-08', 0, 0, 0, 5),
-(4, 'Massiel', 'Rodriguez', 'Rodriguez', 'Femenino', '2004-01-04', 0, 0, 0, 8),
-(5, 'Manuel De Jesus', 'Diaz', 'Diaz', 'Masculino', '1999-01-13', 0, 0, 0, 6),
-(6, 'Albiery', 'Rodriguez', 'Almonte', 'Masculino', '2004-08-19', 0, 0, 0, 1),
-(7, 'Smailyn', 'Gutiérrez', 'Burgos', 'Femenino', '2003-03-04', 0, 0, 0, 9),
-(8, 'Gissel Esmeralda', 'Velez', 'Cruz', 'Femenino', '1999-09-27', 0, 0, 0, 3),
-(9, 'Marilin', 'Gil', 'Paulino', 'Femenino', '2005-01-28', 0, 0, 0, 7),
-(10, 'Tiara', 'Peña', 'Peña', 'Femenino', '2003-12-11', 0, 0, 0, 10);
+(1, 'Faury', 'García', 'Rodríguez', 'Masculino', '2004-09-17', 1, 1, 0, 2),
+(2, 'Jose Miguel', 'Bello', 'Acosta', 'Masculino', '2003-09-04', 2, 1, 0, 4),
+(3, 'Jose Miguel', 'Reyes', '', 'Masculino', '1996-11-08', 3, 1, 0, 5),
+(4, 'Massiel', 'Rodriguez', 'Rodriguez', 'Femenino', '2004-01-04', 1, 2, 0, 8),
+(5, 'Manuel De Jesus', 'Diaz', 'Diaz', 'Masculino', '1999-01-13', 2, 3, 0, 6),
+(6, 'Albiery', 'Rodriguez', 'Almonte', 'Masculino', '2004-08-19', 3, 2, 0, 1),
+(7, 'Smailyn', 'Gutiérrez', 'Burgos', 'Femenino', '2003-03-04', 1, 3, 0, 9),
+(8, 'Gissel Esmeralda', 'Velez', 'Cruz', 'Femenino', '1999-09-27', 2, 4, 0, 3),
+(9, 'Marilin', 'Gil', 'Paulino', 'Femenino', '2005-01-28', 3, 4, 0, 7),
+(10, 'Tiara', 'Peña', 'Peña', 'Femenino', '2003-12-11', 0, 5, 0, 10);
 
 -- --------------------------------------------------------
 
@@ -172,15 +171,13 @@ CREATE TABLE `nivel` (
 CREATE TABLE `profesores` (
   `id_profesor` int(5) NOT NULL,
   `id_asignatura` int(5) NOT NULL,
-  `nombre` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `nombre` blob,
   `apellidos` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `correo` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
   `telefono` char(12) COLLATE utf8mb4_spanish_ci NOT NULL,
   `cedula` char(13) COLLATE utf8mb4_spanish_ci NOT NULL,
   `direccion` text COLLATE utf8mb4_spanish_ci NOT NULL
-  `imagen_perfil` text COLLATE utf8mb4_spanish_ci NOT NULL
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -188,19 +185,19 @@ CREATE TABLE `profesores` (
 --
 
 INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `nombre`, `apellidos`, `fecha_nacimiento`, `correo`, `telefono`, `cedula`, `direccion`) VALUES
-(1, 3, 'Eduardo Rafael', 'Rodríguez Domínguez', '1968-08-02', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30'),
-(2, 1, 'Hanyi Gersi', 'Castillo', '1990-08-16', 'hanyigc@gmail.com', '829-633-5649', '130-6575967-6', 'Los Castillos, #21'),
-(3, 5, 'Jose Luis Manuel', 'Alonzo', '1953-12-06', 'profjosealonzo@gmail.com', '829-55-6545', '046-2285963-6', 'Padre de Las Casas #30'),
-(4, 6, 'Ruddys', 'Ferreras', '1950-12-10', 'ruddysf@gmail.com', '849-578-8489', '046-2596451-2', 'Villa Olímpica, Calle principal #2'),
-(5, 7, 'Apolinar', 'Rivas Genao', '1960-04-15', 'apolinar@gmail.com', '829-565-3215', '130-5426315-6', 'La Barranquita, Avenida Olímpica, #12'),
-(6, 4, 'Jose', 'De La Cruz', '1950-01-16', 'delacruz@gmail.com', '849-424-2424', '046-5526321-6', 'Las Colinas #05'),
-(7, 2, 'Faustina', 'Rodriguez', '1979-05-04', 'fausrodriguez@gmail.com', '849-478-9863', '130-1548963-9', 'Los Jardines #40');
+(1, 3, 0x4564756172646f2052616661656c, 'Rodríguez Domínguez', '1968-08-02', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30'),
+(2, 1, 0x48616e7969204765727369, 'Castillo', '1990-08-16', 'hanyigc@gmail.com', '829-633-5649', '130-6575967-6', 'Los Castillos, #21'),
+(3, 5, 0x4a6f7365204c756973204d616e75656c, 'Alonzo', '1953-12-06', 'profjosealonzo@gmail.com', '829-55-6545', '046-2285963-6', 'Padre de Las Casas #30'),
+(4, 6, 0x527564647973, 'Ferreras', '1950-12-10', 'ruddysf@gmail.com', '849-578-8489', '046-2596451-2', 'Villa Olímpica, Calle principal #2'),
+(5, 7, 0x41706f6c696e6172, 'Rivas Genao', '1960-04-15', 'apolinar@gmail.com', '829-565-3215', '130-5426315-6', 'La Barranquita, Avenida Olímpica, #12'),
+(6, 4, 0x4a6f7365, 'De La Cruz', '1950-01-16', 'delacruz@gmail.com', '849-424-2424', '046-5526321-6', 'Las Colinas #05'),
+(7, 2, 0x4661757374696e61, 'Rodriguez', '1979-05-04', 'fausrodriguez@gmail.com', '849-478-9863', '130-1548963-9', 'Los Jardines #40');
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `roles`
---a
+--
 
 CREATE TABLE `roles` (
   `id_roles` int(5) NOT NULL,
@@ -215,7 +212,7 @@ INSERT INTO `roles` (`id_roles`, `tipo_rol`) VALUES
 (1, 'administrador'),
 (2, 'profesor'),
 (3, 'estudiante');
- 
+
 -- --------------------------------------------------------
 
 --
@@ -232,7 +229,7 @@ CREATE TABLE `seccion` (
 --
 
 INSERT INTO `seccion` (`id_seccion`, `seccion`) VALUES
-(1, 'A'),
+(0, 'A'),
 (2, 'B'),
 (3, 'C'),
 (4, 'D');
@@ -382,7 +379,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `asignatura`
 --
 ALTER TABLE `asignatura`
-  MODIFY `id_asignatura` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_asignatura` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `calificaciones`
@@ -400,7 +397,7 @@ ALTER TABLE `calificacion_final`
 -- AUTO_INCREMENT de la tabla `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `id_curso` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_curso` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `estudiante`
@@ -412,7 +409,7 @@ ALTER TABLE `estudiante`
 -- AUTO_INCREMENT de la tabla `nivel`
 --
 ALTER TABLE `nivel`
-  MODIFY `id_nivel` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_nivel` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `profesores`
@@ -474,13 +471,16 @@ ALTER TABLE `cursos`
   ADD CONSTRAINT `cursos_ibfk_1` FOREIGN KEY (`Id_profesor`) REFERENCES `profesores` (`id_profesor`),
   ADD CONSTRAINT `cursos_ibfk_2` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
   ADD CONSTRAINT `cursos_ibfk_3` FOREIGN KEY (`id_nivel`) REFERENCES `nivel` (`id_nivel`),
-  ADD CONSTRAINT `cursos_ibfk_4` FOREIGN KEY (`id_seccion`) REFERENCES `seccion` (`id_seccion`);
+  ADD CONSTRAINT `cursos_ibfk_4` FOREIGN KEY (`id_seccion`) REFERENCES `seccion` (`id_seccion`),
+  ADD CONSTRAINT `cursos_ibfk_5` FOREIGN KEY (`id_curso`) REFERENCES `estudiante` (`id_curso`);
 
 --
 -- Filtros para la tabla `estudiante`
 --
 ALTER TABLE `estudiante`
-  ADD CONSTRAINT `estudiante_ibfk_1` FOREIGN KEY (`id_tutor`) REFERENCES `tutor` (`id_tutor`);
+  ADD CONSTRAINT `estudiante_ibfk_1` FOREIGN KEY (`id_tutor`) REFERENCES `tutor` (`id_tutor`),
+  ADD CONSTRAINT `estudiante_ibfk_2` FOREIGN KEY (`id_seccion`) REFERENCES `seccion` (`id_seccion`),
+  ADD CONSTRAINT `estudiante_ibfk_3` FOREIGN KEY (`Id_profesor`) REFERENCES `profesores` (`id_profesor`);
 
 --
 -- Filtros para la tabla `nivel`
