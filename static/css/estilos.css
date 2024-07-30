@@ -221,11 +221,13 @@ h4 {
 
 
 /* Movil */ 
-@media  screen and (max-width: 600px) {
+@media  screen and (max-width: 900px) {
     h1 {
-        margin-left: 17%;
         font-size: 6vh;
-        width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
     }
 
     header img {
@@ -233,12 +235,13 @@ h4 {
     }
 
     .titulo1 {
-        margin-left: 30%;
+        margin-left: 33%;
     }
 
     .iniciar_container {
         margin-left: 19%;
-        width: 58%;
+        margin: 0 auto;
+        width: 350px;
     }
 
     input {
@@ -256,7 +259,10 @@ h4 {
     }
 
     aside {
-       margin-left: 32%;
+        margin-left: 80%;
+        top: -150px;
+        position: relative;
+        margin: 0 auto;
     }
 }
 

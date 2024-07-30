@@ -28,15 +28,28 @@
     <main>
         <section class="reporte">
             <h2>INDICANOS CUAL ES TU PROBLEMA</h2>
-            <form>
-                <label for="reportar"></label>
-                <textarea name="reportar" id="reportar" cols="30" rows="10" placeholder="Describe aquí tu problema"></textarea>
+            <form id="reportarForm">
+                <label for="repotar"></label>
+                <textarea name="reportar" id="reportar2" cols="30" rows="10" placeholder="Describe aquí tu problema"></textarea>
 
                 <input type="submit" value="Borrar" class="report_ev" id="Borrar">
-                <input type="submit" value="Enviar reporte" class="report_ev">
+                <input type="submit" value="Enviar reporte" class="report_ev" id="reportes">
                 
             </form>
         </section>
     </main>
+
+    <script>
+        document.getElementById("reportarForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("reporte enviado correctamente")
+        
+        });
+        
+        
+        document.getElementById("Borrar").addEventListener("click", function() {
+            document.getElementById("reportar2").value = "" ;
+        });
+    </script>
 </body>
 </html>

@@ -225,7 +225,7 @@ main {
     grid-template-columns: 2fr 6fr 4fr;
     grid-template-rows: 3rem;
     margin: 0 25rem;
-    transform: translateY(-440px);
+     transform: translateY(-440px); 
 } 
 
 
@@ -238,20 +238,24 @@ main {
     font-size: 25px;
     color: #ffffff;
     position: relative;
-    bottom: 600px;
-    left: 700px;
+    top: -600px;
+    left: 580px;
+}
+
+.info_docente {
+   position: relative;
+   top: -160px;
 }
 
 
 .info_docente img {
-   width: 350px;
+   width: 850px;
    height: 350px;
    position: absolute;
-   top: 10px;
+   top: 20px;
    left: 90%;
    object-fit: contain;
 }
-
 
 
 .contenedor {
@@ -261,12 +265,10 @@ main {
     width: 500px;
     cursor: pointer;
     position: relative;
-    bottom: -150px;
-    left: 20px;
-    
 }
 
 .contenedor-imagen {
+    position: relative;
     border: 1px solid gray;
     height: 180px;
     margin: 10px;
@@ -363,6 +365,9 @@ main {
      left: 50%; 
     transition: all .3s;
 }
+
+
+
 
 /* calificacaiones */
 
@@ -1021,7 +1026,7 @@ td{
     font-family: miFuentePath;
     width: 490px;
     margin-left: 10%;
-    height: 375px;
+    height: 410px;
     position: relative;
     top: 540px;
     border-radius: 30px;
@@ -1034,25 +1039,56 @@ td{
     font-weight: normal;
 }
 
-.inf_basica_estudiante h4 {
-    font-weight: normal;
-    margin-left: 45px;
-    color: #ffffffa2;
-}
+
+
 
 .estudiante-img img {
     border-radius: 50%;
     width: 150px;
+    height: 150px;
     margin-left: 40px;
     margin-top: 55px;
 }
 
-.estudiante-img .camara2 {
+.estudiante-img input {
+    z-index: 90;
+   display: flex;
+    position: relative;
+    left: 11%;
+    margin-top: 2%;
+   color: white;
+    width: 136px;
+}
+
+.estudiante-img button {
+   position: relative;
+   
+    z-index: 150;
+    margin-left: 15%;
+    margin-top: 3%;
+    padding: 5px;
+    width: 90px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #81e6ff;
+    font-weight: normal;
+    font-size: 17px;
+}
+
+.estudiante-img .borrar {
     width: 30px;
+    height: 30px;
     top: -115px;
     right: 75px;
     position: relative;
 }
+
+.titinfo {
+    position: relative;
+    bottom: 30px;
+    
+}
+
 
 .titinfo h4 {
     margin: 30px;
@@ -1429,18 +1465,18 @@ summary {
 }
 
 
-@media  screen and (max-width: 900px) {
+@media  screen and (max-width: 600px) {
     .cout {
     position: relative;
     display: inline-block;
    
     }
 
-    nav{
+    .nav{
         display: none; 
     }
 
-    nav li a {
+    .nav li a {
         padding: 0px;
         margin: 0px;
         background-color: #000000;
@@ -1584,11 +1620,12 @@ summary {
           /* display: flex;   */
         position: relative;
         top: 55%;
-       margin-left: 170px;
+       margin-left: -20px;
     }
 
     .calificaciones .tabla {
         width: 100.60%;
+        
     }
 
 
@@ -1764,6 +1801,27 @@ summary {
     width: 200px;
    }
    
+   /* cambio de contraseña */
+   .cons{
+    position: relative;
+    right: 10%;
+   }
+
+   .cons figure {
+    position: relative;
+    right: 2%;
+   }
+
+   .regresar {
+    position: relative;
+    left: 10%;
+    bottom: 70px;
+   }
+
+   .cambio_contraseña {
+    position: relative;
+    right: 34%;
+   }
 
    /* pagina foto responsiv */
    .cargar-imagen {

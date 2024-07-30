@@ -20,3 +20,16 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         alert("Nombre de usuario o contraseña incorrectos.");
     }
 });
+
+
+
+document.getElementById("reportarForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("reporte enviado correctamente")
+
+});
+
+
+document.getElementById("Borrar").addEventListener("click", function() {
+    document.getElementById("reportar2").value = "" ;
+});
