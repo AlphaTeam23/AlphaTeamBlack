@@ -126,6 +126,21 @@ def a_cursos():
 def a_inscripcion():
     return render_template('./admin/a_inscripcion.html')
 
+
+@app.route('/admin/a_inscripcion.html', methods=['GET', 'POST'])
+def inscripcion ():
+    if request.method == 'POST':
+        nombre_estudiante = request.form['nom']
+        apellidop_estudiante = request.form['ape']
+        sexo_estudinate = request.form['sexo']
+        nacimiento_estudiante = request.form['fechnac']
+        id_curso = request.form['curso']
+        id_profesor = request.form['prof']
+        id_seccion = request.form['seccion']
+        id_tutor = request.form['nomt']
+        
+     
+
 @app.route('/alphaTeam/admin/planificacion')
 def a_planificacion():
     return render_template('./admin/a_planificacion.html')
@@ -146,6 +161,7 @@ def a_usuarios():
 def p_cerrar():
     session.clear()
     return redirect('./index.html')
+
 
 
 
