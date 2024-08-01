@@ -724,7 +724,7 @@ summary {
 .input_boton1 .reset img {
     width: 30%;
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: -8%;
 }
 
 .cambio_contraseña h2 {
@@ -756,20 +756,24 @@ summary {
 }
 
 .imagen {
-    margin-top: -37%;
-    margin-left: 10%;
+    top: -40px;
+    left: 14%;
+    position: relative;
+    margin: 0 auto;
 }
 
 .imagen1 {
-    top: -60px;
+    top: -65px;
     left: 14%;
     position: relative;
+    margin: 0 auto;
 }
 
 .imagen2 {
     bottom: 10px;
     left: 14%;
     position: relative;
+    margin: 0 auto;
 }
 
 .botton1 {
@@ -873,12 +877,14 @@ summary {
     border: 1px solid #ffffff70;
     color: #fff;
     font-family: miFuentePath;
-    width: 35%;
+    width: 450px;
     margin-left: 33%;
     height: 375px;
-    margin-top: 8%;
+    top: 80px;
+    position: relative;
     border-radius: 30px;
     cursor: pointer;   
+    margin: 0 auto;
 }
 
 .inf_basica_profesor h2 {
@@ -958,9 +964,9 @@ summary {
     position: absolute;
     display: flex;
     justify-content: flex-start;
-    margin-top: -18.5%;
-    margin-left: 17%;
-    width: 1.20%;
+    margin-top: -57%;
+    margin-left: 49%;
+    width: 18px;
 }
 
 .titinfo p {
@@ -1176,60 +1182,7 @@ summary {
 
     /* Perfil usuario */
 
-    .inf_basica_profesor {
-        margin-left: 10%;
-        position: relative;
-        width: 390px;
-        top: 125px;
-        margin: 0 auto;
-    }
 
-    .inf_basica_profesor h4 {
-        margin-left: 8%;
-        position: relative;
-        bottom: -10px;
-    }
-
-    .titinfo {
-        margin-left: 10%;
-        margin-top: 12%;
-    }
-
-    .titinfo h4 {
-        margin-left: 55%;
-    }
-    .titinfo p {
-        width: 43%;
-        margin-left: 55%;
-    }
-
-    .titinfo img {
-        width: 3%;
-        margin-top: -63%;
-        margin-left: 49%;
-    }
-
-    .direccion {
-        height: 44px;
-    }
-
-    .estudiante-img img {
-        margin-left: 10%;
-        width: 30%;
-        top: 20%;
-        position: relative;
-    }
-
-     .estudiante-img .camara2 {
-        width: 7%;
-        margin-left: 8%;
-        top: -90px;
-    }
-
-    .regresar {
-        top: 160px;
-        position: relative;
-    }
 
 /* Cambiar Contraseña */
 
@@ -1648,57 +1601,6 @@ summary {
 
     .preguntas_container::-webkit-scrollbar {
         display: none;
-    }
-
-    /* Informacion Personal del Profesor */
-    .inf_basica_profesor {
-        margin-left: 10%;
-        position: relative;
-        width: 390px;
-        top: 125px;
-        margin: 0 auto;
-    }
-
-    .inf_basica_profesor h4 {
-        margin-left: 8%;
-        position: relative;
-        bottom: -10px;
-    }
-
-    .titinfo {
-        margin-left: 10%;
-        margin-top: 12%;
-    }
-
-    .titinfo h4 {
-        margin-left: 55%;
-    }
-    .titinfo p {
-        width: 43%;
-        margin-left: 55%;
-    }
-
-    .titinfo img {
-        width: 3%;
-        margin-top: -63%;
-        margin-left: 49%;
-    }
-
-    .direccion {
-        height: 44px;
-    }
-
-    .estudiante-img img {
-        margin-left: 10%;
-        width: 30%;
-        top: 20%;
-        position: relative;
-    }
-
-     .estudiante-img .camara2 {
-        width: 7%;
-        margin-left: 8%;
-        top: -90px;
     }
 
 
