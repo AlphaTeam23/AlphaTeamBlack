@@ -11,11 +11,11 @@
 <body>
     <header>
         <h1>ALPHA TEAM</h1>
+        <a href="e_alphaTeam.html">
             <figure class="logo_pagina">
                 <img src="/static/imagenes/logo.png" alt="">
             </figure>
         </a>
-
             <div class="regresar">
                 <figure>
                     <a href="javascript:history.back()">
@@ -23,28 +23,32 @@
                 </figure>
             </div>
     </header>
-
     <main>
-        <section class="inf_basica_profesor">
-            <h2>MI INFORMACIÓN BÁSICA PERSONAL</h2>
+    <section class="inf_basica_profesor">
+        <h2>MI INFORMACIÓN BÁSICA PERSONAL</h2>
+        <form action="" id="imageUploadForm">
             <figure class="estudiante-img">
-                <img src="/static/imagenes/imagenprofesor.jpg" alt=""><img src="/static/imagenes/boligrafo (4).png" alt="" class="camara2"></a>
-                <h4>Haz clic para editar la foto</h4>
+                <img src="/static/imagenes/usuario.svg" alt="" id="imagenPrevia">
+                <img src="/static/imagenes/bx-trash.svg" alt="" class="borrar">
+                <label for="imageInput"></label>
+                <input type="file" name="image" id="imageInput">
+                <button type="submit" id="uploadButton">Subir</button>
             </figure>
-
-            <div class="titinfo">
-                <h4>Nombre</h4><img src="/static/imagenes/bx-user copy.svg" alt="">
-                <p>Carlos</p>
-                <h4>Apellidos</h4><img src="/static/imagenes/bxs-user-detail.svg" alt="">
-                <p>Acosta Reyes</p>
-                <h4>Email</h4><img src="/static/imagenes/bx-envelope (1).svg" alt="">
-                <p>carlosareyes@gmail.com</p>
-                <h4>Género</h4><img src="/static/imagenes/bx-male-female.svg" alt="">
-                <p>Masculino</p>
-                <h4>Dirección</h4><img src="/static/imagenes/ubicacion.png" alt="">
-                <p class="direccion">Los Padros 1, Santiago de los Caballeros</p>
-            </div>
-        </section>
+        </form>
+        <div class="titinfo">
+            <h4>Nombre</h4><img src="/static/imagenes/bx-user copy.svg" alt="">
+            <p>Carlos</p>
+            <h4>Apellidos</h4><img src="/static/imagenes/bxs-user-detail.svg" alt="">
+            <p>Acosta Reyes</p>
+            <h4>Email</h4><img src="/static/imagenes/bx-envelope (1).svg" alt="">
+            <p>carlosareyes@gmail.com</p>
+            <h4>Género</h4><img src="/static/imagenes/bx-male-female.svg" alt="">
+            <p>Masculino</p>
+            <h4>Dirección</h4><img src="/static/imagenes/ubicacion.png" alt="">
+            <p class="direccion">Los Padros 1, Santiago de los Caballeros</p>
+        </div>
+    </section>
     </main>
+    <script src="/static/js/cambiofoto.js"></script>
 </body>
 </html>

@@ -22,8 +22,6 @@
 //     });
 // });
 
-
-
 document.getElementById('uploadButton').addEventListener('click', function(event) {
     event.preventDefault();
     const input = document.getElementById('imageInput');
@@ -53,5 +51,5 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelector('.borrar').addEventListener('click', function() {
     localStorage.removeItem('uploadedImage');
     document.getElementById('imagenPrevia').src = '/static/imagenes/usuario.svg';
-    alert("se elimino la imagen del pelfil.")
+    alert("Se eliminó la imagen del perfil.")
 });

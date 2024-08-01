@@ -883,7 +883,7 @@ summary {
 
 .inf_basica_profesor h2 {
     text-align: center;
-    padding: 2%;
+    padding: 1%;
     font-weight: normal;
 }
 
@@ -895,15 +895,41 @@ summary {
 
 .estudiante-img img {
     border-radius: 50%;
-    width: 32%;
-    margin-left: 10%;
-    margin-top: 12%;
+    width: 150px;
+    height: 150px;
+    margin-left: -40%;
+    margin-top: 15px;
 }
 
-.estudiante-img .camara2 {
-    width: 6%;
+.estudiante-img input {
+    z-index: 90;
+    display: flex;
+    position: relative;
+    left: -38%;
+    margin-top: 2%;
+    color: white;
+    width: 136px;
+}
+
+.estudiante-img button {
+   position: relative;
+    z-index: 150;
+    margin-left: -30%;
+    margin-top: 3%;
+    padding: 5px;
+    width: 90px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #81e6ff;
+    font-weight: normal;
+    font-size: 17px;
+}
+
+.estudiante-img .borrar {
+    width: 30px;
+    height: 30px;
     top: -115px;
-    right: 15%;
+    left: 30%;
     position: relative;
 }
 
