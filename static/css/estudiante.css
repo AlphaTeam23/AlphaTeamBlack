@@ -1134,99 +1134,6 @@ td{
     border-radius: 5px;
 }
 
-/* Cambiar foto de estudiante */
-
-.cargar-imagen {
-    border: 1px solid #fff;
-    color: #fff;
-    font-family: miFuentePath;
-    width: 450px;
-    margin-left: 50%;
-    height: 380px;
-    margin-top: 20%;
-    border-radius: 40px;
-    /* cursor: pointer; */
-}
-
-.cargar-imagen h2 {
-    font-weight: normal;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    font-size: 22px;
-}
-
-.cargar-imagen h3 {
-    border: 1px solid #81e6ff;
-    font-weight: normal;
-    font-size: 17px;
-    width: 90px;
-    text-align: center;
-    margin-left: 170px;
-    margin-top: 20px;
-}
-
-.cambio-img img {
-    border-radius: 50%;
-    width: 160px;
-    height: 160px;
-    margin-left: 150px;
-    margin-top: 30px;
-}
-
-
-/* editar perfil */
-
-.cargar-imagen {
-    border: 1px solid #fff;
-    color: #fff;
-    font-family: miFuentePath;
-    width: 450px;
-    margin-left: 50px;
-    height: 380px;
-    position: relative;
-    top: 445px;
-    border-radius: 40px;
-    
-}
-
-.cargar-imagen h2 {
-    font-weight: normal;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    font-size: 22px;
-}
-
-.cargar-imagen button {
-    cursor: pointer;
-    border: 1px solid #81e6ff;
-    font-weight: normal;
-    font-size: 17px;
-    width: 90px;
-    text-align: center;
-    margin-left: 170px;
-    margin-top: 20px;
-    
-}
-
-.cargar-imagen input {
-    cursor: pointer;
-   
-}
-
-.cambio-img img {
-    border-radius: 50%;
-    width: 160px;
-    margin-left: 150px;
-    margin-top: 30px;
-}
-
-
-#cargarfoto {
-    margin-left: 30px;    
-}
-
 /* Cambio de contraseña en Gestion Perfil */
 
 .input_boton1 .reset img {
@@ -1833,7 +1740,11 @@ summary {
    }
    
    /* cambio de contraseña */
-   .cons {
+
+   
+
+   .cons{
+
     position: relative;
     right: 10%;
    }
@@ -1849,11 +1760,14 @@ summary {
     bottom: 70px;
    }
 
+
    #back {
     position: relative;
         left: 1%;
         bottom: 70px;
    }
+
+
 
    .cambio_contraseña {
     position: relative;
