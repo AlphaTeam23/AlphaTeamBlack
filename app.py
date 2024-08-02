@@ -125,19 +125,44 @@ def a_cursos():
 @app.route('/alphaTeam/admin/inscripcion')
 def a_inscripcion():
     return render_template('./admin/a_inscripcion.html')
-
-
-@app.route('/admin/a_inscripcion.html', methods=['GET', 'POST'])
-def inscripcion ():
+    
+    
+@app.route('/admin/a_inscripcion', methods=['GET', 'POST'])
+def inscripcion():
     if request.method == 'POST':
-        nombre_estudiante = request.form['nom']
-        apellidop_estudiante = request.form['ape']
-        sexo_estudinate = request.form['sexo']
-        nacimiento_estudiante = request.form['fechnac']
-        id_curso = request.form['curso']
-        id_profesor = request.form['prof']
-        id_seccion = request.form['seccion']
-        id_tutor = request.form['nomt']
+        # Obtener datos del formulario
+        nom = request.form['inpnom']
+        ape = request.form['inpape']
+        sexo = request.form['inpsexo']
+        fech = request.form['inpfechnac']
+        curso = request.form['inpcurso']
+        prof = request.form['inpprof']
+        seccion = request.form['inpseccion']
+        nomt = request.form['inpnomt']
+        apet = request.form['inpapet']
+        cedula = request.form['inpcedula']
+        telefono = request.form['inpnumero']
+        correo = request.form['inpcorreo']
+        educacion = request.form['inpedu']
+        ocupacion = request.form['inpocup']
+        parentesco = request.form['inpparent']
+        provincia = request.form['inpprovincia']
+        sector = request.form['inpsector']
+        calle = request.form['inpcalle']
+        edificio = request.form['inpedificio']
+        foto = request.files['inpfoto'].read()
+
+       
+
+            # Inserción de datos
+        cursor.execute("""
+            INSERT INTO inscripcion (inpnom, inpape, inpsexo, inpfechnac, inpcurso, inpprof, inpseccion, inpnomt,       inpapet, inpcedula, inpnumero, inpcorreo, inpedu, inpocup, inpparent, inpprovincia, inpsector, inpcalle,    inpedificio, inpfoto)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """, (nom, ape, sexo, fech, curso, prof, seccion, nomt, apet, cedula, telefono, correo, educacion, ocupacion,       parentesco, provincia, sector, calle, edificio, foto))
+
+          
+
+    return render_template('admin/a_inscripcion.html')
         
      
 
