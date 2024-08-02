@@ -239,13 +239,16 @@ main {
     font-size: 25px;
     color: #ffffff;
     position: relative;
-    top: -600px;
-    left: 580px;
+    /* top: -600px;
+    left: 580px; */
 }
 
-.info_docente {
-   position: relative;
-   top: -160px;
+.info_docente{
+    position: relative;
+    top: -160px;
+    right: -100px;
+       
+   
 }
 
 
@@ -266,6 +269,7 @@ main {
     width: 500px;
     cursor: pointer;
     position: relative;
+    
 }
 
 .contenedor-imagen {
@@ -1373,7 +1377,7 @@ summary {
 }
 
 
-@media  screen and (max-width: 600px) {
+@media  screen and (max-width: 900px) {
     .cout {
     position: relative;
     display: inline-block;
@@ -1524,16 +1528,13 @@ summary {
     /* mis calificaciones responsive */
 
     .calificaciones {
-      
-          /* display: flex;   */
         position: relative;
         top: 55%;
-       margin-left: -20px;
+        margin-left: -20px;
     }
 
     .calificaciones .tabla {
         width: 100.60%;
-        
     }
 
 
@@ -1620,6 +1621,7 @@ summary {
 
     .coutinfo{
         bottom: 60px;
+        z-index: 50;
     }
 
     .docente h2 {
@@ -1992,7 +1994,7 @@ summary {
         height: 357px;
     }
 
-    /* .datos_personales h4 {
+     .datos_personales h4 {
         text-align: center;
         position: relative;
         transform: translate(-50%);
@@ -2001,6 +2003,6 @@ summary {
         color: #fffdfd;
         font-family: miFuentePath;
         font-weight: normal;
-    } */
+    } 
 
 }
