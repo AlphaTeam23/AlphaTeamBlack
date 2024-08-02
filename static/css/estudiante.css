@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
 }
 
 /* Fuentes */
@@ -238,8 +239,8 @@ main {
     font-size: 25px;
     color: #ffffff;
     position: relative;
-    top: 200px;
-    left: 100px;
+    top: -600px;
+    left: 580px;
 }
 
 .info_docente {
@@ -258,7 +259,6 @@ main {
 }
 
 
-
 .contenedor {
     display: flex;
     flex-wrap: wrap;
@@ -266,7 +266,6 @@ main {
     width: 500px;
     cursor: pointer;
     position: relative;
-    
 }
 
 .contenedor-imagen {
@@ -352,7 +351,7 @@ main {
 
 .contenedor-imagen::after {
     background-color: #fff;
-     content: ""; 
+    content: ""; 
     height: 2px;
     left: -100%;
     position: absolute;
@@ -1467,7 +1466,7 @@ summary {
 }
 
 
-@media  screen and (max-width: 900px) {
+@media  screen and (max-width: 600px) {
     .cout {
     position: relative;
     display: inline-block;
@@ -1622,11 +1621,12 @@ summary {
           /* display: flex;   */
         position: relative;
         top: 55%;
-       margin-left: 170px;
+       margin-left: -20px;
     }
 
     .calificaciones .tabla {
         width: 100.60%;
+        
     }
 
 
@@ -1636,9 +1636,21 @@ summary {
 
     /* pagina reinscripcion resposive */
 
+    
+        
+    .inscribete {
+        color: rgb(255, 255, 255);
+        font-size: 40px;
+        position: relative;
+        left: 30%;
+        bottom: 200px;
+        font-family: miFuentePath;
+        }
+        
+
     .reinscripcion {
         position: relative;
-
+       
         top: 500px;
         right: 93%;
        
@@ -1693,9 +1705,27 @@ summary {
 
     /* informacion decente resposive */
 
+    .container {
+       transform: translate(-19%);
+       position: relative;
+       bottom: 40px;
+    }
+
+    .coutinfo{
+        bottom: 60px;
+    }
+
+    .docente h2 {
+        color: #00ccff;
+        font-size: 60px;
+        position: relative;
+        top: -700px;
+        right: -350px;
+    }
+
     .info_docente {
         position: relative;
-        top: 450px;
+        top: 410px;
         right: 400px;
 
     }
@@ -1798,10 +1828,37 @@ summary {
         top: 480px;
     }
 
-   .titinfo p{
+   .titinfo p {
     width: 200px;
    }
    
+   /* cambio de contraseña */
+   .cons {
+    position: relative;
+    right: 10%;
+   }
+
+   .cons figure {
+    position: relative;
+    right: 2%;
+   }
+
+   .regresar {
+    position: relative;
+    left: 10%;
+    bottom: 70px;
+   }
+
+   #back {
+    position: relative;
+        left: 1%;
+        bottom: 70px;
+   }
+
+   .cambio_contraseña {
+    position: relative;
+    right: 34%;
+   }
 
    /* pagina foto responsiv */
    .cargar-imagen {
@@ -1812,7 +1869,7 @@ summary {
 
 
    /* pagina de resportar problema */
-   .reporte textarea{
+   .reporte textarea {
     position: relative;
     right: 85%;
     width: 420px;
@@ -1825,5 +1882,211 @@ summary {
     bottom: 50px;
     transform: translate(-350px);
    } 
+
+}
+
+
+/* responsive tablet */
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+
+    .cout {
+            position: relative;
+            display: inline-block;
+    
+        }
+    
+        .nav {
+            display: none;
+        }
+    
+        .nav li a {
+            padding: 0px;
+            margin: 0px;
+            background-color: #000000;
+        }
+    
+        .cout ul {
+            margin-left: 220px;
+            padding: 5px;
+            width: 320px;
+            background-color: #000000;
+    
+        }
+    
+        .cout li {
+            text-align: left;
+        }
+    
+    
+        .container {
+            position: relative;
+            left: 19%;
+            bottom: 95%;
+            width: 100%;
+        }
+    
+        .cout li a {
+            color: white;
+            left: 50px;
+            margin: -10px;
+    
+        }
+    
+        li {
+            background-color: #00000031;
+            margin: -5px;
+            width: 310px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    
+        .content {
+            display: none;
+            position: absolute;
+            right: 200px;
+            top: 19%;
+            padding: 5px;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+    
+    
+        .content a {
+            color: rgb(0, 0, 0);
+            padding: 12px;
+            text-decoration: none;
+            display: block;
+        }
+    
+        /* .content a:hover {
+        background-color: #ddd;
+        } */
+    
+        .cout:focus-within .content,
+        .cout:active .content {
+            display: block;
+        }
+    
+        .menu {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            position: relative;
+            bottom: 110px;
+            left: 39%;
+    
+        }
+    
+        .menu-items {
+            margin-right: 50px;
+            margin-top: 5%;
+    
+        }
+    
+        .body {
+            margin-top: 0;
+            height: 900px;
+    
+        }
+    
+    
+        .menu img {
+            width: 20px;
+            height: 20px;
+        }
+
+
+        
+
+    .logo_pagina img{
+        width: 80px;
+        height: 50px;
+        position: relative;
+        top: -50px;
+        left: 17%;
+        margin: 0;
+         padding: 0;
+    }
+
+    .logo_pagina figure {
+        padding: 0;
+        margin: 0;
+        width: 0;
+        height: 0;
+        z-index: -1;
+    }
+    
+    
+   
+
+    h1 {
+        width: 400px;
+        font-size: 29px;
+        position: relative;
+        left: 17%;
+        top: 60px;
+       
+    }
+
+
+    .menu-btn {
+        position: relative;
+        left: 80%;
+        top: -160px;
+        }
+
+        /* calificaciones */
+
+        
+    .calificaciones {
+        position: relative;
+        top: 55%;
+        margin-left: -25px;
+        
+        
+    }
+
+    section .tabla {
+        width: 130%;
+       
+        position: relative;
+        left: 4%;
+        right: 60%;
+    
+    }
+    
+    /* reinscripcion */
+
+    .reinscripcion {
+        position: relative;
+        top: 500px;
+        right: 70%;
+    }
+
+    .conten-imag {
+        position: relative;
+        top: 141px;
+        left: -61%;
+    }
+
+    .conten-imag img {
+        width: 300px;
+        height: 357px;
+    }
+
+    /* .datos_personales h4 {
+        text-align: center;
+        position: relative;
+        transform: translate(-50%);
+        line-height: 2;
+        font-size: 50px;
+        color: #fffdfd;
+        font-family: miFuentePath;
+        font-weight: normal;
+    } */
 
 }
