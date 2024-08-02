@@ -1377,7 +1377,7 @@ summary {
 }
 
 
-@media  screen and (max-width: 900px) {
+@media  screen and (max-width: 600px) {
     .cout {
     position: relative;
     display: inline-block;
@@ -1534,7 +1534,7 @@ summary {
     }
 
     .calificaciones .tabla {
-        width: 100.60%;
+        width: 100%;
     }
 
 
