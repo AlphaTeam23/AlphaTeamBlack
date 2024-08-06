@@ -1513,7 +1513,7 @@ summary {
         font-size: 29px;
         position: relative;
         left: 23%;
-        top: 60px;
+        top: 20px;
     }
 
 
@@ -1619,8 +1619,9 @@ summary {
        bottom: 40px;
     }
 
-    .coutinfo{
-        bottom: 60px;
+    #coutinfo{
+        position: relative;
+        bottom: 80px;
         z-index: 50;
     }
 
@@ -1967,13 +1968,16 @@ summary {
     }
 
     section .tabla {
-        width: 130%;
-       
+        width: 130%; 
         position: relative;
-        left: 4%;
+        left: 10%;
         right: 60%;
     
     }
+
+  
+
+
     
     /* reinscripcion */
 
@@ -2003,6 +2007,15 @@ summary {
         color: #fffdfd;
         font-family: miFuentePath;
         font-weight: normal;
-    } 
+    }
+    
+    /* imformacion docente */
+
+     .info_docente {
+        position: relative;
+        top: 400px;
+        right: 20px;
+
+    }
 
 }
