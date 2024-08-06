@@ -56,6 +56,7 @@ h1 {
     left: 10px;
     top: -125px;
     position: relative;  
+    margin: 0 auto ;
 }
 
 
@@ -387,9 +388,8 @@ table {
     color: #fff;
     font-family: miFuentePath;
     border: 1px solid #81e6ff;
-    width: 7%;
-    margin-left: 33%;
-    margin-top: -5%;
+    width: 15%;
+    margin-left: 15.50%;
     font-size: 16px;
     cursor: pointer;
 }
@@ -404,6 +404,10 @@ table {
     background-color: transparent;
     color: #fff;
     border: 1px solid #81e6ff63;
+}
+
+.calificaciones_docente2 form {
+    width: 58%;
 }
 
 .calificaciones_docente2 option {
@@ -848,7 +852,7 @@ summary {
     width: 130px;
     border-radius: 5px;
     padding: 0;   
-    margin-top: 30%;
+    margin-top: 10%;
     position: relative;
     left: 35%;
     cursor: pointer;
@@ -1188,7 +1192,7 @@ summary {
 
     .cambio_contraseña {
         left: 1%;
-        top: 15%;
+        top: 65px;
         position: relative;
         width: 340px;
         margin: 0 auto;
@@ -1204,7 +1208,7 @@ summary {
     
     .cambio_contraseña input {
         top: 10px;
-        left: -17%;
+        left: -10%;
         position: relative;
     }
 
@@ -1237,19 +1241,20 @@ summary {
     }
 
     .imagen {
-        margin-top: -1%;
-        margin-left: 1%;
+        top: 2px;
+        left: 10px;
+        position: relative;
     }
 
     .imagen1 {
-        top: -10px;
+        top: -15px;
         position: relative;
-        left: 1%;
+        left: 5%;
     }
 
     .imagen2 {
         top: 30px;
-        left: 1%;
+        left: 5%;
     }
 
     /* Reportar */
@@ -1282,6 +1287,11 @@ summary {
         margin-top: -5px;
         left: 2%;
         position: relative;
+    }
+
+    .regresar {
+        margin-left: 20px;
+        margin-top: -13px;
     }
 
     /* Menú desplegable */
@@ -1465,8 +1475,14 @@ summary {
 
     /* Logo de las paginas */
     .logo_pagina {
-        width: 1300px;
+        width: 1200px;
+        position: relative;
+        top: 6px;
         margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 6vh;
     }
 
 
@@ -1517,19 +1533,22 @@ summary {
 
     /* Pagina Calificacion */
 
-    .calificaciones_docente1 {
-        bottom: -35px;
-        margin-left: 25%;
-        z-index: 3;
-        width: 80%;
+    /* .calificaciones_docente1 {
+        left: 10%;
+        position: relative;
+        margin: 0 auto;
+        width: 430px;
     }
 
     .calificaciones_docente1 fieldset {
         height: 90px;
-        width: 102%;
     }
 
-    .calificaciones_docente1 select {
+    .tabla1 {
+        width: 503px;
+    } */
+
+    /* .calificaciones_docente1 select {
         width: 10%;
     }
 
@@ -1548,7 +1567,7 @@ summary {
 
     .publicar {
         display: none;
-    }
+    } */
 
     /* Pagina Horario */
     .horario {
