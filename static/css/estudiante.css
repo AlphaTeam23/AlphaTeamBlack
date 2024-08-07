@@ -1491,7 +1491,7 @@ summary {
         width: 80px;
         height: 50px;
         position: relative;
-        top: -50px;
+        top: -90px;
         left: 17%;
         margin: 0;
          padding: 0;
@@ -1636,7 +1636,7 @@ summary {
     .info_docente {
         position: relative;
         top: 410px;
-        right: 400px;
+        right: 370px;
 
     }
 
@@ -1923,7 +1923,7 @@ summary {
         width: 80px;
         height: 50px;
         position: relative;
-        top: -50px;
+        top: -70px;
         left: 17%;
         margin: 0;
          padding: 0;
@@ -1944,8 +1944,8 @@ summary {
         width: 400px;
         font-size: 29px;
         position: relative;
-        left: 17%;
-        top: 60px;
+        left: 20%;
+        top: 40px;
        
     }
 
@@ -2016,6 +2016,12 @@ summary {
         top: 400px;
         right: 20px;
 
+    }
+
+    #coutinfo{
+        position: relative;
+        bottom: 85px;
+        z-index: 50;
     }
 
 }
