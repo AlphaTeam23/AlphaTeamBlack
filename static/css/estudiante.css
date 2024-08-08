@@ -1635,7 +1635,7 @@ summary {
 
     .info_docente {
         position: relative;
-        top: 410px;
+        top: 350px;
         right: 370px;
 
     }
@@ -2011,17 +2011,30 @@ summary {
     
     /* imformacion docente */
 
-     .info_docente {
+     /* .info_docente {
         position: relative;
         top: 400px;
-        right: 20px;
+        right: 50%;
+        
 
-    }
+    } */
 
     #coutinfo{
         position: relative;
         bottom: 85px;
         z-index: 50;
+    }
+
+    #window {
+        position: relative;
+        left: 6%;
+        bottom: 30px;
+    }
+
+    .contenedor-imagen {
+        position: relative;
+        top: 400px;
+        right: 50%;
     }
 
 }

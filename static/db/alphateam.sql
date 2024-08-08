@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-07-2024 a las 20:53:01
+-- Tiempo de generación: 08-08-2024 a las 23:41:41
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `asignatura` (
   `id_asignatura` int(5) NOT NULL,
+  `id_profesor` int(5) NOT NULL,
   `nom_asignatura` char(60) COLLATE utf32_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish2_ci;
 
@@ -37,14 +38,14 @@ CREATE TABLE `asignatura` (
 -- Volcado de datos para la tabla `asignatura`
 --
 
-INSERT INTO `asignatura` (`id_asignatura`, `nom_asignatura`) VALUES
-(1, 'Lengua Española'),
-(2, 'Matemáticas'),
-(3, 'Ciencias Sociales'),
-(4, 'Ciencias Naturales'),
-(5, 'Física'),
-(6, 'Educación Financiera'),
-(7, 'Inglés');
+INSERT INTO `asignatura` (`id_asignatura`, `id_profesor`, `nom_asignatura`) VALUES
+(1, 0, 'Lengua Española'),
+(2, 0, 'Matemáticas'),
+(3, 0, 'Ciencias Sociales'),
+(4, 0, 'Ciencias Naturales'),
+(5, 0, 'Física'),
+(6, 0, 'Educación Financiera'),
+(7, 0, 'Inglés');
 
 -- --------------------------------------------------------
 
@@ -111,10 +112,16 @@ INSERT INTO `calificacion_final` (`id_asignatura`, `id_estudiante`, `primer_peri
 CREATE TABLE `cursos` (
   `id_curso` int(5) NOT NULL,
   `id_profesor` int(5) NOT NULL,
-  `id_nivel` int(5) NOT NULL,
-  `id_seccion` int(5) NOT NULL,
+  `nivel` varchar(10) COLLATE utf32_spanish2_ci NOT NULL,
   `total_estudiante` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `cursos`
+--
+
+INSERT INTO `cursos` (`id_curso`, `id_profesor`, `nivel`, `total_estudiante`) VALUES
+(1, 5, '1ro Bachil', 11);
 
 -- --------------------------------------------------------
 
@@ -150,17 +157,6 @@ INSERT INTO `estudiante` (`id_estudiante`, `nombre_estudiante`, `apellidop_estud
 (8, 'Gissel Esmeralda', 'Velez', 'Cruz', 'Femenino', '1999-09-27', 2, 4, 0, 3),
 (9, 'Marilin', 'Gil', 'Paulino', 'Femenino', '2005-01-28', 3, 4, 0, 7),
 (10, 'Tiara', 'Peña', 'Peña', 'Femenino', '2003-12-11', 0, 5, 0, 10);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `nivel`
---
-
-CREATE TABLE `nivel` (
-  `id_nivel` int(5) NOT NULL,
-  `nivel` varchar(10) COLLATE utf8mb4_spanish2_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
 
@@ -216,27 +212,6 @@ INSERT INTO `roles` (`id_roles`, `tipo_rol`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `seccion`
---
-
-CREATE TABLE `seccion` (
-  `id_seccion` int(5) NOT NULL,
-  `seccion` varchar(1) COLLATE utf8mb4_spanish2_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-
---
--- Volcado de datos para la tabla `seccion`
---
-
-INSERT INTO `seccion` (`id_seccion`, `seccion`) VALUES
-(0, 'A'),
-(2, 'B'),
-(3, 'C'),
-(4, 'D');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `tutor`
 --
 
@@ -288,7 +263,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `usuario`, `id_roles`) VALUES
 (1, 'Jose Miguel', 'Reyes', 'P00001', 2),
-(2, 'Alexander', 'Salaman', 'E00001', 3);
+(2, 'Alexander', 'Salaman', 'E00001', 3),
+(3, 'Jose Miguel', 'Acosta', 'A00001', 1);
 
 --
 -- Índices para tablas volcadas
@@ -298,7 +274,8 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `usuario`, `id_roles
 -- Indices de la tabla `asignatura`
 --
 ALTER TABLE `asignatura`
-  ADD PRIMARY KEY (`id_asignatura`);
+  ADD PRIMARY KEY (`id_asignatura`),
+  ADD KEY `id_profesor` (`id_profesor`);
 
 --
 -- Indices de la tabla `calificaciones`
@@ -320,8 +297,7 @@ ALTER TABLE `calificacion_final`
 ALTER TABLE `cursos`
   ADD PRIMARY KEY (`id_curso`),
   ADD KEY `Id_profesor` (`id_profesor`),
-  ADD KEY `id_nivel` (`id_nivel`),
-  ADD KEY `id_seccion` (`id_seccion`);
+  ADD KEY `id_nivel` (`nivel`);
 
 --
 -- Indices de la tabla `estudiante`
@@ -332,12 +308,6 @@ ALTER TABLE `estudiante`
   ADD KEY `id_tutor` (`id_tutor`),
   ADD KEY `Id_profesor` (`Id_profesor`),
   ADD KEY `id_seccion` (`id_seccion`);
-
---
--- Indices de la tabla `nivel`
---
-ALTER TABLE `nivel`
-  ADD PRIMARY KEY (`id_nivel`);
 
 --
 -- Indices de la tabla `profesores`
@@ -351,12 +321,6 @@ ALTER TABLE `profesores`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id_roles`);
-
---
--- Indices de la tabla `seccion`
---
-ALTER TABLE `seccion`
-  ADD PRIMARY KEY (`id_seccion`);
 
 --
 -- Indices de la tabla `tutor`
@@ -397,19 +361,13 @@ ALTER TABLE `calificacion_final`
 -- AUTO_INCREMENT de la tabla `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `id_curso` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_curso` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `estudiante`
 --
 ALTER TABLE `estudiante`
   MODIFY `id_estudiante` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT de la tabla `nivel`
---
-ALTER TABLE `nivel`
-  MODIFY `id_nivel` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `profesores`
@@ -424,12 +382,6 @@ ALTER TABLE `roles`
   MODIFY `id_roles` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `seccion`
---
-ALTER TABLE `seccion`
-  MODIFY `id_seccion` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT de la tabla `tutor`
 --
 ALTER TABLE `tutor`
@@ -439,7 +391,7 @@ ALTER TABLE `tutor`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -468,10 +420,8 @@ ALTER TABLE `calificacion_final`
 -- Filtros para la tabla `cursos`
 --
 ALTER TABLE `cursos`
-  ADD CONSTRAINT `cursos_ibfk_1` FOREIGN KEY (`Id_profesor`) REFERENCES `profesores` (`id_profesor`),
+  ADD CONSTRAINT `cursos_ibfk_1` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
   ADD CONSTRAINT `cursos_ibfk_2` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
-  ADD CONSTRAINT `cursos_ibfk_3` FOREIGN KEY (`id_nivel`) REFERENCES `nivel` (`id_nivel`),
-  ADD CONSTRAINT `cursos_ibfk_4` FOREIGN KEY (`id_seccion`) REFERENCES `seccion` (`id_seccion`),
   ADD CONSTRAINT `cursos_ibfk_5` FOREIGN KEY (`id_curso`) REFERENCES `estudiante` (`id_curso`);
 
 --
@@ -479,14 +429,7 @@ ALTER TABLE `cursos`
 --
 ALTER TABLE `estudiante`
   ADD CONSTRAINT `estudiante_ibfk_1` FOREIGN KEY (`id_tutor`) REFERENCES `tutor` (`id_tutor`),
-  ADD CONSTRAINT `estudiante_ibfk_2` FOREIGN KEY (`id_seccion`) REFERENCES `seccion` (`id_seccion`),
   ADD CONSTRAINT `estudiante_ibfk_3` FOREIGN KEY (`Id_profesor`) REFERENCES `profesores` (`id_profesor`);
-
---
--- Filtros para la tabla `nivel`
---
-ALTER TABLE `nivel`
-  ADD CONSTRAINT `nivel_ibfk_1` FOREIGN KEY (`id_nivel`) REFERENCES `cursos` (`id_nivel`);
 
 --
 -- Filtros para la tabla `profesores`
