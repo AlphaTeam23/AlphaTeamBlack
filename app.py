@@ -13,6 +13,7 @@ app.config['MYSQL_DATABASE_USER']='root'
 app.config['MYSQL_DATABASE_PASSWORD']=''
 app.config['MYSQL_DATABASE_DB']='alphateam'
 
+# Iniciar mysql
 mysql.init_app(app)
 
 # Página index
@@ -28,7 +29,16 @@ def p_alphaTeam():
 # Página Alpha Team
 @app.route('/alphaTeam/profesor/calificaciones')
 def p_calificaciones():
-    return render_template('./profesor/p_calificaciones.html')
+    conn = mysql.connect() 
+    cursor = conn.cursor()  
+    cursor.execute("SELECT nombre_estudiante, id_estudiante FROM estudiante")  
+    data = cursor.fetchall()  
+    cursor.close()  
+    conn.close()  
+    return render_template('./profesor/p_calificaciones.html', estudiante=data)
+
+
+
 
 @app.route('/alphaTeam/profesor/ayuda')
 def p_ayuda():
@@ -129,39 +139,6 @@ def a_inscripcion():
     
 @app.route('/admin/a_inscripcion', methods=['GET', 'POST'])
 def inscripcion():
-    if request.method == 'POST':
-        # Obtener datos del formulario
-        nom = request.form['inpnom']
-        ape = request.form['inpape']
-        sexo = request.form['inpsexo']
-        fech = request.form['inpfechnac']
-        curso = request.form['inpcurso']
-        prof = request.form['inpprof']
-        seccion = request.form['inpseccion']
-        nomt = request.form['inpnomt']
-        apet = request.form['inpapet']
-        cedula = request.form['inpcedula']
-        telefono = request.form['inpnumero']
-        correo = request.form['inpcorreo']
-        educacion = request.form['inpedu']
-        ocupacion = request.form['inpocup']
-        parentesco = request.form['inpparent']
-        provincia = request.form['inpprovincia']
-        sector = request.form['inpsector']
-        calle = request.form['inpcalle']
-        edificio = request.form['inpedificio']
-        foto = request.files['inpfoto'].read()
-
-       
-
-            # Inserción de datos
-        cursor.execute("""
-            INSERT INTO inscripcion (inpnom, inpape, inpsexo, inpfechnac, inpcurso, inpprof, inpseccion, inpnomt,       inpapet, inpcedula, inpnumero, inpcorreo, inpedu, inpocup, inpparent, inpprovincia, inpsector, inpcalle,    inpedificio, inpfoto)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        """, (nom, ape, sexo, fech, curso, prof, seccion, nomt, apet, cedula, telefono, correo, educacion, ocupacion,       parentesco, provincia, sector, calle, edificio, foto))
-
-          
-
     return render_template('admin/a_inscripcion.html')
         
      
