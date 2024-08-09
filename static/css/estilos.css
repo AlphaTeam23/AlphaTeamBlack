@@ -50,9 +50,10 @@ h1 {
 
 header img {
     width: 7%;
-    margin-left: 36%;
+    left: 36%;
     top: -101px;
     position: relative;
+    margin: 0 auto;
 }
 
 main {
