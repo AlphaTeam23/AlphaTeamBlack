@@ -56,15 +56,18 @@
                 <h4>INSCRIPCION</h4>
 
             </div>
-            <form class="inscripcion">
+            <form action="/admin/inscripcion/inscribir" method="post" class="inscripcion">
                 <fieldset>
                     <legend>Datos del estudiante</legend>
                     <br>
+
                     <label class="nom" for="nom">Nombre</label>
-                    <input type="text" id="nom" autocomplete="on" autofocus required placeholder="Ej: Jose">
+                    <input type="text" name="nom" id="nom" autocomplete="on" autofocus required placeholder="Ej: Jose">
+
                     <label for="ape">Apellido</label>
-                    <input type="text" id="Ape" required placeholder="Ej: Garcia">
+                    <input type="text" name="ape" id="Ape" required placeholder="Ej: Garcia">
                     <br>
+
                     <label class="sexoest" for="sexo">Sexo</label>
                         <select name="sexo" id="sexo" required>
                             <option value="sexo">- Elegir Sexo-</option>
@@ -73,8 +76,9 @@
                         </select>
 
                         <label class="fechnac" for="fecha">Fecha de nacimiento</label>
-                        <input type="date" id="fecha">
+                        <input type="date" name="fecha" id="fecha">
                         <br><br>
+
                     <label class="curso" for="curso">Curso</label>
                         <select name="curso" id="curso" required>
                             <option value="">- Elija un curso -</option>
@@ -123,43 +127,41 @@
                     <legend>Datos del Tutor</legend>
 
                     <label class="nomt" for="nomt">Nombre</label>
-                    <input class="inpnomt" type="text" id="nomt" required placeholder="Ej: Jose">
+                    <input class="inpnomt" name="nomt" type="text" id="nomt" required placeholder="Ej: Jose">
+
                     <label for="apet">Apellido</label>
-                    <input class="inpapet" type="text" id="Apet" required placeholder="Ej: Garcia">
+                    <input class="inpapet" name="apet" type="text" id="Apet" required placeholder="Ej: Garcia">
                     <br>
-                    <label class="cedula" for="numero">Cedula</label>
-                    <input class="inpcedula" type="number" id="cedula" min="11" max="13">
-                    <label for="numero">Telefono</label>
-                    <input class="inpnumero" type="number" id="numero" min="10" max="12">
+
+                    <label class="cedula" for="cedula">Cedula</label>
+                    <input class="inpcedula" name="cedula" type="number" id="cedula" min="11" max="13">
+
+                    <label for="telefono">Telefono</label>
+                    <input class="inpnumero" name="telefono" type="number" id="numero" min="10" max="12">
                     <br>
+
                     <label class="correo" for="correo">Correo</label>
-                    <input class="inpcorreo" type="email" id="correo">
+                    <input class="inpcorreo" name="correo" type="email" id="correo">
+
                     <label for="educ">Educacion</label>
-                    <input class="inpeduc" type="text" id="educ" required placeholder="Ej: Primaria">
+                    <input class="inpeduc" type="text" name="educ" id="educ" required placeholder="Ej: Primaria">
                     <br>
+
                     <label class="ocupacion" for="ocup">Ocupacion</label>
-                    <input class="inpocup"  type="text" id="ocup" required placeholder="Ej: Contador">
-                    <label for="parent">Parentesco</label>
-                    <input class="inpparent" type="text" id="parent" required placeholder="Ej: Padre">
+                    <input class="inpocup" name="ocup"  type="text" id="ocup" required placeholder="Ej: Contador">
+                    
+                    <label class="direccion" for="direccion">Direccion</label>
+                    <input class="inpdireccion" name="direccion" type="text" id="direccion" required placeholder="Ej: Santiago">
                     <br>
-                    <label class="provincia" for="provincia">Provincia</label>
-                    <input class="inpprovincia" type="text" id="Provicia" required placeholder="Ej: Santiago">
-                    <label for="sector">Sector</label>
-                    <input class="inpsector" type="text" id="Sector" required placeholder="Ej: Herradura">
-                    <br>
-                    <label class="calle" for="calle">Calle</label>
-                    <input class="inpcalle" type="text" id="Calle" required placeholder="Ej: No:4">
-                    <label for="edificio">Edificio</label>
-                    <input class="inpedificio" type="text" id="edificio" required placeholder="Ej: 13">
-                    <br>
+
                     <label class="foto2x2" for="foto">Foto 2x2</label>
-                    <input class="inpfoto" type="file" id="foto" >
+                    <input class="inpfoto" name="foto" type="file" id="foto" >
 
                 </fieldset>
 
                 </fieldset>
 
-                    <input class="guardinscrip" type="button" name="guardar" value="Guardar">
+                    <input class="guardinscrip" type="submit" name="guardar" value="Guardar">
 
 
     

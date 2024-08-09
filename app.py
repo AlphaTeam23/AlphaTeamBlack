@@ -13,6 +13,7 @@ app.config['MYSQL_DATABASE_USER']='root'
 app.config['MYSQL_DATABASE_PASSWORD']=''
 app.config['MYSQL_DATABASE_DB']='alphateam'
 
+# Iniciar mysql
 mysql.init_app(app)
 
 # Página index
@@ -127,40 +128,41 @@ def a_inscripcion():
     return render_template('./admin/a_inscripcion.html')
     
     
-@app.route('/admin/a_inscripcion', methods=['GET', 'POST'])
-def inscripcion():
+@app.route('/admin/a_inscripcion/inscribir', methods=['POST'])
+def inscribir():
     if request.method == 'POST':
         # Obtener datos del formulario
-        nom = request.form['inpnom']
-        ape = request.form['inpape']
-        sexo = request.form['inpsexo']
-        fech = request.form['inpfechnac']
-        curso = request.form['inpcurso']
-        prof = request.form['inpprof']
-        seccion = request.form['inpseccion']
-        nomt = request.form['inpnomt']
-        apet = request.form['inpapet']
-        cedula = request.form['inpcedula']
-        telefono = request.form['inpnumero']
-        correo = request.form['inpcorreo']
-        educacion = request.form['inpedu']
-        ocupacion = request.form['inpocup']
-        parentesco = request.form['inpparent']
-        provincia = request.form['inpprovincia']
-        sector = request.form['inpsector']
-        calle = request.form['inpcalle']
-        edificio = request.form['inpedificio']
-        foto = request.files['inpfoto'].read()
+        nom = request.form['nom']
+        ape = request.form['ape']
+        sexo = request.form['sexo']
+        fech = request.form['fecha']
+        curso = request.form['curso']
+        prof = request.form['prof']
+        seccion = request.form['seccion']
+        nomt = request.form['nomt']
+        apet = request.form['apet']
+        cedula = request.form['cedula']
+        telefono = request.form['telefono']
+        correo = request.form['correo']
+        educacion = request.form['edu']
+        ocupacion = request.form['ocup']
+        direccion = request.form['direccion']
+        foto = request.files['foto'].read()
 
        
 
             # Inserción de datos
-        cursor.execute("""
-            INSERT INTO inscripcion (inpnom, inpape, inpsexo, inpfechnac, inpcurso, inpprof, inpseccion, inpnomt,       inpapet, inpcedula, inpnumero, inpcorreo, inpedu, inpocup, inpparent, inpprovincia, inpsector, inpcalle,    inpedificio, inpfoto)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        """, (nom, ape, sexo, fech, curso, prof, seccion, nomt, apet, cedula, telefono, correo, educacion, ocupacion,       parentesco, provincia, sector, calle, edificio, foto))
+        sql="INSERT INTO `estudiante` (`nom`, `ape`, `sexo`, `fechnac`, `curso`, `prof`, `seccion`, `nomt`, `apet`, `cedula`, `numero`, `correo`, `edu`, `ocup`, `parent`, `direccion`, `foto`) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);" 
+        datos=(nom, ape, sexo, fech, curso, prof, seccion, nomt, apet, cedula, telefono, correo, educacion, ocupacion, direccion, foto)
+        
+        
 
-          
+        conexion=mysql.connect()
+        cursor=conexion.cursor()  
+        cursor.execute(sql, datos)
+        conexion.commit()
+        print("Estudiante Registrado")
+     
 
     return render_template('admin/a_inscripcion.html')
         

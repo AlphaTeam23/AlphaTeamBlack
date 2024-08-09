@@ -674,7 +674,7 @@ fieldset {
 }
 
 
-.nom, .sexoest, .nomt, .cedula, .correo, .ocupacion, .provincia, .calle {
+.nom, .sexoest, .nomt, .cedula, .correo, .ocupacion,  .calle {
     margin-left: 50px;
 }
 
@@ -700,6 +700,10 @@ fieldset {
     margin-left: 32px;
 }
 
+.direccion {
+    margin-left: 0px;
+}
+
 .inpparent {
     margin-left: 28px;
 }
@@ -713,11 +717,16 @@ fieldset {
 }
 
 .inpfoto {
-    margin-left: 43px;  
+    margin-left: 35px; 
+   
 }
 
-.inpnomt, .inpapet, .inpnumero, .foto2x2 {
+.inpnomt, .inpapet, .inpnumero {
     margin-left: 40px;
+}
+
+.foto2x2 {
+    margin-left: 50px;
 }
 
 .inpocup {
@@ -728,8 +737,8 @@ fieldset {
     margin-left: 52px;
 }
 
-.inpprovincia {
-    margin-left: 30px;
+.inpdireccion {
+    margin-left: 37px;
 }
 
 .inscripcion input {
