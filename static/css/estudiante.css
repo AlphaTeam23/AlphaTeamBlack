@@ -1744,8 +1744,6 @@ summary {
    
    /* cambio de contraseña */
 
-   
-
    .cons{
 
     position: relative;
@@ -1771,10 +1769,11 @@ summary {
    }
 
 
-
    .cambio_contraseña {
     position: relative;
     right: 34%;
+    top: 370px;
+    
    }
 
    /* pagina foto responsiv */
@@ -2033,8 +2032,74 @@ summary {
 
     .contenedor-imagen {
         position: relative;
-        top: 400px;
-        right: 50%;
+        top: 460px;
+        right: 70%;
     }
+
+    .docente h2 {
+        position: relative;
+        bottom: 147px;
+        left: 36%;
+    }
+
+
+    /* resposive de pago */
+    .opcion_pago {
+        position: relative;
+        top: 530px;
+        right: 400px;
+       width: 157%;
+      
+        
+    }
+
+    /* respsive de de ayuda */
+
+    .preguntas {
+        position: relative;
+        bottom: -610px;
+        right: 460px;
+        
+    }
+
+    .preguntas details {
+        position: relative;
+        bottom: 40px;
+    }
+
+    .preguntas summary {
+        font-size: 23px;
+        width: 800px;
+    }
+
+
+    /* usuario pagina */
+    .inf_basica_estudiante {
+        position: relative;
+        right: 320px;
+        top: 480px;
+    }
+
+    /* cambio de contraseña */
+
+    .cambio_contraseña {
+    position: relative;
+    right: 20%;
+    top: 380px;
+   }
+
+   /* pagina de resportar problema */
+   .reporte textarea {
+    position: relative;
+    right: 55%;
+    /* width: 420px; */
+    bottom: 60px;
+   }
+
+   .reporte  input{
+    position: relative;
+    bottom: 50px;
+   
+   } 
 
 }
