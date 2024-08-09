@@ -406,8 +406,11 @@ table {
     border: 1px solid #81e6ff63;
 }
 
-.calificaciones_docente2 form {
-    width: 58%;
+.calificaciones_docente2 fieldset {
+    padding: -20%;
+    width: 87%;
+    margin-left: -17.20%;
+    height: 80px;
 }
 
 .calificaciones_docente2 option {
@@ -419,20 +422,24 @@ table {
 }
 
 .calificaciones_docente2 {
-    margin-top: -29%;
+    bottom: 390px;
+    left: 10%;
+    position: relative;
 }
 
 .tabla2 {
     color: #fff;
     font-family: miFuentePath;
-    margin-left: 33.3%;
-    margin-top: 0%;
+    left: 11.20%;
+    bottom: 390px;
+    position: relative;
     width: 60%;
     border-radius: 1%;
     height: 340px;
     overflow: hidden;
     overflow-y: scroll;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 
@@ -496,25 +503,17 @@ th:hover {
     color: #fff;
     border: 1px solid #81e6ff;
     font-family: miFuentePath;
-    margin: 15px;
     font-size: 15px;
-    width: 60px;
+    width: 8%;
     font-weight: normal;
-    bottom: -1px;
-    left: 20px;
-    position: relative;
+    margin-left: 90%;
+    margin-top: 5px;
 }
 
 .boton9:hover {
     border: 1px solid #0077ff96;
 }
 
-.calificaciones_docente2 fieldset {
-    height: 80px;
-    width: 100%;
-    right: -8px;
-    position: relative;
-}
 
 .calificaciones_docente2 legend {
     font-size: 22px;
@@ -645,9 +644,11 @@ th:hover {
 }
 
 .planificar {
+    width: 130px;
+    margin-left: 50%;
     bottom: 40px;
-    left: 50%;
     position: relative;
+
 }
 
 .planif_fielsed {
@@ -667,7 +668,7 @@ th:hover {
 }
 
 .cargar-plan {
-    left: 400px;
+    margin-left: 100px;
     bottom: 39px;
     position: relative;
 }
@@ -1184,10 +1185,6 @@ summary {
          border-top: solid 1px rgba(0, 0, 0, 0.397);
     }
 
-    /* Perfil usuario */
-
-
-
 /* Cambiar Contraseña */
 
     .cambio_contraseña {
@@ -1260,15 +1257,15 @@ summary {
     /* Reportar */
     .reporte textarea {
         left: -22%;
-        top: 95px;
+        top: 60px;
         position: relative;
         width: 300px;
         margin: 0 auto;
     }
 
     .reporte h2 {
-        left: -5%;
-        top: 95px;
+        left: -2%;
+        top: 50px;
         position: relative;
         font-size: 22px;
         margin: 0 auto;
@@ -1276,7 +1273,7 @@ summary {
 
     .reporte .report_ev {
         left: 1%;
-        top: 105px;
+        top: 70px;
         position: relative;
         margin: 0 auto;
     }
@@ -1327,11 +1324,11 @@ summary {
         font-size: 17px;
     }
 
-    .calificaciones_docente select {
-        width: 17px;
+    .calificaciones_docente1 select {
+        width: 7%;
     }
 
-    .calificaciones_docente fieldset {
+    .calificaciones_docente1 fieldset {
         height: 60px;
     }
 
@@ -1341,9 +1338,9 @@ summary {
     }
 
     .boton {
-        top: -100%;
+        top: -110%;
         position: relative;
-        margin-left: 80%;
+        margin-left: 85%;
         width: 10%;
     }
     
@@ -1387,19 +1384,23 @@ summary {
 
 /* Pagina Informacion Estudiante */
 .calificaciones_docente2 {
-    margin-top: 12%;
+    top: 80px;
+    left: -9%;
+    position: relative;
+    margin: 0 auto;
     
 }
 
 .calificaciones_docente2 form {
-    width: 95%;
-    margin-left: 1%;
+    width: 100%;
 }
 
 .tabla2 {
-    width: 96%;
-    margin-left: 2%;
-    margin-top: 1%;
+    width: 88.50%;
+    left: 0.50%;
+    top: 80px;
+    position: relative;
+    margin: 0 auto;
 }
 
 .tabla2::-webkit-scrollbar {
@@ -1411,19 +1412,27 @@ summary {
 }
 
 .calificaciones_docente2 select {
-    width: 17px;
+    width: 7%;
 }
 
 .calificaciones_docente2 fieldset {
     height: 10%;
 }
 
+.boton9 {
+    top: -20px;
+    position: relative;
+    left: -8%;
+    width: 10%;
+}
+
 /* Pagina Planificación Docente */
 .planificacion_docente {
     left: -1px;
-    bottom: -40px;
+    bottom: -60px;
     width: 98%;
     position: relative;
+    margin: 0 auto;
 }
 
 .planificacion_docente select {
@@ -1435,7 +1444,7 @@ summary {
 }
 
 .planificar {
-    left: 43%;
+    left: 13%;
     margin-top: -5%;
     position: relative;
 }
@@ -1533,22 +1542,28 @@ summary {
 
     /* Pagina Calificacion */
 
-    /* .calificaciones_docente1 {
-        left: 10%;
+    .calificaciones_docente1 {
+        left: 8%;
         position: relative;
         margin: 0 auto;
-        width: 430px;
+        width: 50%;
     }
 
     .calificaciones_docente1 fieldset {
         height: 90px;
+        margin: 0 auto;
+        right: 36.50%;
+        position: relative;
     }
 
     .tabla1 {
-        width: 503px;
-    } */
+        width: 117%;
+        margin: 0 auto;
+        left: 8%;
+        position: relative;
+    }
 
-    /* .calificaciones_docente1 select {
+    .calificaciones_docente1 select {
         width: 10%;
     }
 
@@ -1559,6 +1574,8 @@ summary {
     .imprimir {
         top: -50%;
         position: relative;
+        width: 16%;
+        font-size: 12px;
     }
 
     .tabla1::-webkit-scrollbar {
@@ -1567,7 +1584,7 @@ summary {
 
     .publicar {
         display: none;
-    } */
+    }
 
     /* Pagina Horario */
     .horario {
@@ -1584,7 +1601,32 @@ summary {
     }
 
     /* Pagina Informacion de Estudiante */
-   
+   .calificaciones_docente2 {
+        margin: 0 auto;
+   }
+
+   .calificaciones_docente2 {
+        bottom: 385px;
+        left: 17%;
+        position: relative;
+        width: 100%;
+   }
+
+   .calificaciones_docente2 select {
+        width: 10%;
+   }
+
+   .tabla2 {
+        bottom: 385px;
+        left: 17.70%;
+        position: relative;
+        margin: 0 auto;
+        width: 59%;
+   }
+
+   .tabla2::-webkit-scrollbar {
+    display: none;
+   }
 
     /* Pagina Planificacion docente */
     .planificacion_docente {
@@ -1595,11 +1637,15 @@ summary {
     }
 
     .planificacion_docente select {
-        width: 20px;
+        width: 8%;
     }
 
     .cargar-plan {
         margin-left: -5%;
+    }
+
+    .planificar {
+        width: 130px;
     }
 
     /* Pagina Ayuda */
@@ -1621,7 +1667,6 @@ summary {
     .preguntas_container::-webkit-scrollbar {
         display: none;
     }
-
 
 
 
