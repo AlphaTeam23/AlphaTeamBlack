@@ -13,6 +13,7 @@ app.config['MYSQL_DATABASE_USER']='root'
 app.config['MYSQL_DATABASE_PASSWORD']=''
 app.config['MYSQL_DATABASE_DB']='alphateam'
 
+# Iniciar mysql
 mysql.init_app(app)
 
 # Página index
