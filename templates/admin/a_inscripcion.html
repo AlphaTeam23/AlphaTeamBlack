@@ -56,7 +56,7 @@
                 <h4>INSCRIPCION</h4>
 
             </div>
-            <form action="/admin/inscripcion" method="post" class="inscripcion">
+            <form action="'/admin/inscripcion'" method="post" class="inscripcion">
                 <fieldset>
                     <legend>Datos del estudiante</legend>
                     <br>
@@ -82,33 +82,26 @@
                     <label class="curso" for="curso">Curso</label>
                         <select name="curso" id="curso" required>
                             <option value="">- Elija un curso -</option>
-                            <optgroup label="Nivel Primario">
-                            <option value="pp">Pre-primario</option>
-                            <option value="1p">1° Grado</option>
-                            <option value="2p">2° Grado</option>
-                            <option value="3p">3° Grado</option>
-                            <option value="4p">4° Grado</option>
-                            <option value="5p">5° Grado</option>
-                            <option value="6p">6° Grado</option>
-                            <optgroup label="Nivel Secundario">
-                            <option value="1s">1° Grado</option>
-                            <option value="2s">2° Grado</option>
-                            <option value="3s">3° Grado</option>
-                            <option value="4s">4° Grado</option>
-                            <option value="5s">5° Grado</option>
-                            <option value="6s">6° Grado</option>
+                
+                            <option value="1">1° Bachiller</option>
+                            <option value="2">2° Bachiller</option>
+                            <option value="3">3° Bachiller</option>
+                            <option value="4">4° Bachiller</option>
+                            <option value="5">5° Bachiller</option>
+                            <option value="6">6° Bachiller</option>
                     </select>
 
                     <label for="prof">Asignar Profesor</label>
                     <select name="prof" id="prof" required>
 
                         <option value="">Asigne un Profesor</option>
-                        <option value="1">1</option>
-                        <option value="">Profesor 2</option>
-                        <option value="">Profesor 3</option>
-                        <option value="">Profesor 4</option>
-                        <option value="">Profesor 5</option>
-                        <option value="">Profesor 6</option>
+                        <option value="1">Eduardo Rodriguez</option>
+                        <option value="2">Anyi Castillo</option>
+                        <option value="3">Jose Alonzo</option>
+                        <option value="4">Ruddy Ferreras</option>
+                        <option value="5">Apolinar Rivas</option>
+                        <option value="6">Daniel De la Cruz</option>
+                        <option value="7">Fausto Rodriguez</option>
                     </select>
 
                     <label for="seccion">Seccion</label>
@@ -134,10 +127,10 @@
                     <br>
 
                     <label class="cedula" for="cedula">Cedula</label>
-                    <input class="inpcedula" name="cedula" type="number" id="cedula" min="11" max="13">
+                    <input class="inpcedula" name="cedula" type="text" id="cedula" pattern="[0-9]{1,12}" maxlength="12">
 
                     <label for="telefono">Telefono</label>
-                    <input class="inpnumero" name="telefono" type="number" id="numero" min="10" max="12">
+                    <input class="inpnumero" name="telefono" type="text" id="numero" pattern="[0-9]{1,10}" maxlength="10">
                     <br>
 
                     <label class="correo" for="correo">Correo</label>
