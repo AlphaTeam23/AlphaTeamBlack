@@ -130,6 +130,17 @@ def a_alphaTeam():
 
 @app.route('/alphaTeam/admin/cursos')
 def a_cursos():
+
+    # Consulta a la base de datos
+
+
+    conn = mysql.connect() 
+    cursor = conn.cursor()  
+    cursor.execute("SELECT id_curso, nivel, total_est FROM cursos")  
+    data = cursor.fetchall()  
+    cursor.close()  
+    conn.close()  
+
     return render_template('./admin/a_cursos.html')
 
 @app.route('/alphaTeam/admin/inscripcion')
