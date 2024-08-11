@@ -135,11 +135,51 @@ def a_cursos():
 @app.route('/alphaTeam/admin/inscripcion')
 def a_inscripcion():
     return render_template('./admin/a_inscripcion.html')
-    
-    
-@app.route('/admin/a_inscripcion', methods=['GET', 'POST'])
+
+@app.route('/admin/inscripcion', methods=['GET', 'POST'])
 def inscripcion():
-    return render_template('admin/a_inscripcion.html')
+    if request.method == 'POST':
+        # Procesar el formulario
+        nom = request.form['nom']
+        ape = request.form['ape']
+        sexo = request.form['sexo']
+        fecha = request.form['fecha']
+        curso = request.form['curso']
+        prof = request.form['prof']
+        nomt = request.form['nomt']
+        apet = request.form['apet']
+        cedula = request.form['cedula']
+        telefono = request.form['telefono']
+        correo = request.form['correo']
+        educ = request.form['educ']
+        ocup = request.form['ocup']
+        direccion = request.form['direccion']
+        #foto = request.files['foto']
+
+        # Create a connection to the database
+        conn = mysql.connect()
+        cursor = conn.cursor()
+
+        # INsercion de datos entabla estudiante
+        cursor.execute("INSERT INTO estudiante (nombre_estudiante, apellidop_estudiante, sexo_estudinate, nacimiento_estudiante, id_curso, id_profesor, id_tutor) VALUES (%s, %s, %s, %s, %s, %s, %s)", (nom, ape, sexo, fecha, curso, prof, 1))
+        estudiante_id = cursor.lastrowid
+
+
+        #NOTAS: debo buscar la for
+        # INsercion de datos entabla tutor
+        cursor.execute("INSERT INTO tutor (nombre, apellidos, cedula, telefono, correo, ocupacion, parentesco, direccion) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (nomt, apet, cedula, telefono, correo, educ, ocup, direccion))
+        tutor_id = cursor.lastrowid
+
+
+        # GUardar cambios
+        conn.commit()
+
+        # cerrar conexion
+        cursor.close()
+        conn.close()
+
+        return "Inscripción guardada con éxito"
+    return render_template('inscripcion.html')
         
      
 
