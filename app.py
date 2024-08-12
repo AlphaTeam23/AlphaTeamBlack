@@ -28,6 +28,10 @@ def p_alphaTeam():
 
 # Página Alpha Team
 @app.route('/alphaTeam/profesor/calificaciones', methods=['GET', 'POST'])
+
+# Página Calificaciones
+@app.route('/alphaTeam/profesor/calificaciones')
+
 def p_calificaciones():
     if request.method == 'POST':
         # Actualizar las calificaciones en la base de datos
@@ -47,6 +51,7 @@ def p_calificaciones():
                 SET tareas = %s, examenes = %s, participacion = %s, asistencia = %s, cali_final = %s
                 WHERE id_estudiante = %s
             """, (tareas, examenes, participacion, asistencia, cali_final, estudiante_id))
+
 
         conn.commit()
         cursor.close()
@@ -69,6 +74,7 @@ def p_calificaciones():
         conn.close()
 
         return render_template('./profesor/p_calificaciones.html', estudiantes=data)
+
 
 
 @app.route('/alphaTeam/profesor/ayuda')
