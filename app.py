@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from flask import render_template, request, redirect, session
+from flask import render_template, request,  url_for, redirect, session
 from flaskext.mysql import MySQL
 from datetime import datetime
 
@@ -27,17 +27,48 @@ def p_alphaTeam():
     return render_template('./profesor/p_alphaTeam.html')
 
 # Página Alpha Team
-@app.route('/alphaTeam/profesor/calificaciones')
+@app.route('/alphaTeam/profesor/calificaciones', methods=['GET', 'POST'])
 def p_calificaciones():
-    conn = mysql.connect() 
-    cursor = conn.cursor()  
-    cursor.execute("SELECT nombre_estudiante, apellidos, id_estudiante FROM estudiante")  
-    data = cursor.fetchall()  
-    cursor.close()  
-    conn.close()  
-    return render_template('./profesor/p_calificaciones.html', estudiante=data)
+    if request.method == 'POST':
+        # Actualizar las calificaciones en la base de datos
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        estudiantes = request.form.getlist('estudiante_id')
 
+        for estudiante_id in estudiantes:
+            tareas = request.form.get(f'tareas_{estudiante_id}')
+            examenes = request.form.get(f'examenes_{estudiante_id}')
+            participacion = request.form.get(f'participacion_{estudiante_id}')
+            asistencia = request.form.get(f'asistencia_{estudiante_id}')
+            cali_final = request.form.get(f'cali_final_{estudiante_id}')
 
+            cursor.execute("""
+                UPDATE calificaciones
+                SET tareas = %s, examenes = %s, participacion = %s, asistencia = %s, cali_final = %s
+                WHERE id_estudiante = %s
+            """, (tareas, examenes, participacion, asistencia, cali_final, estudiante_id))
+
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+        return redirect(url_for('p_calificaciones'))
+
+    else:
+        # Obtener datos de estudiantes y calificaciones
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT e.nombre_estudiante, e.apellidos, e.id_estudiante,
+                   c.tareas, c.examenes, c.participacion, c.asistencia, c.cali_final
+            FROM estudiante e
+            LEFT JOIN calificaciones c ON e.id_estudiante = c.id_estudiante
+        """)
+        data = cursor.fetchall()
+        cursor.close()
+        conn.close()
+
+        return render_template('./profesor/p_calificaciones.html', estudiantes=data)
 
 
 @app.route('/alphaTeam/profesor/ayuda')
