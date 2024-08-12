@@ -280,7 +280,11 @@ label {
 }
 
 .complete {
-    width: 35%;
+    width: 20%;
+}
+
+.apellido {
+    width: 20%;
 }
 
 td input {

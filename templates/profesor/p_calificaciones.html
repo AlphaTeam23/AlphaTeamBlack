@@ -112,7 +112,8 @@
 <div class="tabla1">
     <table border="1">
         <tr>
-            <th class="complete">NOMBRE COMPLETO</th>
+            <th class="complete">NOMBRES</th>
+            <th class="apellido">APELLIDOS</th>
             <th>MATRICULA</th>
             <th>TAREAS</th>
             <th>EXAM</th>
@@ -125,11 +126,13 @@
         <tr>
             <td>{{ estudiante[0] }}</td>  
             <td>{{ estudiante[1] }}</td> 
+            <td>{{ estudiante[2] }}</td>
             <td><input type="text" maxlength="3"></td>
             <td><input type="text" maxlength="3"></td>
             <td><input type="text" maxlength="3"></td>
             <td><input type="text" maxlength="3"></td>
             <td><input type="text" maxlength="3"></td>
+
         </tr>
         {% endfor %}
     </table>

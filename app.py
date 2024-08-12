@@ -31,7 +31,7 @@ def p_alphaTeam():
 def p_calificaciones():
     conn = mysql.connect() 
     cursor = conn.cursor()  
-    cursor.execute("SELECT nombre_estudiante, id_estudiante FROM estudiante")  
+    cursor.execute("SELECT nombre_estudiante, apellidos, id_estudiante FROM estudiante")  
     data = cursor.fetchall()  
     cursor.close()  
     conn.close()  
