@@ -26,7 +26,7 @@ def iniciosesion():
 def p_alphaTeam():
     return render_template('./profesor/p_alphaTeam.html')
 
-# Página Alpha Team
+# Página Calificaciones
 @app.route('/alphaTeam/profesor/calificaciones')
 def p_calificaciones():
     conn = mysql.connect() 
@@ -36,9 +36,6 @@ def p_calificaciones():
     cursor.close()  
     conn.close()  
     return render_template('./profesor/p_calificaciones.html', estudiante=data)
-
-
-
 
 @app.route('/alphaTeam/profesor/ayuda')
 def p_ayuda():
