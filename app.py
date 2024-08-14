@@ -28,52 +28,60 @@ def p_alphaTeam():
 
 # Página Alpha Team
 @app.route('/alphaTeam/profesor/calificaciones', methods=['GET', 'POST'])
-
-# Página Calificaciones
-@app.route('/alphaTeam/profesor/calificaciones')
-
 def p_calificaciones():
+    curso_id = None
+    estudiantes = []
+    
     if request.method == 'POST':
-        # Actualizar las calificaciones en la base de datos
-        conn = mysql.connect()
-        cursor = conn.cursor()
-        estudiantes = request.form.getlist('estudiante_id')
-
-        for estudiante_id in estudiantes:
-            tareas = request.form.get(f'tareas_{estudiante_id}')
-            examenes = request.form.get(f'examenes_{estudiante_id}')
-            participacion = request.form.get(f'participacion_{estudiante_id}')
-            asistencia = request.form.get(f'asistencia_{estudiante_id}')
-            cali_final = request.form.get(f'cali_final_{estudiante_id}')
-
+        action = request.form.get('action')
+        if action == 'CARGAR':
+            curso_id = request.form.get('cur')
+            if not curso_id:
+                return "No se proporcionó un ID de curso", 400
+            
+            # Obtener los estudiantes que pertenecen al curso seleccionado
+            conn = mysql.connect()
+            cursor = conn.cursor()
             cursor.execute("""
-                UPDATE calificaciones
-                SET tareas = %s, examenes = %s, participacion = %s, asistencia = %s, cali_final = %s
-                WHERE id_estudiante = %s
-            """, (tareas, examenes, participacion, asistencia, cali_final, estudiante_id))
+                SELECT e.nombre_estudiante, e.apellidos, e.id_estudiante,
+                       c.tareas, c.examenes, c.participacion, c.asistencia, c.cali_final
+                FROM estudiante e
+                LEFT JOIN calificaciones c ON e.id_estudiante = c.id_estudiante
+                WHERE e.id_curso = %s
+            """, (curso_id,))
+            estudiantes = cursor.fetchall()
+            cursor.close()
+            conn.close()
+
+        elif action == 'Publicar Notas':
+            # Actualizar las calificaciones en la base de datos
+            conn = mysql.connect()
+            cursor = conn.cursor()
+            estudiantes_ids = request.form.getlist('estudiante_id')
+
+            for estudiante_id in estudiantes_ids:
+                tareas = request.form.get(f'tareas_{estudiante_id}')
+                examenes = request.form.get(f'examenes_{estudiante_id}')
+                participacion = request.form.get(f'participacion_{estudiante_id}')
+                asistencia = request.form.get(f'asistencia_{estudiante_id}')
+                cali_final = request.form.get(f'cali_final_{estudiante_id}')
+
+                cursor.execute("""
+                    UPDATE calificaciones
+                    SET tareas = %s, examenes = %s, participacion = %s, asistencia = %s, cali_final = %s
+                    WHERE id_estudiante = %s
+                """, (tareas, examenes, participacion, asistencia, cali_final, estudiante_id))
+
+            conn.commit()
+            cursor.close()
+            conn.close()
+
+            return redirect(url_for('p_calificaciones'))
+    
+    # Renderizar el formulario con el curso seleccionado (si existe)
+    return render_template('./profesor/p_calificaciones.html', estudiantes=estudiantes, selected_curso=curso_id)
 
 
-        conn.commit()
-        cursor.close()
-        conn.close()
-
-        return redirect(url_for('p_calificaciones'))
-
-    else:
-        # Obtener datos de estudiantes y calificaciones
-        conn = mysql.connect()
-        cursor = conn.cursor()
-        cursor.execute("""
-            SELECT e.nombre_estudiante, e.apellidos, e.id_estudiante,
-                   c.tareas, c.examenes, c.participacion, c.asistencia, c.cali_final
-            FROM estudiante e
-            LEFT JOIN calificaciones c ON e.id_estudiante = c.id_estudiante
-        """)
-        data = cursor.fetchall()
-        cursor.close()
-        conn.close()
-
-        return render_template('./profesor/p_calificaciones.html', estudiantes=data)
 
 
 
