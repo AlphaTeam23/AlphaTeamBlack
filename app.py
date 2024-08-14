@@ -184,7 +184,7 @@ def a_cursos():
 def a_inscripcion():
     return render_template('./admin/a_inscripcion.html')
 
-@app.route('/admin/inscripcion', methods=['GET', 'POST'])
+@app.route('/alphaTeam/admin/inscripcion', methods=['GET', 'POST'])
 def inscripcion():
     if request.method == 'POST':
         # Procesar el formulario
