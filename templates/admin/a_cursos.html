@@ -142,15 +142,26 @@
           </tr>
         </thead>
         <tbody>
-          {% for row in data %}
-          <tr>
-            <td>{{ row[0] }}</td>
-            <td>{{ row[1] }}</td>
-            <td>{{ row[2] }}</td>
-          </tr>
-          {% endfor %}
+          {% if data %}
+            {% for row in data %}
+              <tr>
+                <td>{{ row.curso }}</td>
+                <td>{{ row.profesor }}</td>
+                <td>{{ row.nivel }}</td>
+                <td>{{ row.seccion }}</td>
+                <td>{{ row.total_estudiantes }}</td>
+                <td><a href="#">Mas Detalle</a></td>
+                <td><a href="#">Modificar</a></td>
+              </tr>
+            {% endfor %}
+          {% else %}
+            <tr>
+              <td colspan="7">No hay datos disponibles</td>
+            </tr>
+          {% endif %}
         </tbody>
       </table>
+      
       <input type="button" class="guarcambio" name="enviar" value="Guardar Cambios">
 
 </body>

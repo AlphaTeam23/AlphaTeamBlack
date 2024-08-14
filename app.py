@@ -173,7 +173,7 @@ def e_cerrarsesion():
 def a_alphaTeam():
     return render_template('./admin/a_alphaTeam.html')
 
-@app.route('/alphaTeam/admin/cursos')
+@app.route('/alphaTeam/admin/cursos', methods=['GET'])
 def a_cursos():
 
     # Consulta a la base de datos
@@ -192,7 +192,7 @@ def a_cursos():
 def a_inscripcion():
     return render_template('./admin/a_inscripcion.html')
 
-@app.route('/admin/inscripcion', methods=['GET', 'POST'])
+@app.route('/alphaTeam/admin/inscripcion', methods=['GET', 'POST'])
 def inscripcion():
     if request.method == 'POST':
         # Procesar el formulario
@@ -218,13 +218,13 @@ def inscripcion():
 
         # INsercion de datos entabla estudiante
         cursor.execute("INSERT INTO estudiante (nombre_estudiante, apellidop_estudiante, sexo_estudinate, nacimiento_estudiante, id_curso, id_profesor, id_tutor) VALUES (%s, %s, %s, %s, %s, %s, %s)", (nom, ape, sexo, fecha, curso, prof, 1))
-        estudiante_id = cursor.lastrowid
+      
 
 
         #NOTAS: debo buscar la for
         # INsercion de datos entabla tutor
         cursor.execute("INSERT INTO tutor (nombre, apellidos, cedula, telefono, correo, ocupacion, parentesco, direccion) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (nomt, apet, cedula, telefono, correo, educ, ocup, direccion))
-        tutor_id = cursor.lastrowid
+        
 
 
         # GUardar cambios
