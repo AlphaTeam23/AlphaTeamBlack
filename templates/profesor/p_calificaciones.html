@@ -97,8 +97,10 @@
                         <label for="period">Periodo</label>
                         <select name="period" id="period" required>
                             <option value="">- Elija un periodo -</option>
-                            <option value="2022-2023">2022-2023</option>
-                            <option value="2023-2024">2023-2024</option>
+                            <option value="2022-2023">1 Periodo</option>
+                            <option value="2023-2024">2 Periodo</option>
+                            <option value="2023-2024">3 Periodo</option>
+                            <option value="2023-2024">4 Periodo</option>
                         </select>
                 
                         <input type="submit" name="action" value="CARGAR" class="boton">
@@ -118,7 +120,7 @@
                                 <th>EXAM</th>
                                 <th>PART</th>
                                 <th>ASIST</th>
-                                <th>PROM</th>
+                                <th>CALIFICACION</th>
                             </tr>
                 
                             {% for estudiante in estudiantes %}

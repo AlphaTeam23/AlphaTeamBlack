@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-08-2024 a las 22:59:47
+-- Tiempo de generación: 14-08-2024 a las 23:50:26
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -54,6 +54,7 @@ INSERT INTO `asignatura` (`id_asignatura`, `id_profesor`, `nom_asignatura`) VALU
 --
 
 CREATE TABLE `calificaciones` (
+  `id_calificaciones` int(5) NOT NULL,
   `id_asignatura` int(5) NOT NULL,
   `id_estudiante` int(5) NOT NULL,
   `tareas` int(2) NOT NULL,
@@ -67,36 +68,36 @@ CREATE TABLE `calificaciones` (
 -- Volcado de datos para la tabla `calificaciones`
 --
 
-INSERT INTO `calificaciones` (`id_asignatura`, `id_estudiante`, `tareas`, `examenes`, `participacion`, `asistencia`, `cali_final`) VALUES
-(1, 1, 0, 0, 0, 0, 0),
-(2, 2, 0, 0, 0, 0, 0),
-(3, 3, 0, 0, 0, 0, 0),
-(4, 4, 0, 0, 0, 0, 0),
-(5, 5, 0, 0, 0, 0, 0),
-(6, 6, 0, 0, 0, 0, 0),
-(7, 7, 0, 0, 0, 0, 0),
-(8, 8, 0, 0, 0, 0, 0),
-(9, 9, 0, 0, 0, 0, 0),
-(11, 11, 0, 0, 0, 0, 0),
-(12, 12, 0, 0, 0, 0, 0),
-(13, 13, 0, 0, 0, 0, 0),
-(14, 14, 0, 0, 0, 0, 0),
-(15, 15, 0, 0, 0, 0, 0),
-(16, 16, 0, 0, 0, 0, 0),
-(17, 17, 0, 0, 0, 0, 0),
-(18, 18, 0, 0, 0, 0, 0),
-(19, 19, 0, 0, 0, 0, 0),
-(20, 20, 0, 0, 0, 0, 0),
-(21, 21, 0, 0, 0, 0, 0),
-(22, 22, 0, 0, 0, 0, 0),
-(23, 23, 0, 0, 0, 0, 0),
-(24, 24, 0, 0, 0, 0, 0),
-(25, 25, 0, 0, 0, 0, 0),
-(26, 26, 0, 0, 0, 0, 0),
-(27, 27, 0, 0, 0, 0, 0),
-(28, 28, 0, 0, 0, 0, 0),
-(29, 29, 0, 0, 0, 0, 0),
-(30, 30, 0, 0, 0, 0, 0);
+INSERT INTO `calificaciones` (`id_calificaciones`, `id_asignatura`, `id_estudiante`, `tareas`, `examenes`, `participacion`, `asistencia`, `cali_final`) VALUES
+(1, 1, 1, 0, 0, 0, 0, 0),
+(2, 2, 1, 0, 0, 0, 0, 0),
+(3, 3, 1, 0, 0, 0, 0, 0),
+(4, 4, 1, 0, 0, 0, 0, 0),
+(5, 5, 1, 0, 0, 0, 0, 0),
+(6, 6, 1, 0, 0, 0, 0, 0),
+(7, 7, 1, 0, 0, 0, 0, 0),
+(8, 1, 2, 0, 0, 0, 0, 0),
+(9, 2, 2, 0, 0, 0, 0, 0),
+(11, 3, 2, 0, 0, 0, 0, 0),
+(12, 4, 2, 0, 0, 0, 0, 0),
+(13, 5, 2, 0, 0, 0, 0, 0),
+(14, 6, 2, 0, 0, 0, 0, 0),
+(15, 7, 2, 0, 0, 0, 0, 0),
+(16, 1, 3, 0, 0, 0, 0, 0),
+(17, 2, 3, 0, 0, 0, 0, 0),
+(18, 3, 3, 0, 0, 0, 0, 0),
+(19, 4, 3, 0, 0, 0, 0, 0),
+(20, 5, 3, 0, 0, 0, 0, 0),
+(21, 6, 3, 0, 0, 0, 0, 0),
+(22, 7, 3, 0, 0, 0, 0, 0),
+(23, 1, 4, 0, 0, 0, 0, 0),
+(24, 2, 4, 0, 0, 0, 0, 0),
+(25, 3, 4, 0, 0, 0, 0, 0),
+(26, 4, 4, 0, 0, 0, 0, 0),
+(27, 5, 4, 0, 0, 0, 0, 0),
+(28, 6, 4, 0, 0, 0, 0, 0),
+(29, 7, 4, 0, 0, 0, 0, 0),
+(30, 1, 5, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -176,6 +177,7 @@ INSERT INTO `dias` (`id_dias`, `dias`) VALUES
 
 CREATE TABLE `estudiante` (
   `id_estudiante` int(5) NOT NULL,
+  `e-Matricula` char(6) COLLATE utf32_spanish2_ci NOT NULL,
   `nombre_estudiante` varchar(30) COLLATE utf32_spanish2_ci NOT NULL,
   `apellidos` varchar(30) COLLATE utf32_spanish2_ci DEFAULT NULL,
   `sexo_estudiante` varchar(9) COLLATE utf32_spanish2_ci NOT NULL,
@@ -189,37 +191,37 @@ CREATE TABLE `estudiante` (
 -- Volcado de datos para la tabla `estudiante`
 --
 
-INSERT INTO `estudiante` (`id_estudiante`, `nombre_estudiante`, `apellidos`, `sexo_estudiante`, `nacimiento_estudiante`, `id_curso`, `id_profesor`, `id_tutor`) VALUES
-(1, 'Faury', 'García Rodríguez', 'Masculino', '2004-09-17', 4, 4, 2),
-(2, 'Jose Miguel', 'Bello Acosta', 'Masculino', '2003-09-04', 4, 4, 4),
-(3, 'Jose Miguel', 'Reyes', 'Masculino', '1996-11-08', 4, 4, 5),
-(4, 'Massiel', 'Rodriguez Rodríguez', 'Femenino', '2004-01-04', 4, 4, 8),
-(5, 'Manuel De Jesus', 'Díaz Díaz', 'Masculino', '1999-01-13', 4, 4, 6),
-(6, 'Albiery', 'Rodriguez Almonte', 'Masculino', '2004-08-19', 5, 5, 1),
-(7, 'Smailyn', 'Gutiérrez Burgos', 'Femenino', '2003-03-04', 5, 5, 9),
-(8, 'Gissel Esmeralda', 'Velez Cruz', 'Femenino', '1999-09-27', 5, 5, 3),
-(9, 'Marilin', 'Gil Paulino', 'Femenino', '2005-01-28', 5, 5, 7),
-(10, 'Tiara', 'Peña Rodríguez', 'Femenino', '2003-12-11', 5, 5, 12),
-(11, 'Ana', 'Martínez', 'Femenino', '2001-03-15', 6, 6, 11),
-(12, 'Luis', 'García', 'Masculino', '1999-06-21', 1, 1, 13),
-(13, 'Marta', 'Fernández', 'Femenino', '2000-08-30', 6, 6, 15),
-(14, 'Carlos', 'López', 'Masculino', '2002-11-05', 6, 6, 18),
-(15, 'Sofía', 'Gómez', 'Femenino', '2003-12-18', 6, 6, 20),
-(16, 'Jorge', 'Sánchez', 'Masculino', '1998-02-25', 2, 2, 22),
-(17, 'Laura', 'Martínez', 'Femenino', '2004-04-10', 2, 2, 25),
-(18, 'Pedro', 'Ramírez', 'Masculino', '2002-07-22', 2, 2, 27),
-(19, 'Isabel', 'Hernández', 'Femenino', '2001-09-14', 2, 2, 29),
-(20, 'Felipe', 'Morales', 'Masculino', '2000-10-30', 2, 2, 30),
-(21, 'Catalina', 'Cano', 'Femenino', '2003-01-05', 3, 3, 21),
-(22, 'Antonio', 'Gómez', 'Masculino', '2002-03-18', 3, 3, 23),
-(23, 'Elena', 'Castro', 'Femenino', '1999-05-27', 3, 3, 24),
-(24, 'Alejandro', 'Ramírez', 'Masculino', '2000-07-15', 3, 3, 26),
-(25, 'Patricia', 'Mendoza', 'Femenino', '2001-09-04', 3, 3, 28),
-(26, 'Manuel', 'Serrano', 'Masculino', '1999-02-20', 1, 1, 10),
-(27, 'Victoria', 'Álvarez', 'Femenino', '2000-04-25', 1, 1, 14),
-(28, 'Julio', 'Paredes', 'Masculino', '2001-06-30', 1, 1, 16),
-(29, 'Natalia', 'Mora', 'Femenino', '2003-08-15', 1, 1, 17),
-(30, 'Diego', 'Velasco', 'Masculino', '2002-10-12', 6, 6, 19);
+INSERT INTO `estudiante` (`id_estudiante`, `e-Matricula`, `nombre_estudiante`, `apellidos`, `sexo_estudiante`, `nacimiento_estudiante`, `id_curso`, `id_profesor`, `id_tutor`) VALUES
+(1, '', 'Faury', 'García Rodríguez', 'Masculino', '2004-09-17', 4, 4, 2),
+(2, '', 'Jose Miguel', 'Bello Acosta', 'Masculino', '2003-09-04', 4, 4, 4),
+(3, '', 'Jose Miguel', 'Reyes', 'Masculino', '1996-11-08', 4, 4, 5),
+(4, '', 'Massiel', 'Rodriguez Rodríguez', 'Femenino', '2004-01-04', 4, 4, 8),
+(5, '', 'Manuel De Jesus', 'Díaz Díaz', 'Masculino', '1999-01-13', 4, 4, 6),
+(6, '', 'Albiery', 'Rodriguez Almonte', 'Masculino', '2004-08-19', 5, 5, 1),
+(7, '', 'Smailyn', 'Gutiérrez Burgos', 'Femenino', '2003-03-04', 5, 5, 9),
+(8, '', 'Gissel Esmeralda', 'Velez Cruz', 'Femenino', '1999-09-27', 5, 5, 3),
+(9, '', 'Marilin', 'Gil Paulino', 'Femenino', '2005-01-28', 5, 5, 7),
+(10, '', 'Tiara', 'Peña Rodríguez', 'Femenino', '2003-12-11', 5, 5, 12),
+(11, '', 'Ana', 'Martínez', 'Femenino', '2001-03-15', 6, 6, 11),
+(12, '', 'Luis', 'García', 'Masculino', '1999-06-21', 1, 1, 13),
+(13, '', 'Marta', 'Fernández', 'Femenino', '2000-08-30', 6, 6, 15),
+(14, '', 'Carlos', 'López', 'Masculino', '2002-11-05', 6, 6, 18),
+(15, '', 'Sofía', 'Gómez', 'Femenino', '2003-12-18', 6, 6, 20),
+(16, '', 'Jorge', 'Sánchez', 'Masculino', '1998-02-25', 2, 2, 22),
+(17, '', 'Laura', 'Martínez', 'Femenino', '2004-04-10', 2, 2, 25),
+(18, '', 'Pedro', 'Ramírez', 'Masculino', '2002-07-22', 2, 2, 27),
+(19, '', 'Isabel', 'Hernández', 'Femenino', '2001-09-14', 2, 2, 29),
+(20, '', 'Felipe', 'Morales', 'Masculino', '2000-10-30', 2, 2, 30),
+(21, '', 'Catalina', 'Cano', 'Femenino', '2003-01-05', 3, 3, 21),
+(22, '', 'Antonio', 'Gómez', 'Masculino', '2002-03-18', 3, 3, 23),
+(23, '', 'Elena', 'Castro', 'Femenino', '1999-05-27', 3, 3, 24),
+(24, '', 'Alejandro', 'Ramírez', 'Masculino', '2000-07-15', 3, 3, 26),
+(25, '', 'Patricia', 'Mendoza', 'Femenino', '2001-09-04', 3, 3, 28),
+(26, '', 'Manuel', 'Serrano', 'Masculino', '1999-02-20', 1, 1, 10),
+(27, '', 'Victoria', 'Álvarez', 'Femenino', '2000-04-25', 1, 1, 14),
+(28, '', 'Julio', 'Paredes', 'Masculino', '2001-06-30', 1, 1, 16),
+(29, '', 'Natalia', 'Mora', 'Femenino', '2003-08-15', 1, 1, 17),
+(30, '', 'Diego', 'Velasco', 'Masculino', '2002-10-12', 6, 6, 19);
 
 -- --------------------------------------------------------
 
@@ -400,8 +402,9 @@ ALTER TABLE `asignatura`
 -- Indices de la tabla `calificaciones`
 --
 ALTER TABLE `calificaciones`
-  ADD PRIMARY KEY (`id_asignatura`),
-  ADD KEY `id_estudiante` (`id_estudiante`);
+  ADD PRIMARY KEY (`id_calificaciones`),
+  ADD KEY `id_estudiante` (`id_estudiante`),
+  ADD KEY `id_asignatura` (`id_asignatura`);
 
 --
 -- Indices de la tabla `calificacion_final`
@@ -489,7 +492,7 @@ ALTER TABLE `asignatura`
 -- AUTO_INCREMENT de la tabla `calificaciones`
 --
 ALTER TABLE `calificaciones`
-  MODIFY `id_asignatura` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_calificaciones` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `calificacion_final`
@@ -559,7 +562,7 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `asignatura`
 --
 ALTER TABLE `asignatura`
-  ADD CONSTRAINT `asignatura_ibfk_1` FOREIGN KEY (`id_asignatura`) REFERENCES `calificaciones` (`id_asignatura`);
+  ADD CONSTRAINT `asignatura_ibfk_1` FOREIGN KEY (`id_asignatura`) REFERENCES `calificaciones` (`id_calificaciones`);
 
 --
 -- Filtros para la tabla `calificaciones`
@@ -579,7 +582,7 @@ ALTER TABLE `calificacion_final`
 --
 ALTER TABLE `estudiante`
   ADD CONSTRAINT `estudiante_ibfk_1` FOREIGN KEY (`id_tutor`) REFERENCES `tutor` (`id_tutor`),
-  ADD CONSTRAINT `estudiante_ibfk_3` FOREIGN KEY (`Id_profesor`) REFERENCES `profesores` (`id_profesor`),
+  ADD CONSTRAINT `estudiante_ibfk_3` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
   ADD CONSTRAINT `estudiante_ibfk_4` FOREIGN KEY (`id_curso`) REFERENCES `cursos` (`id_curso`),
   ADD CONSTRAINT `estudiante_ibfk_5` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`);
 

@@ -269,13 +269,11 @@ label {
 .tabla1 {
     color: #fff;
     font-family: miFuentePath;
-    margin-left: 15%;
+    margin-left: -27%;
     margin-top: 0%;
-    width: 120%;
+    width: 175%;
     border-radius: 1%;
     height: 340px;
-    overflow: hidden;
-    overflow-y: scroll;
     cursor: pointer;
 }
 
@@ -304,21 +302,6 @@ table {
     border-spacing: 4px;
 }
 
-.tabla1::-webkit-scrollbar {
-    background-color: transparent;
-    border: 1px solid #81e6ff;
-    scroll-margin-left: -10%;
-}
-
-.tabla1::-webkit-scrollbar:hover {
-    border: 1px solid #0077ff96;
-}
-
-.tabla1::-webkit-scrollbar-thumb {
-    background-image: url(/imagenes/bx-chevrons-down.svg);
-    background-position-x: 15%;
-    background-size: 100%;
-}
 
 .tabla1 th {
     font-weight: normal;
