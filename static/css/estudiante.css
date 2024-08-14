@@ -239,8 +239,8 @@ main {
     font-size: 25px;
     color: #ffffff;
     position: relative;
-    /* top: -600px;
-    left: 580px; */
+   bottom: 600px;
+   left: 50%;
 }
 
 .info_docente{
@@ -566,7 +566,7 @@ td{
 
 
 .conten-imag img {
-    width: 54%;
+    width: 40%;
     height: 357px;
     position: fixed;
 }
