@@ -67,19 +67,18 @@
     <main>    
         <section>
             <div class="calificaciones_docente2">
-                <form>
+                <form method="POST" action="{{ url_for('p_informacion') }}">
                     <fieldset>
                         <legend>LISTADO ESTUDIANTES DEL CURSO</legend>
                         <label for="cur">Cursos</label>
                         <select name="cur" id="cur" required>
                             <option value="">- Elija un curso - </option>
-                            <optgroup label="Nivel Secundario"></optgroup>
-                            <option value="">1ro de secundaria</option>
-                            <option value="">2do de secundaria</option>
-                            <option value="">3ro de secundaria</option>
-                            <option value="">4to de secundaria</option>
-                            <option value="">5to de secundaria</option>
-                            <option value="">6to de secundaria</option>
+                            <option value="1ro" {% if selected_curso == '1ro' %}selected{% endif %}>1ro de secundaria</option>
+                            <option value="2do" {% if selected_curso == '2do' %}selected{% endif %}>2do de secundaria</option>
+                            <option value="3ro" {% if selected_curso == '3ro' %}selected{% endif %}>3ro de secundaria</option>
+                            <option value="4to" {% if selected_curso == '4to' %}selected{% endif %}>4to de secundaria</option>
+                            <option value="5to" {% if selected_curso == '5to' %}selected{% endif %}>5to de secundaria</option>
+                            <option value="6to" {% if selected_curso == '6to' %}selected{% endif %}>6to de secundaria</option>
                         </select>
                     
                         <label for="asig">Materia</label>
@@ -97,132 +96,65 @@
                         <label for="period">Periodo</label>
                         <select name="period" id="period" required>
                             <option value="">- Elija un periodo -</option>
-                            <option value="">2022-2023</option>
-                            <option value="">2023-2024</option>
+                            <option value="2022-2023">1 Periodo</option>
+                            <option value="2023-2024">2 Periodo</option>
+                            <option value="2023-2024">3 Periodo</option>
+                            <option value="2023-2024">4 Periodo</option>
                         </select>
 
-                        <input type="submit" value="CARGAR" class="boton9">
+                        <input type="submit" name="action" value="CARGAR" class="boton9">
                     </fieldset>
                 </form>
             </div>
-
 
             <div class="tabla2">  
                 <table border="1">
                     <tr>
                         <th>MATRICULA</th>
                         <th>NOMBRES</th>
-                        <th>APELLIDOS </th>
-                        <th class="cuadro-edad">EDAD</th>
-                        <th>TUTOR </th>
-                        <th> TELEFONO TUTOR</th>
+                        <th>APELLIDOS</th>
+                        <th>SEXO</th>
+                        <th>FECHA NACIMIENTO</th>
+                        <th>EDAD</th>
                     </tr>
-                    <tr>
-                        <td>10061</td>
-                        <td></td>
-                        <td></td>
-                        <td class="cuadro-edad"><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10062</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10063</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>  
-                    </tr>
-                    <tr>
-                        <td>10064</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10065</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10066</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10067</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10068</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10069</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10070</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                <tfoot>
-                    <tr>
-                        <td>TOTAL ESTUDIANTE</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                </tfoot>
+
+                    {% for estudiante in estudiantes %}
+                        <tr>
+                            <td>{{ estudiante[0] }}</td>  
+                            <td>{{ estudiante[1] }}</td> 
+                            <td>{{ estudiante[2] }}</td>
+                            <td>{{ estudiante[3] }}</td>  
+                            <td>{{ estudiante[4] }}</td> 
+                            <td>{{ estudiante[5] }}</td>   
+                        </tr>
+                    {% endfor %}
                 </table>
-                
             </div>
         </section>
-        <!-- <input type="submit" value="Publicar Notas" class="publicar"> -->
     </main>
+
+    <script>
+        document.getElementById('cur').addEventListener('change', function() {
+            var cursoId = this.value;
+            if (cursoId) {
+                fetch('/get_estudiantes', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'curso_id=' + encodeURIComponent(cursoId),
+                })
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('tabla_estudiantes').innerHTML = html;
+                })
+                .catch(error => console.error('Error al cargar los estudiantes:', error));
+            } else {
+                document.getElementById('tabla_estudiantes').innerHTML = '';
+            }
+
+        });
+    </script>
     
 </body>
 </html>
