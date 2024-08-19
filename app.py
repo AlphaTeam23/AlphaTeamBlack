@@ -258,7 +258,7 @@ def a_estudiantes():
     
     conn = mysql.connect() 
     cursor = conn.cursor()  
-    cursor.execute("SELECT * FROM estudiante, tutor")  
+    cursor.execute("SELECT *, tutor.nombre AS tnombre FROM estudiante JOIN tutor ON tutor.id_tutor = estudiante.id_tutor")  
     estudiantes = cursor.fetchall() 
     cursor.close()  
     conn.close() 
