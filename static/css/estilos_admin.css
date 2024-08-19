@@ -245,6 +245,21 @@ li img {
     font-weight: normal;
 }
 
+.barraestudiante {
+    position: relative;
+    top: -25px;
+    right: 40px;
+    width: 896px;
+    height: 100px;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: miFuentePath;
+    font-weight: normal;
+}
+
 th {
     font-family: miFuentePath;
     font-weight: normal;
@@ -322,6 +337,23 @@ td {
     bottom: -60px;
     position: relative;
     left: 30px;
+    color: #000;
+    cursor: pointer;
+    border: none;
+}
+.btbuscarest {
+    top: 0px;
+    height: 20px;
+    font-family: miFuentePath;
+    background-color: #fff;
+    font-size: 20px;
+    height: 23px;
+    width: 60px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -60px;
+    position: relative;
+    left: 0px;
     color: #000;
     cursor: pointer;
     border: none;
@@ -762,6 +794,17 @@ section {
     top: 0px;
     height: 20px;
     width: 10px;
+}
+
+.estudiantes {
+    border-color: #979393;
+    background-color: #ffffff83;
+    color: #0d0c0c;
+    position: absolute;
+    top: -400px;
+    left: -93px;
+    height: 10px;
+    width: 630px;
 }
 
 .datosestudiante {

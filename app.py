@@ -253,6 +253,17 @@ def a_recordnota2():
 def a_usuarios():
     return render_template('./admin/a_usuarios.html')
 
+@app.route('/alphaTeam/admin/estudiantes', methods=['GET', 'POST'])
+def a_estudiantes():
+    
+    conn = mysql.connect() 
+    cursor = conn.cursor()  
+    cursor.execute("SELECT * FROM estudiante, tutor")  
+    estudiantes = cursor.fetchall() 
+    cursor.close()  
+    conn.close() 
+    return render_template('./admin/a_estudiantes.html', estudiantes = estudiantes)
+
 @app.route('/alphaTeam/templates/cerrarsesion')
 def p_cerrar():
     session.clear()

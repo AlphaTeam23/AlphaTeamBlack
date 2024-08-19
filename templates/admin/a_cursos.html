@@ -10,15 +10,10 @@
 <body>
     <header>
         <h1>ALPHA TEAM</h1>
-
                     <figure class="logo_pagina">
                 <img src="/static/imagenes/logo.png" alt="">
             </figure>
         </a>
-
-        
-
-        
 
         <nav> 
           <ul>
@@ -63,34 +58,26 @@
                     <legend>Buscar  Cursos</legend>
                     <label for="curso">Nivel</label>
                         <select name="curso" id="curso" required>
-                            <option value="">- Elija un curso -</option>
-                            <optgroup label="Nivel Primario">
-                            <option value="pp">Pre-primario</option>
-                            <option value="1p">1° Grado</option>
-                            <option value="2p">2° Grado</option>
-                            <option value="3p">3° Grado</option>
-                            <option value="4p">4° Grado</option>
-                            <option value="5p">5° Grado</option>
-                            <option value="6p">6° Grado</option>
-                            <optgroup label="Nivel Secundario">
-                            <option value="1s">1° Grado</option>
-                            <option value="2s">2° Grado</option>
-                            <option value="3s">3° Grado</option>
-                            <option value="4s">4° Grado</option>
-                            <option value="5s">5° Grado</option>
-                            <option value="6s">6° Grado</option>
+                            <option value="">Seleccion un curso</option>
+                            <option value="1">1° Bachiller</option>
+                            <option value="2">2° Bachiller</option>
+                            <option value="3">3° Bachiller</option>
+                            <option value="4">4° Bachiller</option>
+                            <option value="5">5° Bachiller</option>
+                            <option value="6">6° Bachiller</option>
                     </select>
 
                     <label for="prof">Profesor</label>
                     <select name="prof" id="prof" required>
 
                         <option value="">Seleccione un Profesor</option>
-                        <option value="">Profesor 1</option>
-                        <option value="">Profesor 2</option>
-                        <option value="">Profesor 3</option>
-                        <option value="">Profesor 4</option>
-                        <option value="">Profesor 5</option>
-                        <option value="">Profesor 6</option>
+                        <option value="1">Eduardo Rodriguez</option>
+                        <option value="2">Anyi Castillo</option>
+                        <option value="3">Jose Alonzo</option>
+                        <option value="4">Ruddy Ferreras</option>
+                        <option value="5">Apolinar Rivas</option>
+                        <option value="6">Daniel De la Cruz</option>
+                        <option value="7">Fausto Rodriguez</option>
                     </select>
 
                     <label for="seccion">Seccion</label>
@@ -132,13 +119,10 @@
     <table class="datoscurs" border="1">
         <thead>
           <tr>
+            <th> ID Curso</th>
             <th>Curso</th>
-            <th>Profesor</th>
-            <th>Nivel</th>
-            <th>Seccion</th>
             <th>Total Estudiante</th>
-            <th>Mas Detalle</th>
-            <th>Modificar</th>
+            <th>Ver Listado</th>
           </tr>
         </thead>
         <tbody>
@@ -147,13 +131,7 @@
                 <td>{{ curso[0] }}</td>
                 <td>{{ curso[1] }}</td>
                 <td>{{ curso[2] }}</td>
-                <td>{{ curso[3] }}</td>
-                <td>{{ curso[4] }}</td>
-                <td>{{ curso[5] }}</td>
-                <td>{{ curso[6] }}</td>
-                
-                <td><a href="#">Mas Detalle</a></td>
-                <td><a href="#">Modificar</a></td>
+                <td> <a href="/alphaTeam/admin/estudiantes">Ver Estudiantes</a> </td>           
               </tr>
             {% endfor %}
         </tbody>
