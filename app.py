@@ -173,20 +173,18 @@ def e_cerrarsesion():
 def a_alphaTeam():
     return render_template('./admin/a_alphaTeam.html')
 
-@app.route('/alphaTeam/admin/cursos', methods=['GET'])
+@app.route('/alphaTeam/admin/cursos', methods=['GET', 'POST'])
 def a_cursos():
-
-    # Consulta a la base de datos
-
-
+   
     conn = mysql.connect() 
     cursor = conn.cursor()  
-    cursor.execute("SELECT id_curso, nivel, total_est FROM cursos")  
-    data = cursor.fetchall()  
+    cursor.execute("SELECT * FROM cursos")  
+    cursos = cursor.fetchall()  
     cursor.close()  
     conn.close()  
 
-    return render_template('./admin/a_cursos.html')
+    # Pasar los datos a la plantilla
+    return render_template('./admin/a_cursos.html', cursos=cursos)
 
 @app.route('/alphaTeam/admin/inscripcion')
 def a_inscripcion():
@@ -217,7 +215,7 @@ def inscripcion():
         cursor = conn.cursor()
 
         # INsercion de datos entabla estudiante
-        cursor.execute("INSERT INTO estudiante (nombre_estudiante, apellidop_estudiante, sexo_estudinate, nacimiento_estudiante, id_curso, id_profesor, id_tutor) VALUES (%s, %s, %s, %s, %s, %s, %s)", (nom, ape, sexo, fecha, curso, prof, 1))
+        cursor.execute("INSERT INTO estudiante (nombre_estudiante, apellidos, sexo_estudiante, nacimiento_estudiante, id_curso, id_profesor, id_tutor) VALUES (%s, %s, %s, %s, %s, %s, %s)", (nom, ape, sexo, fecha, curso, prof, 1))
       
 
 

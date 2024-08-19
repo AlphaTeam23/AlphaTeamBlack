@@ -142,14 +142,17 @@
           </tr>
         </thead>
         <tbody>
-          {% if data %}
-            {% for row in data %}
+          {% if curso %}
+            {% for curso in cursos %}
               <tr>
-                <td>{{ row.curso }}</td>
-                <td>{{ row.profesor }}</td>
-                <td>{{ row.nivel }}</td>
-                <td>{{ row.seccion }}</td>
-                <td>{{ row.total_estudiantes }}</td>
+                <td>{{ curso[0] }}</td>
+                <td>{{ curso[1] }}</td>
+                <td>{{ curso[2] }}</td>
+                <td>{{ curso[3] }}</td>
+                <td>{{ curso[4] }}</td>
+                <td>{{ curso[5] }}</td>
+                <td>{{ curso[6] }}</td>
+                
                 <td><a href="#">Mas Detalle</a></td>
                 <td><a href="#">Modificar</a></td>
               </tr>
