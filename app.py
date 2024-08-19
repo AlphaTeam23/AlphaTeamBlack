@@ -175,7 +175,7 @@ def a_alphaTeam():
 
 @app.route('/alphaTeam/admin/cursos', methods=['GET', 'POST'])
 def a_cursos():
-   
+
     conn = mysql.connect() 
     cursor = conn.cursor()  
     cursor.execute("SELECT * FROM cursos")  
