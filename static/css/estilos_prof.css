@@ -431,19 +431,9 @@ table {
 
 
 .tabla2::-webkit-scrollbar {
-    background-color: transparent;
-    border: 1px solid #81e6ff;
+    display: none;
 }
 
-.tabla2::-webkit-scrollbar:hover {
-    border: 1px solid #0077ff96;
-}
-
-.tabla2::-webkit-scrollbar-thumb {
-    background-image: url(/imagenes/bx-chevrons-down.svg);
-    background-position-x: 15%;
-    background-size: 100%;
-}
 
 .tabla2 th {
     font-weight: normal;
