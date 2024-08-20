@@ -258,6 +258,7 @@ li img {
     align-items: center;
     font-family: miFuentePath;
     font-weight: normal;
+    
 }
 
 th {
@@ -805,6 +806,25 @@ section {
     left: -93px;
     height: 10px;
     width: 630px;
+
+
+   /* position: relative;
+    top: -35px;
+    right: 33px;
+    height: 20px;
+    width: 850px;
+    border-radius: 5px;
+    font-family: miFuentePath;
+    font-weight: normal;
+    overflow: hidden;   
+    overflow-y: scroll;
+    height: 440px;
+    margin-left: 3px;
+    margin-top: 400px */
+
+
+
+    
 }
 
 .datosestudiante {

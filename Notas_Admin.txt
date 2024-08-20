@@ -1,1 +1,6 @@
 debo buscar la forma para que verifique si el tutor esta creado y si no esta creado me lo cree en la base de datos
+La tabla Usuario debe tener un id para identificar a que usuario esta asignado
+Me esta faltando planificacion y gestion de usuario para completar basede datos y empezar a ahacer pruebas
+Me falta hacer las consultas de la busqueda
+poner que los datos se puedan editar todos desde administrador con update
+Hay que crear la tabla de polanificacion para que los archivos se guarden en una carpeta o un archivos
