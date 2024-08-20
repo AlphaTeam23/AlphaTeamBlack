@@ -239,11 +239,27 @@ def inscripcion():
 
 @app.route('/alphaTeam/admin/planificacion')
 def a_planificacion():
-    return render_template('./admin/a_planificacion.html')
+
+    conn = mysql.connect() 
+    cursor = conn.cursor()  
+    cursor.execute("SELECT * FROM cursos")  
+    planificacion = cursor.fetchall()  
+    cursor.close()  
+    conn.close()  
+
+    return render_template('./admin/a_planificacion.html', planificacion = planificacion)
 
 @app.route('/alphaTeam/admin/recordnota')
 def a_recordnota():
-    return render_template('./admin/a_recordnota.html')
+
+    conn = mysql.connect() 
+    cursor = conn.cursor()  
+    cursor.execute("SELECT *, asignatura.nom_asignatura AS anom_asignatura FROM calificacion_final JOIN asignatura ON asignatura.id_asignatura = calificacion_final.id_asignatura")  
+    calificaciones = cursor.fetchall() 
+    cursor.close()  
+    conn.close()  
+
+    return render_template('./admin/a_recordnota.html', calificaciones = calificaciones)
 
 @app.route('/alphaTeam/admin/recordnota2')
 def a_recordnota2():

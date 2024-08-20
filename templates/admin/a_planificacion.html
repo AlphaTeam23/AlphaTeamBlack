@@ -133,9 +133,8 @@
         <thead> 
        
           <tr>
-            <th>MATRICULA</th>
+            <th>CURSO</th>
             <th>PROFESOR</th>
-            <th>NIVEL</th>
             <th>PERIODO</th>
             <th>VER PLANIFICACION</th>
           
@@ -143,97 +142,15 @@
           </tr>
         </thead>
         <tbody>
+          {% for plan in planificacion %}
+          
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
+              <td>{{ plan[1] }}</td>
+              <td>{{ plan[2] }}</td>
+              <td>{{ plan[3] }}</td>
+              <td>{{ plan[4] }}</td>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
-    
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
-           
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
-           
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
-           
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
-           
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
-           
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ver Planificacion</td>
-           
-          </tr>
+          {% endfor %}
         </tbody>
         
 </body>

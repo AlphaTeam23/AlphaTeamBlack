@@ -63,25 +63,15 @@
                     <input type="search" class="referencia" id="busqueda" placeholder="1000045">
                     <label for="curso">CURSO</label>
                         <select name="curso" id="curso" required>
-                            <option value="">- Elija un curso -</option>
-                            <optgroup label="Nivel Primario">
-                            <option value="pp">Pre-primario</option>
-                            <option value="1p">1° Grado</option>
-                            <option value="2p">2° Grado</option>
-                            <option value="3p">3° Grado</option>
-                            <option value="4p">4° Grado</option>
-                            <option value="5p">5° Grado</option>
-                            <option value="6p">6° Grado</option>
-                            <optgroup label="Nivel Secundario">
-                            <option value="1s">1° Grado</option>
-                            <option value="2s">2° Grado</option>
-                            <option value="3s">3° Grado</option>
-                            <option value="4s">4° Grado</option>
-                            <option value="5s">5° Grado</option>
-                            <option value="6s">6° Grado</option>
-                            <option value="6s">Cargar Todo</option>
+                          <option value="">Seleccion un curso</option>
+                          <option value="1">1° Bachiller</option>
+                          <option value="2">2° Bachiller</option>
+                          <option value="3">3° Bachiller</option>
+                          <option value="4">4° Bachiller</option>
+                          <option value="5">5° Bachiller</option>
+                          <option value="6">6° Bachiller</option>
 
-                    </select>
+                        </select>
 
                     
 
@@ -141,76 +131,36 @@
 
     <table class="datosrecord1" border="1">
         <thead> 
-            <th>PRIMER SEMESTRE</th>
+     
           <tr>
             <th>ASIGNATURA</th>
-            <th>TAREA</th>
-            <th>EXAMEN</th>
-            <th>PARTICIPACION</th>
-            <th>ASISTENCIA</th>
-            <th>PROMEDIO</th>
+            <th>Ago-Sept-Oct</th>
+            <th>Nov-Dic-Ene </th>
+            <th>Feb-Mar </th>
+            <th>Abr-May-Jun</th>
+            <th>Completivo</th>
+            <th>Extraordinario</th>
+            <th>C.F</th>
           </tr>
         </thead>
         <tbody>
+          {% for calificacion in calificaciones %}
+          
           <tr>
-            <td>LENGUA ESPAÑOLA</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+              <td>{{ calificacion[11] }}</td>
+              <td>{{ calificacion[2] }}</td>
+              <td>{{ calificacion[3] }}</td>
+              <td>{{ calificacion[4] }}</td>
+              <td>{{ calificacion[5] }}</td>
+              <td>{{ calificacion[6] }}</td>
+              <td>{{ calificacion[7] }}</td>
+              <td>{{ calificacion[8] }}</td>
+              
+
+          
           </tr>
-          <tr>
-            <td>MATEMATICAS</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>CIENCIAS SOCIALES</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>CIENCIAS NATURALES</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>FISICA</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>EDUACACION FINANCIERA</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-    
-          </tr>
-          <tr>
-            <td>INGLES</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-           
-          </tr>
-        </tbody>
+          {% endfor %}
+      </tbody>
       </table>
 
       
