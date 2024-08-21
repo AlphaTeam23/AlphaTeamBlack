@@ -242,7 +242,7 @@ def a_planificacion():
 
     conn = mysql.connect() 
     cursor = conn.cursor()  
-    cursor.execute("SELECT * FROM cursos")  
+    cursor.execute("SELECT * FROM planificacion")  
     planificacion = cursor.fetchall()  
     cursor.close()  
     conn.close()  
