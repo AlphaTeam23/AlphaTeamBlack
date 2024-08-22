@@ -2103,3 +2103,29 @@ summary {
    } 
 
 }
+
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+
+    .calificaciones {
+        display: grid;
+        grid-template-columns: 4fr;
+        gap: 20px;
+    }
+
+    .calificaciones .tabla {
+        width: 100%; /
+    }
+
+    .seccion {
+        padding: 15px;
+        margin: 0 auto;
+        max-width: 1000px; 
+    }
+
+    .tabla th, .tabla td {
+        padding: 10px;
+        font-size: 13px;
+        text-align: center;
+    }
+}

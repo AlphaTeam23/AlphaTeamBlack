@@ -66,81 +66,85 @@
 
     <main>
         <section>
-            <div class="calificaciones_docente1">
-                <form method="POST">
-                    <fieldset>
-                        <legend>CALIFICACIONES</legend>
-                
-                        <label for="cur">Cursos</label>
-                        <select name="cur" id="cur" required>
-                            <option value="">- Elija un curso - </option>
-                            <option value="1ro" {% if selected_curso == '1ro' %}selected{% endif %}>1ro de secundaria</option>
-                            <option value="2do" {% if selected_curso == '2do' %}selected{% endif %}>2do de secundaria</option>
-                            <option value="3ro" {% if selected_curso == '3ro' %}selected{% endif %}>3ro de secundaria</option>
-                            <option value="4to" {% if selected_curso == '4to' %}selected{% endif %}>4to de secundaria</option>
-                            <option value="5to" {% if selected_curso == '5to' %}selected{% endif %}>5to de secundaria</option>
-                            <option value="6to" {% if selected_curso == '6to' %}selected{% endif %}>6to de secundaria</option>
-                        </select>
-                
-                        <label for="asig">Materia</label>
-                        <select name="asig" id="asig" required>
-                            <option value="">- Elija una materia -</option>
-                            <option value="1">Lengua Española</option>
-                            <option value="2">Matemáticas</option>
-                            <option value="3">Ciencias Sociales</option>
-                            <option value="4">Ciencias Naturales</option>
-                            <option value="5">Física</option>
-                            <option value="6">Educación Financiera</option>
-                            <option value="7">Inglés</option>
-                        </select>
-                
-                        <label for="period">Periodo</label>
-                        <select name="period" id="period" required>
-                            <option value="">- Elija un periodo -</option>
-                            <option value="2022-2023">1 Periodo</option>
-                            <option value="2023-2024">2 Periodo</option>
-                            <option value="2023-2024">3 Periodo</option>
-                            <option value="2023-2024">4 Periodo</option>
-                        </select>
-                
-                        <input type="submit" name="action" value="CARGAR" class="boton">
-                        <br>
-                        <input type="submit" name="action" value="Imprimir x Estudiante" class="imprimir">
-                        <input type="submit" name="action" value="Imprimir x Curso" class="imprimir">
-                        <br><br>
-                    </fieldset>
-                
-                    <div class="tabla1">
-                        <table border="1">
-                            <tr>
-                                <th class="complete">NOMBRES</th>
-                                <th class="apellido">APELLIDOS</th>
-                                <th>MATRICULA</th>
-                                <th>TAREAS</th>
-                                <th>EXAM</th>
-                                <th>PART</th>
-                                <th>ASIST</th>
-                                <th>CALIFICACION</th>
-                            </tr>
-                
-                            {% for estudiante in estudiantes %}
-                            <tr>
-                                <td>{{ estudiante[0] }}</td>  
-                                <td>{{ estudiante[1] }}</td> 
-                                <td>{{ estudiante[2] }}</td>
-                                <td><input type="text" name="tareas_{{ estudiante[2] }}" value="{{ estudiante[3] }}" maxlength="3"></td>
-                                <td><input type="text" name="examenes_{{ estudiante[2] }}" value="{{ estudiante[4] }}" maxlength="3"></td>
-                                <td><input type="text" name="participacion_{{ estudiante[2] }}" value="{{ estudiante[5] }}" maxlength="3"></td>
-                                <td><input type="text" name="asistencia_{{ estudiante[2] }}" value="{{ estudiante[6] }}" maxlength="3"></td>
-                                <td><input type="text" name="cali_final_{{ estudiante[2] }}" value="{{ estudiante[7] }}" maxlength="3"></td>
-                                <input type="hidden" name="estudiante_id" value="{{ estudiante[2] }}">
-                            </tr>
-                            {% endfor %}
-                        </table>
-                    </div>
-                
-                    <input type="submit" name="action" value="Publicar Notas" class="publicar">
-                </form>
+        <div class="calificaciones_docente1">
+    <form method="POST" action="/alphaTeam/profesor/calificaciones">
+        <fieldset>
+            <legend>CALIFICACIONES</legend>
+
+            <label for="cur">Cursos</label>
+            <select name="cur" id="cur" required>
+                <option value="">- Elija un curso - </option>
+                <option value="1ro" {% if selected_curso == '1ro' %}selected{% endif %}>1ro de secundaria</option>
+                <option value="2do" {% if selected_curso == '2do' %}selected{% endif %}>2do de secundaria</option>
+                <option value="3ro" {% if selected_curso == '3ro' %}selected{% endif %}>3ro de secundaria</option>
+                <option value="4to" {% if selected_curso == '4to' %}selected{% endif %}>4to de secundaria</option>
+                <option value="5to" {% if selected_curso == '5to' %}selected{% endif %}>5to de secundaria</option>
+                <option value="6to" {% if selected_curso == '6to' %}selected{% endif %}>6to de secundaria</option>
+            </select>
+
+            <label for="asig">Materia</label>
+            <select name="asig" id="asig" required>
+                <option value="">- Elija una materia -</option>
+                <option value="1" {% if selected_asignatura == '1' %}selected{% endif %}>Lengua Española</option>
+                <option value="2" {% if selected_asignatura == '2' %}selected{% endif %}>Matemáticas</option>
+                <option value="3" {% if selected_asignatura == '3' %}selected{% endif %}>Ciencias Sociales</option>
+                <option value="4" {% if selected_asignatura == '4' %}selected{% endif %}>Ciencias Naturales</option>
+                <option value="5" {% if selected_asignatura == '5' %}selected{% endif %}>Física</option>
+                <option value="6" {% if selected_asignatura == '6' %}selected{% endif %}>Educación Financiera</option>
+                <option value="7" {% if selected_asignatura == '7' %}selected{% endif %}>Inglés</option>
+            </select>
+
+            <label for="period">Periodo</label>
+            <select name="period" id="period" required>
+                <option value="">- Elija un periodo -</option>
+                <option value="2022-2023" {% if selected_periodo == '2022-2023' %}selected{% endif %}>1 Periodo</option>
+                <option value="2023-2024" {% if selected_periodo == '2023-2024' %}selected{% endif %}>2 Periodo</option>
+                <option value="2023-2024" {% if selected_periodo == '2023-2024' %}selected{% endif %}>3 Periodo</option>
+                <option value="2023-2024" {% if selected_periodo == '2023-2024' %}selected{% endif %}>4 Periodo</option>
+            </select>
+
+            <input type="submit" name="action" value="CARGAR" class="boton">
+            <br>
+            <input type="submit" name="action" value="Imprimir x Estudiante" class="imprimir">
+            <input type="submit" name="action" value="Imprimir x Curso" class="imprimir">
+            <br><br>
+        </fieldset>
+
+        <div class="tabla1">
+            <table border="1">
+                <tr>
+                    <th class="complete">NOMBRES</th>
+                    <th class="apellido">APELLIDOS</th>
+                    <th>MATRICULA</th>
+                    <th>TAREAS</th>
+                    <th>EXAM</th>
+                    <th>PART</th>
+                    <th>ASIST</th>
+                    <th>CALIFICACION</th>
+                </tr>
+
+                {% for estudiante in estudiantes %}
+                <tr>
+                    <td>{{ estudiante[0] }}</td>  
+                    <td>{{ estudiante[1] }}</td> 
+                    <td>{{ estudiante[2] }}</td>
+                    <td>{{ estudiante[3] }}</td>
+
+                    <td><input type="text" name="tareas_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[3] }}" maxlength="3"></td>
+                    <td><input type="text" name="examenes_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[4] }}" maxlength="3"></td>
+                    <td><input type="text" name="participacion_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[5] }}" maxlength="3"></td>
+                    <td><input type="text" name="asistencia_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[6] }}" maxlength="3"></td>
+                    <td><input type="text" name="cali_final_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[7] }}" maxlength="3"></td>
+                    <input type="hidden" name="estudiante_id" value="{{ estudiante[2] }}">
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <input type="submit" name="action" value="Publicar Notas" class="publicar">
+    </form>
+</div>
+
                 
                 
                 

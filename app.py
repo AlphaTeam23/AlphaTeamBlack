@@ -30,56 +30,68 @@ def p_alphaTeam():
 @app.route('/alphaTeam/profesor/calificaciones', methods=['GET', 'POST'])
 def p_calificaciones():
     curso_id = None
+    asignatura_id = None
+    periodo = None
     estudiantes = []
-    
+
     if request.method == 'POST':
         action = request.form.get('action')
+        
         if action == 'CARGAR':
             curso_id = request.form.get('cur')
-            if not curso_id:
-                return "No se proporcionó un ID de curso", 400
+            asignatura_id = request.form.get('asig')
+            periodo = request.form.get('period')
             
-            # Obtener los estudiantes que pertenecen al curso seleccionado
+            if not curso_id or not asignatura_id or not periodo:
+                return "No se proporcionaron todos los datos necesarios", 400
+
+            # Obtener los estudiantes que pertenecen al curso y asignatura seleccionados
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute("""
-                SELECT e.nombre_estudiante, e.apellidos, e.id_estudiante,
-                       c.tareas, c.examenes, c.participacion, c.asistencia, c.cali_final
+                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.e_Matricula,
+                       IFNULL(c.tareas, 0), IFNULL(c.examenes, 0), IFNULL(c.participacion, 0), IFNULL(c.asistencia, 0), IFNULL(c.cali_final, 0)
                 FROM estudiante e
-                LEFT JOIN calificaciones c ON e.id_estudiante = c.id_estudiante
+                LEFT JOIN calificaciones c ON e.id_estudiante = c.id_estudiante AND c.id_asignatura = %s
                 WHERE e.id_curso = %s
-            """, (curso_id,))
+            """, (asignatura_id, curso_id))
+
             estudiantes = cursor.fetchall()
             cursor.close()
             conn.close()
 
         elif action == 'Publicar Notas':
-            # Actualizar las calificaciones en la base de datos
             conn = mysql.connect()
             cursor = conn.cursor()
+            asignatura_id = request.form.get('asig')
+            
+            if not asignatura_id:
+                return "No se proporcionó un ID de asignatura", 400
+
             estudiantes_ids = request.form.getlist('estudiante_id')
 
             for estudiante_id in estudiantes_ids:
-                tareas = request.form.get(f'tareas_{estudiante_id}')
-                examenes = request.form.get(f'examenes_{estudiante_id}')
-                participacion = request.form.get(f'participacion_{estudiante_id}')
-                asistencia = request.form.get(f'asistencia_{estudiante_id}')
-                cali_final = request.form.get(f'cali_final_{estudiante_id}')
+                tareas = request.form.get(f'tareas_{estudiante_id}_{asignatura_id}')
+                examenes = request.form.get(f'examenes_{estudiante_id}_{asignatura_id}')
+                participacion = request.form.get(f'participacion_{estudiante_id}_{asignatura_id}')
+                asistencia = request.form.get(f'asistencia_{estudiante_id}_{asignatura_id}')
+                cali_final = request.form.get(f'cali_final_{estudiante_id}_{asignatura_id}')
 
                 cursor.execute("""
                     UPDATE calificaciones
                     SET tareas = %s, examenes = %s, participacion = %s, asistencia = %s, cali_final = %s
-                    WHERE id_estudiante = %s
-                """, (tareas, examenes, participacion, asistencia, cali_final, estudiante_id))
+                    WHERE id_asignatura = %s AND id_estudiante = %s
+                """, (tareas, examenes, participacion, asistencia, cali_final, asignatura_id, estudiante_id))
 
             conn.commit()
             cursor.close()
             conn.close()
 
             return redirect(url_for('p_calificaciones'))
-    
-    # Renderizar el formulario con el curso seleccionado (si existe)
-    return render_template('./profesor/p_calificaciones.html', estudiantes=estudiantes, selected_curso=curso_id)
+
+    return render_template('./profesor/p_calificaciones.html', estudiantes=estudiantes, selected_curso=curso_id, selected_asignatura=asignatura_id, selected_periodo=periodo)
+
+
 
 
 
@@ -100,6 +112,7 @@ def p_planificacion():
 @app.route('/alphaTeam/profesor/informacion')
 def p_informacion():
     return render_template('./profesor/p_informacionestudiante.html')
+
 
 @app.route('/alphaTeam/profesor/foto')
 def p_foto():
