@@ -416,7 +416,7 @@ td {
 }
 
 .btbuscarcurso {
-    top: -32px;
+    top: 0px;
     height: 20px;
     font-family: miFuentePath;
     background-color: #fff;
@@ -427,7 +427,7 @@ td {
     padding: 0;
     bottom: -60px;
     position: relative;
-    left: 760px;
+    left: 100px;
     color: #000;
     cursor: pointer;
     border: none;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-08-2024 a las 23:41:36
+-- Tiempo de generación: 23-08-2024 a las 22:40:22
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -39,13 +39,13 @@ CREATE TABLE `asignatura` (
 --
 
 INSERT INTO `asignatura` (`id_asignatura`, `id_profesor`, `nom_asignatura`) VALUES
-(1, 0, 'Lengua Española'),
-(2, 0, 'Matemáticas'),
-(3, 0, 'Ciencias Sociales'),
-(4, 0, 'Ciencias Naturales'),
-(5, 0, 'Física'),
-(6, 0, 'Educación Financiera'),
-(7, 0, 'Inglés');
+(1, 1, 'Lengua Española'),
+(2, 2, 'Matemáticas'),
+(3, 3, 'Ciencias Sociales'),
+(4, 4, 'Ciencias Naturales'),
+(5, 5, 'Física'),
+(6, 6, 'Educación Financiera'),
+(7, 7, 'Inglés');
 
 -- --------------------------------------------------------
 
@@ -287,6 +287,7 @@ INSERT INTO `calificaciones` (`id_calificaciones`, `id_asignatura`, `id_estudian
 --
 
 CREATE TABLE `calificacion_final` (
+  `id_calificacionFinal` int(5) NOT NULL,
   `id_asignatura` int(5) NOT NULL,
   `id_estudiante` int(5) NOT NULL,
   `primer_periodo` int(3) NOT NULL,
@@ -302,8 +303,217 @@ CREATE TABLE `calificacion_final` (
 -- Volcado de datos para la tabla `calificacion_final`
 --
 
-INSERT INTO `calificacion_final` (`id_asignatura`, `id_estudiante`, `primer_periodo`, `segundo_periodo`, `tercer_periodo`, `cuarto_periodo`, `completivo`, `extraordinario`, `final`) VALUES
-(1, 2, 80, 80, 80, 80, NULL, NULL, 80);
+INSERT INTO `calificacion_final` (`id_calificacionFinal`, `id_asignatura`, `id_estudiante`, `primer_periodo`, `segundo_periodo`, `tercer_periodo`, `cuarto_periodo`, `completivo`, `extraordinario`, `final`) VALUES
+(1, 1, 1, 0, 0, 0, 0, 0, 0, 0),
+(2, 2, 1, 0, 0, 0, 0, 0, 0, 0),
+(3, 3, 1, 0, 0, 0, 0, 0, 0, 0),
+(4, 4, 1, 0, 0, 0, 0, 0, 0, 0),
+(5, 5, 1, 0, 0, 0, 0, 0, 0, 0),
+(6, 6, 1, 0, 0, 0, 0, 0, 0, 0),
+(7, 7, 1, 0, 0, 0, 0, 0, 0, 0),
+(8, 1, 2, 0, 0, 0, 0, 0, 0, 0),
+(9, 2, 2, 0, 0, 0, 0, 0, 0, 0),
+(10, 3, 2, 0, 0, 0, 0, 0, 0, 0),
+(11, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+(12, 5, 2, 0, 0, 0, 0, 0, 0, 0),
+(13, 6, 2, 0, 0, 0, 0, 0, 0, 0),
+(14, 7, 2, 0, 0, 0, 0, 0, 0, 0),
+(15, 1, 3, 0, 0, 0, 0, 0, 0, 0),
+(16, 2, 3, 0, 0, 0, 0, 0, 0, 0),
+(17, 3, 3, 0, 0, 0, 0, 0, 0, 0),
+(18, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+(19, 5, 3, 0, 0, 0, 0, 0, 0, 0),
+(20, 6, 3, 0, 0, 0, 0, 0, 0, 0),
+(21, 7, 3, 0, 0, 0, 0, 0, 0, 0),
+(22, 1, 4, 0, 0, 0, 0, 0, 0, 0),
+(23, 2, 4, 0, 0, 0, 0, 0, 0, 0),
+(24, 3, 4, 0, 0, 0, 0, 0, 0, 0),
+(25, 4, 4, 0, 0, 0, 0, 0, 0, 0),
+(26, 5, 4, 0, 0, 0, 0, 0, 0, 0),
+(27, 6, 4, 0, 0, 0, 0, 0, 0, 0),
+(28, 7, 4, 0, 0, 0, 0, 0, 0, 0),
+(29, 1, 5, 0, 0, 0, 0, 0, 0, 0),
+(30, 2, 5, 0, 0, 0, 0, 0, 0, 0),
+(31, 3, 5, 0, 0, 0, 0, 0, 0, 0),
+(32, 4, 5, 0, 0, 0, 0, 0, 0, 0),
+(33, 5, 5, 0, 0, 0, 0, 0, 0, 0),
+(34, 6, 5, 0, 0, 0, 0, 0, 0, 0),
+(35, 7, 5, 0, 0, 0, 0, 0, 0, 0),
+(36, 1, 6, 0, 0, 0, 0, 0, 0, 0),
+(37, 2, 6, 0, 0, 0, 0, 0, 0, 0),
+(38, 3, 6, 0, 0, 0, 0, 0, 0, 0),
+(39, 4, 6, 0, 0, 0, 0, 0, 0, 0),
+(40, 5, 6, 0, 0, 0, 0, 0, 0, 0),
+(41, 6, 6, 0, 0, 0, 0, 0, 0, 0),
+(42, 7, 6, 0, 0, 0, 0, 0, 0, 0),
+(43, 1, 7, 0, 0, 0, 0, 0, 0, 0),
+(44, 2, 7, 0, 0, 0, 0, 0, 0, 0),
+(45, 3, 7, 0, 0, 0, 0, 0, 0, 0),
+(46, 4, 7, 0, 0, 0, 0, 0, 0, 0),
+(47, 5, 7, 0, 0, 0, 0, 0, 0, 0),
+(48, 6, 7, 0, 0, 0, 0, 0, 0, 0),
+(49, 7, 7, 0, 0, 0, 0, 0, 0, 0),
+(50, 1, 8, 0, 0, 0, 0, 0, 0, 0),
+(51, 2, 8, 0, 0, 0, 0, 0, 0, 0),
+(52, 3, 8, 0, 0, 0, 0, 0, 0, 0),
+(53, 4, 8, 0, 0, 0, 0, 0, 0, 0),
+(54, 5, 8, 0, 0, 0, 0, 0, 0, 0),
+(55, 6, 8, 0, 0, 0, 0, 0, 0, 0),
+(56, 7, 8, 0, 0, 0, 0, 0, 0, 0),
+(57, 1, 9, 0, 0, 0, 0, 0, 0, 0),
+(58, 2, 9, 0, 0, 0, 0, 0, 0, 0),
+(59, 3, 9, 0, 0, 0, 0, 0, 0, 0),
+(60, 4, 9, 0, 0, 0, 0, 0, 0, 0),
+(61, 5, 9, 0, 0, 0, 0, 0, 0, 0),
+(62, 6, 9, 0, 0, 0, 0, 0, 0, 0),
+(63, 7, 9, 0, 0, 0, 0, 0, 0, 0),
+(64, 1, 10, 0, 0, 0, 0, 0, 0, 0),
+(65, 2, 10, 0, 0, 0, 0, 0, 0, 0),
+(66, 3, 10, 0, 0, 0, 0, 0, 0, 0),
+(67, 4, 10, 0, 0, 0, 0, 0, 0, 0),
+(68, 5, 10, 0, 0, 0, 0, 0, 0, 0),
+(69, 6, 10, 0, 0, 0, 0, 0, 0, 0),
+(70, 7, 10, 0, 0, 0, 0, 0, 0, 0),
+(71, 1, 11, 0, 0, 0, 0, 0, 0, 0),
+(72, 2, 11, 0, 0, 0, 0, 0, 0, 0),
+(73, 3, 11, 0, 0, 0, 0, 0, 0, 0),
+(74, 4, 11, 0, 0, 0, 0, 0, 0, 0),
+(75, 5, 11, 0, 0, 0, 0, 0, 0, 0),
+(76, 6, 11, 0, 0, 0, 0, 0, 0, 0),
+(77, 7, 11, 0, 0, 0, 0, 0, 0, 0),
+(78, 1, 12, 0, 0, 0, 0, 0, 0, 0),
+(79, 2, 12, 0, 0, 0, 0, 0, 0, 0),
+(80, 3, 12, 0, 0, 0, 0, 0, 0, 0),
+(81, 4, 12, 0, 0, 0, 0, 0, 0, 0),
+(82, 5, 12, 0, 0, 0, 0, 0, 0, 0),
+(83, 6, 12, 0, 0, 0, 0, 0, 0, 0),
+(84, 7, 12, 0, 0, 0, 0, 0, 0, 0),
+(85, 1, 13, 0, 0, 0, 0, 0, 0, 0),
+(86, 2, 13, 0, 0, 0, 0, 0, 0, 0),
+(87, 3, 13, 0, 0, 0, 0, 0, 0, 0),
+(88, 4, 13, 0, 0, 0, 0, 0, 0, 0),
+(89, 5, 13, 0, 0, 0, 0, 0, 0, 0),
+(90, 6, 13, 0, 0, 0, 0, 0, 0, 0),
+(91, 7, 13, 0, 0, 0, 0, 0, 0, 0),
+(92, 1, 14, 0, 0, 0, 0, 0, 0, 0),
+(93, 2, 14, 0, 0, 0, 0, 0, 0, 0),
+(94, 3, 14, 0, 0, 0, 0, 0, 0, 0),
+(95, 4, 14, 0, 0, 0, 0, 0, 0, 0),
+(96, 5, 14, 0, 0, 0, 0, 0, 0, 0),
+(97, 6, 14, 0, 0, 0, 0, 0, 0, 0),
+(98, 7, 14, 0, 0, 0, 0, 0, 0, 0),
+(99, 1, 15, 0, 0, 0, 0, 0, 0, 0),
+(100, 2, 15, 0, 0, 0, 0, 0, 0, 0),
+(101, 3, 15, 0, 0, 0, 0, 0, 0, 0),
+(102, 4, 15, 0, 0, 0, 0, 0, 0, 0),
+(103, 5, 15, 0, 0, 0, 0, 0, 0, 0),
+(104, 6, 15, 0, 0, 0, 0, 0, 0, 0),
+(105, 7, 15, 0, 0, 0, 0, 0, 0, 0),
+(106, 1, 16, 0, 0, 0, 0, 0, 0, 0),
+(107, 2, 16, 0, 0, 0, 0, 0, 0, 0),
+(108, 3, 16, 0, 0, 0, 0, 0, 0, 0),
+(109, 4, 16, 0, 0, 0, 0, 0, 0, 0),
+(110, 5, 16, 0, 0, 0, 0, 0, 0, 0),
+(111, 6, 16, 0, 0, 0, 0, 0, 0, 0),
+(112, 7, 16, 0, 0, 0, 0, 0, 0, 0),
+(113, 1, 17, 0, 0, 0, 0, 0, 0, 0),
+(114, 2, 17, 0, 0, 0, 0, 0, 0, 0),
+(115, 3, 17, 0, 0, 0, 0, 0, 0, 0),
+(116, 4, 17, 0, 0, 0, 0, 0, 0, 0),
+(117, 5, 17, 0, 0, 0, 0, 0, 0, 0),
+(118, 6, 17, 0, 0, 0, 0, 0, 0, 0),
+(119, 7, 17, 0, 0, 0, 0, 0, 0, 0),
+(120, 1, 18, 0, 0, 0, 0, 0, 0, 0),
+(121, 2, 18, 0, 0, 0, 0, 0, 0, 0),
+(122, 3, 18, 0, 0, 0, 0, 0, 0, 0),
+(123, 4, 18, 0, 0, 0, 0, 0, 0, 0),
+(124, 5, 18, 0, 0, 0, 0, 0, 0, 0),
+(125, 6, 18, 0, 0, 0, 0, 0, 0, 0),
+(126, 7, 18, 0, 0, 0, 0, 0, 0, 0),
+(127, 1, 19, 0, 0, 0, 0, 0, 0, 0),
+(128, 2, 19, 0, 0, 0, 0, 0, 0, 0),
+(129, 3, 19, 0, 0, 0, 0, 0, 0, 0),
+(130, 4, 19, 0, 0, 0, 0, 0, 0, 0),
+(131, 5, 19, 0, 0, 0, 0, 0, 0, 0),
+(132, 6, 19, 0, 0, 0, 0, 0, 0, 0),
+(133, 7, 19, 0, 0, 0, 0, 0, 0, 0),
+(134, 1, 20, 0, 0, 0, 0, 0, 0, 0),
+(135, 2, 20, 0, 0, 0, 0, 0, 0, 0),
+(136, 3, 20, 0, 0, 0, 0, 0, 0, 0),
+(137, 4, 20, 0, 0, 0, 0, 0, 0, 0),
+(138, 5, 20, 0, 0, 0, 0, 0, 0, 0),
+(139, 6, 20, 0, 0, 0, 0, 0, 0, 0),
+(140, 7, 20, 0, 0, 0, 0, 0, 0, 0),
+(141, 1, 21, 0, 0, 0, 0, 0, 0, 0),
+(142, 2, 21, 0, 0, 0, 0, 0, 0, 0),
+(143, 3, 21, 0, 0, 0, 0, 0, 0, 0),
+(144, 4, 21, 0, 0, 0, 0, 0, 0, 0),
+(145, 5, 21, 0, 0, 0, 0, 0, 0, 0),
+(146, 6, 21, 0, 0, 0, 0, 0, 0, 0),
+(147, 7, 21, 0, 0, 0, 0, 0, 0, 0),
+(148, 1, 22, 0, 0, 0, 0, 0, 0, 0),
+(149, 2, 22, 0, 0, 0, 0, 0, 0, 0),
+(150, 3, 22, 0, 0, 0, 0, 0, 0, 0),
+(151, 4, 22, 0, 0, 0, 0, 0, 0, 0),
+(152, 5, 22, 0, 0, 0, 0, 0, 0, 0),
+(153, 6, 22, 0, 0, 0, 0, 0, 0, 0),
+(154, 7, 22, 0, 0, 0, 0, 0, 0, 0),
+(155, 1, 23, 0, 0, 0, 0, 0, 0, 0),
+(156, 2, 23, 0, 0, 0, 0, 0, 0, 0),
+(157, 3, 23, 0, 0, 0, 0, 0, 0, 0),
+(158, 4, 23, 0, 0, 0, 0, 0, 0, 0),
+(159, 5, 23, 0, 0, 0, 0, 0, 0, 0),
+(160, 6, 23, 0, 0, 0, 0, 0, 0, 0),
+(161, 7, 23, 0, 0, 0, 0, 0, 0, 0),
+(162, 1, 24, 0, 0, 0, 0, 0, 0, 0),
+(163, 2, 24, 0, 0, 0, 0, 0, 0, 0),
+(164, 3, 24, 0, 0, 0, 0, 0, 0, 0),
+(165, 4, 24, 0, 0, 0, 0, 0, 0, 0),
+(166, 5, 24, 0, 0, 0, 0, 0, 0, 0),
+(167, 6, 24, 0, 0, 0, 0, 0, 0, 0),
+(168, 7, 24, 0, 0, 0, 0, 0, 0, 0),
+(169, 1, 25, 0, 0, 0, 0, 0, 0, 0),
+(170, 2, 25, 0, 0, 0, 0, 0, 0, 0),
+(171, 3, 25, 0, 0, 0, 0, 0, 0, 0),
+(172, 4, 25, 0, 0, 0, 0, 0, 0, 0),
+(173, 5, 25, 0, 0, 0, 0, 0, 0, 0),
+(174, 6, 25, 0, 0, 0, 0, 0, 0, 0),
+(175, 7, 25, 0, 0, 0, 0, 0, 0, 0),
+(176, 1, 26, 0, 0, 0, 0, 0, 0, 0),
+(177, 2, 26, 0, 0, 0, 0, 0, 0, 0),
+(178, 3, 26, 0, 0, 0, 0, 0, 0, 0),
+(179, 4, 26, 0, 0, 0, 0, 0, 0, 0),
+(180, 5, 26, 0, 0, 0, 0, 0, 0, 0),
+(181, 6, 26, 0, 0, 0, 0, 0, 0, 0),
+(182, 7, 26, 0, 0, 0, 0, 0, 0, 0),
+(183, 1, 27, 0, 0, 0, 0, 0, 0, 0),
+(184, 2, 27, 0, 0, 0, 0, 0, 0, 0),
+(185, 3, 27, 0, 0, 0, 0, 0, 0, 0),
+(186, 4, 27, 0, 0, 0, 0, 0, 0, 0),
+(187, 5, 27, 0, 0, 0, 0, 0, 0, 0),
+(188, 6, 27, 0, 0, 0, 0, 0, 0, 0),
+(189, 7, 27, 0, 0, 0, 0, 0, 0, 0),
+(190, 1, 28, 0, 0, 0, 0, 0, 0, 0),
+(191, 2, 28, 0, 0, 0, 0, 0, 0, 0),
+(192, 3, 28, 0, 0, 0, 0, 0, 0, 0),
+(193, 4, 28, 0, 0, 0, 0, 0, 0, 0),
+(194, 5, 28, 0, 0, 0, 0, 0, 0, 0),
+(195, 6, 28, 0, 0, 0, 0, 0, 0, 0),
+(196, 7, 28, 0, 0, 0, 0, 0, 0, 0),
+(197, 1, 29, 0, 0, 0, 0, 0, 0, 0),
+(198, 2, 29, 0, 0, 0, 0, 0, 0, 0),
+(199, 3, 29, 0, 0, 0, 0, 0, 0, 0),
+(200, 4, 29, 0, 0, 0, 0, 0, 0, 0),
+(201, 5, 29, 0, 0, 0, 0, 0, 0, 0),
+(202, 6, 29, 0, 0, 0, 0, 0, 0, 0),
+(203, 7, 29, 0, 0, 0, 0, 0, 0, 0),
+(204, 1, 30, 0, 0, 0, 0, 0, 0, 0),
+(205, 2, 30, 0, 0, 0, 0, 0, 0, 0),
+(206, 3, 30, 0, 0, 0, 0, 0, 0, 0),
+(207, 4, 30, 0, 0, 0, 0, 0, 0, 0),
+(208, 5, 30, 0, 0, 0, 0, 0, 0, 0),
+(209, 6, 30, 0, 0, 0, 0, 0, 0, 0),
+(210, 7, 30, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -357,41 +567,54 @@ INSERT INTO `dias` (`id_dias`, `dias`) VALUES
 -- Estructura de tabla para la tabla `estudiante`
 --
 
+CREATE TABLE `estudiante` (
+  `id_estudiante` int(5) NOT NULL,
+  `e_Matricula` char(7) COLLATE utf32_spanish2_ci NOT NULL,
+  `nombre_estudiante` varchar(30) COLLATE utf32_spanish2_ci NOT NULL,
+  `apellidos` varchar(30) COLLATE utf32_spanish2_ci DEFAULT NULL,
+  `sexo_estudiante` varchar(9) COLLATE utf32_spanish2_ci NOT NULL,
+  `nacimiento_estudiante` date NOT NULL,
+  `imagen_perfil` varchar(300) COLLATE utf32_spanish2_ci NOT NULL,
+  `id_curso` int(5) NOT NULL,
+  `id_profesor` int(5) NOT NULL,
+  `id_tutor` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish2_ci;
+
 --
 -- Volcado de datos para la tabla `estudiante`
 --
 
-INSERT INTO `estudiante` (`id_estudiante`, `e_Matricula`, `nombre_estudiante`, `apellidos`, `sexo_estudiante`, `nacimiento_estudiante`, `id_curso`, `id_profesor`, `id_tutor`) VALUES
-(1, 'e-00001', 'Faury', 'García Rodríguez', 'Masculino', '2004-09-17', 4, 4, 2),
-(2, 'e-00002', 'Jose Miguel', 'Bello Acosta', 'Masculino', '2003-09-04', 4, 4, 4),
-(3, 'e-00003', 'Jose Miguel', 'Reyes', 'Masculino', '1996-11-08', 4, 4, 5),
-(4, 'e-00004', 'Massiel', 'Rodriguez Rodríguez', 'Femenino', '2004-01-04', 4, 4, 8),
-(5, 'e-00005', 'Manuel De Jesus', 'Díaz Díaz', 'Masculino', '1999-01-13', 4, 4, 6),
-(6, 'e-00006', 'Albiery', 'Rodriguez Almonte', 'Masculino', '2004-08-19', 5, 5, 1),
-(7, 'e-00007', 'Smailyn', 'Gutiérrez Burgos', 'Femenino', '2003-03-04', 5, 5, 9),
-(8, 'e-00008', 'Gissel Esmeralda', 'Velez Cruz', 'Femenino', '1999-09-27', 5, 5, 3),
-(9, 'e-00009', 'Marilin', 'Gil Paulino', 'Femenino', '2005-01-28', 5, 5, 7),
-(10, 'e-00010', 'Tiara', 'Peña Rodríguez', 'Femenino', '2003-12-11', 5, 5, 12),
-(11, 'e-00011', 'Ana', 'Martínez', 'Femenino', '2001-03-15', 6, 6, 11),
-(12, 'e-00012', 'Luis', 'García', 'Masculino', '1999-06-21', 1, 1, 13),
-(13, 'e-00013', 'Marta', 'Fernández', 'Femenino', '2000-08-30', 6, 6, 15),
-(14, 'e-00014', 'Carlos', 'López', 'Masculino', '2002-11-05', 6, 6, 18),
-(15, 'e-00015', 'Sofía', 'Gómez', 'Femenino', '2003-12-18', 6, 6, 20),
-(16, 'e-00016', 'Jorge', 'Sánchez', 'Masculino', '1998-02-25', 2, 2, 22),
-(17, 'e-00017', 'Laura', 'Martínez', 'Femenino', '2004-04-10', 2, 2, 25),
-(18, 'e-00018', 'Pedro', 'Ramírez', 'Masculino', '2002-07-22', 2, 2, 27),
-(19, 'e-00019', 'Isabel', 'Hernández', 'Femenino', '2001-09-14', 2, 2, 29),
-(20, 'e-00020', 'Felipe', 'Morales', 'Masculino', '2000-10-30', 2, 2, 30),
-(21, 'e-00021', 'Catalina', 'Cano', 'Femenino', '2003-01-05', 3, 3, 21),
-(22, 'e-00022', 'Antonio', 'Gómez', 'Masculino', '2002-03-18', 3, 3, 23),
-(23, 'e-00023', 'Elena', 'Castro', 'Femenino', '1999-05-27', 3, 3, 24),
-(24, 'e-00024', 'Alejandro', 'Ramírez', 'Masculino', '2000-07-15', 3, 3, 26),
-(25, 'e-00025', 'Patricia', 'Mendoza', 'Femenino', '2001-09-04', 3, 3, 28),
-(26, 'e-00026', 'Manuel', 'Serrano', 'Masculino', '1999-02-20', 1, 1, 10),
-(27, 'e-00027', 'Victoria', 'Álvarez', 'Femenino', '2000-04-25', 1, 1, 14),
-(28, 'e-00028', 'Julio', 'Paredes', 'Masculino', '2001-06-30', 1, 1, 16),
-(29, 'e-00029', 'Natalia', 'Mora', 'Femenino', '2003-08-15', 1, 1, 17),
-(30, 'e-00030', 'Diego', 'Velasco', 'Masculino', '2002-10-12', 6, 6, 19);
+INSERT INTO `estudiante` (`id_estudiante`, `e_Matricula`, `nombre_estudiante`, `apellidos`, `sexo_estudiante`, `nacimiento_estudiante`, `imagen_perfil`, `id_curso`, `id_profesor`, `id_tutor`) VALUES
+(1, 'e-00001', 'Faury', 'García Rodríguez', 'Masculino', '2004-09-17', '', 4, 4, 2),
+(2, 'e-00002', 'Jose Miguel', 'Bello Acosta', 'Masculino', '2003-09-04', '', 4, 4, 4),
+(3, 'e-00003', 'Jose Miguel', 'Reyes', 'Masculino', '1996-11-08', '', 4, 4, 5),
+(4, 'e-00004', 'Massiel', 'Rodriguez Rodríguez', 'Femenino', '2004-01-04', '', 4, 4, 8),
+(5, 'e-00005', 'Manuel De Jesus', 'Díaz Díaz', 'Masculino', '1999-01-13', '', 4, 4, 6),
+(6, 'e-00006', 'Albiery', 'Rodriguez Almonte', 'Masculino', '2004-08-19', '', 5, 5, 1),
+(7, 'e-00007', 'Smailyn', 'Gutiérrez Burgos', 'Femenino', '2003-03-04', '', 5, 5, 9),
+(8, 'e-00008', 'Gissel Esmeralda', 'Velez Cruz', 'Femenino', '1999-09-27', '', 5, 5, 3),
+(9, 'e-00009', 'Marilin', 'Gil Paulino', 'Femenino', '2005-01-28', '', 5, 5, 7),
+(10, 'e-00010', 'Tiara', 'Peña Rodríguez', 'Femenino', '2003-12-11', '', 5, 5, 12),
+(11, 'e-00011', 'Ana', 'Martínez', 'Femenino', '2001-03-15', '', 6, 6, 11),
+(12, 'e-00012', 'Luis', 'García', 'Masculino', '1999-06-21', '', 1, 1, 13),
+(13, 'e-00013', 'Marta', 'Fernández', 'Femenino', '2000-08-30', '', 6, 6, 15),
+(14, 'e-00014', 'Carlos', 'López', 'Masculino', '2002-11-05', '', 6, 6, 18),
+(15, 'e-00015', 'Sofía', 'Gómez', 'Femenino', '2003-12-18', '', 6, 6, 20),
+(16, 'e-00016', 'Jorge', 'Sánchez', 'Masculino', '1998-02-25', '', 2, 2, 22),
+(17, 'e-00017', 'Laura', 'Martínez', 'Femenino', '2004-04-10', '', 2, 2, 25),
+(18, 'e-00018', 'Pedro', 'Ramírez', 'Masculino', '2002-07-22', '', 2, 2, 27),
+(19, 'e-00019', 'Isabel', 'Hernández', 'Femenino', '2001-09-14', '', 2, 2, 29),
+(20, 'e-00020', 'Felipe', 'Morales', 'Masculino', '2000-10-30', '', 2, 2, 30),
+(21, 'e-00021', 'Catalina', 'Cano', 'Femenino', '2003-01-05', '', 3, 3, 21),
+(22, 'e-00022', 'Antonio', 'Gómez', 'Masculino', '2002-03-18', '', 3, 3, 23),
+(23, 'e-00023', 'Elena', 'Castro', 'Femenino', '1999-05-27', '', 3, 3, 24),
+(24, 'e-00024', 'Alejandro', 'Ramírez', 'Masculino', '2000-07-15', '', 3, 3, 26),
+(25, 'e-00025', 'Patricia', 'Mendoza', 'Femenino', '2001-09-04', '', 3, 3, 28),
+(26, 'e-00026', 'Manuel', 'Serrano', 'Masculino', '1999-02-20', '', 1, 1, 10),
+(27, 'e-00027', 'Victoria', 'Álvarez', 'Femenino', '2000-04-25', '', 1, 1, 14),
+(28, 'e-00028', 'Julio', 'Paredes', 'Masculino', '2001-06-30', '', 1, 1, 16),
+(29, 'e-00029', 'Natalia', 'Mora', 'Femenino', '2003-08-15', '', 1, 1, 17),
+(30, 'e-00030', 'Diego', 'Velasco', 'Masculino', '2002-10-12', '', 6, 6, 19);
 
 -- --------------------------------------------------------
 
@@ -459,7 +682,7 @@ CREATE TABLE `profesores` (
   `telefono` char(12) COLLATE utf8mb4_spanish_ci NOT NULL,
   `cedula` char(13) COLLATE utf8mb4_spanish_ci NOT NULL,
   `direccion` text COLLATE utf8mb4_spanish_ci NOT NULL,
-  `imagen_perfil` longblob NOT NULL
+  `imagen_perfil` varchar(300) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -467,13 +690,13 @@ CREATE TABLE `profesores` (
 --
 
 INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `nombre`, `apellidos`, `fecha_nacimiento`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`) VALUES
-(1, 3, 'Eduardo Rafael', 'Rodríguez Domínguez', '1968-08-02', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30', 0x30),
-(2, 1, 'Hanyi Gersi', 'Castillo', '1990-08-16', 'hanyigc@gmail.com', '829-633-5649', '130-6575967-6', 'Los Castillos, #21', 0x30),
-(3, 5, 'Jose Luis Manuel', 'Alonzo', '1953-12-06', 'profjosealonzo@gmail.com', '829-55-6545', '046-2285963-6', 'Padre de Las Casas #30', 0x30),
-(4, 6, 'Ruddys', 'Ferreras', '1950-12-10', 'ruddysf@gmail.com', '849-578-8489', '046-2596451-2', 'Villa Olímpica, Calle principal #2', 0x30),
-(5, 7, 'Apolinar', 'Rivas Genao', '1960-04-15', 'apolinar@gmail.com', '829-565-3215', '130-5426315-6', 'La Barranquita, Avenida Olímpica, #12', 0x30),
-(6, 4, 'Jose', 'De La Cruz', '1950-01-16', 'delacruz@gmail.com', '849-424-2424', '046-5526321-6', 'Las Colinas #05', 0x30),
-(7, 2, 'Faustina', 'Rodriguez', '1979-05-04', 'fausrodriguez@gmail.com', '849-478-9863', '130-1548963-9', 'Los Jardines #40', 0x30);
+(1, 3, 'Eduardo Rafael', 'Rodríguez Domínguez', '1968-08-02', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30', '0'),
+(2, 1, 'Hanyi Gersi', 'Castillo', '1990-08-16', 'hanyigc@gmail.com', '829-633-5649', '130-6575967-6', 'Los Castillos, #21', '0'),
+(3, 5, 'Jose Luis Manuel', 'Alonzo', '1953-12-06', 'profjosealonzo@gmail.com', '829-55-6545', '046-2285963-6', 'Padre de Las Casas #30', '0'),
+(4, 6, 'Ruddys', 'Ferreras', '1950-12-10', 'ruddysf@gmail.com', '849-578-8489', '046-2596451-2', 'Villa Olímpica, Calle principal #2', '0'),
+(5, 7, 'Apolinar', 'Rivas Genao', '1960-04-15', 'apolinar@gmail.com', '829-565-3215', '130-5426315-6', 'La Barranquita, Avenida Olímpica, #12', '0'),
+(6, 4, 'Jose', 'De La Cruz', '1950-01-16', 'delacruz@gmail.com', '849-424-2424', '046-5526321-6', 'Las Colinas #05', '0'),
+(7, 2, 'Faustina', 'Rodriguez', '1979-05-04', 'fausrodriguez@gmail.com', '849-478-9863', '130-1548963-9', 'Los Jardines #40', '0');
 
 -- --------------------------------------------------------
 
@@ -532,23 +755,22 @@ INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellidos`, `cedula`, `telefono`, `c
 (12, 'Maria', 'Vargas', '13056895468', '8495687452', 'mariav@gmail.com', 'Profesora', 'Madre', 'Jaibon, La Caya #20'),
 (13, 'Maria Elena', 'Moran', '13056897456', '8295468596', 'mariae@gmail.com', 'Ama de casa', 'Madre', 'Calle Belisario Curiel, #10, Pueblo Nuevo.'),
 (14, 'Liberato', 'Angeles', '13047852631', '8495263145', 'liberato@gmail.com', 'Medico', 'Padre', 'La Colinas, #20 '),
-(15, 'Juan', 'Pérez', '12345678', '555-1234', 'juan.perez@example.com', 'Abogado', 'Padre', 'Calle Falsa 123, Ciudad'),
-(16, 'María', 'González', '87654321', '555-5678', 'maria.gonzalez@example.com', 'Médica', 'Madre', 'Avenida Siempre Viva 456, Ciudad'),
-(17, 'Pedro', 'Martínez', '13579246', '555-2468', 'pedro.martinez@example.com', 'Ingeniero', 'Tío', 'Calle del Sol 789, Ciudad'),
-(18, 'Laura', 'Fernández', '24681357', '555-1357', 'laura.fernandez@example.com', 'Profesora', 'Tía', 'Calle del Lago 321, Ciudad'),
-(19, 'Carlos', 'Ruiz', '35791324', '555-8642', 'carlos.ruiz@example.com', 'Empresario', 'Hermano', 'Calle de la Luna 654, Ciudad'),
-(20, 'Ana', 'Romero', '46802468', '555-9753', 'ana.romero@example.com', 'Enfermera', 'Madre', 'Calle de la Flor 987, Ciudad'),
-(21, 'Luis', 'García', '11122333', '555-0001', 'luis.garcia@example.com', 'Contador', 'Padre', 'Calle de los Pinos 123, Ciudad'),
-(22, 'Sofía', 'Martínez', '44455666', '555-0002', 'sofia.martinez@example.com', 'Diseñadora', 'Madre', 'Avenida del Mar 456, Ciudad'),
-(23, 'Jorge', 'Sánchez', '77788999', '555-0003', 'jorge.sanchez@example.com', 'Arquitecto', 'Tío', 'Calle de la Esperanza 789, Ciudad'),
-(24, 'Patricia', 'Mendoza', '10111213', '555-0004', 'patricia.mendoza@example.com', 'Abogada', 'Tía', 'Calle de la Niebla 321, Ciudad'),
-(25, 'Felipe', 'Morales', '14151617', '555-0005', 'felipe.morales@example.com', 'Ingeniero', 'Hermano', 'Calle del Río 654, Ciudad'),
-(26, 'Catalina', 'Cano', '18192021', '555-0006', 'catalina.cano@example.com', 'Enfermera', 'Hermana', 'Calle de la Luna 987, Ciudad'),
-(27, 'Alejandro', 'Ramírez', '22232425', '555-0007', 'alejandro.ramirez@example.com', 'Médico', 'Tío', 'Calle del Viento 123, Ciudad'),
-(28, 'Isabel', 'Castro', '26272829', '555-0008', 'isabel.castro@example.com', 'Profesor', 'Tía', 'Calle de la Nube 456, Ciudad'),
-(29, 'Antonio', 'Gómez', '30313233', '555-0009', 'antonio.gomez@example.com', 'Contador', 'Padre', 'Calle de la Estrella 789, Ciudad'),
-(30, 'Elena', 'Hernández', '34353637', '555-0010', 'elena.hernandez@example.com', 'Psicóloga', 'Madre', 'Calle de la Luna 321, Ciudad'),
-(31, 'Jose', 'Miguel Reyes', '40225601414', '8296459649', 'josemiguelreyes03@gmail.com', 'primaria', 'contador', 'Villa Progreso La Herrdura');
+(15, 'Juan', 'Pérez', '13045986321', '8295551234', 'juan.perez@example.com', 'Abogado', 'Padre', 'Calle Falsa 123, Ciudad'),
+(16, 'María', 'González', '13054321852', '8095555678', 'maria.gonzalez@example.com', 'Médica', 'Madre', 'Avenida Siempre Viva 456, Ciudad'),
+(17, 'Pedro', 'Martínez', '13079246829', '8495552468', 'pedro.martinez@example.com', 'Ingeniero', 'Tío', 'Calle del Sol 789, Ciudad'),
+(18, 'Laura', 'Fernández', '04681357125', '8095551357', 'laura.fernandez@example.com', 'Profesora', 'Tía', 'Calle del Lago 321, Ciudad'),
+(19, 'Carlos', 'Ruiz', '04691324869', '8295558642', 'carlos.ruiz@example.com', 'Empresario', 'Hermano', 'Calle de la Luna 654, Ciudad'),
+(20, 'Ana', 'Romero', '04602468829', '8495559753', 'ana.romero@example.com', 'Enfermera', 'Madre', 'Calle de la Flor 987, Ciudad'),
+(21, 'Luis', 'García', '13022333120', '8295550001', 'luis.garcia@example.com', 'Contador', 'Padre', 'Calle de los Pinos 123, Ciudad'),
+(22, 'Sofía', 'Martínez', '40244455666', '8095550002', 'sofia.martinez@example.com', 'Diseñadora', 'Madre', 'Avenida del Mar 456, Ciudad'),
+(23, 'Jorge', 'Sánchez', '04677788999', '8295550003', 'jorge.sanchez@example.com', 'Arquitecto', 'Tío', 'Calle de la Esperanza 789, Ciudad'),
+(24, 'Patricia', 'Mendoza', '40210111213', '8295550004', 'patricia.mendoza@example.com', 'Abogada', 'Tía', 'Calle de la Niebla 321, Ciudad'),
+(25, 'Felipe', 'Morales', '40214151617', '8295550005', 'felipe.morales@example.com', 'Ingeniero', 'Hermano', 'Calle del Río 654, Ciudad'),
+(26, 'Catalina', 'Cano', '04618192021', '8295550006', 'catalina.cano@example.com', 'Enfermera', 'Hermana', 'Calle de la Luna 987, Ciudad'),
+(27, 'Alejandro', 'Ramírez', '13022232425', '8295550007', 'alejandro.ramirez@example.com', 'Médico', 'Tío', 'Calle del Viento 123, Ciudad'),
+(28, 'Isabel', 'Castro', '40226272829', '8495550008', 'isabel.castro@example.com', 'Profesor', 'Tía', 'Calle de la Nube 456, Ciudad'),
+(29, 'Antonio', 'Gómez', '04630313233', '8295550009', 'antonio.gomez@example.com', 'Contador', 'Padre', 'Calle de la Estrella 789, Ciudad'),
+(30, 'Elena', 'Hernández', '13034353637', '8095550010', 'elena.hernandez@example.com', 'Psicóloga', 'Madre', 'Calle de la Luna 321, Ciudad');
 
 -- --------------------------------------------------------
 
@@ -559,6 +781,7 @@ INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellidos`, `cedula`, `telefono`, `c
 CREATE TABLE `usuarios` (
   `id_usuario` int(5) NOT NULL,
   `matricula_usuario` varchar(10) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `contraseña` varchar(15) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `id_roles` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
@@ -566,10 +789,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `matricula_usuario`, `id_roles`) VALUES
-(1, 'P00001', 2),
-(2, 'E00001', 3),
-(3, 'A00001', 1);
+INSERT INTO `usuarios` (`id_usuario`, `matricula_usuario`, `contraseña`, `id_roles`) VALUES
+(1, 'P00001', '', 2),
+(2, 'E00001', '', 3),
+(3, 'A00001', '', 1);
 
 --
 -- Índices para tablas volcadas
@@ -594,8 +817,9 @@ ALTER TABLE `calificaciones`
 -- Indices de la tabla `calificacion_final`
 --
 ALTER TABLE `calificacion_final`
-  ADD PRIMARY KEY (`id_asignatura`),
-  ADD KEY `id_estudiante` (`id_estudiante`);
+  ADD PRIMARY KEY (`id_calificacionFinal`),
+  ADD KEY `id_estudiante` (`id_estudiante`),
+  ADD KEY `id_asignatura` (`id_asignatura`);
 
 --
 -- Indices de la tabla `cursos`
@@ -689,7 +913,7 @@ ALTER TABLE `calificaciones`
 -- AUTO_INCREMENT de la tabla `calificacion_final`
 --
 ALTER TABLE `calificacion_final`
-  MODIFY `id_asignatura` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_asignatura` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `cursos`
