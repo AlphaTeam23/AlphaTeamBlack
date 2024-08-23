@@ -49,7 +49,7 @@ def p_calificaciones():
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute("""
-                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.id_estudiante,
+                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.id_estudiante, e_Matricula,
                        IFNULL(c.tareas, 0), IFNULL(c.examenes, 0), IFNULL(c.participacion, 0), IFNULL(c.asistencia, 0), IFNULL(c.cali_final, 0)
                 FROM estudiante e
                 LEFT JOIN calificaciones c ON e.id_estudiante = c.id_estudiante AND c.id_asignatura = %s
@@ -68,7 +68,7 @@ def p_calificaciones():
             if not asignatura_id:
                 return "No se proporcionó un ID de asignatura", 400
 
-            estudiantes_ids = request.form.getlist('estudiante_id')
+            estudiantes_ids = [key.split('_')[2] for key in request.form.keys() if key.startswith('estudiante_id_')]
 
             for estudiante_id in estudiantes_ids:
                 tareas = request.form.get(f'tareas_{estudiante_id}_{asignatura_id}')
