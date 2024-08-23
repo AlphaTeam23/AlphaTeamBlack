@@ -357,18 +357,6 @@ INSERT INTO `dias` (`id_dias`, `dias`) VALUES
 -- Estructura de tabla para la tabla `estudiante`
 --
 
-CREATE TABLE `estudiante` (
-  `id_estudiante` int(5) NOT NULL,
-  `e_Matricula` char(7) COLLATE utf32_spanish2_ci NOT NULL,
-  `nombre_estudiante` varchar(30) COLLATE utf32_spanish2_ci NOT NULL,
-  `apellidos` varchar(30) COLLATE utf32_spanish2_ci DEFAULT NULL,
-  `sexo_estudiante` varchar(9) COLLATE utf32_spanish2_ci NOT NULL,
-  `nacimiento_estudiante` date NOT NULL,
-  `id_curso` int(5) NOT NULL,
-  `id_profesor` int(5) NOT NULL,
-  `id_tutor` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish2_ci;
-
 --
 -- Volcado de datos para la tabla `estudiante`
 --

@@ -49,7 +49,7 @@ def p_calificaciones():
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute("""
-                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.e_Matricula,
+                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.id_estudiante,
                        IFNULL(c.tareas, 0), IFNULL(c.examenes, 0), IFNULL(c.participacion, 0), IFNULL(c.asistencia, 0), IFNULL(c.cali_final, 0)
                 FROM estudiante e
                 LEFT JOIN calificaciones c ON e.id_estudiante = c.id_estudiante AND c.id_asignatura = %s
@@ -90,6 +90,7 @@ def p_calificaciones():
             return redirect(url_for('p_calificaciones'))
 
     return render_template('./profesor/p_calificaciones.html', estudiantes=estudiantes, selected_curso=curso_id, selected_asignatura=asignatura_id, selected_periodo=periodo)
+
 
 
 @app.route('/alphaTeam/profesor/ayuda')
