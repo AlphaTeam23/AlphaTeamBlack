@@ -618,10 +618,12 @@ th:hover {
 }
 
 .planificar {
-    width: 130px;
-    margin-left: 50%;
+    width: 100px;
+    margin-left: 410px;
     bottom: 40px;
     position: relative;
+    font-size: 10px;
+    text-align: center;
 
 }
 
@@ -642,10 +644,10 @@ th:hover {
 }
 
 .cargar-plan {
-    margin-left: 100px;
+    margin-left: 250px;
     bottom: 39px;
     position: relative;
-}
+} 
 
 .enviar_borrar:hover {
     border: 1px solid #0077ff96;
