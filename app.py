@@ -43,7 +43,7 @@ def p_calificaciones():
             periodo = request.form.get('period')
             
             if not curso_id or not asignatura_id or not periodo:
-                return "No se proporcionaron todos los datos necesarios", 400
+                return "No se proporcionaron todos los datos necesarios", 404
 
             # Obtener los estudiantes que pertenecen al curso y asignatura seleccionados
             conn = mysql.connect()
@@ -66,7 +66,7 @@ def p_calificaciones():
             asignatura_id = request.form.get('asig')
             
             if not asignatura_id:
-                return "No se proporcionó un ID de asignatura", 400
+                return "No se proporcionó un ID de asignatura", 404
 
             estudiantes_ids = request.form.getlist('estudiante_id')
 
@@ -107,7 +107,41 @@ def p_planificacion():
 
 @app.route('/alphaTeam/profesor/informacion', methods=['GET', 'POST'])
 def p_informacion():
-    return render_template('./profesor/p_informacionestudiante.html')
+    estudiantes = []
+    selected_curso = None
+    selected_asignatura = None
+
+    if request.method == 'POST':
+        curso_id = request.form.get('curL')
+        asignatura_id = request.form.get('asigL')
+
+        if not curso_id or not asignatura_id:
+            return "No se proporcionaron todos los datos necesarios", 404
+
+        # Consultar los estudiantes que pertenecen al curso y asignatura seleccionados
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        
+        # Consulta para obtener estudiantes junto con la información del tutor
+        query = """
+        SELECT *, tutor.nombre AS tnombre FROM estudiante JOIN tutor ON tutor.id_tutor = estudiante.id_tutor
+        WHERE id_curso = %s
+        """
+        
+        cursor.execute(query, (curso_id,))
+        estudiantes = cursor.fetchall()
+
+        cursor.close()
+        conn.close()
+        
+        selected_curso = curso_id
+        selected_asignatura = asignatura_id
+
+    return render_template('./profesor/p_informacionestudiante.html',
+                           estudiantes=estudiantes,
+                           selected_curso=selected_curso,
+                           selected_asignatura=selected_asignatura)
+
 
 @app.route('/alphaTeam/profesor/foto')
 def p_foto():

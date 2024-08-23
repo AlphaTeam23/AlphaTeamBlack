@@ -67,66 +67,63 @@
     <main>    
         <section>
             <div class="calificaciones_docente2">
-                <form method="POST" action="/alphaTeam/profesor/informacion">
-                    <fieldset>
-                        <legend>LISTADO ESTUDIANTES DEL CURSO</legend>
-                        <label for="curL">Cursos</label>
-                        <select name="curL" id="curL" required>
-                            <option value="">- Elija un curso - </option>
-                            <option value="1ro" {% if selected_curso == '1ro' %}selected{% endif %}>1ro de secundaria</option>
-                            <option value="2do" {% if selected_curso == '2do' %}selected{% endif %}>2do de secundaria</option>
-                            <option value="3ro" {% if selected_curso == '3ro' %}selected{% endif %}>3ro de secundaria</option>
-                            <option value="4to" {% if selected_curso == '4to' %}selected{% endif %}>4to de secundaria</option>
-                            <option value="5to" {% if selected_curso == '5to' %}selected{% endif %}>5to de secundaria</option>
-                            <option value="6to" {% if selected_curso == '6to' %}selected{% endif %}>6to de secundaria</option>
-                        </select>
-                    
-                        <label for="asigL">Materia</label>
-                        <select name="asigL" id="asigL" required>
-                            <option value="">- Elija una materia -</option>
-                            <option value="1" {% if selected_asignatura == '1' %}selected{% endif %}>Lengua Española</option>
-                            <option value="2" {% if selected_asignatura == '2' %}selected{% endif %}>Matemáticas</option>
-                            <option value="3" {% if selected_asignatura == '3' %}selected{% endif %}>Ciencias Sociales</option>
-                            <option value="4" {% if selected_asignatura == '4' %}selected{% endif %}>Ciencias Naturales</option>
-                            <option value="5" {% if selected_asignatura == '5' %}selected{% endif %}>Física</option>
-                            <option value="6" {% if selected_asignatura == '6' %}selected{% endif %}>Educación Financiera</option>
-                            <option value="7" {% if selected_asignatura == '7' %}selected{% endif %}>Inglés</option>
-                        </select>
+    <form method="POST" action="/alphaTeam/profesor/informacion">
+        <fieldset>
+            <legend>LISTADO ESTUDIANTES DEL CURSO</legend>
+            <label for="curL">Cursos</label>
+            <select name="curL" id="curL" required>
+                <option value="">- Elija un curso - </option>
+                <option value="1ro" {% if selected_curso == '1ro' %}selected{% endif %}>1ro de secundaria</option>
+                <option value="2do" {% if selected_curso == '2do' %}selected{% endif %}>2do de secundaria</option>
+                <option value="3ro" {% if selected_curso == '3ro' %}selected{% endif %}>3ro de secundaria</option>
+                <option value="4to" {% if selected_curso == '4to' %}selected{% endif %}>4to de secundaria</option>
+                <option value="5to" {% if selected_curso == '5to' %}selected{% endif %}>5to de secundaria</option>
+                <option value="6to" {% if selected_curso == '6to' %}selected{% endif %}>6to de secundaria</option>
+            </select>
+        
+            <label for="asigL">Materia</label>
+            <select name="asigL" id="asigL" required>
+                <option value="">- Elija una materia -</option>
+                <option value="1" {% if selected_asignatura == '1' %}selected{% endif %}>Lengua Española</option>
+                <option value="2" {% if selected_asignatura == '2' %}selected{% endif %}>Matemáticas</option>
+                <option value="3" {% if selected_asignatura == '3' %}selected{% endif %}>Ciencias Sociales</option>
+                <option value="4" {% if selected_asignatura == '4' %}selected{% endif %}>Ciencias Naturales</option>
+                <option value="5" {% if selected_asignatura == '5' %}selected{% endif %}>Física</option>
+                <option value="6" {% if selected_asignatura == '6' %}selected{% endif %}>Educación Financiera</option>
+                <option value="7" {% if selected_asignatura == '7' %}selected{% endif %}>Inglés</option>
+            </select>
 
-                        <input type="submit" name="action" value="CARGAR" class="boton9">
-                    </fieldset>
-                </form>
-            </div>
+            <input type="submit" name="action" value="CARGAR" class="boton9">
+        </fieldset>
+    </form>
+</div>
 
+<div class="tabla2">  
+    <table border="1">
+        <tr>
+            <th>MATRICULA</th>
+            <th>NOMBRES</th>
+            <th>APELLIDOS</th>
+            <th>FECHA NACIMIENTO</th>
+            <th>TUTOR</th>
+            <th>TELEFONO TUTOR</th>
+        </tr>
 
-            <div class="tabla2">  
-                <table border="1">
-                    <tr>
-                        <th>MATRICULA</th>
-                        <th>NOMBRES</th>
-                        <th>APELLIDOS </th>
-                        <th>FECHA NACIMIENTO</th>
-                        <th>TUTOR </th>
-                        <th>TELEFONO TUTOR</th>
-                    </tr>
+        <tbody>
+        {% for estudiante in estudiantes %}
+        <tr>
+            <td>{{ estudiante[1] }}</td>
+            <td>{{ estudiante[2] }}</td>
+            <td>{{ estudiante[3] }}</td>
+            <td>{{ estudiante[5] }}</td>
+            <td>{{ estudiante[11] }}</td>
+            <td>{{ estudiante[14] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 
-                    <tbody>
-                    {% for estudiante in estudiantes %}
-                    <tr>
-                        <td>{{ estudiante[1] }}</td>
-                        <td>{{ estudiante[2] }}</td>
-                        <td>{{ estudiante[3] }}</td>
-                        <td>{{ estudiante[5] }}</td>
-                        <td>{{ estudiante[10] }} {{ estudiante[11] }}</td>
-                        <td>{{ estudiante[13] }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-                </table>
-
-
-                
-            </div>
         </section>
     </main>
     
