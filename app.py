@@ -49,7 +49,7 @@ def p_calificaciones():
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute("""
-                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.id_estudiante,
+                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.e_Matricula,
                        IFNULL(c.tareas, 0), IFNULL(c.examenes, 0), IFNULL(c.participacion, 0), IFNULL(c.asistencia, 0), IFNULL(c.cali_final, 0)
                 FROM estudiante e
                 LEFT JOIN calificaciones c ON e.id_estudiante = c.id_estudiante AND c.id_asignatura = %s
@@ -107,10 +107,6 @@ def p_planificacion():
 @app.route('/alphaTeam/profesor/informacion', methods=['GET', 'POST'])
 def p_informacion():
     return render_template('./profesor/p_informacionestudiante.html')
-
-
-
-
 
 @app.route('/alphaTeam/profesor/foto')
 def p_foto():
