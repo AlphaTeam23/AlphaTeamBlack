@@ -67,41 +67,45 @@
     <main>    
         <section>
             <div class="calificaciones_docente2">
-                <form>
+                <form method="POST" action="/alphaTeam/profesor/informacion">
                     <fieldset>
                         <legend>LISTADO ESTUDIANTES DEL CURSO</legend>
-                        <label for="cur">Cursos</label>
-                        <select name="cur" id="cur" required>
+                        <label for="curL">Cursos</label>
+                        <select name="curL" id="curL" required>
                             <option value="">- Elija un curso - </option>
-                            <optgroup label="Nivel Secundario"></optgroup>
-                            <option value="">1ro de secundaria</option>
-                            <option value="">2do de secundaria</option>
-                            <option value="">3ro de secundaria</option>
-                            <option value="">4to de secundaria</option>
-                            <option value="">5to de secundaria</option>
-                            <option value="">6to de secundaria</option>
+                            <option value="1ro" {% if selected_curso == '1ro' %}selected{% endif %}>1ro de secundaria</option>
+                            <option value="2do" {% if selected_curso == '2do' %}selected{% endif %}>2do de secundaria</option>
+                            <option value="3ro" {% if selected_curso == '3ro' %}selected{% endif %}>3ro de secundaria</option>
+                            <option value="4to" {% if selected_curso == '4to' %}selected{% endif %}>4to de secundaria</option>
+                            <option value="5to" {% if selected_curso == '5to' %}selected{% endif %}>5to de secundaria</option>
+                            <option value="6to" {% if selected_curso == '6to' %}selected{% endif %}>6to de secundaria</option>
                         </select>
                     
-                        <label for="asig">Materia</label>
-                        <select name="asig" id="asig" required>
+                        <label for="asigL">Materia</label>
+                        <select name="asigL" id="asigL" required>
                             <option value="">- Elija una materia -</option>
-                            <option value="">Lengua Española</option>
-                            <option value="">Matemáticas</option>
-                            <option value="">Ciencias Sociales</option>
-                            <option value="">Ciencias Naturales</option>
-                            <option value="">Física</option>
-                            <option value="">Educación financiera</option>
-                            <option value="">Inglés</option>
+                            <option value="1" {% if selected_asignatura == '1' %}selected{% endif %}>Lengua Española</option>
+                            <option value="2" {% if selected_asignatura == '2' %}selected{% endif %}>Matemáticas</option>
+                            <option value="3" {% if selected_asignatura == '3' %}selected{% endif %}>Ciencias Sociales</option>
+                            <option value="4" {% if selected_asignatura == '4' %}selected{% endif %}>Ciencias Naturales</option>
+                            <option value="5" {% if selected_asignatura == '5' %}selected{% endif %}>Física</option>
+                            <option value="6" {% if selected_asignatura == '6' %}selected{% endif %}>Educación Financiera</option>
+                            <option value="7" {% if selected_asignatura == '7' %}selected{% endif %}>Inglés</option>
                         </select>
 
-                        <label for="period">Periodo</label>
-                        <select name="period" id="period" required>
+                        <label for="periodL">Periodo</label>
+                        <select name="periodL" id="periodL" required>
                             <option value="">- Elija un periodo -</option>
-                            <option value="">2022-2023</option>
-                            <option value="">2023-2024</option>
+                            <option value="1" {% if selected_periodo == '1' %}selected{% endif %}>1 Periodo</option>
+                            <option value="2" {% if selected_periodo == '2' %}selected{% endif %}>2 Periodo</option>
+                            <option value="3" {% if selected_periodo == '3' %}selected{% endif %}>3 Periodo</option>
+                            <option value="4" {% if selected_periodo == '4' %}selected{% endif %}>4 Periodo</option>
+                            <option value="5" {% if selected_periodo == '5' %}selected{% endif %}>Completivo</option>
+                            <option value="6" {% if selected_periodo == '6' %}selected{% endif %}>Extraordinario</option>
+                            <option value="7" {% if selected_periodo == '7' %}selected{% endif %}>Final</option>
                         </select>
 
-                        <input type="submit" value="CARGAR" class="boton9">
+                        <input type="submit" name="action" value="CARGAR" class="boton9">
                     </fieldset>
                 </form>
             </div>
@@ -113,111 +117,26 @@
                         <th>MATRICULA</th>
                         <th>NOMBRES</th>
                         <th>APELLIDOS </th>
-                        <th class="cuadro-edad">EDAD</th>
+                        <th>FECHA NACIMIENTO</th>
                         <th>TUTOR </th>
-                        <th> TELEFONO TUTOR</th>
+                        <th>TELEFONO TUTOR</th>
                     </tr>
+
+                    <tbody>
+                    {% for estudiante in estudiantes %}
                     <tr>
-                        <td>10061</td>
-                        <td></td>
-                        <td></td>
-                        <td class="cuadro-edad"><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
+                        <td>{{ estudiante[1] }}</td>
+                        <td>{{ estudiante[2] }}</td>
+                        <td>{{ estudiante[3] }}</td>
+                        <td>{{ estudiante[5] }}</td>
+                        <td>{{ estudiante[10] }} {{ estudiante[11] }}</td>
+                        <td>{{ estudiante[13] }}</td>
                     </tr>
-                    <tr>
-                        <td>10062</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10063</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>  
-                    </tr>
-                    <tr>
-                        <td>10064</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10065</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10066</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10067</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10068</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10069</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>10070</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength="3
-                            "></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                <tfoot>
-                    <tr>
-                        <td>TOTAL ESTUDIANTE</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                </tfoot>
+                    {% endfor %}
+                </tbody>
                 </table>
+
+
                 
             </div>
         </section>

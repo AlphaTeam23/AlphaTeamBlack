@@ -417,10 +417,10 @@ table {
 .tabla2 {
     color: #fff;
     font-family: miFuentePath;
-    left: 11.20%;
+    left: 10.70%;
     bottom: 390px;
     position: relative;
-    width: 60%;
+    width: 59%;
     border-radius: 1%;
     height: 340px;
     overflow: hidden;
@@ -440,10 +440,7 @@ table {
     border: none;
     background-color: #ffffff2f;
     height: 40px;
-}
-
-.cuadro-edad {
-    width: 8%;
+    width: 10%;
 }
 
 .tabla2 td {
@@ -452,7 +449,7 @@ table {
     height: 40px;
     text-align: center;
     border-radius: 3px;
-    width: 50px;
+    width: 10%;
 }
 
 td:hover {
