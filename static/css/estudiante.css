@@ -377,9 +377,6 @@ main {
 /* calificacaiones */
 
 
-
-
-
 .notas {
     background-color: gray;
 }
@@ -566,7 +563,7 @@ td{
 
 
 .conten-imag img {
-    width: 40%;
+    width: 54%;
     height: 357px;
     position: fixed;
 }
@@ -2105,7 +2102,9 @@ summary {
 }
 
 
-@media screen and (min-width: 901px) and (max-width: 1200px) {
+@media screen and (min-width: 901px) and (max-width: 1350px) {
+
+    /* calificaciones */
 
     .calificaciones {
         display: grid;
@@ -2128,4 +2127,19 @@ summary {
         font-size: 13px;
         text-align: center;
     }
+
+    /* reinacripcion */
+
+    .conten-imag img {
+        width: 310px;
+        height: 357px;
+    }
+
+    .inf_basica_estudiante {
+        position: relative;
+        right: 210px;
+       
+         top: 480px; 
+    }
+
 }

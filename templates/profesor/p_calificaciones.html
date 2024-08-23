@@ -132,11 +132,11 @@
                     <td>{{ estudiante[1] }}</td> 
                     <td>{{ estudiante[2] }}</td>
 
-                    <td><input type="text" name="tareas_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[3] }}" maxlength="3"></td>
-                    <td><input type="text" name="examenes_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[4] }}" maxlength="3"></td>
-                    <td><input type="text" name="participacion_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[5] }}" maxlength="3"></td>
-                    <td><input type="text" name="asistencia_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[6] }}" maxlength="3"></td>
-                    <td><input type="text" name="cali_final_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[7] }}" maxlength="3"></td>
+                   <td><input type="text" name="tareas_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[3] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+                    <td><input type="text" name="examenes_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[4] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+                    <td><input type="text" name="participacion_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[5] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+                    <td><input type="text" name="asistencia_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[6] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+                    <td><input type="text" name="cali_final_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[7] }}" maxlength="3" readonly></td>
                     <input type="hidden" name="estudiante_id" value="{{ estudiante[2] }}">
                 </tr>
                 {% endfor %}
@@ -176,6 +176,18 @@
             }
 
         });
+
+        function calcularCalificacion(estudianteId, asignaturaId) {
+        var tareas = parseInt(document.querySelector(`input[name="tareas_${estudianteId}_${asignaturaId}"]`).value) || 0;
+        var examenes = parseInt(document.querySelector(`input[name="examenes_${estudianteId}_${asignaturaId}"]`).value) || 0;
+        var participacion = parseInt(document.querySelector(`input[name="participacion_${estudianteId}_${asignaturaId}"]`).value) || 0;
+        var asistencia = parseInt(document.querySelector(`input[name="asistencia_${estudianteId}_${asignaturaId}"]`).value) || 0;
+
+        var calificacion = tareas + examenes + participacion + asistencia;
+
+        document.querySelector(`input[name="cali_final_${estudianteId}_${asignaturaId}"]`).value = calificacion;
+
+}
     </script>
 
     
