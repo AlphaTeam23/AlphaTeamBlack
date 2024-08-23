@@ -114,32 +114,36 @@
         </fieldset>
 
         <div class="tabla1">
-            <table border="1">
-                <tr>
-                    <th class="complete">NOMBRES</th>
-                    <th class="apellido">APELLIDOS</th>
-                    <th>MATRICULA</th>
-                    <th>TAREAS</th>
-                    <th>EXAM</th>
-                    <th>PART</th>
-                    <th>ASIST</th>
-                    <th>CALIFICACION</th>
-                </tr>
+           <table border="1">
+    <tr>
+        <th class="complete">NOMBRES</th>
+        <th class="apellido">APELLIDOS</th>
+        <th>ID</th>
+        <th>MATRICULA</th>
+        <th>TAREAS</th>
+        <th>EXAM</th>
+        <th>PART</th>
+        <th>ASIST</th>
+        <th>CALIFICACION</th>
+    </tr>
 
-                {% for estudiante in estudiantes %}
-                <tr>
-                    <td>{{ estudiante[0] }}</td>  
-                    <td>{{ estudiante[1] }}</td> 
-                    <td>{{ estudiante[2] }}</td>
+    {% for estudiante in estudiantes %}
+    <tr>
+        <td>{{ estudiante[0] }}</td>  
+        <td>{{ estudiante[1] }}</td>
+        <td>{{ estudiante[2] }}</td> 
+        <td>{{ estudiante[3] }}</td>
 
-                   <td><input type="text" name="tareas_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[3] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
-                    <td><input type="text" name="examenes_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[4] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
-                    <td><input type="text" name="participacion_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[5] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
-                    <td><input type="text" name="asistencia_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[6] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
-                    <td><input type="text" name="cali_final_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[7] }}" maxlength="3" readonly></td>
-                    <input type="hidden" name="estudiante_id" value="{{ estudiante[2] }}">
-                </tr>
-                {% endfor %}
+        <td><input type="text" name="tareas_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[4] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+        <td><input type="text" name="examenes_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[5] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+        <td><input type="text" name="participacion_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[6] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+        <td><input type="text" name="asistencia_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[7] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+        <td><input type="text" name="cali_final_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[8] }}" maxlength="3" readonly></td>
+        <input type="hidden" name="estudiante_id_{{ estudiante[2] }}" value="{{ estudiante[2] }}">
+    </tr>
+    {% endfor %}
+</table>
+
             </table>
         </div>
 
