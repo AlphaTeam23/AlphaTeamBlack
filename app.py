@@ -104,20 +104,9 @@ def p_horario():
 def p_planificacion():
     return render_template('./profesor/p_cargarplanificacion.html')
 
-# @app.route('/alphaTeam/profesor/informacion', methods=['GET', 'POST'])
-# def p_informacion():
-#     curL = request.form.get('curL')
-#     asigL = request.form.get('asigL')
-#     periodL = request.form.get('periodL')
-#     estudiantes = request.form.get('estudiantes')
-
-
-    
-
-
-#     if request.method == 'POST':
-
-#     return render_template('./profesor/p_informacionestudiante.html')
+@app.route('/alphaTeam/profesor/informacion', methods=['GET', 'POST'])
+def p_informacion():
+    return render_template('./profesor/p_informacionestudiante.html')
 
 
 
