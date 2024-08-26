@@ -353,7 +353,18 @@ def a_recordnota2():
 
 @app.route('/alphaTeam/admin/usuarios')
 def a_usuarios():
-    return render_template('./admin/a_usuarios.html')
+    
+    conn = mysql.connect() 
+    cursor = conn.cursor()  
+    cursor.execute("SELECT * FROM usuarios")  
+    usuario = cursor.fetchall()  
+    cursor.close()  
+    conn.close()
+    
+    
+    
+    
+    return render_template('./admin/a_usuarios.html', usuario = usuario)
 
 @app.route('/alphaTeam/admin/estudiantes', methods=['GET', 'POST'])
 def a_estudiantes():

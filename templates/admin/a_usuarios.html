@@ -99,10 +99,10 @@
     </main>
 
     
-
-    <table class="datosusuarios" border="1">
-        <thead> 
-       
+  
+      
+  <table class="datosusuarios" border="1">
+        <thead>
           <tr>
             <th>MATRICULA</th>
             <th>NOMBRE</th>
@@ -110,98 +110,24 @@
             <th>USUARIO</th>
             <th>TIPO USUARIO</th>
             <th>RESET CLAVE</th>
-           
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Reset Clave</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Reset Clave</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Reset Clave</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Reset Clave</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Reset Clave</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Reset Clave</td>
-    
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Reset Clave</td>
-           
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Reset Clave</td>
-           
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Reset Clave</td>
-           
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Reset Clave</td>
-           
-          </tr>
+          {% for usuario in usuarios %}
+              <tr>
+                <td>{{ usuario[0] }}</td>
+                <td>{{ usuario[1] }}</td>
+                <td>{{ usuario[2] }}</td>
+                         
+              </tr>
+            {% endfor %}
         </tbody>
+    </table>
       
-      <input type="button" class="enviar" name="guardar" value="Guardar">
+
+
+</body>
+</html>
 
 
       
