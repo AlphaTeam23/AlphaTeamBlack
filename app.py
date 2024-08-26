@@ -38,12 +38,12 @@ def p_calificaciones():
 
     if request.method == 'POST':
         action = request.form.get('action')
-        
+
         if action == 'CARGAR':
             curso_id = request.form.get('cur')
             asignatura_id = request.form.get('asig')
             periodo = request.form.get('period')
-            
+
             if not curso_id or not asignatura_id or not periodo:
                 return "No se proporcionaron todos los datos necesarios", 404
 
@@ -67,7 +67,7 @@ def p_calificaciones():
             cursor = conn.cursor()
             asignatura_id = request.form.get('asig')
             periodo = request.form.get('period')
-            
+
             if not asignatura_id or not periodo:
                 return "No se proporcionaron todos los datos necesarios", 404
 
@@ -87,29 +87,29 @@ def p_calificaciones():
             periodo_column = periodo_column_map.get(periodo)
 
             for estudiante_id in estudiantes_ids:
-                cali_final = request.form.get(f'cali_final_{estudiante_id}_{asignatura_id}')
+                tareas = request.form.get(f'tareas_{estudiante_id}_{asignatura_id}', 0)
+                examenes = request.form.get(f'examenes_{estudiante_id}_{asignatura_id}', 0)
+                participacion = request.form.get(f'participacion_{estudiante_id}_{asignatura_id}', 0)
+                asistencia = request.form.get(f'asistencia_{estudiante_id}_{asignatura_id}', 0)
+                cali_final = request.form.get(f'cali_final_{estudiante_id}_{asignatura_id}', 0)
 
-                # Verificar si ya existe un registro para el estudiante y asignatura en la tabla calificacion_final
+                # Actualizar en la tabla `calificaciones`
                 cursor.execute("""
-                    SELECT id_calificacionFinal FROM calificacion_final
+                    UPDATE calificaciones
+                    SET tareas = %s,
+                        examenes = %s,
+                        participacion = %s,
+                        asistencia = %s,
+                        cali_final = %s
                     WHERE id_asignatura = %s AND id_estudiante = %s
-                """, (asignatura_id, estudiante_id))
-                
-                existing_record = cursor.fetchone()
+                """, (tareas, examenes, participacion, asistencia, cali_final, asignatura_id, estudiante_id))
 
-                if existing_record:
-                    # Si existe, actualiza la calificación en el periodo correspondiente
-                    cursor.execute(f"""
-                        UPDATE calificacion_final
-                        SET {periodo_column} = %s
-                        WHERE id_calificacionFinal = %s
-                    """, (cali_final, existing_record[0]))
-                else:
-                    # Si no existe, inserta un nuevo registro con la calificación en el periodo correspondiente
-                    cursor.execute(f"""
-                        INSERT INTO calificacion_final (id_asignatura, id_estudiante, {periodo_column})
-                        VALUES (%s, %s, %s)
-                    """, (asignatura_id, estudiante_id, cali_final))
+                # Actualizar en la tabla `calificacion_final`
+                cursor.execute("""
+                    UPDATE calificacion_final
+                    SET {periodo_column} = %s
+                    WHERE id_asignatura = %s AND id_estudiante = %s
+                """.format(periodo_column=periodo_column), (cali_final, asignatura_id, estudiante_id))
 
             conn.commit()
             cursor.close()
