@@ -217,13 +217,29 @@ def a_alphaTeam():
 
 @app.route('/alphaTeam/admin/cursos', methods=['GET', 'POST'])
 def a_cursos():
+    # Conectar a la base de datos
+    conn = mysql.connect()
+    cursor = conn.cursor()
 
-    conn = mysql.connect() 
-    cursor = conn.cursor()  
-    cursor.execute("SELECT * FROM cursos")  
-    cursos = cursor.fetchall()  
-    cursor.close()  
-    conn.close()  
+    # Actualizar la columna total_est en la tabla cursos
+    update_query = """
+    UPDATE cursos c
+    SET c.total_est = (
+        SELECT COUNT(*)
+        FROM estudiante e
+        WHERE e.id_curso = c.id_curso
+    );
+    """
+    cursor.execute(update_query)
+    conn.commit()  
+
+    # Recuperar los datos actualizados de la tabla cursos
+    cursor.execute("SELECT * FROM cursos")
+    cursos = cursor.fetchall()
+
+    # Cerrar el cursor y la conexión
+    cursor.close()
+    conn.close()
 
     # Pasar los datos a la plantilla
     return render_template('./admin/a_cursos.html', cursos=cursos)
@@ -261,7 +277,7 @@ def inscripcion():
       
 
 
-        #NOTAS: debo buscar la for
+    
         # INsercion de datos entabla tutor
         cursor.execute("INSERT INTO tutor (nombre, apellidos, cedula, telefono, correo, ocupacion, parentesco, direccion) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (nomt, apet, cedula, telefono, correo, educ, ocup, direccion))
         
