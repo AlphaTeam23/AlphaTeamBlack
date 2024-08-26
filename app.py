@@ -347,9 +347,23 @@ def a_recordnota():
 
     return render_template('./admin/a_recordnota.html', calificaciones = calificaciones)
 
-@app.route('/alphaTeam/admin/recordnota2')
+
+
+
+
+
+@app.route('/alphaTeam/admin/recordnota2', methods=['GET'])
 def a_recordnota2():
+   
+
+    
     return render_template('./admin/a_recordnota2.html')
+
+
+
+
+
+
 
 @app.route('/alphaTeam/admin/usuarios')
 def a_usuarios():
