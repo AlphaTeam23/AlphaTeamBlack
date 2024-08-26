@@ -26,6 +26,8 @@ def iniciosesion():
 def p_alphaTeam():
     return render_template('./profesor/p_alphaTeam.html')
 
+
+
 # Página Alpha Team
 @app.route('/alphaTeam/profesor/calificaciones', methods=['GET', 'POST'])
 def p_calificaciones():
@@ -49,7 +51,7 @@ def p_calificaciones():
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute("""
-                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.id_estudiante, e_Matricula,
+                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.id_estudiante, e.e_Matricula,
                        IFNULL(c.tareas, 0), IFNULL(c.examenes, 0), IFNULL(c.participacion, 0), IFNULL(c.asistencia, 0), IFNULL(c.cali_final, 0)
                 FROM estudiante e
                 LEFT JOIN calificaciones c ON e.id_estudiante = c.id_estudiante AND c.id_asignatura = %s
@@ -64,24 +66,50 @@ def p_calificaciones():
             conn = mysql.connect()
             cursor = conn.cursor()
             asignatura_id = request.form.get('asig')
+            periodo = request.form.get('period')
             
-            if not asignatura_id:
-                return "No se proporcionó un ID de asignatura", 404
+            if not asignatura_id or not periodo:
+                return "No se proporcionaron todos los datos necesarios", 404
 
             estudiantes_ids = [key.split('_')[2] for key in request.form.keys() if key.startswith('estudiante_id_')]
 
+            # Mapeo de los periodos a las columnas de la tabla calificacion_final
+            periodo_column_map = {
+                '1': 'primer_periodo',
+                '2': 'segundo_periodo',
+                '3': 'tercer_periodo',
+                '4': 'cuarto_periodo',
+                '5': 'completivo',
+                '6': 'extraordinario',
+                '7': 'final'
+            }
+
+            periodo_column = periodo_column_map.get(periodo)
+
             for estudiante_id in estudiantes_ids:
-                tareas = request.form.get(f'tareas_{estudiante_id}_{asignatura_id}')
-                examenes = request.form.get(f'examenes_{estudiante_id}_{asignatura_id}')
-                participacion = request.form.get(f'participacion_{estudiante_id}_{asignatura_id}')
-                asistencia = request.form.get(f'asistencia_{estudiante_id}_{asignatura_id}')
                 cali_final = request.form.get(f'cali_final_{estudiante_id}_{asignatura_id}')
 
+                # Verificar si ya existe un registro para el estudiante y asignatura en la tabla calificacion_final
                 cursor.execute("""
-                    UPDATE calificaciones
-                    SET tareas = %s, examenes = %s, participacion = %s, asistencia = %s, cali_final = %s
+                    SELECT id_calificacionFinal FROM calificacion_final
                     WHERE id_asignatura = %s AND id_estudiante = %s
-                """, (tareas, examenes, participacion, asistencia, cali_final, asignatura_id, estudiante_id))
+                """, (asignatura_id, estudiante_id))
+                
+                existing_record = cursor.fetchone()
+
+                if existing_record:
+                    # Si existe, actualiza la calificación en el periodo correspondiente
+                    cursor.execute(f"""
+                        UPDATE calificacion_final
+                        SET {periodo_column} = %s
+                        WHERE id_calificacionFinal = %s
+                    """, (cali_final, existing_record[0]))
+                else:
+                    # Si no existe, inserta un nuevo registro con la calificación en el periodo correspondiente
+                    cursor.execute(f"""
+                        INSERT INTO calificacion_final (id_asignatura, id_estudiante, {periodo_column})
+                        VALUES (%s, %s, %s)
+                    """, (asignatura_id, estudiante_id, cali_final))
 
             conn.commit()
             cursor.close()
