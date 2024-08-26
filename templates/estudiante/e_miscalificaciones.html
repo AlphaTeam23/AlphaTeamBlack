@@ -108,88 +108,30 @@
     <main class="calificaciones">
         <section class="seccion">
         <h2>MIS CALIFICACIONES</h2>
-            <table class="tabla" >
-                <tr class="ml">
-                    <th>ASIGNATURA.</th>
-                    <th>1P</th>
-                    <th>2P</th>
-                    <th>3P</th>
-                    <th>4P</th>
-                    <th>COMP</th>
-                    <th>EXT</th>
-                    <th>FINAL</th>
-                </tr>
-                <tr>
-                    <td>Lengua Española</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Matemáticas</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Ciencias Sociales</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Ciencias Naturales</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Fisica</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Educación Financiera</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Inglés</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
+            <table class="tabla">
+        <tr>
+            <th>ASIGNATURA</th>
+            <th>1P</th>
+            <th>2P</th>
+            <th>3P</th>
+            <th>4P</th>
+            <th>COMP</th>
+            <th>EXT</th>
+            <th>FINAL</th>
+        </tr>
+        {% for calificacion in calificaciones %}
+        <tr>
+            <td>{{ calificacion[0] }}</td>
+            <td>{{ calificacion[1] }}</td>
+            <td>{{ calificacion[2] }}</td>
+            <td>{{ calificacion[3] }}</td>
+            <td>{{ calificacion[4] }}</td>
+            <td>{{ calificacion[5] }}</td>
+            <td>{{ calificacion[6] }}</td>
+            <td>{{ calificacion[7] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
         </section>
     </main>
 
