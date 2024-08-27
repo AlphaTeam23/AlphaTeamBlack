@@ -144,9 +144,9 @@ def p_planificacion():
         periodo = request.form['period']
         archivo = request.files['planificacion']
 
-        # Guardar el archivo en el servidor
+        # Guardar el archivo en el servidor dentro de la carpeta static/uploads
         if archivo:
-            upload_folder = 'uploads/'
+            upload_folder = os.path.join('static', 'uploads')
             if not os.path.exists(upload_folder):
                 os.makedirs(upload_folder)
             
@@ -154,12 +154,24 @@ def p_planificacion():
             archivo.save(archivo_path)
 
             # Guardar información en la base de datos
-            cursor.execute("INSERT INTO planificacion (id_curso, id_asignatura, periodo, archivo) VALUES (%s, %s, %s, %s)", 
-                           (curso, asignatura, periodo, archivo.filename))
+            cursor.execute("""
+                INSERT INTO planificacion (id_curso, id_asignatura, periodo, archivo) 
+                VALUES (%s, %s, %s, %s)
+            """, (curso, asignatura, periodo, archivo.filename))
             conn.commit()
 
+            # Redirigir al usuario para evitar duplicaciones
+            cursor.close()
+            conn.close()
+            return redirect(url_for('p_planificacion'))
+
     # Obtener los datos de la base de datos para mostrar
-    cursor.execute("SELECT id_curso, id_asignatura, periodo, archivo FROM planificacion")
+    cursor.execute("""
+        SELECT p.id_curso, c.nivel, p.id_asignatura, a.nom_asignatura, p.periodo, p.archivo
+        FROM planificacion p
+        JOIN cursos c ON p.id_curso = c.id_curso
+        JOIN asignatura a ON p.id_asignatura = a.id_asignatura
+    """)
     planificaciones = cursor.fetchall()
     cursor.close()
     conn.close()
