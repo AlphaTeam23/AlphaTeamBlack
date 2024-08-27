@@ -17,7 +17,7 @@
 
             <div class="container">
             <button class="menu-btn">PROFESOR
-                <img src="/static/imagenes/profesor.png" alt="profesor">
+                <img src="/static/imagenes/profesor.png" alt="profesor" id="imagenPrevia">
             </button>
             <div class="menu-items">
                 <h6 class="gestion">Gestión perfil</h6>
@@ -134,12 +134,12 @@
         <td>{{ estudiante[2] }}</td> 
         <td>{{ estudiante[3] }}</td>
 
-        <td><input type="text" name="tareas_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[4] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
-        <td><input type="text" name="examenes_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[5] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
-        <td><input type="text" name="participacion_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[6] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
-        <td><input type="text" name="asistencia_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[7] }}" maxlength="3" oninput="calcularCalificacion('{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
-        <td><input type="text" name="cali_final_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[8] }}" maxlength="3" readonly></td>
-        <input type="hidden" name="estudiante_id_{{ estudiante[2] }}" value="{{ estudiante[2] }}">
+        <td><input type="number" name="tareas_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[4] }}" min="0" max="25" maxlength="3" oninput="validarYCalcular(this, '{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+    <td><input type="number" name="examenes_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[5] }}" min="0" max="25" maxlength="3" oninput="validarYCalcular(this, '{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+    <td><input type="number" name="participacion_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[6] }}" min="0" max="25" maxlength="3" oninput="validarYCalcular(this, '{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+    <td><input type="number" name="asistencia_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[7] }}" min="0" max="25" maxlength="3" oninput="validarYCalcular(this, '{{ estudiante[2] }}', '{{ selected_asignatura }}')"></td>
+    <td><input type="text" name="cali_final_{{ estudiante[2] }}_{{ selected_asignatura }}" value="{{ estudiante[8] }}" maxlength="3" readonly></td>
+    <input type="hidden" name="estudiante_id_{{ estudiante[2] }}" value="{{ estudiante[2] }}">
     </tr>
     {% endfor %}
 </table>
@@ -151,15 +151,45 @@
     </form>
 </div>
 
-                
-                
-                
-                
 </section>
-        
     </main>
 
     <script>
+
+        document.getElementById('uploadButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            const input = document.getElementById('imageInput');
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+                    const base64Image = event.target.result;
+                    localStorage.setItem('uploadedImage', base64Image);
+                    document.getElementById('imagenPrevia').src = base64Image;
+                };
+                
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Al cargar la página, verifica si hay una imagen en localStorage y la muestra
+        document.addEventListener('DOMContentLoaded', function() {
+            const storedImage = localStorage.getItem('uploadedImage');
+            if (storedImage) {
+                document.getElementById('imagenPrevia').src = storedImage;
+            }
+        });
+        
+        // Añade un evento de clic a la imagen de borrar para eliminar la foto
+        document.querySelector('.borrar').addEventListener('click', function() {
+            localStorage.removeItem('uploadedImage');
+            document.getElementById('imagenPrevia').src = '/static/imagenes/usuario.svg';
+            alert("Se eliminó la imagen del perfil.")
+        });
+
+
+
         document.getElementById('cur').addEventListener('change', function() {
             var cursoId = this.value;
             if (cursoId) {
@@ -181,19 +211,39 @@
 
         });
 
+      
+        function validarYCalcular(input, estudianteId, asignaturaId) {
+            const max = 25;
+            let calificacion = parseInt(input.value);
+        
+            if (calificacion > max) {
+                input.value = max;
+                alert("El valor máximo permitido es 25.");
+            } else if (calificacion < 0 || isNaN(calificacion)) {
+                // isNaN esto es para evitar que se ingresen letras en las tablas
+                input.value = 0;
+                alert("El valor mínimo permitido es 0.");
+            }
+        
+            calcularCalificacion(estudianteId, asignaturaId);
+        }
+        
         function calcularCalificacion(estudianteId, asignaturaId) {
-        var tareas = parseInt(document.querySelector(`input[name="tareas_${estudianteId}_${asignaturaId}"]`).value) || 0;
-        var examenes = parseInt(document.querySelector(`input[name="examenes_${estudianteId}_${asignaturaId}"]`).value) || 0;
-        var participacion = parseInt(document.querySelector(`input[name="participacion_${estudianteId}_${asignaturaId}"]`).value) || 0;
-        var asistencia = parseInt(document.querySelector(`input[name="asistencia_${estudianteId}_${asignaturaId}"]`).value) || 0;
+            const tareas = parseInt(document.querySelector(`input[name="tareas_${estudianteId}_${asignaturaId}"]`).value) || 0;
+            const examenes = parseInt(document.querySelector(`input[name="examenes_${estudianteId}_${asignaturaId}"]`).value) || 0;
+            const participacion = parseInt(document.querySelector(`input[name="participacion_${estudianteId}_${asignaturaId}"]`).value) || 0;
+            const asistencia = parseInt(document.querySelector(`input[name="asistencia_${estudianteId}_${asignaturaId}"]`).value) || 0;
+        
+            const cali_final = tareas + examenes + participacion + asistencia;
+        
+            document.querySelector(`input[name="cali_final_${estudianteId}_${asignaturaId}"]`).value = cali_final;
+        }
 
-        var calificacion = tareas + examenes + participacion + asistencia;
-
-        document.querySelector(`input[name="cali_final_${estudianteId}_${asignaturaId}"]`).value = calificacion;
-
-}
+        
+        
     </script>
 
-    
+     <script src="/static/js/cambiofoto.js"></script>
+
 </body>
 </html>
