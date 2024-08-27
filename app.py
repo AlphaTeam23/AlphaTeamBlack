@@ -353,32 +353,47 @@ def inscripcion():
         educ = request.form['educ']
         ocup = request.form['ocup']
         direccion = request.form['direccion']
-        #foto = request.files['foto']
+        contraseña = '12345'  # Valor predeterminado para la contraseña
 
-        # Create a connection to the database
+        # Crear una conexión a la base de datos
         conn = mysql.connect()
         cursor = conn.cursor()
 
-        # INsercion de datos entabla estudiante
-        cursor.execute("INSERT INTO estudiante (nombre_estudiante, apellidos, sexo_estudiante, nacimiento_estudiante, id_curso, id_profesor, id_tutor) VALUES (%s, %s, %s, %s, %s, %s, %s)", (nom, ape, sexo, fecha, curso, prof, 1))
-      
+        # Inserción de datos en la tabla estudiante
+        cursor.execute("""
+            INSERT INTO estudiante (nombre_estudiante, apellidos, sexo_estudiante, nacimiento_estudiante, id_curso, id_profesor, id_tutor, contraseña)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        """, (nom, ape, sexo, fecha, curso, prof, 1, contraseña))
 
+        # Obtener el ID del estudiante recién insertado
+        id_estudiante = cursor.lastrowid
 
-    
-        # INsercion de datos entabla tutor
-        cursor.execute("INSERT INTO tutor (nombre, apellidos, cedula, telefono, correo, ocupacion, parentesco, direccion) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (nomt, apet, cedula, telefono, correo, educ, ocup, direccion))
-        
+        # Generar la matrícula en el formato E-XXXXX
+        id_matricula = f'E-{id_estudiante:05d}'
 
+        # Actualizar el registro del estudiante con la matrícula generada
+        cursor.execute("""
+            UPDATE estudiante
+            SET id_matricula = %s
+            WHERE id_estudiante = %s
+        """, (id_matricula, id_estudiante))
 
-        # GUardar cambios
+        # Inserción de datos en la tabla tutor
+        cursor.execute("""
+            INSERT INTO tutor (nombre, apellidos, cedula, telefono, correo, ocupacion, parentesco, direccion)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        """, (nomt, apet, cedula, telefono, correo, educ, ocup, direccion))
+
+        # Guardar cambios
         conn.commit()
 
-        # cerrar conexion
+        # Cerrar conexión
         cursor.close()
         conn.close()
 
-        return "Inscripción guardada con éxito"
+        return f"Inscripción guardada con éxito. Matrícula: {id_matricula}, Contraseña: {contraseña}"
     return render_template('inscripcion.html')
+
         
      
 
