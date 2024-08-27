@@ -399,22 +399,35 @@ def a_planificacion():
 @app.route('/alphaTeam/admin/recordnota', methods=['GET', 'POST'])
 def a_recordnota():
     calificaciones = []
+    estudiante = None
     if request.method == 'POST':
         id_estudiante = request.form.get('busqueda')  # Obtener valor de 'busqueda'
 
         conn = mysql.connect()
         cursor = conn.cursor()
+
+        # Obtener información del estudiante
         cursor.execute("""
-            SELECT *, asignatura.nom_asignatura AS anom_asignatura
+            SELECT *
+            FROM estudiante
+            WHERE id_estudiante = %s
+        """, (id_estudiante,))
+        estudiante = cursor.fetchone()
+
+        # Obtener calificaciones y asignaturas
+        cursor.execute("""
+            SELECT calificacion_final.*, asignatura.nom_asignatura AS anom_asignatura
             FROM calificacion_final
             JOIN asignatura ON asignatura.id_asignatura = calificacion_final.id_asignatura
             WHERE calificacion_final.id_estudiante = %s
         """, (id_estudiante,))
         calificaciones = cursor.fetchall()
+
         cursor.close()
         conn.close()
 
-    return render_template('./admin/a_recordnota.html', calificaciones=calificaciones)
+    return render_template('./admin/a_recordnota.html', calificaciones=calificaciones, estudiante=estudiante)
+
 
 
 

@@ -61,31 +61,18 @@
                     <legend>BUSCAR USUARIO</legend>
 
                     <label for="busqueda">MATRICULA</label>
-                    <input type="search" class="referencia" id="busqueda" placeholder="1000045">
-                    <label for="curso">CURSO</label>
-                        <select name="curso" id="curso" required>
-                            <option value="">Seleccion un curso</option>
-                            <option value="1">1° Bachiller</option>
-                            <option value="2">2° Bachiller</option>
-                            <option value="3">3° Bachiller</option>
-                            <option value="4">4° Bachiller</option>
-                            <option value="5">5° Bachiller</option>
-                            <option value="6">6° Bachiller</option>
-                    </select>
-
-                    
+                    <input name="busqueda" type="search" class="referencia" id="busqueda" placeholder="00001" required>
 
                     
                     <label for="period">Tipo Usuario</label>
                     <select name="period" id="period" required>
                         <option value="">- Tipo Usuario -</option>
-                        <option value="">Administrador</option>
-                        <option value="">Estudiante</option>
-                        <option value="">Profesor</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Profesor</option>
+                        <option value="3">Estudiante</option>
                     </select>
 
               
-
                     <input type="button" class="btcargar" name="cargar" value="Cargar">
             
                 </fieldset>
