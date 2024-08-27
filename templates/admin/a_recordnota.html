@@ -59,19 +59,21 @@
   </main>
 
   <table class="datosestudiante" border="1">
-      <thead>
-          <tr>
-              <th>NOMBRE:</th>
-              <td>Jose Miguel</td>
-              <th>APELLIDO:</th>
-              <td>Reyes</td>
-              <th>MATRICULA:</th>
-              <td>1000045</td>
-              <th>CURSO:</th>
-              <td>6° Grado</td>
-          </tr>
-      </thead>
-  </table>
+    <thead>
+        <tr>
+            <th>NOMBRE:</th>
+            <td>{{ estudiante[2] }}</td>
+            <th>APELLIDO:</th>
+            <td>{{ estudiante[3] }}</td>
+            <th>MATRICULA:</th>
+            <td>{{ estudiante[1] }}</td>
+            <th>CURSO:</th>
+            <td>{{ estudiante[7] }}</td>
+            <th>PERIODO:</th>
+            <td>2023-2024</td>
+        </tr>
+    </thead>
+</table>
 
   <table class="datosrecord1" border="1">
       <thead>
@@ -89,7 +91,7 @@
       <tbody>
           {% for calificacion in calificaciones %}
           <tr>
-              <td>{{ calificacion[12] }}</td>
+              <td>{{ calificacion[10] }}</td>
               <td>{{ calificacion[3] }}</td>
               <td>{{ calificacion[4] }}</td>
               <td>{{ calificacion[5] }}</td>
