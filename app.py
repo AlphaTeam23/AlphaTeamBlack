@@ -51,7 +51,7 @@ def p_calificaciones():
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute("""
-                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.id_estudiante, e.e_Matricula,
+                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.id_estudiante, e.id_Matricula,
                        IFNULL(c.tareas, 0), IFNULL(c.examenes, 0), IFNULL(c.participacion, 0), IFNULL(c.asistencia, 0), IFNULL(c.cali_final, 0)
                 FROM estudiante e
                 LEFT JOIN calificaciones c ON e.id_estudiante = c.id_estudiante AND c.id_asignatura = %s
@@ -72,8 +72,11 @@ def p_calificaciones():
                 return "No se proporcionaron todos los datos necesarios", 404
 
             estudiantes_ids = [key.split('_')[2] for key in request.form.keys() if key.startswith('estudiante_id_')]
+            # keys() devuelve una vista de las claves (nombres de campos) del formulario como una lista
+            # startswith verifica si la clave comienza con el la cadena estudiante_id
+            # divide la clave en una lista de subcadenas, usando el carácter de subrayado ('_') como delimitador para identificar el id del estudiante
 
-            # Mapeo de los periodos a las columnas de la tabla calificacion_final
+            # reacion de los periodos a las columnas de la tabla calificacion_final
             periodo_column_map = {
                 '1': 'primer_periodo',
                 '2': 'segundo_periodo',
@@ -199,7 +202,31 @@ def e_alphaTeam():
 
 @app.route('/alphaTeam/estudiante/calificaciones')
 def e_miscalificaciones():
-    return render_template('./estudiante/e_miscalificaciones.html')
+    conn = mysql.get_db()
+    cursor = conn.cursor()
+
+    # Consulta SQL para obtener las calificaciones
+    query = '''
+        SELECT a.nom_asignatura, 
+               c.primer_periodo, 
+               c.segundo_periodo, 
+               c.tercer_periodo, 
+               c.cuarto_periodo, 
+               c.completivo, 
+               c.extraordinario, 
+               c.final
+        FROM calificacion_final c
+        JOIN asignatura a ON c.id_asignatura = a.id_asignatura
+        WHERE c.id_estudiante = %s
+    '''
+    estudiante_id = 1  # Cambia esto al ID del estudiante actual
+    cursor.execute(query, (estudiante_id,))
+    calificaciones = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    return render_template('estudiante/e_miscalificaciones.html', calificaciones=calificaciones)
 
 @app.route('/alphaTeam/estudiante/ayuda')
 def e_ayuda():
