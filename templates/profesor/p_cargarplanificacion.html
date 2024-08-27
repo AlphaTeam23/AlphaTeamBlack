@@ -65,7 +65,7 @@
     </div>
     <main>
         <section>
-            <form class="planificacion_docente" action="/alphaTeam/profesor/planificacion" method="POST" enctype="multipart/form-data">
+           <form class="planificacion_docente" action="/alphaTeam/profesor/planificacion" method="POST" enctype="multipart/form-data">
     <fieldset class="planif_fielsed">
         <legend class="plan_docente">CARGAR PLANIFICACIÓN</legend>
 
@@ -109,6 +109,23 @@
     <input class="enviar_borrar" type="submit" name="enviar" value="ENVIAR">
     <input class="enviar_borrar" type="reset" value="CANCELAR">
 </form>
+
+<table class="tabla3">
+    <tr>
+        <td>CURSOS</td>
+        <td>MATERIAS</td>
+        <td>PERIODO</td>
+        <td>ARCHIVOS ENVIADOS</td>
+    </tr>
+    {% for planificacion in planificaciones %}
+    <tr>
+        <td>{{ planificacion[0] }}</td>
+        <td>{{ planificacion[1] }}</td>
+        <td>{{ planificacion[2] }}</td>
+        <td><a href="{{ url_for('static', filename='uploads/' + planificacion[3]) }}" download>{{ planificacion[3] }}</a></td>
+    </tr>
+    {% endfor %}
+</table>
 
         </section>
     </main>
