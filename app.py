@@ -132,9 +132,41 @@ def p_ayuda():
 def p_horario():
     return render_template('./profesor/p_horario.html')
 
-@app.route('/alphaTeam/profesor/planificacion')
+@app.route('/alphaTeam/profesor/planificacion', methods=['GET', 'POST'])
 def p_planificacion():
-    return render_template('./profesor/p_cargarplanificacion.html')
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    if request.method == 'POST':
+        # Obtener los datos del formulario
+        curso = request.form['curso1']
+        asignatura = request.form['asigL']
+        periodo = request.form['period']
+        archivo = request.files['planificacion']
+
+        # Guardar el archivo en el servidor
+        if archivo:
+            upload_folder = 'uploads/'
+            if not os.path.exists(upload_folder):
+                os.makedirs(upload_folder)
+            
+            archivo_path = os.path.join(upload_folder, archivo.filename)
+            archivo.save(archivo_path)
+
+            # Guardar información en la base de datos
+            cursor.execute("INSERT INTO planificacion (id_curso, id_asignatura, periodo, archivo) VALUES (%s, %s, %s, %s)", 
+                           (curso, asignatura, periodo, archivo.filename))
+            conn.commit()
+
+    # Obtener los datos de la base de datos para mostrar
+    cursor.execute("SELECT id_curso, id_asignatura, periodo, archivo FROM planificacion")
+    planificaciones = cursor.fetchall()
+    cursor.close()
+    conn.close()
+
+    return render_template('./profesor/p_cargarplanificacion.html', planificaciones=planificaciones)
+
+
 
 @app.route('/alphaTeam/profesor/informacion', methods=['GET', 'POST'])
 def p_informacion():

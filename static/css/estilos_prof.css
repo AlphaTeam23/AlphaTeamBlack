@@ -221,6 +221,7 @@ legend {
     padding: -20%;
     width: 173%;
     margin-left: -26%;
+    height: 80px;
 }
 
 form {
@@ -256,9 +257,9 @@ label {
     font-size: 16px;
     font-weight: normal;
     margin: 15px;
-    margin-right: 100%;
+    left: 10px;
     width: 8%;
-    top: 28%;
+    top: -1%;
     position: relative;
 }
 
@@ -328,23 +329,6 @@ td:hover {
 
 th:hover {
     background-color: gray;
-}
-.imprimir {
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #81e6ff;
-    font-family: miFuentePath;
-    font-size: 16px;
-    font-weight: normal;
-    top: -20%;
-    left: 60%;
-    position: relative;
-    width: 15%;  
-    margin: 10px;  
-}
-
-.imprimir:hover {
-    border: 1px solid #0077ff96;
 }
 
 fieldset {
@@ -628,7 +612,7 @@ th:hover {
 }
 
 .planif_fielsed {
-    height: 70px;
+    height: 100px;
 }
 
 .enviar_borrar {
@@ -636,7 +620,9 @@ th:hover {
     width: 70px;
     font-weight: normal;
     font-size: 16px;
-    margin-top: 10px;
+    top: -30px;
+    left: 1%;
+    position: relative;;
     cursor: pointer;
     border: 1px solid #81e6ff;
     background-color: transparent;
@@ -653,6 +639,37 @@ th:hover {
     border: 1px solid #0077ff96;
 }
 
+.tabla3 {
+    color: #fff;
+    font-family: miFuentePath;
+    left: 11%;
+    bottom: 410px;
+    position: relative;
+    width: 58.60%;
+    border-radius: 1%;
+    height: 40px;
+    overflow: hidden;
+    overflow-y: scroll;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.tabla3 th {
+    font-weight: normal;
+    border: none;
+    background-color: #ffffff2f;
+    height: 40px;
+    width: 5%;
+}
+
+.tabla3 td {
+    border: none;
+    background-color: #ffffff2f;
+    height: 40px;
+    text-align: center;
+    border-radius: 3px;
+    width: 10%;
+}
 /* Página ayuda */
 
 .preguntas h3 {
@@ -1308,11 +1325,6 @@ summary {
         height: 60px;
     }
 
-
-    .imprimir {
-        display: none;
-    }
-
     .boton {
         top: -110%;
         position: relative;
@@ -1545,13 +1557,6 @@ summary {
 
     .boton {
         margin-top: -50%;
-    }
-
-    .imprimir {
-        top: -50%;
-        position: relative;
-        width: 16%;
-        font-size: 12px;
     }
 
     .tabla1::-webkit-scrollbar {
