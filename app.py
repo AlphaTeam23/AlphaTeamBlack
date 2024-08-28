@@ -51,7 +51,7 @@ def p_calificaciones():
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute("""
-                SELECT DISTINCT e.nombre_estudiante, e.apellidos, e.id_estudiante, e.id_Matricula,
+                SELECT DISTINCT e.id_estudiante, e.nombre_estudiante, e.apellidos,  e.matricula,
                        IFNULL(c.tareas, 0), IFNULL(c.examenes, 0), IFNULL(c.participacion, 0), IFNULL(c.asistencia, 0), IFNULL(c.cali_final, 0)
                 FROM estudiante e
                 LEFT JOIN calificaciones c ON e.id_estudiante = c.id_estudiante AND c.id_asignatura = %s
