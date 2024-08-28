@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-08-2024 a las 23:44:43
+-- Tiempo de generación: 28-08-2024 a las 20:58:11
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -569,12 +569,13 @@ INSERT INTO `dias` (`id_dias`, `dias`) VALUES
 
 CREATE TABLE `estudiante` (
   `id_estudiante` int(5) NOT NULL,
-  `e_Matricula` char(7) COLLATE utf32_spanish2_ci NOT NULL,
+  `matricula` varchar(7) COLLATE utf32_spanish2_ci NOT NULL,
   `nombre_estudiante` varchar(30) COLLATE utf32_spanish2_ci NOT NULL,
   `apellidos` varchar(30) COLLATE utf32_spanish2_ci DEFAULT NULL,
   `sexo_estudiante` varchar(9) COLLATE utf32_spanish2_ci NOT NULL,
   `nacimiento_estudiante` date NOT NULL,
   `imagen_perfil` varchar(300) COLLATE utf32_spanish2_ci NOT NULL,
+  `contraseña` varchar(30) COLLATE utf32_spanish2_ci NOT NULL,
   `id_curso` int(5) NOT NULL,
   `id_profesor` int(5) NOT NULL,
   `id_tutor` int(5) NOT NULL
@@ -584,37 +585,37 @@ CREATE TABLE `estudiante` (
 -- Volcado de datos para la tabla `estudiante`
 --
 
-INSERT INTO `estudiante` (`id_estudiante`, `e_Matricula`, `nombre_estudiante`, `apellidos`, `sexo_estudiante`, `nacimiento_estudiante`, `imagen_perfil`, `id_curso`, `id_profesor`, `id_tutor`) VALUES
-(1, 'e-00001', 'Faury', 'García Rodríguez', 'Masculino', '2004-09-17', '', 4, 4, 2),
-(2, 'e-00002', 'Jose Miguel', 'Bello Acosta', 'Masculino', '2003-09-04', '', 4, 4, 4),
-(3, 'e-00003', 'Jose Miguel', 'Reyes', 'Masculino', '1996-11-08', '', 4, 4, 5),
-(4, 'e-00004', 'Massiel', 'Rodriguez Rodríguez', 'Femenino', '2004-01-04', '', 4, 4, 8),
-(5, 'e-00005', 'Manuel De Jesus', 'Díaz Díaz', 'Masculino', '1999-01-13', '', 4, 4, 6),
-(6, 'e-00006', 'Albiery', 'Rodriguez Almonte', 'Masculino', '2004-08-19', '', 5, 5, 1),
-(7, 'e-00007', 'Smailyn', 'Gutiérrez Burgos', 'Femenino', '2003-03-04', '', 5, 5, 9),
-(8, 'e-00008', 'Gissel Esmeralda', 'Velez Cruz', 'Femenino', '1999-09-27', '', 5, 5, 3),
-(9, 'e-00009', 'Marilin', 'Gil Paulino', 'Femenino', '2005-01-28', '', 5, 5, 7),
-(10, 'e-00010', 'Tiara', 'Peña Rodríguez', 'Femenino', '2003-12-11', '', 5, 5, 12),
-(11, 'e-00011', 'Ana', 'Martínez', 'Femenino', '2001-03-15', '', 6, 6, 11),
-(12, 'e-00012', 'Luis', 'García', 'Masculino', '1999-06-21', '', 1, 1, 13),
-(13, 'e-00013', 'Marta', 'Fernández', 'Femenino', '2000-08-30', '', 6, 6, 15),
-(14, 'e-00014', 'Carlos', 'López', 'Masculino', '2002-11-05', '', 6, 6, 18),
-(15, 'e-00015', 'Sofía', 'Gómez', 'Femenino', '2003-12-18', '', 6, 6, 20),
-(16, 'e-00016', 'Jorge', 'Sánchez', 'Masculino', '1998-02-25', '', 2, 2, 22),
-(17, 'e-00017', 'Laura', 'Martínez', 'Femenino', '2004-04-10', '', 2, 2, 25),
-(18, 'e-00018', 'Pedro', 'Ramírez', 'Masculino', '2002-07-22', '', 2, 2, 27),
-(19, 'e-00019', 'Isabel', 'Hernández', 'Femenino', '2001-09-14', '', 2, 2, 29),
-(20, 'e-00020', 'Felipe', 'Morales', 'Masculino', '2000-10-30', '', 2, 2, 30),
-(21, 'e-00021', 'Catalina', 'Cano', 'Femenino', '2003-01-05', '', 3, 3, 21),
-(22, 'e-00022', 'Antonio', 'Gómez', 'Masculino', '2002-03-18', '', 3, 3, 23),
-(23, 'e-00023', 'Elena', 'Castro', 'Femenino', '1999-05-27', '', 3, 3, 24),
-(24, 'e-00024', 'Alejandro', 'Ramírez', 'Masculino', '2000-07-15', '', 3, 3, 26),
-(25, 'e-00025', 'Patricia', 'Mendoza', 'Femenino', '2001-09-04', '', 3, 3, 28),
-(26, 'e-00026', 'Manuel', 'Serrano', 'Masculino', '1999-02-20', '', 1, 1, 10),
-(27, 'e-00027', 'Victoria', 'Álvarez', 'Femenino', '2000-04-25', '', 1, 1, 14),
-(28, 'e-00028', 'Julio', 'Paredes', 'Masculino', '2001-06-30', '', 1, 1, 16),
-(29, 'e-00029', 'Natalia', 'Mora', 'Femenino', '2003-08-15', '', 1, 1, 17),
-(30, 'e-00030', 'Diego', 'Velasco', 'Masculino', '2002-10-12', '', 6, 6, 19);
+INSERT INTO `estudiante` (`id_estudiante`, `matricula`, `nombre_estudiante`, `apellidos`, `sexo_estudiante`, `nacimiento_estudiante`, `imagen_perfil`, `contraseña`, `id_curso`, `id_profesor`, `id_tutor`) VALUES
+(1, 'e-00001', 'Faury', 'García Rodríguez', 'Masculino', '2004-09-17', '', 'e101', 4, 4, 2),
+(2, 'e-00002', 'Jose Miguel', 'Bello Acosta', 'Masculino', '2003-09-04', '', 'e102', 4, 4, 4),
+(3, 'e-00003', 'Jose Miguel', 'Reyes', 'Masculino', '1996-11-08', '', 'e103', 4, 4, 5),
+(4, 'e-00004', 'Massiel', 'Rodriguez Rodríguez', 'Femenino', '2004-01-04', '', 'e104', 4, 4, 8),
+(5, 'e-00005', 'Manuel De Jesus', 'Díaz Díaz', 'Masculino', '1999-01-13', '', 'e105', 4, 4, 6),
+(6, 'e-00006', 'Albiery', 'Rodriguez Almonte', 'Masculino', '2004-08-19', '', 'e106', 5, 5, 1),
+(7, 'e-00007', 'Smailyn', 'Gutiérrez Burgos', 'Femenino', '2003-03-04', '', 'e107', 5, 5, 9),
+(8, 'e-00008', 'Gissel Esmeralda', 'Velez Cruz', 'Femenino', '1999-09-27', '', 'e108', 5, 5, 3),
+(9, 'e-00009', 'Marilin', 'Gil Paulino', 'Femenino', '2005-01-28', '', 'e109', 5, 5, 7),
+(10, 'e-00010', 'Tiara', 'Peña Rodríguez', 'Femenino', '2003-12-11', '', 'e110', 5, 5, 12),
+(11, 'e-00011', 'Ana', 'Martínez', 'Femenino', '2001-03-15', '', 'e111', 6, 6, 11),
+(12, 'e-00012', 'Luis', 'García', 'Masculino', '1999-06-21', '', 'e112', 1, 1, 13),
+(13, 'e-00013', 'Marta', 'Fernández', 'Femenino', '2000-08-30', '', 'e113', 6, 6, 15),
+(14, 'e-00014', 'Carlos', 'López', 'Masculino', '2002-11-05', '', 'e114', 6, 6, 18),
+(15, 'e-00015', 'Sofía', 'Gómez', 'Femenino', '2003-12-18', '', 'e115', 6, 6, 20),
+(16, 'e-00016', 'Jorge', 'Sánchez', 'Masculino', '1998-02-25', '', 'e116', 2, 2, 22),
+(17, 'e-00017', 'Laura', 'Martínez', 'Femenino', '2004-04-10', '', 'e117', 2, 2, 25),
+(18, 'e-00018', 'Pedro', 'Ramírez', 'Masculino', '2002-07-22', '', 'e118', 2, 2, 27),
+(19, 'e-00019', 'Isabel', 'Hernández', 'Femenino', '2001-09-14', '', 'e119', 2, 2, 29),
+(20, 'e-00020', 'Felipe', 'Morales', 'Masculino', '2000-10-30', '', 'e120', 2, 2, 30),
+(21, 'e-00021', 'Catalina', 'Cano', 'Femenino', '2003-01-05', '', 'e121', 3, 3, 21),
+(22, 'e-00022', 'Antonio', 'Gómez', 'Masculino', '2002-03-18', '', 'e122', 3, 3, 23),
+(23, 'e-00023', 'Elena', 'Castro', 'Femenino', '1999-05-27', '', 'e123', 3, 3, 24),
+(24, 'e-00024', 'Alejandro', 'Ramírez', 'Masculino', '2000-07-15', '', 'e124', 3, 3, 26),
+(25, 'e-00025', 'Patricia', 'Mendoza', 'Femenino', '2001-09-04', '', 'e125', 3, 3, 28),
+(26, 'e-00026', 'Manuel', 'Serrano', 'Masculino', '1999-02-20', '', 'e126', 1, 1, 10),
+(27, 'e-00027', 'Victoria', 'Álvarez', 'Femenino', '2000-04-25', '', 'e127', 1, 1, 14),
+(28, 'e-00028', 'Julio', 'Paredes', 'Masculino', '2001-06-30', '', 'e128', 1, 1, 16),
+(29, 'e-00029', 'Natalia', 'Mora', 'Femenino', '2003-08-15', '', 'e129', 1, 1, 17),
+(30, 'e-00030', 'Diego', 'Velasco', 'Masculino', '2002-10-12', '', 'e130', 6, 6, 19);
 
 -- --------------------------------------------------------
 
@@ -664,7 +665,7 @@ CREATE TABLE `planificacion` (
   `id_curso` int(5) NOT NULL,
   `id_asignatura` int(5) NOT NULL,
   `periodo` varchar(20) NOT NULL,
-  `archivo` longblob NOT NULL
+  `archivo` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -676,6 +677,7 @@ CREATE TABLE `planificacion` (
 CREATE TABLE `profesores` (
   `id_profesor` int(5) NOT NULL,
   `id_asignatura` int(5) NOT NULL,
+  `matricula` varchar(7) COLLATE utf8mb4_spanish_ci NOT NULL,
   `nombre` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
   `apellidos` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
   `fecha_nacimiento` date NOT NULL,
@@ -683,21 +685,22 @@ CREATE TABLE `profesores` (
   `telefono` char(12) COLLATE utf8mb4_spanish_ci NOT NULL,
   `cedula` char(13) COLLATE utf8mb4_spanish_ci NOT NULL,
   `direccion` text COLLATE utf8mb4_spanish_ci NOT NULL,
-  `imagen_perfil` varchar(300) COLLATE utf8mb4_spanish_ci NOT NULL
+  `imagen_perfil` varchar(300) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `contraseña` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `profesores`
 --
 
-INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `nombre`, `apellidos`, `fecha_nacimiento`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`) VALUES
-(1, 3, 'Eduardo Rafael', 'Rodríguez Domínguez', '1968-08-02', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30', '0'),
-(2, 1, 'Hanyi Gersi', 'Castillo', '1990-08-16', 'hanyigc@gmail.com', '829-633-5649', '130-6575967-6', 'Los Castillos, #21', '0'),
-(3, 5, 'Jose Luis Manuel', 'Alonzo', '1953-12-06', 'profjosealonzo@gmail.com', '829-55-6545', '046-2285963-6', 'Padre de Las Casas #30', '0'),
-(4, 6, 'Ruddys', 'Ferreras', '1950-12-10', 'ruddysf@gmail.com', '849-578-8489', '046-2596451-2', 'Villa Olímpica, Calle principal #2', '0'),
-(5, 7, 'Apolinar', 'Rivas Genao', '1960-04-15', 'apolinar@gmail.com', '829-565-3215', '130-5426315-6', 'La Barranquita, Avenida Olímpica, #12', '0'),
-(6, 4, 'Jose', 'De La Cruz', '1950-01-16', 'delacruz@gmail.com', '849-424-2424', '046-5526321-6', 'Las Colinas #05', '0'),
-(7, 2, 'Faustina', 'Rodriguez', '1979-05-04', 'fausrodriguez@gmail.com', '849-478-9863', '130-1548963-9', 'Los Jardines #40', '0');
+INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `matricula`, `nombre`, `apellidos`, `fecha_nacimiento`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`, `contraseña`) VALUES
+(1, 3, 'p-00001', 'Eduardo Rafael', 'Rodríguez Domínguez', '1968-08-02', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30', '0', 'p12345'),
+(2, 1, 'p-00002', 'Hanyi Gersi', 'Castillo', '1990-08-16', 'hanyigc@gmail.com', '829-633-5649', '130-6575967-6', 'Los Castillos, #21', '0', 'p23456'),
+(3, 5, 'p-00003', 'Jose Luis Manuel', 'Alonzo', '1953-12-06', 'profjosealonzo@gmail.com', '829-55-6545', '046-2285963-6', 'Padre de Las Casas #30', '0', 'p34567'),
+(4, 6, 'p-00004', 'Ruddys', 'Ferreras', '1950-12-10', 'ruddysf@gmail.com', '849-578-8489', '046-2596451-2', 'Villa Olímpica, Calle principal #2', '0', 'p45678'),
+(5, 7, 'p-00005', 'Apolinar', 'Rivas Genao', '1960-04-15', 'apolinar@gmail.com', '829-565-3215', '130-5426315-6', 'La Barranquita, Avenida Olímpica, #12', '0', 'p56789'),
+(6, 4, 'p-00006', 'Jose', 'De La Cruz', '1950-01-16', 'delacruz@gmail.com', '849-424-2424', '046-5526321-6', 'Las Colinas #05', '0', 'p61234'),
+(7, 2, 'p-00007', 'Faustina', 'Rodriguez', '1979-05-04', 'fausrodriguez@gmail.com', '849-478-9863', '130-1548963-9', 'Los Jardines #40', '0', 'p71234');
 
 -- --------------------------------------------------------
 
@@ -950,7 +953,7 @@ ALTER TABLE `horario`
 -- AUTO_INCREMENT de la tabla `planificacion`
 --
 ALTER TABLE `planificacion`
-  MODIFY `id_planificacion` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_planificacion` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de la tabla `profesores`
@@ -968,7 +971,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `tutor`
 --
 ALTER TABLE `tutor`
-  MODIFY `id_tutor` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_tutor` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -984,7 +987,8 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `asignatura`
 --
 ALTER TABLE `asignatura`
-  ADD CONSTRAINT `asignatura_ibfk_1` FOREIGN KEY (`id_asignatura`) REFERENCES `calificaciones` (`id_calificaciones`);
+  ADD CONSTRAINT `asignatura_ibfk_1` FOREIGN KEY (`id_asignatura`) REFERENCES `calificaciones` (`id_calificaciones`),
+  ADD CONSTRAINT `asignatura_ibfk_2` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`);
 
 --
 -- Filtros para la tabla `calificaciones`
