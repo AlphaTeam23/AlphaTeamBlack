@@ -19,12 +19,12 @@
 
     <main>
         <div class="iniciar_container">
-            <form id="loginForm">
+            <form action="/sesion" id="loginForm" method="POST">
                 <h2 class="titulo1">INICIO DE SESION</h2>
                 <input type="text" placeholder="Matrícula" name="matricula" autofocus id="user" required autocomplete="off" >
                 <img src="/static/imagenes/bx-fingerprint.svg"  alt="" class="imagen">
 
-                <input type="password" name="contra" id="contra" placeholder= "Contraseña" required maxlength="15" autocomplete="off" >
+                <input type="password" name="contraseña" id="contra" placeholder= "Contraseña" required maxlength="15" autocomplete="off" >
                 <img src="/static/imagenes/bx-lock-alt.svg" alt="" class="cont">
                 <button type="submit" class="access">Acceder</button>
             </form>
@@ -55,6 +55,6 @@
 
     </aside>
 
-    <script src="/static/js/script.js"></script>
+    <!-- <script src="/static/js/script.js"></script> -->
 </body>
 </html>

@@ -1,0 +1,48 @@
+# Página index
+@app.route('/')
+def iniciosesion():
+   session.clear()
+   return render_template('index.html')
+
+# LOGIN DE PAGINAS 
+@app.route('/sesion', methods=['POST'])
+def sesion():
+    matricula = request.form['matricula']
+    password = request.form['contraseña']
+
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM profesores WHERE matricula = %s', (matricula,))
+    profesor = cursor.fetchone()
+    if profesor:
+        if profesor[11] == password:
+            session['usuario_id'] = profesor[0]
+            session['role'] = 'profesor'
+            return redirect('/alphaTeam/profesor')
+
+
+# Redireccionar a home del profesor
+@app.route('/alphaTeam/profesor')
+def p_alphaTeam():
+
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    id_profe = session.get("usuario_id")
+    cursor.execute('SELECT * FROM profesores WHERE id_profesor = %s', (id_profe))
+    profe = cursor.fetchone()
+
+    return render_template('./profesor/p_alphaTeam.html', profe = profe)
+
+# Redireccionar a home del estudiante
+@app.route('/alphaTeam/estudiante')
+def e_alphaTeam():
+
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    id_estudiante = session.get("usuario_id")
+    cursor.execute('SELECT * FROM estudiante WHERE id_estudiante = %s', (id_estudiante))
+    estudiante = cursor.fetchone()
+
+    return render_template('./profesor/_alphaTeam.html', estudiante = estudiante)

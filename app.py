@@ -16,15 +16,83 @@ app.config['MYSQL_DATABASE_DB']='alphateam'
 # Iniciar mysql
 mysql.init_app(app)
 
-# Página index
 @app.route('/')
 def iniciosesion():
-   return render_template('index.html')
+    session.clear()
+    return render_template('index.html')
 
-# Redireccionar a profesor
+# LOGIN
+@app.route('/sesion', methods=['POST'])
+def sesion():
+    matricula = request.form['matricula']
+    password = request.form['contraseña']
+
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    
+    # LOGIN PROFESOR
+    cursor.execute('SELECT * FROM profesores WHERE matricula = %s', (matricula,))
+    profesor = cursor.fetchone()
+    
+    if profesor and profesor[11] == password:
+        session['usuario_id'] = profesor[0]
+        session['role'] = 'profesor'
+        cursor.close()
+        conn.close()
+        return redirect('/alphaTeam/profesor')
+
+    # LOGIN ESTUDIANTE
+    cursor.execute('SELECT * FROM estudiante WHERE matricula = %s', (matricula,))
+    estudiante = cursor.fetchone()
+
+    if estudiante and estudiante[7] == password:
+        session['usuario_id'] = estudiante[0]
+        session['role'] = 'estudiante'
+        cursor.close()
+        conn.close()
+        return redirect('/alphaTeam/estudiante')
+
+    # Usuario o contraseña incorrectos
+    cursor.close()
+    conn.close()
+    return redirect('/')
+
+
 @app.route('/alphaTeam/profesor')
 def p_alphaTeam():
-    return render_template('./profesor/p_alphaTeam.html')
+    if 'usuario_id' not in session or session.get('role') != 'profesor':
+        return redirect('/')
+    
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    id_profe = session.get("usuario_id")
+    cursor.execute('SELECT * FROM profesores WHERE id_profesor = %s', (id_profe,))
+    profe = cursor.fetchone()
+    cursor.close()
+    conn.close()
+
+    if profe:
+        return render_template('./profesor/p_alphaTeam.html', profe=profe)
+    else:
+        return redirect('/')
+
+@app.route('/alphaTeam/estudiante')
+def e_alphaTeam():
+    if 'usuario_id' not in session or session.get('role') != 'estudiante':
+        return redirect('/')
+    
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    id_estudiante = session.get("usuario_id")
+    cursor.execute('SELECT * FROM estudiante WHERE id_estudiante = %s', (id_estudiante,))
+    estudiante = cursor.fetchone()
+    cursor.close()
+    conn.close()
+
+    if estudiante:
+        return render_template('./estudiante/e_alphaTeam.html', estudiante=estudiante)
+    else:
+        return redirect('/')
 
 
 
@@ -239,10 +307,10 @@ def p_cerrarsesion():
     return render_template('./index.html')
 
     
-# Redireccionar a estudiante
-@app.route('/alphaTeam/estudiante')
-def e_alphaTeam():
-    return render_template('./estudiante/e_alphaTeam.html')
+# # Redireccionar a estudiante
+# @app.route('/alphaTeam/estudiante')
+# def e_alphaTeam():
+#     return render_template('./estudiante/e_alphaTeam.html')
 
 @app.route('/alphaTeam/estudiante/calificaciones')
 def e_miscalificaciones():
