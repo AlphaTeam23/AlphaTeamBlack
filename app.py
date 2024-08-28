@@ -276,9 +276,51 @@ def e_miscalificaciones():
 def e_ayuda():
     return render_template('./estudiante/e_ayuda.html')
 
-@app.route('/alphaTeam/estudiante/reinscripcion')
+@app.route('/alphaTeam/estudiante/reinscripcion', methods=['GET', 'POST'])
 def e_reinscripcion():
-    return render_template('./estudiante/e_reinscripcion.html')
+    id_estudiante = request.args.get('id_estudiante', 1)  # Asumiendo id_estudiante = 1 por defecto si no se pasa como parámetro
+
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    if request.method == 'POST':
+        # Recoger los datos del formulario
+        direccion = request.form.get('direccion')
+        telefono = request.form.get('telefono')
+        tanda = request.form.get('tanda')
+
+        # Actualizar la información en la base de datos
+        cursor.execute("""
+            UPDATE tutor t
+            JOIN estudiante e ON t.id_tutor = e.id_tutor
+            SET t.direccion = %s, t.telefono = %s, e.id_curso = %s
+            WHERE e.id_estudiante = %s
+        """, (direccion, telefono, tanda, id_estudiante))
+
+        conn.commit()  # Guardar los cambios en la base de datos
+
+    # Obtener los datos del estudiante para mostrarlos en el formulario
+    cursor.execute("""
+        SELECT e.nombre_estudiante, e.apellidos, e.sexo_estudiante, e.nacimiento_estudiante,
+               t.telefono, t.parentesco, t.direccion, e.id_curso
+        FROM estudiante e
+        JOIN tutor t ON e.id_tutor = t.id_tutor
+        WHERE e.id_estudiante = %s
+    """, (id_estudiante,))
+    
+    estudiante = cursor.fetchone()
+    cursor.close()
+    conn.close()
+
+    if estudiante:
+        # Si la consulta devolvió resultados, continuamos
+        return render_template('./estudiante/e_reinscripcion.html', estudiante=estudiante)
+    else:
+        # Si no se encontró al estudiante, podrías redirigir o mostrar un error
+        return "Estudiante no encontrado", 404
+
+
+
 
 @app.route('/alphaTeam/estudiante/e_informaciondocente')
 def e_info_docente():
@@ -303,6 +345,9 @@ def e_reporte():
 @app.route('/alphaTeam/estudiante/usuario')
 def e_usuario():
     return render_template('./estudiante/e_usuario.html')
+
+
+
 
 @app.route('/alphaTeam/templates/cerrarsesion')
 def e_cerrarsesion():
