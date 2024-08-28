@@ -11,11 +11,10 @@
 <body>
     <header>
         <h1>ALPHA TEAM</h1>
-        <a href="e_alphaTeam.html">
+      
             <figure class="logo_pagina">
                 <img src="/static/imagenes/logo.png" alt="">
             </figure>
-        </a>
             <div class="regresar" id="back">
                 <figure>
                     <a href="javascript:history.back()">
@@ -26,15 +25,13 @@
     <main>
     <section class="inf_basica_estudiante">
         <h2>MI INFORMACIÓN BÁSICA PERSONAL</h2>
-        <form action="" id="imageUploadForm">
-            <figure class="estudiante-img">
-                <img src="/static/imagenes/usuario.svg" alt="" id="imagenPrevia">
-                <img src="/static/imagenes/bx-trash.svg" alt="" class="borrar">
-                <label for="imageInput"></label>
-                <input type="file" name="image" id="imageInput">
-                <button type="submit" id="uploadButton">Subir</button>
-            </figure>
-        </form>
+        <form action="/alphaTeam/estudiante/usuario" method="post" enctype="multipart/form-data">
+    <figure class="estudiante-img">
+        <img src="{{ imagen_url }}" alt="" id="imagenPrevia">
+        <input type="file" name="image" id="imageInput">
+        <button type="submit" id="uploadButton">Subir</button>
+    </figure>
+</form>
         <div class="titinfo">
             <h4>Nombre</h4><img src="/static/imagenes/bx-user copy.svg" alt="">
             <p>Carlos</p>

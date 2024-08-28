@@ -13,11 +13,10 @@
 <body>
     <header>
         <h1>ALPHA TEAM </h1>
-        <a href="e_alphaTeam.html">
             <figure class="logo_pagina">
                 <img src="/static/imagenes/logo.png" alt="">
             </figure>
-        </a>
+       
 
         
 
@@ -73,7 +72,7 @@
 
     <div class="cout">
         <button class="menu">
-            <img src="/static/imagenes/bx-menu.svg" alt="">
+            <img src="/static/imagenes/estudiante.png" alt="">
         </button>
         <div class="content">
     
@@ -112,58 +111,41 @@
     <main>
         <section>
             <h4 class="inscribete">¡Reinscríbete ya!</h4>
-            <form class="reinscripcion">
-              <div class="datos_personales">
-                <label for="">Nombre</label>
-                <input type="text">
-                <label for="">Apellido</label>
-                <input type="text">
-                <label for="">Edad</label>
-                <input type="number">
-                <label for="">Sexo</label>
-                <select name="" id="">
-                    <option value="">Masculino</option>
-                    <option value="femenino">Femenino</option>
-                </select>
-                <label for="">Nacionalidad</label>
-                <select name="" id="">
-                    <option value="">Dominicano</option>
-                    <option value="">Extranjero</option>
-                </select>
-
-                <label for="email">Email</label>
-                <input type="email" id="email">
-                <label for="">Telefono de Casa</label>
-                <input type="number">
-                <label for="">Celular</label>
-                <input type="number">
-                <label for="">Tutor/a</label>
-                <input type="text">
-                <label for="">Parentesco</label>
-                <input type="text">
-                <label for="">Numero del Tutor</label>
-                <input type="number">
-               
-               
-
-                <label for="">direccion</label>
-                <input type="text">
-                <h4>Tanda</h4>
-
-                <div class="radio">
-                <label for="tanda">tanda</label>
-                <input type="radio" name="matutina" id="tanda">Matutino
-                <input type="radio" name="Vespertina" id="tanda">Vespertina
+            <form class="reinscripcion" method="POST">
+                <div class="datos_personales">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" value="{{ estudiante[0] }}" readonly>
+            
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" value="{{ estudiante[1] }}" readonly>
+            
+                    <label for="sexo">Sexo</label>
+                    <input type="text" name="sexo" value="{{ estudiante[2] }}" readonly>
+            
+                    <label for="nacimiento">Fecha de Nacimiento</label>
+                    <input type="text" name="nacimiento" value="{{ estudiante[3] }}" readonly>
+            
+                    <label for="telefono">Teléfono de Casa</label>
+                    <input type="text" name="telefono" value="{{ estudiante[4] }}">
+            
+                    <label for="parentesco">Parentesco</label>
+                    <input type="text" name="parentesco" value="{{ estudiante[5] }}" readonly>
+            
+                    <label for="direccion">Dirección</label>
+                    <input type="text" name="direccion" value="{{ estudiante[6] }}">
+            
+            
+                    <button type="submit" class="deshacer">Deshacer</button>
+                    <button type="submit" class="enviar_formulario">Enviar Formulario</button>
                 </div>
-                <button type="submit" class="deshacer">Deshacer</button>
-                <button type="submit" class="enviar_formulario">Enviar Formulario</button>
-              </div>
-              
-                </form>
+            </form>
+            
+            
                 <div class="conten-imag">
                     <img src="/static/imagenes/estudianteFormulario.png" alt="">
                    
                 </div>
         </section>
+       
     </main>
 </body>
