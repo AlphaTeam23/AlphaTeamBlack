@@ -10,41 +10,25 @@
 <body>
     <header>
         <h1>ALPHA TEAM</h1>
-                    <figure class="logo_pagina">
-                <img src="/static/imagenes/logo.png" alt="">
-            </figure>
-        </a>
-
+        <figure class="logo_pagina">
+            <img src="/static/imagenes/logo.png" alt="">
+        </figure>
         <nav> 
           <ul>
-  
               <li><img src="/static/imagenes/bxs-school(1).svg" alt="cursos">
-                  <a href="/alphaTeam/admin/cursos">ADMINISTRACION CURSOS
-              </a></li>
-  
+                  <a href="/alphaTeam/admin/cursos">ADMINISTRACION CURSOS</a></li>
               <li><img src="/static/imagenes/bxs-pencil.svg" alt="inscripcion">
-                  <a href="/alphaTeam/admin/inscripcion">INSCRIPCION
-              </a></li>
-  
-              <li> <img src="/static/imagenes/bxs-book-content.svg" alt="planificacion">
-                  <a href="/alphaTeam/admin/planificacion">PLANIFICACION DOCENTE
-              </a></li>
-  
+                  <a href="/alphaTeam/admin/inscripcion">INSCRIPCION</a></li>
+              <li><img src="/static/imagenes/bxs-book-content.svg" alt="planificacion">
+                  <a href="/alphaTeam/admin/planificacion">PLANIFICACION DOCENTE</a></li>
               <li><img src="/static/imagenes/bx-file.svg" alt="record">
-                  <a href="/alphaTeam/admin/recordnota">RECORD DE NOTAS   
-              </a></li>
-                  
-              
+                  <a href="/alphaTeam/admin/recordnota">RECORD DE NOTAS</a></li>
               <li><img src="/static/imagenes/bx-user.svg" alt="usuario">
-                  <a href="/alphaTeam/admin/usuarios">GESTION USUARIOS
-              </a></li> 
-  
+                  <a href="/alphaTeam/admin/usuarios">GESTION USUARIOS</a></li> 
               <li><img src="/static/imagenes/bxs-log-out.svg" alt="cerrar">
-                  <a href="/alphaTeam/templates/cerrarsesion">CERRAR SESION
-              </a></li>
-  
+                  <a href="/alphaTeam/templates/cerrarsesion">CERRAR SESION</a></li>
           </ul>
-          </nav>
+        </nav>
     </header>
     <main>
         <section>
@@ -52,38 +36,29 @@
                 <h4>BUSCAR CURSOS</h4>
             </div>
 
-
-<form>
+            <form method="GET" action="/alphaTeam/admin/cursos">
                 <fieldset class="barra4">
-                    <legend>Buscar  Cursos</legend>
+                    <legend>Buscar Cursos</legend>
                     <label class="curs" for="curso">Curso</label>
-                        <select name="curso" id="curso" required>
-                            <option value="">Seleccion un curso</option>
-                            <option value="1">1° Bachiller</option>
-                            <option value="2">2° Bachiller</option>
-                            <option value="3">3° Bachiller</option>
-                            <option value="4">4° Bachiller</option>
-                            <option value="5">5° Bachiller</option>
-                            <option value="6">6° Bachiller</option>
+                    <select name="curso" id="curso" required>
+                        <option value="">Selecciona un curso</option>
+                        <option value="1">1° Bachiller</option>
+                        <option value="2">2° Bachiller</option>
+                        <option value="3">3° Bachiller</option>
+                        <option value="4">4° Bachiller</option>
+                        <option value="5">5° Bachiller</option>
+                        <option value="6">6° Bachiller</option>
                     </select>
 
                     <label class="periodplan" for="period">Periodo</label>
                     <select name="period" id="period" required>
                         <option value="">- Elija un periodo -</option>
-                        <option value="">2022-2023</option>
-                        <option value="">2023-2024</option>
+                        <option value="2022-2023">2022-2023</option>
+                        <option value="2023-2024">2023-2024</option>
                     </select>
 
-                    <input type="button" class="btbuscarcurso" name="Buscar" value="Buscar">
-                   
-
+                    <input type="submit" class="btbuscarcurso" name="Buscar" value="Buscar">
                 </fieldset>
-
-                
-
-
-
-
             </form>
         </section>
     </main>
@@ -91,7 +66,7 @@
     <table class="datoscurs" border="1">
         <thead>
           <tr>
-            <th> ID Curso</th>
+            <th>ID Curso</th>
             <th>Curso</th>
             <th>Total Estudiante</th>
             <th>Ver Listado</th>
@@ -103,13 +78,10 @@
                 <td>{{ curso[0] }}</td>
                 <td>{{ curso[1] }}</td>
                 <td>{{ curso[2] }}</td>
-                <td> <a href="/alphaTeam/admin/estudiantes">Ver Estudiantes</a> </td>           
+                <td><a href="/alphaTeam/admin/estudiantes?id_curso={{ curso[0] }}">Ver Estudiantes</a></td>
               </tr>
             {% endfor %}
         </tbody>
     </table>
-      
-
-
 </body>
 </html>

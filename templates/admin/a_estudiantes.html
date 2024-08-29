@@ -13,35 +13,20 @@
         <figure class="logo_pagina">
             <img src="/static/imagenes/logo.png" alt="">
         </figure>
-        </a>
     <nav> 
           <ul>
-  
               <li><img src="/static/imagenes/bxs-school(1).svg" alt="cursos">
-                  <a href="/alphaTeam/admin/cursos">ADMINISTRACION CURSOS
-              </a></li>
-  
+                  <a href="/alphaTeam/admin/cursos">ADMINISTRACION CURSOS</a></li>
               <li><img src="/static/imagenes/bxs-pencil.svg" alt="inscripcion">
-                  <a href="/alphaTeam/admin/inscripcion">INSCRIPCION
-              </a></li>
-  
+                  <a href="/alphaTeam/admin/inscripcion">INSCRIPCION</a></li>
               <li> <img src="/static/imagenes/bxs-book-content.svg" alt="planificacion">
-                  <a href="/alphaTeam/admin/planificacion">PLANIFICACION DOCENTE
-              </a></li>
-  
+                  <a href="/alphaTeam/admin/planificacion">PLANIFICACION DOCENTE</a></li>
               <li><img src="/static/imagenes/bx-file.svg" alt="record">
-                  <a href="/alphaTeam/admin/recordnota">RECORD DE NOTAS   
-              </a></li>
-                  
-              
+                  <a href="/alphaTeam/admin/recordnota">RECORD DE NOTAS</a></li>
               <li><img src="/static/imagenes/bx-user.svg" alt="usuario">
-                  <a href="/alphaTeam/admin/usuarios">GESTION USUARIOS
-              </a></li> 
-  
+                  <a href="/alphaTeam/admin/usuarios">GESTION USUARIOS</a></li> 
               <li><img src="/static/imagenes/bxs-log-out.svg" alt="cerrar">
-                  <a href="/alphaTeam/templates/cerrarsesion">CERRAR SESION
-              </a></li>
-  
+                  <a href="/alphaTeam/templates/cerrarsesion">CERRAR SESION</a></li>
           </ul>
         </nav>
     </header>
@@ -61,16 +46,13 @@
                 </thead>
                 <tbody>
                     {% for estudiante in estudiantes %}
-                    
                     <tr>
                         <td>{{ estudiante[1] }}</td>
                         <td>{{ estudiante[2] }}</td>
                         <td>{{ estudiante[3] }}</td>
-                        <td>{{ estudiante[5] }}</td>
-                        <td>{{ estudiante[12] }} {{ estudiante[13] }}</td>
-                        <td>{{ estudiante[15] }}</td>
-
-                    
+                        <td>{{ estudiante[4] }}</td>
+                        <td>{{ estudiante[5] }} {{ estudiante[6] }}</td>
+                        <td>{{ estudiante[7] }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -78,6 +60,5 @@
         </div>
         </section>
     </main>
-    
 </body>
 </html>
