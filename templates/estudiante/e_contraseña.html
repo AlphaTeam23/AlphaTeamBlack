@@ -26,33 +26,39 @@
 
     <main class="cambio_contraseña">
         <h2>CAMBIO DE CONTRASEÑA</h2>
-        <form class="input_boton1" id="passwordForm">
-            <figure class="reset">
-                <img src="/static/imagenes/reset-password.png" alt="Reset Password">
-            </figure>
-        
-            <input type="password" id="oldPassword" class="botton1" placeholder="Contraseña Antigua" required maxlength="10" autofocus>
-            <div class="imagen1">
-                <img src="/static/imagenes/bx-lock-alt.svg" alt="Old Password">
-            </div>
-            <input type="password" id="newPassword" class="botton3" placeholder="Nueva Contraseña" required maxlength="10">
-            <div class="imagen2">
-                <img src="/static/imagenes/contrasena.png" alt="New Password">
-            </div>
-        
-            <br>
-            <input type="password" id="confirmPassword" class="botton2" placeholder="Confirmar Contraseña" required maxlength="10">
-            <div class="imagen">
-                <img src="/static/imagenes/confirmar.png" alt="Confirm Password">
-            </div>
-            <input type="submit" value="CAMBIAR CONTRASEÑA" class="enviar">
-        </form>
+      <form class="input_boton1" id="passwordForm" method="POST" action="/alphaTeam/estudiante/contraseña">
+        <figure class="reset">
+            <img src="/static/imagenes/reset-password.png" alt="Reset Password">
+        </figure>
+
+        <input type="password" id="oldPassword" name="oldPassword" class="botton1" placeholder="Contraseña Antigua" required maxlength="10" autofocus>
+        <div class="imagen1">
+            <img src="/static/imagenes/bx-lock-alt.svg" alt="Old Password">
+        </div>
+        <input type="password" id="newPassword" name="newPassword" class="botton3" placeholder="Nueva Contraseña" required maxlength="10">
+        <div class="imagen2">
+            <img src="/static/imagenes/contrasena.png" alt="New Password">
+        </div>
+
+        <br>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="botton2" placeholder="Confirmar Contraseña" required maxlength="10">
+        <div class="imagen">
+            <img src="/static/imagenes/confirmar.png" alt="Confirm Password">
+        </div>
+        <input type="submit" value="CAMBIAR CONTRASEÑA" class="enviar">
+    </form>
+
+    <!-- Mostrar el mensaje -->
+    {% if message %}
+    <p class="message">{{ message }}</p>
+    {% endif %}
+
     </main>
 
     
-        <script>
+        <!-- <script>
            
-           document.getElementById('passwordForm').addEventListener('submit', function (event) {
+             document.getElementById('passwordForm').addEventListener('submit', function (event) {
                     event.preventDefault();
 
                     var oldPassword = document.getElementById('oldPassword').value;
@@ -75,9 +81,9 @@
                     } else {
                         alert(mensaje);
                     }
-                });
+                });  
 
-        </script>
+        </script> -->
     
 </body>
 </html>

@@ -111,34 +111,37 @@
     <main>
         <section>
             <h4 class="inscribete">¡Reinscríbete ya!</h4>
-            <form class="reinscripcion" method="POST">
-                <div class="datos_personales">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" value="{{ estudiante[0] }}" readonly>
-            
-                    <label for="apellido">Apellido</label>
-                    <input type="text" name="apellido" value="{{ estudiante[1] }}" readonly>
-            
-                    <label for="sexo">Sexo</label>
-                    <input type="text" name="sexo" value="{{ estudiante[2] }}" readonly>
-            
-                    <label for="nacimiento">Fecha de Nacimiento</label>
-                    <input type="text" name="nacimiento" value="{{ estudiante[3] }}" readonly>
-            
-                    <label for="telefono">Teléfono de Casa</label>
-                    <input type="text" name="telefono" value="{{ estudiante[4] }}">
-            
-                    <label for="parentesco">Parentesco</label>
-                    <input type="text" name="parentesco" value="{{ estudiante[5] }}" readonly>
-            
-                    <label for="direccion">Dirección</label>
-                    <input type="text" name="direccion" value="{{ estudiante[6] }}">
-            
-            
-                    <button type="submit" class="deshacer">Deshacer</button>
-                    <button type="submit" class="enviar_formulario">Enviar Formulario</button>
-                </div>
-            </form>
+          <form class="reinscripcion" method="POST">
+    <div class="datos_personales">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" value="{{ estudiante[0] }}" readonly>
+        
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" value="{{ estudiante[1] }}" readonly>
+        
+        <label for="sexo">Sexo</label>
+        <input type="text" name="sexo" value="{{ estudiante[2] }}" readonly>
+        
+        <label for="nacimiento">Fecha de Nacimiento</label>
+        <input type="text" name="nacimiento" value="{{ estudiante[3] }}" readonly>
+        
+        <label for="telefono">Teléfono de Casa</label>
+        <input type="text" name="telefono" value="{{ estudiante[4] }}">
+        
+        <label for="parentesco">Parentesco</label>
+        <input type="text" name="parentesco" value="{{ estudiante[5] }}" readonly>
+        
+        <label for="direccion">Dirección</label>
+        <input type="text" name="direccion" value="{{ estudiante[6] }}">
+        
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" name="correo" value="{{ estudiante[7] }}">
+        
+        <button type="submit" class="deshacer">Deshacer</button>
+        <button type="submit" class="enviar_formulario">Enviar Formulario</button>
+    </div>
+</form>
+
             
             
                 <div class="conten-imag">
