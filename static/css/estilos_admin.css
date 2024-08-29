@@ -788,25 +788,24 @@ section {
 
 .referencia {
     top: 0px;
-    height: 20px;
     width: 8%;
- 
     padding: 5px;
     border-radius: 5px;
-    height: 20px;
+    height: 25px;
     font-family: miFuentePath;
     background-color: #fff;
-    
     font-size: 15px;
-
-
-
-
     position: relative;
-  
- 
     border: none;
+    right: 20px;
 }
+
+.e {
+    margin-left: 20px;
+    padding: -100px;
+
+}
+
 
 .estudiantes {
     
