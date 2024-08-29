@@ -1,7 +1,14 @@
+# Incluir el framework Flask
 import os
 from flask import Flask
+
+# Importar la pantilla html. para guardar datos desde el formulario importamos request, redirect y session (variable de sesion)
 from flask import render_template, request,  url_for, redirect, session
+
+# Importar el enlace a base de datos MySQL
 from flaskext.mysql import MySQL
+
+# Importar controlador del tiempo
 from datetime import datetime
 
 app=Flask(__name__)
@@ -16,12 +23,12 @@ app.config['MYSQL_DATABASE_DB']='alphateam'
 # Iniciar mysql
 mysql.init_app(app)
 
+
 @app.route('/')
 def iniciosesion():
     session.clear()
     return render_template('index.html')
 
-# LOGIN
 @app.route('/sesion', methods=['POST'])
 def sesion():
     matricula = request.form['matricula']
@@ -29,11 +36,11 @@ def sesion():
 
     conn = mysql.connect()
     cursor = conn.cursor()
-    
+
     # LOGIN PROFESOR
     cursor.execute('SELECT * FROM profesores WHERE matricula = %s', (matricula,))
     profesor = cursor.fetchone()
-    
+
     if profesor and profesor[11] == password:
         session['usuario_id'] = profesor[0]
         session['role'] = 'profesor'
@@ -51,49 +58,36 @@ def sesion():
         cursor.close()
         conn.close()
         return redirect('/alphaTeam/estudiante')
+    
+    # LOGIN ADMINISTRADOR 
+    cursor.execute('SELECT * FROM administrador WHERE matricula = %s', (matricula,))
+    administrador = cursor.fetchone()
+
+    if administrador and administrador[10] == password:
+        session['usuario_id'] = administrador[0]
+        session['role'] = 'administrador'
+        cursor.close()
+        conn.close()
+        return redirect('/alphaTeam/admin')
 
     # Usuario o contraseña incorrectos
     cursor.close()
     conn.close()
-    return redirect('/')
+    # Redirigir al inicio de sesión con mensaje de error
+    return render_template('index.html', mensaje='Matrícula/Contraseña inválida')
 
 
+
+
+# Redireccionar a profesor
 @app.route('/alphaTeam/profesor')
 def p_alphaTeam():
-    if 'usuario_id' not in session or session.get('role') != 'profesor':
-        return redirect('/')
-    
-    conn = mysql.connect()
-    cursor = conn.cursor()
-    id_profe = session.get("usuario_id")
-    cursor.execute('SELECT * FROM profesores WHERE id_profesor = %s', (id_profe,))
-    profe = cursor.fetchone()
-    cursor.close()
-    conn.close()
+    return render_template('./profesor/p_alphaTeam.html')
 
-    if profe:
-        return render_template('./profesor/p_alphaTeam.html', profe=profe)
-    else:
-        return redirect('/')
-
+# Redireccionar a estudiante
 @app.route('/alphaTeam/estudiante')
 def e_alphaTeam():
-    if 'usuario_id' not in session or session.get('role') != 'estudiante':
-        return redirect('/')
-    
-    conn = mysql.connect()
-    cursor = conn.cursor()
-    id_estudiante = session.get("usuario_id")
-    cursor.execute('SELECT * FROM estudiante WHERE id_estudiante = %s', (id_estudiante,))
-    estudiante = cursor.fetchone()
-    cursor.close()
-    conn.close()
-
-    if estudiante:
-        return render_template('./estudiante/e_alphaTeam.html', estudiante=estudiante)
-    else:
-        return redirect('/')
-
+    return render_template('./estudiante/e_alphaTeam.html')
 
 
 # Página Alpha Team
