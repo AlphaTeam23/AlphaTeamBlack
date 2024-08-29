@@ -494,14 +494,14 @@ def inscripcion():
         id_estudiante = cursor.lastrowid
 
         # Generar la matrícula en el formato E-XXXXX
-        id_matricula = f'E-{id_estudiante:05d}'
+        matricula = f'E-{id_estudiante:05d}'
 
         # Actualizar el registro del estudiante con la matrícula generada
         cursor.execute("""
             UPDATE estudiante
-            SET id_matricula = %s
+            SET matricula = %s
             WHERE id_estudiante = %s
-        """, (id_matricula, id_estudiante))
+        """, (matricula, id_estudiante))
 
         # Inserción de datos en la tabla tutor
         cursor.execute("""
@@ -516,7 +516,7 @@ def inscripcion():
         cursor.close()
         conn.close()
 
-        return f"Inscripción guardada con éxito. Matrícula: {id_matricula}, Contraseña: {contraseña}"
+        return f"Inscripción guardada con éxito. Matrícula: {matricula}, Contraseña: {contraseña}"
     return render_template('inscripcion.html')
 
         
@@ -585,21 +585,21 @@ def a_usuarios():
         conn = mysql.connect()
         cursor = conn.cursor()
 
-        if tipo_usuario == '1':  # Administrador
+        if tipo_usuario == '1':  # Administrador "SELECT * FROM planificacion"
             cursor.execute("""
-                SELECT id_administrador, nombre, apellidos 
+                SELECT matricula, nombre, apellidos 
                 FROM administrador 
                 WHERE id_administrador = %s
             """, (id_usuario,))
         elif tipo_usuario == '2':  # Profesor
             cursor.execute("""
-                SELECT id_profesor, nombre, apellidos 
-                FROM profesor 
+                SELECT matricula, nombre, apellidos 
+                FROM profesores 
                 WHERE id_profesor = %s
             """, (id_usuario,))
         elif tipo_usuario == '3':  # Estudiante
             cursor.execute("""
-                SELECT id_estudiante, nombre, apellidos 
+                SELECT matricula, nombre_estudiante, apellidos
                 FROM estudiante 
                 WHERE id_estudiante = %s
             """, (id_usuario,))

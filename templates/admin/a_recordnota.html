@@ -6,6 +6,22 @@
     <title>Record De Notas</title>
     <link rel="stylesheet" href="/static/css/estilos_admin.css">
     <link rel="icon" href="/static/imagenes/logo.png">
+    <style>
+        /* Estilo para la ventana de impresión */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .printableArea, .printableArea * {
+                visibility: visible;
+            }
+            .printableArea {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    </style>
 </head>
 <body>
   <header>
@@ -46,66 +62,73 @@
           </div>
           
           <form method="POST" action="{{ url_for('a_recordnota') }}">
-    <fieldset class="barra3">
-        <legend>BUSCAR RECORD DE NOTA</legend>
+              <fieldset class="barra3">
+                  <legend>BUSCAR RECORD DE NOTA</legend>
 
-        <label class="mat" for="busqueda">MATRICULA</label>
-        <label class="e" for="e">E-</label>
-        
-        <input  name="busqueda" type="search" class="referencia" id="busqueda" placeholder="00001" required >
-
-        <input type="submit" class="btcargarrecord" name="cargar" value="Cargar">
-    </fieldset>
-</form>
+                  <label class="mat" for="busqueda">MATRICULA</label>
+                  <label class="e" for="e">E-</label>
+                  
+                  <input name="busqueda" type="search" class="referencia" id="busqueda" placeholder="00001" required>
+                  <input type="submit" class="btcargarrecord" name="cargar" value="Cargar">
+              </fieldset>
+          </form>
       </section>
   </main>
 
-  <table class="datosestudiante" border="1">
-    <thead>
-        <tr>
-            <th>NOMBRE:</th>
-            <td>{{ estudiante[2] }}</td>
-            <th>APELLIDO:</th>
-            <td>{{ estudiante[3] }}</td>
-            <th>MATRICULA:</th>
-            <td>{{ estudiante[1] }}</td>
-            <th>CURSO:</th>
-            <td>{{ estudiante[8] }}</td>
-            <th>PERIODO:</th>
-            <td>2023-2024</td>
-        </tr>
-    </thead>
-</table>
+  <div class="printableArea">
+      <table class="datosestudiante" border="1">
+          <thead>
+              <tr>
+                  <th>NOMBRE:</th>
+                  <td>{{ estudiante[2] }}</td>
+                  <th>APELLIDO:</th>
+                  <td>{{ estudiante[3] }}</td>
+                  <th>MATRICULA:</th>
+                  <td>{{ estudiante[1] }}</td>
+                  <th>CURSO:</th>
+                  <td>{{ estudiante[8] }}</td>
+                  <th>PERIODO:</th>
+                  <td>2023-2024</td>
+              </tr>
+          </thead>
+      </table>
 
-  <table class="datosrecord1" border="1">
-      <thead>
-          <tr>
-              <th>ASIGNATURA</th>
-              <th>Ago-Sept-Oct</th>
-              <th>Nov-Dic-Ene</th>
-              <th>Feb-Mar</th>
-              <th>Abr-May-Jun</th>
-              <th>Completivo</th>
-              <th>Extraordinario</th>
-              <th>C.F</th>
-          </tr>
-      </thead>
-      <tbody>
-          {% for calificacion in calificaciones %}
-          <tr>
-              <td>{{ calificacion[10] }}</td>
-              <td>{{ calificacion[3] }}</td>
-              <td>{{ calificacion[4] }}</td>
-              <td>{{ calificacion[5] }}</td>
-              <td>{{ calificacion[6] }}</td>
-              <td>{{ calificacion[7] }}</td>
-              <td>{{ calificacion[8] }}</td>
-              <td>{{ calificacion[9] }}</td>
-          </tr>
-          {% endfor %}
-      </tbody>
-  </table>
+      <table class="datosrecord1" border="1">
+          <thead>
+              <tr>
+                  <th>ASIGNATURA</th>
+                  <th>Ago-Sept-Oct</th>
+                  <th>Nov-Dic-Ene</th>
+                  <th>Feb-Mar</th>
+                  <th>Abr-May-Jun</th>
+                  <th>Completivo</th>
+                  <th>Extraordinario</th>
+                  <th>C.F</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for calificacion in calificaciones %}
+              <tr>
+                  <td>{{ calificacion[10] }}</td>
+                  <td>{{ calificacion[3] }}</td>
+                  <td>{{ calificacion[4] }}</td>
+                  <td>{{ calificacion[5] }}</td>
+                  <td>{{ calificacion[6] }}</td>
+                  <td>{{ calificacion[7] }}</td>
+                  <td>{{ calificacion[8] }}</td>
+                  <td>{{ calificacion[9] }}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+  </div>
 
-  <input type="button" class="imprimir" name="imprimir" value="Imprimir">
+  <input type="button" class="imprimir" name="imprimir" value="Imprimir" onclick="imprimirTabla()">
+
+  <script>
+      function imprimirTabla() {
+          window.print();
+      }
+  </script>
 </body>
 </html>
