@@ -797,13 +797,17 @@ section {
     font-size: 15px;
     position: relative;
     border: none;
-    right: 20px;
+    left: -20px;
 }
 
 .e {
     margin-left: 20px;
     padding: -100px;
 
+}
+
+.mat {
+    margin-left: 250px;
 }
 
 
