@@ -521,12 +521,20 @@ def a_planificacion():
 
     conn = mysql.connect() 
     cursor = conn.cursor()  
-    cursor.execute("SELECT * FROM planificacion")  
+    cursor.execute("SELECT p.id_curso, c.nivel, p.id_asignatura, a.nom_asignatura, p.periodo, p.archivo FROM planificacion p JOIN cursos c ON p.id_curso = c.id_curso JOIN asignatura a ON p.id_asignatura = a.id_asignatura")  
     planificacion = cursor.fetchall()  
     cursor.close()  
     conn.close()  
 
     return render_template('./admin/a_planificacion.html', planificacion = planificacion)
+
+
+
+    
+
+
+
+
 
 
 
@@ -579,7 +587,7 @@ def a_usuarios():
         conn = mysql.connect()
         cursor = conn.cursor()
 
-        if tipo_usuario == '1':  # Administrador "SELECT * FROM planificacion"
+        if tipo_usuario == '1':  # Administrador "
             cursor.execute("""
                 SELECT matricula, nombre, apellidos 
                 FROM administrador 
