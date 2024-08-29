@@ -574,20 +574,43 @@ def a_recordnota():
 
 
 
-@app.route('/alphaTeam/admin/usuarios')
+@app.route('/alphaTeam/admin/usuarios', methods=['GET', 'POST'])
 def a_usuarios():
     
-    conn = mysql.connect() 
-    cursor = conn.cursor()  
-    cursor.execute("SELECT * FROM usuarios")  
-    usuario = cursor.fetchall()  
-    cursor.close()  
-    conn.close()
+    usuario = []
+    if request.method == 'POST':
+        id_usuario = request.form.get('busqueda')  # Buscar ahora por ID
+        tipo_usuario = request.form.get('period')
+
+        conn = mysql.connect()
+        cursor = conn.cursor()
+
+        if tipo_usuario == '1':  # Administrador
+            cursor.execute("""
+                SELECT id_administrador, nombre, apellidos 
+                FROM administrador 
+                WHERE id_administrador = %s
+            """, (id_usuario,))
+        elif tipo_usuario == '2':  # Profesor
+            cursor.execute("""
+                SELECT id_profesor, nombre, apellidos 
+                FROM profesor 
+                WHERE id_profesor = %s
+            """, (id_usuario,))
+        elif tipo_usuario == '3':  # Estudiante
+            cursor.execute("""
+                SELECT id_estudiante, nombre, apellidos 
+                FROM estudiante 
+                WHERE id_estudiante = %s
+            """, (id_usuario,))
+
+        usuario = cursor.fetchall()
+
+        cursor.close()
+        conn.close()
     
-    
-    
-    
-    return render_template('./admin/a_usuarios.html', usuario = usuario)
+    return render_template('./admin/a_usuarios.html', usuario=usuario)
+
 
 @app.route('/alphaTeam/admin/estudiantes', methods=['GET', 'POST'])
 def a_estudiantes():
