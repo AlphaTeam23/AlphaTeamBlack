@@ -44,7 +44,7 @@
           <form method="POST" action="{{ url_for('a_usuarios') }}">
               <fieldset class="barra1">
                   <legend>BUSCAR USUARIO</legend>
-                  <label for="busqueda">MATRICULA</label>
+                  <label class="busc" for="busqueda">MATRICULA</label>
                   <input name="busqueda" type="search" class="referencia" id="busqueda" placeholder="00001" required>
                   <label for="period">Tipo Usuario</label>
                   <select name="period" id="period" required>
@@ -65,7 +65,6 @@
               <th>NOMBRE</th>
               <th>APELLIDO</th>
               <th>USUARIO</th>
-              <th>TIPO USUARIO</th>
               <th>RESET CLAVE</th>
           </tr>
       </thead>
@@ -75,8 +74,13 @@
                   <td>{{ usuario[0] }}</td>
                   <td>{{ usuario[1] }}</td>
                   <td>{{ usuario[2] }}</td>
-                  <td>{{ usuario[3] }}</td>
-                  <td>{{ usuario[4] }}</td>
+                  <td>{{ usuario[0] }}</td>
+                  <td>
+                    <form action="">
+                        <button type="submit">Reset Clave</button>
+                    </form>
+                  </td>
+
 
 
                   <!-- Añade aquí más datos si es necesario -->

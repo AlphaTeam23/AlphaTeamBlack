@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Usuario</title>
+</head>
+
+<body>
+    <h1>Crear Usuario</h1>
+    <form action="/alphaTeam/admin/a_crearusuario" method="POST" enctype="multipart/form-data">
+        <label for="tipo_usuario">Tipo de Usuario:</label>
+        <select id="tipo_usuario" name="tipo_usuario" required>
+            <option value="administrador">Administrador</option>
+            <option value="profesor">Profesor</option>
+        </select><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required><br><br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" required><br><br>
+
+        <label for="cedula">Cédula:</label>
+        <input type="text" id="cedula" name="cedula" required><br><br>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required><br><br>
+
+        <label for="imagen_perfil">Imagen de Perfil:</label>
+        <input type="file" id="imagen_perfil" name="imagen_perfil"><br><br>
+
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña"><br><br>
+
+        <button type="submit">Crear Usuario</button>
+    </form>
+</body>
+
+</html>

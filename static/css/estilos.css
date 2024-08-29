@@ -9,11 +9,6 @@
     src: url(../fuentes/Limelight-Regular.ttf);
 }
 
-@font-face {
-    font-family: miFuenteJust;
-    src: url(../fuentes/JustAnotherHand-Regular.ttf);
-}
-
  @font-face {
     font-family: miFuentePath;
     src: url(../fuentes/PathwayGothicOne-Regular.ttf);
@@ -220,6 +215,23 @@ h4 {
     background-color: #0077ffc0;
 }
 
+.mensaje-error {
+    color: #721c25;
+    background-color: #f8d7da;
+    border: 1px solid #a01b2888;
+    width: 31%;
+    padding: 10px;
+    top: -125px;
+    position: relative;
+    border-radius: 12px;
+    margin-left: 35%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
+.ocultar {
+    display: none;
+}
 
 /* Movil */ 
 @media  screen and (max-width: 1300px) {

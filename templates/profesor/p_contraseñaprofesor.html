@@ -48,34 +48,5 @@
             <input type="submit" value="CAMBIAR CONTRASEÑA" class="enviar">
         </form>
     </main>
-
-    <script>
-           
-           document.getElementById('passwordForm').addEventListener('submit', function (event) {
-                    event.preventDefault();
-
-                    var oldPassword = document.getElementById('oldPassword').value;
-                    var newPassword = document.getElementById('newPassword').value;
-                    var confirmPassword = document.getElementById('confirmPassword').value;
-
-                    var mensaje = '';
-
-                    if (oldPassword != "profesor123") {
-                        mensaje += 'Error: La contraseña antigua es incorrecta.\n';
-                    }
-
-                   
-                    if (newPassword !== confirmPassword) {
-                        mensaje += 'Error: La nueva contraseña y la confirmación no coinciden.\n';
-                    }
-
-                    if (mensaje === '') {
-                        alert('Contraseña cambiada exitosamente.');
-                    } else {
-                        alert(mensaje);
-                    }
-                });
-
-        </script>  
 </body>
 </html>

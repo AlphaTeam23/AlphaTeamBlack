@@ -150,6 +150,14 @@ input {
     font-size: 1px;
 }
 
+.busc {
+    margin-left: 160px;
+}
+
+.prof {
+    margin-left: 110px;
+}
+
 nav {
     position: relative;
     bottom: 49px;
@@ -215,6 +223,9 @@ li img {
     font-weight: normal;
 }
 
+.periodplan {
+    margin-left: 35px;
+}
 
 .tit_pagina {
     color: #fff;
@@ -315,11 +326,11 @@ td {
 
 .barra4 {
     position: absolute;
-    top: -427px;
+    top: -410px;
     left: -16px;
     transform: translate(-10%, -100%);
     width: 845px;
-    height: 68px;
+    height: 80px;
     padding: 1px;
     color: #fff;
 }
@@ -398,7 +409,7 @@ td {
 }
 
 .btbuscarplan {
-    top: -32px;
+    top: 5px;
     height: 20px;
     font-family: miFuentePath;
     background-color: #fff;
@@ -409,7 +420,7 @@ td {
     padding: 0;
     bottom: -60px;
     position: relative;
-    left: 760px;
+    left: 60px;
     color: #000;
     cursor: pointer;
     border: none;
@@ -427,7 +438,7 @@ td {
     padding: 0;
     bottom: -60px;
     position: relative;
-    left: 100px;
+    left: 50px;
     color: #000;
     cursor: pointer;
     border: none;
@@ -653,10 +664,14 @@ legend {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 237px;
+    top: 251px;
     left: 399px;
     height: 20px;
     width: 847px;
+}
+
+.curs{
+    margin-left: 120px;
 }
 
 .inscripcion {
@@ -873,7 +888,7 @@ section {
     background-color: #ffffff83;
     color: #0d0c0c;
     position: absolute;
-    top: 238px;
+    top: 252px;
     left: 400px;
     height: 20px;
     width: 847px;
