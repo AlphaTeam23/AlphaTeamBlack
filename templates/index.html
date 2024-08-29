@@ -19,13 +19,12 @@
 
     <main>
         <!-- Mostrar mensaje si el usuario o la contraseña son inválidos -->
-            <div class="mensaje-error">
-               {% if mensaje %}
-                    <div class="alert alert-danger" role="alert">
-                        <strong>{{ mensaje }}</strong>
-                    </div>
-                {% endif %}
-            </div>      
+        <div class="mensaje-error {% if not mensaje %} ocultar {% endif %}">
+            <div class="alert alert-danger" role="alert">
+                <strong>{{ mensaje }}</strong>
+            </div>
+        </div>
+
               
         <div class="iniciar_container">
             <form action="/sesion" id="loginForm" method="POST">

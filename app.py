@@ -27,7 +27,7 @@ mysql.init_app(app)
 @app.route('/')
 def iniciosesion():
     session.clear()
-    return render_template('index.html')
+    return render_template('index.html', mensaje=None)
 
 @app.route('/sesion', methods=['POST'])
 def sesion():
@@ -76,21 +76,12 @@ def sesion():
     # Redirigir al inicio de sesión con mensaje de error
     return render_template('index.html', mensaje='Matrícula/Contraseña inválida')
 
-
-
-
 # Redireccionar a profesor
 @app.route('/alphaTeam/profesor')
 def p_alphaTeam():
     return render_template('./profesor/p_alphaTeam.html')
 
-# Redireccionar a estudiante
-@app.route('/alphaTeam/estudiante')
-def e_alphaTeam():
-    return render_template('./estudiante/e_alphaTeam.html')
-
-
-# Página Alpha Team
+# Página Calificaciones 
 @app.route('/alphaTeam/profesor/calificaciones', methods=['GET', 'POST'])
 def p_calificaciones():
     curso_id = None
@@ -300,11 +291,10 @@ def p_contraseña():
 def p_cerrarsesion():
     return render_template('./index.html')
 
-    
-# # Redireccionar a estudiante
-# @app.route('/alphaTeam/estudiante')
-# def e_alphaTeam():
-#     return render_template('./estudiante/e_alphaTeam.html')
+# Redireccionar a estudiante
+@app.route('/alphaTeam/estudiante')
+def e_alphaTeam():
+    return render_template('./estudiante/e_alphaTeam.html')
 
 @app.route('/alphaTeam/estudiante/calificaciones')
 def e_miscalificaciones():
