@@ -397,14 +397,16 @@ def e_pago():
 def e_foto():
     return render_template('./estudiante/e_foto.html')
 
+
+
 @app.route('/alphaTeam/estudiante/contraseña', methods=['GET', 'POST'])
 def e_contraseña():
     message = None
 
     if request.method == 'POST':
-        old_password = request.form.get('oldPassword').encode('utf-8')
-        new_password = request.form.get('newPassword').encode('utf-8')
-        confirm_password = request.form.get('confirmPassword').encode('utf-8')
+        old_password = request.form.get('oldPassword')
+        new_password = request.form.get('newPassword')
+        confirm_password = request.form.get('confirmPassword')
 
         student_id = session.get('usuario_id', None)
 
@@ -414,27 +416,34 @@ def e_contraseña():
         if new_password != confirm_password:
             message = 'Las contraseñas nuevas no coinciden.'
         else:
-            connection = mysql.get_db()
+            connection = mysql.connect()
             cursor = connection.cursor()
 
+            # Obtiene la contraseña actual del estudiante
             cursor.execute('SELECT contraseña FROM estudiante WHERE id_estudiante = %s', (student_id,))
             student = cursor.fetchone()
 
             if student:
-                hashed_password = student[0].encode('utf-8')
-                if bcrypt.checkpw(old_password, hashed_password):
-                    new_hashed_password = bcrypt.hashpw(new_password, bcrypt.gensalt())
-                    cursor.execute('UPDATE estudiante SET contraseña = %s WHERE id_estudiante = %s', (new_hashed_password.decode('utf-8'), student_id))
+                current_password = student[0]
+                if old_password == current_password:
+                    # Actualiza la contraseña en la base de datos
+                    cursor.execute('UPDATE estudiante SET contraseña = %s WHERE id_estudiante = %s', (new_password, student_id))
                     connection.commit()
                     message = 'Contraseña actualizada exitosamente.'
                 else:
-                    message = 'Contraseña antigua incorrecta.'
+                    message = '.'
             else:
                 message = 'Estudiante no encontrado.'
 
             cursor.close()
+            connection.close()
 
     return render_template('./estudiante/e_contraseña.html', message=message)
+
+
+
+
+
 
 
 
