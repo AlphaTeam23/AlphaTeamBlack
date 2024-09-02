@@ -106,29 +106,33 @@
     <main class="calificaciones">
         <section class="seccion">
         <h2>MIS CALIFICACIONES</h2>
-            <table class="tabla">
-        <tr>
-            <th>ASIGNATURA</th>
-            <th>1P</th>
-            <th>2P</th>
-            <th>3P</th>
-            <th>4P</th>
-            <th>COMP</th>
-            <th>EXT</th>
-            <th>FINAL</th>
-        </tr>
-        {% for calificacion in calificaciones %}
-        <tr>
-            <td>{{ calificacion[0] }}</td>
-            <td>{{ calificacion[1] }}</td>
-            <td>{{ calificacion[2] }}</td>
-            <td>{{ calificacion[3] }}</td>
-            <td>{{ calificacion[4] }}</td>
-            <td>{{ calificacion[5] }}</td>
-            <td>{{ calificacion[6] }}</td>
-            <td>{{ calificacion[7] }}</td>
-        </tr>
-        {% endfor %}
+           <table border="1">
+        <thead>
+            <tr>
+                <th>Asignatura</th>
+                <th>Primer Periodo</th>
+                <th>Segundo Periodo</th>
+                <th>Tercer Periodo</th>
+                <th>Cuarto Periodo</th>
+                <th>Completivo</th>
+                <th>Extraordinario</th>
+                <th>Final</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for calificacion in calificaciones %}
+            <tr>
+                <td>{{ calificacion[0] }}</td>
+                <td>{{ calificacion[1] }}</td>
+                <td>{{ calificacion[2] }}</td>
+                <td>{{ calificacion[3] }}</td>
+                <td>{{ calificacion[4] }}</td>
+                <td>{{ calificacion[5] }}</td>
+                <td>{{ calificacion[6] }}</td>
+                <td>{{ calificacion[7] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
         </section>
     </main>

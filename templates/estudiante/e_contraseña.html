@@ -7,6 +7,9 @@
     <title>Cambio de contraseña</title>
     <link rel="stylesheet" href="/static/css/estudiante.css">
     <link rel="icon" href="/static/imagenes/icono_pagina.png">
+   
+
+    </script>
 </head>
 <body>
     <header class="cons">
@@ -26,58 +29,57 @@
 
     <main class="cambio_contraseña">
         <h2>CAMBIO DE CONTRASEÑA</h2>
-        <form class="input_boton1" id="passwordForm">
+        <form class="input_boton1" id="passwordForm" method="POST" action="/alphaTeam/estudiante/contraseña" onsubmit="return validateForm();">
             <figure class="reset">
                 <img src="/static/imagenes/reset-password.png" alt="Reset Password">
             </figure>
-        
-            <input type="password" id="oldPassword" class="botton1" placeholder="Contraseña Antigua" required maxlength="10" autofocus>
+    
+            <input type="password" id="oldPassword" name="oldPassword" class="botton1" placeholder="Contraseña Antigua" required maxlength="10" autofocus>
             <div class="imagen1">
                 <img src="/static/imagenes/bx-lock-alt.svg" alt="Old Password">
             </div>
-            <input type="password" id="newPassword" class="botton3" placeholder="Nueva Contraseña" required maxlength="10">
+            <input type="password" id="newPassword" name="newPassword" class="botton3" placeholder="Nueva Contraseña" required maxlength="10">
             <div class="imagen2">
                 <img src="/static/imagenes/contrasena.png" alt="New Password">
             </div>
-        
+    
             <br>
-            <input type="password" id="confirmPassword" class="botton2" placeholder="Confirmar Contraseña" required maxlength="10">
+            <input type="password" id="confirmPassword" name="confirmPassword" class="botton2" placeholder="Confirmar Contraseña" required maxlength="10">
             <div class="imagen">
                 <img src="/static/imagenes/confirmar.png" alt="Confirm Password">
             </div>
             <input type="submit" value="CAMBIAR CONTRASEÑA" class="enviar">
         </form>
+    
+        <!-- Mostrar el mensaje -->
+        {% if message %}
+        <p class="message">{{ message }}</p>
+        {% endif %}
     </main>
 
     
-        <script>
+         <script>
            
-           document.getElementById('passwordForm').addEventListener('submit', function (event) {
-                    event.preventDefault();
+            function validateForm() {
+                var oldPassword = document.getElementById('oldPassword').value;
+                var newPassword = document.getElementById('newPassword').value;
+                var confirmPassword = document.getElementById('confirmPassword').value;
+    
+                // Validación de las contraseñas
+                if (newPassword !== confirmPassword) {
+                    alert('Las contraseñas nuevas no coinciden.');
+                    return false; // Evita el envío del formulario
+                }
+    
+                if (oldPassword === '' || newPassword === '' || confirmPassword === '') {
+                    alert('Todos los campos son obligatorios.');
+                    return false; // Evita el envío del formulario
+                }
+    
+                return true; // Permite el envío del formulario
+            }
 
-                    var oldPassword = document.getElementById('oldPassword').value;
-                    var newPassword = document.getElementById('newPassword').value;
-                    var confirmPassword = document.getElementById('confirmPassword').value;
-
-                    var mensaje = '';
-
-                    if (oldPassword !== "estudiante") {
-                        mensaje += 'Error: La contraseña antigua es incorrecta.\n';
-                    }
-
-                   
-                    if (newPassword !== confirmPassword) {
-                        mensaje += 'Error: La nueva contraseña y la confirmación no coinciden.\n';
-                    }
-
-                    if (mensaje === '') {
-                        alert('Contraseña cambiada exitosamente.');
-                    } else {
-                        alert(mensaje);
-                    }
-                });
-
-        </script>
+        </script> 
     
 </body>
 </html>

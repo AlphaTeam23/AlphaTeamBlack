@@ -601,7 +601,7 @@ CREATE TABLE `estudiante` (
   `sexo_estudiante` varchar(9) NOT NULL,
   `nacimiento_estudiante` date NOT NULL,
   `imagen_perfil` varchar(300) NOT NULL,
-  `contraseña` varchar(30) NOT NULL,
+  `contraseña` varchar(60) NOT NULL,
   `id_curso` int(5) NOT NULL,
   `id_profesor` int(5) NOT NULL,
   `id_tutor` int(5) NOT NULL

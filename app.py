@@ -11,6 +11,9 @@ from flaskext.mysql import MySQL
 # Importar controlador del tiempo
 from datetime import datetime
 
+from werkzeug.utils import secure_filename
+
+
 app=Flask(__name__)
 app.secret_key="alphateam"
 
@@ -27,7 +30,7 @@ mysql.init_app(app)
 @app.route('/')
 def iniciosesion():
     session.clear()
-    return render_template('index.html')
+    return render_template('index.html', mensaje=None)
 
 @app.route('/sesion', methods=['POST'])
 def sesion():
@@ -76,21 +79,12 @@ def sesion():
     # Redirigir al inicio de sesión con mensaje de error
     return render_template('index.html', mensaje='Matrícula/Contraseña inválida')
 
-
-
-
 # Redireccionar a profesor
 @app.route('/alphaTeam/profesor')
 def p_alphaTeam():
     return render_template('./profesor/p_alphaTeam.html')
 
-# Redireccionar a estudiante
-@app.route('/alphaTeam/estudiante')
-def e_alphaTeam():
-    return render_template('./estudiante/e_alphaTeam.html')
-
-
-# Página Alpha Team
+# Página Calificaciones 
 @app.route('/alphaTeam/profesor/calificaciones', methods=['GET', 'POST'])
 def p_calificaciones():
     curso_id = None
@@ -183,6 +177,8 @@ def p_calificaciones():
             return redirect(url_for('p_calificaciones'))
 
     return render_template('./profesor/p_calificaciones.html', estudiantes=estudiantes, selected_curso=curso_id, selected_asignatura=asignatura_id, selected_periodo=periodo)
+
+
 
 
 
@@ -288,30 +284,132 @@ def p_foto():
 def p_reportar():
     return render_template('./profesor/p_reportar_problema.html')
 
-@app.route('/alphaTeam/profesor/usuario')
-def p_usuario():
-    return render_template('./profesor/p_usuarioprofesor.html')
+@app.route('/alphaTeam/profesor/usuario', methods=['GET'])
+def p_profesor():
+    if 'usuario_id' not in session:
+        return redirect(url_for('login'))
 
-@app.route('/alphaTeam/profesor/contraseña')
+    usuario_id = session['usuario_id']
+
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    query = """
+        SELECT nombre, apellidos, correo, direccion, imagen_perfil
+        FROM profesores
+        WHERE id_profesor = %s
+    """
+    cursor.execute(query, (usuario_id,))
+    profesor = cursor.fetchone()
+    cursor.close()
+    conn.close()
+
+    if profesor:
+        profesor_dict = {
+            'nombre': profesor[0],
+            'apellidos': profesor[1],
+            'correo': profesor[2],
+            'direccion': profesor[3],
+            'imagen_perfil': profesor[4]
+        }
+        return render_template('./profesor/p_usuarioprofesor.html', profesor=profesor_dict)
+    else:
+        return render_template('p_usuarioprofesor.html', profesor=None)
+
+
+UPLOAD_FOLDER = 'static/upload_image'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+@app.route('/upload_image', methods=['POST'])
+def upload_image():
+    if 'usuario_id' not in session:
+        return redirect(url_for('login'))
+
+    file = request.files.get('image')
+    if not file:
+        return redirect(url_for('p_profesor', error='No se ha seleccionado ningún archivo'))
+
+    if file.filename == '':
+        return redirect(url_for('p_profesor', error='No se ha seleccionado ningún archivo'))
+
+    filename = secure_filename(file.filename)
+    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    file.save(file_path)
+
+    # Verificar si el archivo se guardó correctamente
+    if not os.path.isfile(file_path):
+        return redirect(url_for('p_profesor', error='Error al guardar el archivo'))
+
+    # Inserta la ruta de la imagen en la base de datos
+    usuario_id = session['usuario_id']
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    # Actualiza la base de datos con el nombre del archivo
+    cursor.execute('UPDATE profesores SET imagen_perfil = %s WHERE id_profesor = %s', (filename, usuario_id))
+    conn.commit()
+
+    cursor.close()
+    conn.close()
+
+    return redirect(url_for('p_profesor'))
+
+@app.route('/alphaTeam/profesor/contraseña', methods=['GET', 'POST'])
 def p_contraseña():
+    mensaje = None
+    if request.method == 'POST':
+        old_password = request.form['oldPassword']
+        new_password = request.form['newPassword']
+        confirm_password = request.form['confirmPassword']
+
+        # Verificar si las contraseñas nuevas coinciden
+        if new_password != confirm_password:
+            mensaje = "Las contraseñas nuevas no coinciden"
+            return render_template('./profesor/p_contraseñaprofesor.html', mensaje=mensaje)
+
+        # Conectar a la base de datos
+        conn = mysql.connect()
+        cursor = conn.cursor()
+
+        # Verificar la contraseña actual
+        cursor.execute('SELECT contraseña FROM profesores WHERE id_profesor = %s', (session['usuario_id'],))
+        profesor = cursor.fetchone()
+
+        if profesor and profesor[0] == old_password:
+            # Actualizar la contraseña en la base de datos
+            cursor.execute('UPDATE profesores SET contraseña = %s WHERE id_profesor = %s', (new_password, session['usuario_id']))
+            conn.commit()
+            mensaje = "Contraseña cambiada exitosamente"
+        else:
+            mensaje = "La contraseña antigua es incorrecta"
+
+        cursor.close()
+        conn.close()
+
+        return render_template('./profesor/p_contraseñaprofesor.html', mensaje=mensaje)
+
     return render_template('./profesor/p_contraseñaprofesor.html')
 
 @app.route('/alphaTeam/templates/cerrarsesion')
 def p_cerrarsesion():
     return render_template('./index.html')
 
-    
-# # Redireccionar a estudiante
-# @app.route('/alphaTeam/estudiante')
-# def e_alphaTeam():
-#     return render_template('./estudiante/e_alphaTeam.html')
+# Redireccionar a estudiante
+@app.route('/alphaTeam/estudiante')
+def e_alphaTeam():
+    return render_template('./estudiante/e_alphaTeam.html')
 
 @app.route('/alphaTeam/estudiante/calificaciones')
 def e_miscalificaciones():
+    estudiante_id = session.get('usuario_id')  
+
+    if not estudiante_id:
+        return "No se ha encontrado el ID del estudiante en la sesión", 404
+
+   
     conn = mysql.get_db()
     cursor = conn.cursor()
 
-    # Consulta SQL para obtener las calificaciones
+    
     query = '''
         SELECT a.nom_asignatura, 
                c.primer_periodo, 
@@ -325,14 +423,14 @@ def e_miscalificaciones():
         JOIN asignatura a ON c.id_asignatura = a.id_asignatura
         WHERE c.id_estudiante = %s
     '''
-    estudiante_id = 1  # Cambia esto al ID del estudiante actual
+    
     cursor.execute(query, (estudiante_id,))
     calificaciones = cursor.fetchall()
 
     cursor.close()
-    conn.close()
 
     return render_template('estudiante/e_miscalificaciones.html', calificaciones=calificaciones)
+
 
 @app.route('/alphaTeam/estudiante/ayuda')
 def e_ayuda():
@@ -340,7 +438,7 @@ def e_ayuda():
 
 @app.route('/alphaTeam/estudiante/reinscripcion', methods=['GET', 'POST'])
 def e_reinscripcion():
-    id_estudiante = request.args.get('id_estudiante', 1)  # Asumiendo id_estudiante = 1 por defecto si no se pasa como parámetro
+    id_estudiante = session.get('usuario_id') 
 
     conn = mysql.connect()
     cursor = conn.cursor()
@@ -349,22 +447,22 @@ def e_reinscripcion():
         # Recoger los datos del formulario
         direccion = request.form.get('direccion')
         telefono = request.form.get('telefono')
-        tanda = request.form.get('tanda')
+        correo = request.form.get('correo')
 
         # Actualizar la información en la base de datos
         cursor.execute("""
             UPDATE tutor t
             JOIN estudiante e ON t.id_tutor = e.id_tutor
-            SET t.direccion = %s, t.telefono = %s, e.id_curso = %s
+            SET t.direccion = %s, t.telefono = %s, t.correo = %s
             WHERE e.id_estudiante = %s
-        """, (direccion, telefono, tanda, id_estudiante))
+        """, (direccion, telefono, correo, id_estudiante))
 
-        conn.commit()  # Guardar los cambios en la base de datos
+        conn.commit()  
 
     # Obtener los datos del estudiante para mostrarlos en el formulario
     cursor.execute("""
         SELECT e.nombre_estudiante, e.apellidos, e.sexo_estudiante, e.nacimiento_estudiante,
-               t.telefono, t.parentesco, t.direccion, e.id_curso
+               t.telefono, t.parentesco, t.direccion, t.correo
         FROM estudiante e
         JOIN tutor t ON e.id_tutor = t.id_tutor
         WHERE e.id_estudiante = %s
@@ -384,6 +482,8 @@ def e_reinscripcion():
 
 
 
+
+
 @app.route('/alphaTeam/estudiante/e_informaciondocente')
 def e_info_docente():
     return render_template('./estudiante/e_informaciondocente.html')
@@ -396,17 +496,53 @@ def e_pago():
 def e_foto():
     return render_template('./estudiante/e_foto.html')
 
-@app.route('/alphaTeam/estudiante/contraseña')
+
+
+@app.route('/alphaTeam/estudiante/contraseña', methods=['GET', 'POST'])
 def e_contraseña():
-    return render_template('./estudiante/e_contraseña.html')
+    message = None
 
-@app.route('/alphaTeam/estudiante/reporte')
-def e_reporte():
-    return render_template('./estudiante/e_reportarproblema.html')
+    if request.method == 'POST':
+        old_password = request.form.get('oldPassword')
+        new_password = request.form.get('newPassword')
+        confirm_password = request.form.get('confirmPassword')
 
-@app.route('/alphaTeam/estudiante/usuario')
-def e_usuario():
-    return render_template('./estudiante/e_usuario.html')
+        student_id = session.get('usuario_id', None)
+
+        if student_id is None:
+            return redirect(url_for('index'))
+
+        if new_password != confirm_password:
+            message = 'Las contraseñas nuevas no coinciden.'
+        else:
+            connection = mysql.connect()
+            cursor = connection.cursor()
+
+            # Obtiene la contraseña actual del estudiante
+            cursor.execute('SELECT contraseña FROM estudiante WHERE id_estudiante = %s', (student_id,))
+            student = cursor.fetchone()
+
+            if student:
+                current_password = student[0]
+                if old_password == current_password:
+                    # Actualiza la contraseña en la base de datos
+                    cursor.execute('UPDATE estudiante SET contraseña = %s WHERE id_estudiante = %s', (new_password, student_id))
+                    connection.commit()
+                    message = 'Contraseña actualizada exitosamente.'
+                else:
+                    message = '.'
+            else:
+                message = 'Estudiante no encontrado.'
+
+            cursor.close()
+            connection.close()
+
+    return render_template('./estudiante/e_contraseña.html', message=message)
+
+
+
+
+
 
 
 

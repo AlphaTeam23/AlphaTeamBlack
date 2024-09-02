@@ -229,6 +229,9 @@ h4 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 
+.ocultar {
+    display: none;
+}
 
 /* Movil */ 
 @media  screen and (max-width: 1300px) {
