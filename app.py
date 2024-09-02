@@ -742,15 +742,6 @@ def a_planificacion():
     return render_template('./admin/a_planificacion.html', planificacion = planificacion)
 
 
-
-    
-
-
-
-
-
-
-
 @app.route('/alphaTeam/admin/recordnota', methods=['GET', 'POST'])
 def a_recordnota():
     calificaciones = []
@@ -838,6 +829,61 @@ def a_estudiantes():
     conn.close() 
     return render_template('./admin/a_estudiantes.html', estudiantes = estudiantes)
 
+@app.route('/alphaTeam/admin/crearusuarios', methods=['GET', 'POST'])
+def a_crearusuarios():
+    if request.method == 'POST':
+        # Procesar el formulario
+        nombre = request.form.get('nomt')
+        apellidos = request.form.get('apet')
+        cedula = request.form.get('cedula', '')
+        telefono = request.form.get('telefono', '')
+        correo = request.form.get('correo', '')
+        fecha_nacimiento = request.form.get('nacimiento', '')
+        direccion = request.form.get('direccion')
+        contraseña = request.form.get('contraseña', '12345')  # Valor predeterminado para la contraseña
+        tipo_usuario = request.form.get('tipousuario')
+
+        if not all([nombre, apellidos, tipo_usuario]):  # Validar campos esenciales
+            return "Faltan campos requeridos.", 400
+
+        # Crear una conexión a la base de datos
+        conn = mysql.connect()
+        cursor = conn.cursor()
+
+        # Obtener el último ID de usuario para generar la matrícula
+        if tipo_usuario == 'administrador':
+            cursor.execute('SELECT MAX(id_administrador) FROM administrador')
+            last_id = cursor.fetchone()[0]
+            next_id = 1 if last_id is None else last_id + 1
+            matricula = f'A-{next_id:05d}'
+            cursor.execute('''
+                INSERT INTO administrador (matricula, nombre, apellidos, cedula, telefono, correo, fecha_nacimiento, direccion, contraseña)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ''', (matricula, nombre, apellidos, cedula, telefono, correo, fecha_nacimiento, direccion, contraseña))
+        
+        elif tipo_usuario == 'profesor':
+            cursor.execute('SELECT MAX(id_profesor) FROM profesores')
+            last_id = cursor.fetchone()[0]
+            next_id = 1 if last_id is None else last_id + 1
+            matricula = f'P-{next_id:05d}'
+            cursor.execute('''
+                INSERT INTO profesores (matricula, nombre, apellidos, cedula, telefono, correo, fecha_nacimiento, direccion, contraseña)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ''', (matricula, nombre, apellidos, cedula, telefono, correo, fecha_nacimiento, direccion, contraseña))
+        
+        else:
+            return "Tipo de usuario no válido.", 400
+
+        # Guardar cambios
+        conn.commit()
+        conn.close()
+
+        return f"Usuario creado con éxito. Matrícula: {matricula}"
+
+    return render_template('admin/a_crearusuario.html')
+
+
+    
 @app.route('/alphaTeam/templates/cerrarsesion')
 def p_cerrar():
     session.clear()
