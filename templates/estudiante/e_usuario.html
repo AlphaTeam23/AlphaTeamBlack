@@ -25,24 +25,28 @@
     <main>
     <section class="inf_basica_estudiante">
         <h2>MI INFORMACIÓN BÁSICA PERSONAL</h2>
-        <form action="/alphaTeam/estudiante/usuario" method="post" enctype="multipart/form-data">
-    <figure class="estudiante-img">
-        <img src="{{ imagen_url }}" alt="" id="imagenPrevia">
-        <input type="file" name="image" id="imageInput">
-        <button type="submit" id="uploadButton">Subir</button>
-    </figure>
-</form>
-        <div class="titinfo">
-            <h4>Nombre</h4><img src="/static/imagenes/bx-user copy.svg" alt="">
-            <p>Carlos</p>
-            <h4>Apellidos</h4><img src="/static/imagenes/bxs-user-detail.svg" alt="">
-            <p>Acosta Reyes</p>
-            <h4>Email</h4><img src="/static/imagenes/bx-envelope (1).svg" alt="">
-            <p>carlosareyes@gmail.com</p>
-            <h4>Género</h4><img src="/static/imagenes/bx-male-female.svg" alt="">
-            <p>Masculino</p>
-            <h4>Dirección</h4><img src="/static/imagenes/ubicacion.png" alt="">
-            <p class="direccion">Los Padros 1, Santiago de los Caballeros</p>
+         <form action="/alphaTeam/profesor/usuarioprofesor" method="POST" enctype="multipart/form-data" id="imageUploadForm">
+            <figure class="estudiante-img">
+                <img src="{{'/alphaTeam/profesor/usuarioprofesor'}}" alt="" id="imagenPrevia">
+                <img src="/static/imagenes/bx-trash.svg" alt="" class="borrar">
+                <label for="imageInput"></label>
+                <input type="file" name="image" id="imageInput">
+                <button type="submit" id="uploadButton">Subir</button>
+            </figure>
+        </form>
+<div class="titinfo">
+<h4>Nombre</h4><img src="/static/imagenes/bx-user copy.svg" alt="">
+<p>{{ estudiante.nombre if estudiante else 'No disponible' }}</p>
+
+<h4>Apellidos</h4><img src="/static/imagenes/bxs-user-detail.svg" alt="">
+<p>{{ estudiante.apellidos if estudiante else 'No disponible' }}</p>
+
+<h4>Género</h4><img src="/static/imagenes/bx-male-female.svg" alt="">
+<p>{{ estudiante.sexo_estudiante if estudiante else 'No disponible' }}</p>
+
+<h4>Dirección</h4><img src="/static/imagenes/ubicacion.png" alt="">
+<p class="direccion">{{ tutor.direccion if tutor else 'No disponible' }}</p>
+
         </div>
     </section>
     </main>
