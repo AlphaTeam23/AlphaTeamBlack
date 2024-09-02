@@ -856,6 +856,39 @@ summary {
     border: 1px solid #0077ff96;
 }
 
+/* ERROR C.ANTIGUA */
+.mensaje-error {
+    color: #721c25;
+    background-color: #f8d7da;
+    border: 1px solid #a01b2888;
+    width: 99%;
+    padding: 10px;
+    bottom: 460px;
+    position: relative;
+    border-radius: 12px;
+    margin-left: 1%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
+.mensaje-error2 {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+    width: 36%;
+    padding: 10px;
+    top: 60px;
+    position: relative;
+    border-radius: 12px;
+    margin-left: 33%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
+.ocultar {
+    display: none;
+}
+
 /* Boton de regresar */
 .regresar {
     display: flex;
@@ -1002,7 +1035,7 @@ summary {
     width: 500px;
     height: 300px;
     border-radius: 30px;
-    margin-top: -10px;
+    margin-top: 8px;
     display: flex;
     justify-content: center;  
     padding: 15px; 
@@ -1026,6 +1059,10 @@ summary {
     font-size: 16px;
     left: 30px;
     position: relative;
+}
+
+.reporte .report_ev:hover {
+    border: 1px solid #0077ff96;
 }
 
 #nombre::placeholder {

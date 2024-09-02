@@ -26,7 +26,7 @@ app.config['MYSQL_DATABASE_DB']='alphateam'
 # Iniciar mysql
 mysql.init_app(app)
 
-
+# Pagina Index
 @app.route('/')
 def iniciosesion():
     session.clear()
@@ -44,9 +44,11 @@ def sesion():
     cursor.execute('SELECT * FROM profesores WHERE matricula = %s', (matricula,))
     profesor = cursor.fetchone()
 
-    if profesor and profesor[11] == password:
+    if profesor and profesor[12] == password:
         session['usuario_id'] = profesor[0]
         session['role'] = 'profesor'
+        session['matricula'] = profesor[2]  # Suponiendo que la matrícula está en la posición 2
+        session['nombre'] = profesor[3]  # Suponiendo que el nombre está en la posición 3
         cursor.close()
         conn.close()
         return redirect('/alphaTeam/profesor')
@@ -58,10 +60,12 @@ def sesion():
     if estudiante and estudiante[7] == password:
         session['usuario_id'] = estudiante[0]
         session['role'] = 'estudiante'
+        session['matricula'] = estudiante[1]  # Suponiendo que la matrícula está en la posición 1
+        session['nombre'] = estudiante[2]  # Suponiendo que el nombre está en la posición 2
         cursor.close()
         conn.close()
         return redirect('/alphaTeam/estudiante')
-    
+
     # LOGIN ADMINISTRADOR 
     cursor.execute('SELECT * FROM administrador WHERE matricula = %s', (matricula,))
     administrador = cursor.fetchone()
@@ -76,12 +80,12 @@ def sesion():
     # Usuario o contraseña incorrectos
     cursor.close()
     conn.close()
-    # Redirigir al inicio de sesión con mensaje de error
     return render_template('index.html', mensaje='Matrícula/Contraseña inválida')
 
-# Redireccionar a profesor
 @app.route('/alphaTeam/profesor')
 def p_alphaTeam():
+    if 'usuario_id' not in session or session.get('role') != 'profesor':
+        return redirect('/')
     return render_template('./profesor/p_alphaTeam.html')
 
 # Página Calificaciones 
@@ -282,7 +286,39 @@ def p_foto():
 
 @app.route('/alphaTeam/profesor/reportar')
 def p_reportar():
+    if 'usuario_id' not in session:
+        return redirect('/')
     return render_template('./profesor/p_reportar_problema.html')
+
+@app.route('/alphaTeam/profesor/enviar_reporte', methods=['POST'])
+def enviar_reporte():
+    if 'usuario_id' not in session:
+        return redirect('/')
+
+    reporte = request.form.get('reportar')
+    if not reporte or reporte.strip() == "":
+        return render_template('./profesor/p_reportar_problema.html', mensaje="El reporte no puede estar vacío.")
+
+    matricula = session.get('matricula')
+    nombre = session.get('nombre')
+
+    if not matricula or not nombre:
+        return "Información del usuario no disponible", 404
+
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    # Insertar el reporte en la base de datos
+    query = "INSERT INTO reportes (matricula, nombre, reporte) VALUES (%s, %s, %s)"
+    values = (matricula, nombre, reporte)
+    cursor.execute(query, values)
+    conn.commit()
+    mensaje5 = "Reporte enviado con éxito"
+    cursor.close()
+    conn.close()
+
+    return render_template('./profesor/p_reportar_problema.html', mensaje5=mensaje5)
+
 
 @app.route('/alphaTeam/profesor/usuario', methods=['GET'])
 def p_profesor():
@@ -294,7 +330,7 @@ def p_profesor():
     conn = mysql.connect()
     cursor = conn.cursor()
     query = """
-        SELECT nombre, apellidos, correo, direccion, imagen_perfil
+        SELECT nombre, apellidos, correo, genero, direccion, imagen_perfil
         FROM profesores
         WHERE id_profesor = %s
     """
@@ -308,8 +344,9 @@ def p_profesor():
             'nombre': profesor[0],
             'apellidos': profesor[1],
             'correo': profesor[2],
-            'direccion': profesor[3],
-            'imagen_perfil': profesor[4]
+            'genero': profesor[3],
+            'direccion': profesor[4],
+            'imagen_perfil': profesor[5]
         }
         return render_template('./profesor/p_usuarioprofesor.html', profesor=profesor_dict)
     else:

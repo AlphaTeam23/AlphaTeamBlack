@@ -48,9 +48,13 @@
             <input type="submit" value="CAMBIAR CONTRASEÑA" class="enviar">
         </form>
         
-        {% if mensaje %}
-          <div class="mensaje">{{ mensaje }}</div>
-        {% endif %}
+      <div class="mensaje-error {% if not mensaje %} ocultar {% endif %}">
+            <div class="alert alert-danger" role="alert">
+                <strong>{{ mensaje }}</strong>
+            </div>
+        </div>
+
+        
         
     </main>
 </body>
