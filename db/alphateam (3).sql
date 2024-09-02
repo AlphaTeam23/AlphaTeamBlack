@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-08-2024 a las 23:40:14
+-- Tiempo de generación: 02-09-2024 a las 22:45:06
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -41,6 +41,13 @@ CREATE TABLE `administrador` (
   `imagen_perfil` blob,
   `contraseña` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`id_administrador`, `matricula`, `nombre`, `apellidos`, `fecha_nacimiento`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`, `contraseña`) VALUES
+(1, 'A00001', 'admin', 'administrador', '2023-11-08', 'josemiguelreyes03@gmail.com', '8293859649', '402256021414', 'Herradura', NULL, 'admin');
 
 -- --------------------------------------------------------
 
@@ -595,7 +602,7 @@ CREATE TABLE `estudiante` (
   `sexo_estudiante` varchar(9) COLLATE utf32_spanish2_ci NOT NULL,
   `nacimiento_estudiante` date NOT NULL,
   `imagen_perfil` varchar(300) COLLATE utf32_spanish2_ci NOT NULL,
-  `contraseña` varchar(30) COLLATE utf32_spanish2_ci NOT NULL,
+  `contraseña` varchar(60) COLLATE utf32_spanish2_ci NOT NULL,
   `id_curso` int(5) NOT NULL,
   `id_profesor` int(5) NOT NULL,
   `id_tutor` int(5) NOT NULL
@@ -688,6 +695,13 @@ CREATE TABLE `planificacion` (
   `archivo` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `planificacion`
+--
+
+INSERT INTO `planificacion` (`id_planificacion`, `id_curso`, `id_asignatura`, `periodo`, `archivo`) VALUES
+(60, 1, 1, '2024-2025', 'python redes (albiery).docx');
+
 -- --------------------------------------------------------
 
 --
@@ -701,6 +715,7 @@ CREATE TABLE `profesores` (
   `nombre` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
   `apellidos` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
   `fecha_nacimiento` date NOT NULL,
+  `genero` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
   `correo` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
   `telefono` char(12) COLLATE utf8mb4_spanish_ci NOT NULL,
   `cedula` char(13) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -713,14 +728,27 @@ CREATE TABLE `profesores` (
 -- Volcado de datos para la tabla `profesores`
 --
 
-INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `matricula`, `nombre`, `apellidos`, `fecha_nacimiento`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`, `contraseña`) VALUES
-(1, 3, 'p-00001', 'Eduardo Rafael', 'Rodríguez Domínguez', '1968-08-02', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30', '0', 'p12345'),
-(2, 1, 'p-00002', 'Hanyi Gersi', 'Castillo', '1990-08-16', 'hanyigc@gmail.com', '829-633-5649', '130-6575967-6', 'Los Castillos, #21', '0', 'p23456'),
-(3, 5, 'p-00003', 'Jose Luis Manuel', 'Alonzo', '1953-12-06', 'profjosealonzo@gmail.com', '829-55-6545', '046-2285963-6', 'Padre de Las Casas #30', '0', 'p34567'),
-(4, 6, 'p-00004', 'Ruddys', 'Ferreras', '1950-12-10', 'ruddysf@gmail.com', '849-578-8489', '046-2596451-2', 'Villa Olímpica, Calle principal #2', '0', 'p45678'),
-(5, 7, 'p-00005', 'Apolinar', 'Rivas Genao', '1960-04-15', 'apolinar@gmail.com', '829-565-3215', '130-5426315-6', 'La Barranquita, Avenida Olímpica, #12', '0', 'p56789'),
-(6, 4, 'p-00006', 'Jose', 'De La Cruz', '1950-01-16', 'delacruz@gmail.com', '849-424-2424', '046-5526321-6', 'Las Colinas #05', '0', 'p61234'),
-(7, 2, 'p-00007', 'Faustina', 'Rodriguez', '1979-05-04', 'fausrodriguez@gmail.com', '849-478-9863', '130-1548963-9', 'Los Jardines #40', '0', 'p71234');
+INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `matricula`, `nombre`, `apellidos`, `fecha_nacimiento`, `genero`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`, `contraseña`) VALUES
+(1, 3, 'p-00001', 'Eduardo Rafael', 'Rodríguez Domínguez', '1968-08-02', 'Masculino', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30', '0', 'maria'),
+(2, 1, 'p-00002', 'Hanyi Gersi', 'Castillo', '1990-08-16', 'Femenino', 'hanyigc@gmail.com', '829-633-5649', '130-6575967-6', 'Los Castillos, #21', '0', 'p23456'),
+(3, 5, 'p-00003', 'Jose Luis Manuel', 'Alonzo', '1953-12-06', 'Masculino', 'profjosealonzo@gmail.com', '829-55-6545', '046-2285963-6', 'Padre de Las Casas #30', '0', 'p34567'),
+(4, 6, 'p-00004', 'Ruddys', 'Ferreras', '1950-12-10', 'Masculino', 'ruddysf@gmail.com', '849-578-8489', '046-2596451-2', 'Villa Olímpica, Calle principal #2', '0', 'p45678'),
+(5, 7, 'p-00005', 'Apolinar', 'Rivas Genao', '1960-04-15', 'Masculino', 'apolinar@gmail.com', '829-565-3215', '130-5426315-6', 'La Barranquita, Avenida Olímpica, #12', '0', 'p56789'),
+(6, 4, 'p-00006', 'Jose', 'De La Cruz', '1950-01-16', 'Masculino', 'delacruz@gmail.com', '849-424-2424', '046-5526321-6', 'Las Colinas #05', '0', 'p61234'),
+(7, 2, 'p-00007', 'Faustina', 'Rodriguez', '1979-05-04', 'Femenino', 'fausrodriguez@gmail.com', '849-478-9863', '130-1548963-9', 'Los Jardines #40', '0', 'p71234');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reportes`
+--
+
+CREATE TABLE `reportes` (
+  `id_reporte` int(5) NOT NULL,
+  `matricula` varchar(7) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `reporte` varchar(5000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -908,6 +936,12 @@ ALTER TABLE `profesores`
   ADD KEY `id_asignatura` (`id_asignatura`);
 
 --
+-- Indices de la tabla `reportes`
+--
+ALTER TABLE `reportes`
+  ADD PRIMARY KEY (`id_reporte`);
+
+--
 -- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
@@ -934,7 +968,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `asignatura`
@@ -988,13 +1022,19 @@ ALTER TABLE `horario`
 -- AUTO_INCREMENT de la tabla `planificacion`
 --
 ALTER TABLE `planificacion`
-  MODIFY `id_planificacion` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id_planificacion` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `profesores`
 --
 ALTER TABLE `profesores`
   MODIFY `id_profesor` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `reportes`
+--
+ALTER TABLE `reportes`
+  MODIFY `id_reporte` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

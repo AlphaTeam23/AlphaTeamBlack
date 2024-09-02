@@ -26,13 +26,13 @@
     <main>
     <section class="inf_basica_profesor">
         <h2>MI INFORMACIÓN BÁSICA PERSONAL</h2>
-        <form action="{{ url_for('upload_image') }}" method="POST" enctype="multipart/form-data" id="imageUploadForm">
+        <form action="{{ url_for('upload_image') }}" method="POST" enctype="multipart/form-data" id="imageUploadForm1">
             <figure class="estudiante-img">
                 <img src="{{ url_for('static', filename='imagenes/' ~ (profesor.imagen_perfil if profesor and profesor.imagen_perfil else 'usuario.svg')) }}" alt="" id="imagenPrevia">
                 <img src="/static/imagenes/bx-trash.svg" alt="" class="borrar">
                 <label for="imageInput"></label>
                 <input type="file" name="image" id="imageInput">
-                <button type="submit" id="uploadButton">Subir</button>
+                <button type="submit" id="uploadButton1">Subir</button>
             </figure>
         </form>
         
@@ -53,7 +53,7 @@
     </main>
    
     <script>
-        document.getElementById('uploadButton').addEventListener('click', function(event) {
+        document.getElementById('uploadButton1').addEventListener('click', function(event) {
             event.preventDefault();
             const input = document.getElementById('imageInput');
             if (input.files && input.files[0]) {
@@ -68,12 +68,12 @@
                 
                 reader.readAsDataURL(file);
         
-                // Luego de previsualizar la imagen, envía el formulario
-                document.getElementById('imageUploadForm').submit();
+                
+                document.getElementById('imageUploadForm1').submit();
             }
         });
         
-        // Al cargar la página, verifica si hay una imagen en localStorage y la muestra
+        
         document.addEventListener('DOMContentLoaded', function() {
             const storedImage = localStorage.getItem('uploadedImage');
             if (storedImage) {
@@ -84,13 +84,13 @@
             }
         });
         
-        // Añade un evento de clic a la imagen de borrar para eliminar la foto
+      
         document.querySelector('.borrar').addEventListener('click', function() {
             localStorage.removeItem('uploadedImage');
             document.getElementById('imagenPrevia').src = '/static/imagenes/usuario.svg';
             alert("Se eliminó la imagen del perfil.");
         
-            // Aquí podrías agregar un código para eliminar la imagen de la base de datos si es necesario
+            
         });
         </script>
 </body>

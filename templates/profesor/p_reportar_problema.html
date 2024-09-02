@@ -25,17 +25,24 @@
     </header>
 
     <main>
-        <section class="reporte">
-            <h2><img src="/static/imagenes/pistas (2).png" alt="">INDICANOS CUAL ES TU PROBLEMA</h2>
-            
-            <form>
-                <label for="reportar"></label>
-                <textarea name="reportar" id="reportar" cols="30" rows="10" placeholder="Describe aquí tu problema"></textarea>
+         <main>
+     <!-- Mostrar mensaje si está disponible -->
+     <div class="mensaje-error2 {% if not mensaje5 %} ocultar {% endif %}">
+        <div class="alert alert-success" role="alert">
+            <strong>{{ mensaje5 }}</strong>
+        </div>
+    </div>
+</main>
 
-                <input type="submit" value="Borrar" class="report_ev">
-                <input type="submit" value="Enviar reporte" class="report_ev">
-                
-            </form>
+
+        <section class="reporte">
+            <h2><img src="/static/imagenes/pistas (2).png" alt="Pistas"> INDICANOS CUAL ES TU PROBLEMA</h2>
+            
+           <form action="{{ url_for('enviar_reporte') }}" method="post">
+    <textarea name="reportar" id="reportar" cols="30" rows="10" placeholder="Describe aquí tu problema" required></textarea>
+    <br>
+    <input type="submit" value="Enviar reporte" class="report_ev">
+</form>
         </section>
     </main>
 </body>

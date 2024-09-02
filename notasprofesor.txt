@@ -1,48 +1,58 @@
-# Página index
-@app.route('/')
-def iniciosesion():
-   session.clear()
-   return render_template('index.html')
+@app.route('/alphaTeam/profesor/contraseña', methods=['GET', 'POST'])
+def p_contraseña():
+    mensaje = None
+    if request.method == 'POST':
+        old_password = request.form['oldPassword']
+        new_password = request.form['newPassword']
+        confirm_password = request.form['confirmPassword']
 
-# LOGIN DE PAGINAS 
-@app.route('/sesion', methods=['POST'])
-def sesion():
-    matricula = request.form['matricula']
-    password = request.form['contraseña']
+        # Verificar si las contraseñas nuevas coinciden
+        if new_password != confirm_password:
+            mensaje1 = "Las contraseñas nuevas no coinciden"
+            return render_template('./profesor/p_contraseñaprofesor.html', mensaje1=mensaje1)
 
-    conn = mysql.connect()
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM profesores WHERE matricula = %s', (matricula,))
-    profesor = cursor.fetchone()
-    if profesor:
-        if profesor[11] == password:
-            session['usuario_id'] = profesor[0]
-            session['role'] = 'profesor'
-            return redirect('/alphaTeam/profesor')
+        # Conectar a la base de datos
+        conn = mysql.connect()
+        cursor = conn.cursor()
+
+        # Verificar la contraseña actual
+        cursor.execute('SELECT contraseña FROM profesores WHERE id_profesor = %s', (session['usuario_id'],))
+        profesor = cursor.fetchone()
+
+        if profesor and profesor[0] == old_password:
+            # Actualizar la contraseña en la base de datos
+            cursor.execute('UPDATE profesores SET contraseña = %s WHERE id_profesor = %s', (new_password, session['usuario_id']))
+            conn.commit()
+            mensaje2 = "Contraseña cambiada exitosamente"
+        else:
+            mensaje2 = "La contraseña antigua es incorrecta"
+
+        cursor.close()
+        conn.close()
+
+        return render_template('./profesor/p_contraseñaprofesor.html', mensaje2=mensaje2)
+
+    return render_template('./profesor/p_contraseñaprofesor.html')
 
 
-# Redireccionar a home del profesor
-@app.route('/alphaTeam/profesor')
-def p_alphaTeam():
+    codigo html
+     <!-- Mostrar mensaje si la contraseña antigua es inválida -->
+                <div class="mensaje-error2 {% if not mensaje %} ocultar {% endif %}">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>{{ mensaje2 }}</strong>
+                    </div>
+                </div>
 
-    conn = mysql.connect()
-    cursor = conn.cursor()
+        <!-- Mostrar mensaje si las contraseñas no coinciden -->
+        <div class="mensaje-error1 {% if not mensaje %} ocultar {% endif %}">
+            <div class="alert alert-danger" role="alert">
+                <strong>{{ mensaje1 }}</strong>
+            </div>
+        </div>
 
-    id_profe = session.get("usuario_id")
-    cursor.execute('SELECT * FROM profesores WHERE id_profesor = %s', (id_profe))
-    profe = cursor.fetchone()
-
-    return render_template('./profesor/p_alphaTeam.html', profe = profe)
-
-# Redireccionar a home del estudiante
-@app.route('/alphaTeam/estudiante')
-def e_alphaTeam():
-
-    conn = mysql.connect()
-    cursor = conn.cursor()
-
-    id_estudiante = session.get("usuario_id")
-    cursor.execute('SELECT * FROM estudiante WHERE id_estudiante = %s', (id_estudiante))
-    estudiante = cursor.fetchone()
-
-    return render_template('./profesor/_alphaTeam.html', estudiante = estudiante)
+        <!-- Mostrar mensaje si la contraseña se cambio exitosamente -->
+        <div class="mensaje-error5 {% if not mensaje %} ocultar {% endif %}">
+            <div class="alert alert-danger" role="alert">
+                <strong>{{ mensaje2 }}</strong>
+            </div>
+        </div>
