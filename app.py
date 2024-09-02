@@ -756,6 +756,7 @@ def a_estudiantes():
 def a_crearusuarios():
     if request.method == 'POST':
         # Procesar el formulario
+        id_asignatura = request.form.get('materia')
         nombre = request.form.get('nomt')
         apellidos = request.form.get('apet')
         cedula = request.form.get('cedula', '')
@@ -790,9 +791,9 @@ def a_crearusuarios():
             next_id = 1 if last_id is None else last_id + 1
             matricula = f'P-{next_id:05d}'
             cursor.execute('''
-                INSERT INTO profesores (matricula, nombre, apellidos, cedula, telefono, correo, fecha_nacimiento, direccion, contraseña)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-            ''', (matricula, nombre, apellidos, cedula, telefono, correo, fecha_nacimiento, direccion, contraseña))
+                INSERT INTO profesores (matricula, nombre, apellidos, cedula, telefono, correo, fecha_nacimiento, direccion, contraseña, id_asignatura)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ''', (matricula, nombre, apellidos, cedula, telefono, correo, fecha_nacimiento, direccion, contraseña, id_asignatura))
         
         else:
             return "Tipo de usuario no válido.", 400

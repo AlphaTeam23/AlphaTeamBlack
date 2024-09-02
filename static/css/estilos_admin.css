@@ -769,8 +769,16 @@ fieldset {
     margin-left: 40px;
 }
 
+.nacimiento {
+    margin-left: 40px;
+}
+
 .fechnac {
     margin-left: 80px;
+}
+
+.materia {
+    margin-left: 143px;
 }
 
 .contraseña {
@@ -797,6 +805,10 @@ fieldset {
 
 .direccion {
     margin-left: 40px;
+}
+
+.direccioninscripcion {
+    margin-left: 0px;
 }
 
 .inpparent {
