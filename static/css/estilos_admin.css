@@ -92,6 +92,7 @@ li a {
 
 
 
+
 li img {
    display: flex;
    justify-content: flex-start;
@@ -237,6 +238,8 @@ li img {
     font-size: 20px;
 }
 
+
+
 .tit_pagina h4 {
     font-weight: normal;
 }
@@ -305,6 +308,11 @@ td {
     color: #fff;
     font-weight: normal;
     font-family: miFuentePath;  
+}
+
+.inpfoto {
+    margin-right: 100px;
+    
 }
 
 .barra2 label {
@@ -426,6 +434,24 @@ td {
     border: none;
 }
 
+.btcrearusuario {
+    top: 0px;
+    height: 20px;
+    font-family: miFuentePath;
+    background-color: #fff;
+    font-size: 20px;
+    height: 23px;
+    width: 45px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -60px;
+    position: relative;
+    left: 50px;
+    color: #000;
+    cursor: pointer;
+    border: none;
+}
+
 .btbuscarcurso {
     top: 0px;
     height: 20px;
@@ -443,6 +469,9 @@ td {
     cursor: pointer;
     border: none;
 }
+
+
+
 
 .planificacion-completa {
     font-family: miFuentePath;
@@ -527,6 +556,25 @@ legend {
     bottom: -60px;
     position: relative;
     left: 230px;
+
+}
+
+.btguardarusuario {
+    top: 150px;
+    height: 20px;
+    font-family: miFuentePath;
+    background-color: #fff;
+    font-size: 20px;
+    height: 23px;
+    width: 100px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -60px;
+    position: relative;
+    left: 320px;
+    color: #000;
+    cursor: pointer;
+    border: none;
 
 }
 
@@ -718,11 +766,15 @@ fieldset {
 
 
 .nom, .sexoest, .nomt, .cedula, .correo, .ocupacion,  .calle {
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 .fechnac {
     margin-left: 80px;
+}
+
+.contraseña {
+    margin-left: 33px;
 }
 
 .cursos-adm {
@@ -744,7 +796,7 @@ fieldset {
 }
 
 .direccion {
-    margin-left: 0px;
+    margin-left: 40px;
 }
 
 .inpparent {
@@ -760,12 +812,20 @@ fieldset {
 }
 
 .inpfoto {
-    margin-left: 35px; 
+    margin-left: 53px; 
    
 }
 
 .inpnomt, .inpapet, .inpnumero {
     margin-left: 40px;
+}
+
+.telefono {
+    margin-left: 30px;
+}
+
+.apet {
+    margin-left: 30px;
 }
 
 .foto2x2 {
@@ -781,8 +841,14 @@ fieldset {
 }
 
 .inpdireccion {
-    margin-left: 37px;
+    margin-left: 30px;
 }
+
+.selectusuario {
+    margin-left: 40px;
+}
+
+
 
 .inscripcion input {
     height: 20px;
