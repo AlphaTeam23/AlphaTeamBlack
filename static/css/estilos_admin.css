@@ -453,22 +453,23 @@ td {
 }
 
 .btreportes {
-    top: -500px;
+    top: -620px;
     height: 20px;
     font-family: miFuentePath;
-    background-color: #fff;
+    background-color: #f0e6e646;
     font-size: 20px;
-    height: 23px;
-    width: 85px;
+    height: 25px;
+    width: 80px;
     border-radius: 5px;
     padding: 0;
     bottom: -60px;
     position: relative;
-    left: 1100px;
+    left: 1280px;
     color: #000;
     cursor: pointer;
     border: none;
 }
+
 
 .btbuscarcurso {
     top: 0px;
