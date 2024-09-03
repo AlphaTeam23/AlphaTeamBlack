@@ -452,6 +452,24 @@ td {
     border: none;
 }
 
+.btreportes {
+    top: -500px;
+    height: 20px;
+    font-family: miFuentePath;
+    background-color: #fff;
+    font-size: 20px;
+    height: 23px;
+    width: 85px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -60px;
+    position: relative;
+    left: 1100px;
+    color: #000;
+    cursor: pointer;
+    border: none;
+}
+
 .btbuscarcurso {
     top: 0px;
     height: 20px;
@@ -967,6 +985,20 @@ section {
     color: #0d0c0c;
     position: absolute;
     top: 252px;
+    left: 400px;
+    height: 20px;
+    width: 847px;
+    overflow: hidden;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+
+.datosreporte {
+    border-color: #979393;
+    background-color: #ffffff83;
+    color: #0d0c0c;
+    position: absolute;
+    top: 180px;
     left: 400px;
     height: 20px;
     width: 847px;

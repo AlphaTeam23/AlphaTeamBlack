@@ -906,9 +906,22 @@ def a_crearusuarios():
 
     return render_template('admin/a_crearusuario.html')
 
+@app.route('/alphaTeam/admin/reportes')
+def a_reportes():
+    
+    
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM reportes")
+    reporte = cursor.fetchall()
+    cursor.close()
+    conn.close()
+
+    return render_template('./admin/a_reportes.html', reporte = reporte)
+
     
 @app.route('/alphaTeam/templates/cerrarsesion')
-def p_cerrar():
+def a_cerrar():
     session.clear()
     return redirect('./index.html')
 
