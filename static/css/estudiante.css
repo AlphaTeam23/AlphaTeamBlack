@@ -392,6 +392,7 @@ table th {
     background-color: #ffffff2f;
     width: 5%;
     height: 40px;
+    font-weight: normal;
 }
 
 table td {
@@ -564,7 +565,7 @@ td{
 
 
 .conten-imag img {
-    width: 40%;
+    width: 52%;
     height: 357px;
     position: fixed;
 }
@@ -1275,20 +1276,27 @@ td{
 
 /* Pagina Reportar problema */
 
-.reporte h2 {
+.reporte  h2 {
     font-family: miFuentepath;
     font-weight: normal;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    margin-top: 80px;
+    text-align: center;
+    position: relative;
+    top: 425px;
     font-size: 23px;
+}
+
+.reporte {
+    position: relative;
+   top: 30px;
+    left: 20px;
 }
 
 .reporte img {
     width: 50px;
-    margin-right: 20px;
-    margin-top: -15px;
+  margin: auto 20px;
+  position: relative;
+  top: 15px;
 }
 
 .reporte textarea {

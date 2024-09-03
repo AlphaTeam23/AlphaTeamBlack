@@ -279,11 +279,6 @@ def p_informacion():
                            selected_curso=selected_curso,
                            selected_asignatura=selected_asignatura)
 
-
-@app.route('/alphaTeam/profesor/foto')
-def p_foto():
-    return render_template('./profesor/p_foto.html')
-
 @app.route('/alphaTeam/profesor/reportar')
 def p_reportar():
     if 'usuario_id' not in session:
@@ -522,6 +517,41 @@ def e_info_docente():
 @app.route('/alphaTeam/estudiante/pago')
 def e_pago():
     return render_template('./estudiante/e_pago.html')
+
+@app.route('/alphaTeam/estudiante/reporte')
+def e_reporte():
+    if 'usuario_id' not in session:
+        return redirect('/')
+    return render_template('./estudiante/e_reportarproblema.html')
+
+@app.route('/alphaTeam/estudiante/enviar1_reporte', methods=['POST'] )
+def enviar1_reporte():
+    if 'usuario_id' not in session:
+        return redirect('/')
+
+    reporte = request.form.get('reporte')
+    if not reporte or reporte.strip() == "":
+        return render_template('./estudiante/e_reportarproblema.html', mensaje="El reporte no puede estar vacío.")
+
+    matricula = session.get('matricula')
+    nombre = session.get('nombre')
+
+    if not matricula or not nombre:
+        return "Información del usuario no disponible", 404
+
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    # Insertar el reporte en la base de datos
+    query = "INSERT INTO reportes (matricula, nombre, reporte) VALUES (%s, %s, %s)"
+    values = (matricula, nombre, reporte)
+    cursor.execute(query, values)
+    conn.commit()
+    mensaje4 = "Reporte enviado con éxito"
+    cursor.close()
+    conn.close()
+
+    return render_template('./estudiante/e_reportarproblema.html', mensaje4=mensaje4)
 
 @app.route('/alphaTeam/estudiante/usuario')
 def e_usuario():
