@@ -830,19 +830,19 @@ def a_usuarios():
 
         if tipo_usuario == '1':  # Administrador "
             cursor.execute("""
-                SELECT matricula, nombre, apellidos 
+                SELECT matricula, nombre, apellidos , contraseña
                 FROM administrador 
                 WHERE id_administrador = %s
             """, (id_usuario,))
         elif tipo_usuario == '2':  # Profesor
             cursor.execute("""
-                SELECT matricula, nombre, apellidos 
+                SELECT matricula, nombre, apellidos, contraseña 
                 FROM profesores 
                 WHERE id_profesor = %s
             """, (id_usuario,))
         elif tipo_usuario == '3':  # Estudiante
             cursor.execute("""
-                SELECT matricula, nombre_estudiante, apellidos
+                SELECT matricula, nombre_estudiante, apellidos, contraseña
                 FROM estudiante 
                 WHERE id_estudiante = %s
             """, (id_usuario,))
@@ -916,10 +916,19 @@ def a_crearusuarios():
         conn.commit()
         conn.close()
 
-        return f"Usuario creado con éxito. Matrícula: {matricula}"
+        return f"Usuario creado con éxito. Matrícula: {matricula} y contaseña: {contraseña}"
 
     return render_template('admin/a_crearusuario.html')
 
+
+
+@app.route('/reset_clave', methods=['POST'])
+def reset_clave():
+    user_id = request.form.get('user_id')
+    user_type = request.form.get('user_type')
+    # Aquí deberías agregar la lógica para resetear la clave del usuario
+    print(f"Resetear clave para el usuario con ID: {user_id} y Tipo: {user_type}")
+    return redirect(url_for('a_usuarios'))
 
     
 @app.route('/alphaTeam/templates/cerrarsesion')

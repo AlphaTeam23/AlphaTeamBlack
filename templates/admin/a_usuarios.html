@@ -67,28 +67,22 @@
               <th>NOMBRE</th>
               <th>APELLIDO</th>
               <th>USUARIO</th>
-              <th>RESET CLAVE</th>
+              <th>CONTRASEÑA</th>
           </tr>
       </thead>
       <tbody>
-          {% for usuario in usuario %}
-              <tr>
-                  <td>{{ usuario[0] }}</td>
-                  <td>{{ usuario[1] }}</td>
-                  <td>{{ usuario[2] }}</td>
-                  <td>{{ usuario[0] }}</td>
-                  <td>
-                    <form action="">
-                        <button type="submit">Reset Clave</button>
-                    </form>
-                  </td>
+    {% for usuario in usuario %}
+        <tr>
+            <td>{{ usuario[0] }}</td>
+            <td>{{ usuario[1] }}</td>
+            <td>{{ usuario[2] }}</td>
+            <td>{{ usuario[0] }}</td>
+            <td>{{ usuario[3] }}</td>
+            
+        </tr>
+    {% endfor %}
+</tbody>
 
-
-
-                  <!-- Añade aquí más datos si es necesario -->
-              </tr>
-          {% endfor %}
-      </tbody>
   </table>
 </body>
 </html>
