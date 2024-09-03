@@ -873,7 +873,9 @@ summary {
     border-radius: 12px;
     margin-left: 1%;
     text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+   
 }
 
 .mensaje-exito {
@@ -912,6 +914,12 @@ summary {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
+
+
+.ocultar {
+    display: none;
+} 
+
 
 /* Boton de regresar */
 .regresar {
