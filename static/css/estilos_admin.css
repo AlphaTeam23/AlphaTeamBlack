@@ -735,7 +735,7 @@ legend {
     font-family: miFuentePath;
     font-weight: normal;
     overflow: hidden;   
-    overflow-y: scroll;
+    overflow-y: hidden;
     height: 440px;
     margin-left: 3px;
     margin-top: 400px

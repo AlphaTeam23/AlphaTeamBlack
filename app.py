@@ -654,13 +654,6 @@ def e_contraseña():
     return render_template('./estudiante/e_contraseña.html', message=message)
 
 
-
-
-
-
-
-
-
 @app.route('/alphaTeam/templates/cerrarsesion')
 def e_cerrarsesion():
     return render_template('./index.html')
@@ -761,9 +754,7 @@ def inscripcion():
         conn.close()
 
         return f"Inscripción guardada con éxito. Matrícula: {matricula}, Contraseña: {contraseña}"
-    return render_template('inscripcion.html')
-
-        
+    return render_template('inscripcion.html')      
      
 
 @app.route('/alphaTeam/admin/planificacion')
@@ -810,11 +801,6 @@ def a_recordnota():
         conn.close()
 
     return render_template('./admin/a_recordnota.html', calificaciones=calificaciones, estudiante=estudiante)
-
-
-
-
-
 
 
 @app.route('/alphaTeam/admin/usuarios', methods=['GET', 'POST'])
@@ -919,16 +905,6 @@ def a_crearusuarios():
         return f"Usuario creado con éxito. Matrícula: {matricula} y contaseña: {contraseña}"
 
     return render_template('admin/a_crearusuario.html')
-
-
-
-@app.route('/reset_clave', methods=['POST'])
-def reset_clave():
-    user_id = request.form.get('user_id')
-    user_type = request.form.get('user_type')
-    # Aquí deberías agregar la lógica para resetear la clave del usuario
-    print(f"Resetear clave para el usuario con ID: {user_id} y Tipo: {user_type}")
-    return redirect(url_for('a_usuarios'))
 
     
 @app.route('/alphaTeam/templates/cerrarsesion')
