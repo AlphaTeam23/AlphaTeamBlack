@@ -661,13 +661,6 @@ def e_contraseña():
 
 
 
-
-
-
-
-
-
-
 @app.route('/alphaTeam/templates/cerrarsesion')
 def e_cerrarsesion():
     return render_template('./index.html')
@@ -768,9 +761,7 @@ def inscripcion():
         conn.close()
 
         return f"Inscripción guardada con éxito. Matrícula: {matricula}, Contraseña: {contraseña}"
-    return render_template('inscripcion.html')
-
-        
+    return render_template('inscripcion.html')      
      
 
 @app.route('/alphaTeam/admin/planificacion')
@@ -819,11 +810,6 @@ def a_recordnota():
     return render_template('./admin/a_recordnota.html', calificaciones=calificaciones, estudiante=estudiante)
 
 
-
-
-
-
-
 @app.route('/alphaTeam/admin/usuarios', methods=['GET', 'POST'])
 def a_usuarios():
     
@@ -837,19 +823,19 @@ def a_usuarios():
 
         if tipo_usuario == '1':  # Administrador "
             cursor.execute("""
-                SELECT matricula, nombre, apellidos 
+                SELECT matricula, nombre, apellidos , contraseña
                 FROM administrador 
                 WHERE id_administrador = %s
             """, (id_usuario,))
         elif tipo_usuario == '2':  # Profesor
             cursor.execute("""
-                SELECT matricula, nombre, apellidos 
+                SELECT matricula, nombre, apellidos, contraseña 
                 FROM profesores 
                 WHERE id_profesor = %s
             """, (id_usuario,))
         elif tipo_usuario == '3':  # Estudiante
             cursor.execute("""
-                SELECT matricula, nombre_estudiante, apellidos
+                SELECT matricula, nombre_estudiante, apellidos, contraseña
                 FROM estudiante 
                 WHERE id_estudiante = %s
             """, (id_usuario,))
@@ -923,10 +909,9 @@ def a_crearusuarios():
         conn.commit()
         conn.close()
 
-        return f"Usuario creado con éxito. Matrícula: {matricula}"
+        return f"Usuario creado con éxito. Matrícula: {matricula} y contaseña: {contraseña}"
 
     return render_template('admin/a_crearusuario.html')
-
 
     
 @app.route('/alphaTeam/templates/cerrarsesion')
