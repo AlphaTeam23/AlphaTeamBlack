@@ -1161,7 +1161,7 @@ td{
 .cambio_contraseña {
     position: relative;
     top: 440px;
-    margin-left: 40%;
+    margin-left: 35%;
     border: 1px solid #ffffff70;
     width: 420px;
     border-radius: 20px;
@@ -1273,6 +1273,40 @@ td{
     border: 1px solid #0077ff96;
 }
 
+/* Mensajes de exito y error  */
+.mensaje{
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.mensaje.exito {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #8ce9a2;
+    width: 410px;
+    padding: 12px;
+    bottom: 60px;
+    position: relative;
+    border-radius: 12px;
+    left: -455px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.mensaje.error {
+    color: #721c25;
+    background-color: #f8d7da;
+    width: 410px;
+    padding: 12px;
+    border: 1px solid #a01b2888;
+    bottom: 60px;
+    position: relative;
+    border-radius: 12px;
+    left: -455px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
 /* Pagina Reportar problema */
 
 .reporte h2 {
