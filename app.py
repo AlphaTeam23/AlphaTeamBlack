@@ -411,7 +411,7 @@ def p_contraseña():
             conn.commit()
             mensaje = "Contraseña cambiada exitosamente"
         else:
-            mensaje= "La contraseña antigua es incorrecta"
+            mensaje = "La contraseña antigua es incorrecta"
 
         cursor.close()
         conn.close()
@@ -419,6 +419,7 @@ def p_contraseña():
         return render_template('./profesor/p_contraseñaprofesor.html', mensaje=mensaje)
 
     return render_template('./profesor/p_contraseñaprofesor.html')
+
 
 @app.route('/alphaTeam/templates/cerrarsesion')
 def p_cerrarsesion():
@@ -614,44 +615,50 @@ def upload_imageestuden():
 
 @app.route('/alphaTeam/estudiante/contraseña', methods=['GET', 'POST'])
 def e_contraseña():
-    message = None
+    mensaje = None
+    mensaje_class = None
 
     if request.method == 'POST':
         old_password = request.form.get('oldPassword')
         new_password = request.form.get('newPassword')
         confirm_password = request.form.get('confirmPassword')
 
-        student_id = session.get('usuario_id', None)
+        estudiante_id = session.get('usuario_id', None)
 
-        if student_id is None:
+        if estudiante_id is None:
             return redirect(url_for('index'))
 
         if new_password != confirm_password:
-            message = 'Las contraseñas nuevas no coinciden.'
+            mensaje = 'Las contraseñas nuevas no coinciden.'
+            mensaje_class = 'error'
         else:
             connection = mysql.connect()
             cursor = connection.cursor()
 
             # Obtiene la contraseña actual del estudiante
-            cursor.execute('SELECT contraseña FROM estudiante WHERE id_estudiante = %s', (student_id,))
-            student = cursor.fetchone()
+            cursor.execute('SELECT contraseña FROM estudiante WHERE id_estudiante = %s', (estudiante_id,))
+            estudiante = cursor.fetchone()
 
-            if student:
-                current_password = student[0]
+            if estudiante:
+                current_password = estudiante[0]
                 if old_password == current_password:
                     # Actualiza la contraseña en la base de datos
-                    cursor.execute('UPDATE estudiante SET contraseña = %s WHERE id_estudiante = %s', (new_password, student_id))
+                    cursor.execute('UPDATE estudiante SET contraseña = %s WHERE id_estudiante = %s', (new_password, estudiante_id))
                     connection.commit()
-                    message = 'Contraseña actualizada exitosamente.'
+                    mensaje = 'Contraseña actualizada exitosamente.'
+                    mensaje_class = 'exito'
                 else:
-                    message = 'La contraseña antigua es incorrecta.'
+                    mensaje = 'La contraseña antigua es incorrecta.'
+                    mensaje_class = 'error'
             else:
-                message = 'Estudiante no encontrado.'
+                mensaje = 'Estudiante no encontrado.'
+                mensaje_class = 'error'
 
             cursor.close()
             connection.close()
 
-    return render_template('./estudiante/e_contraseña.html', message=message)
+    return render_template('./estudiante/e_contraseña.html', mensaje=mensaje, mensaje_class=mensaje_class)
+
 
 
 @app.route('/alphaTeam/templates/cerrarsesion')

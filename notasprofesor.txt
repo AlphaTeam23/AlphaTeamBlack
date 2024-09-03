@@ -56,3 +56,49 @@ def p_contraseña():
                 <strong>{{ mensaje2 }}</strong>
             </div>
         </div>
+        
+
+
+
+ # bello
+ 
+@app.route('/alphaTeam/estudiante/contraseña', methods=['GET', 'POST'])
+def e_contraseña():
+    message = None
+
+    if request.method == 'POST':
+        old_password = request.form.get('oldPassword')
+        new_password = request.form.get('newPassword')
+        confirm_password = request.form.get('confirmPassword')
+
+        student_id = session.get('usuario_id', None)
+
+        if student_id is None:
+            return redirect(url_for('index'))
+
+        if new_password != confirm_password:
+            message = 'Las contraseñas nuevas no coinciden.'
+        else:
+            connection = mysql.connect()
+            cursor = connection.cursor()
+
+            # Obtiene la contraseña actual del estudiante
+            cursor.execute('SELECT contraseña FROM estudiante WHERE id_estudiante = %s', (student_id,))
+            student = cursor.fetchone()
+
+            if student:
+                current_password = student[0]
+                if old_password == current_password:
+                    # Actualiza la contraseña en la base de datos
+                    cursor.execute('UPDATE estudiante SET contraseña = %s WHERE id_estudiante = %s', (new_password, student_id))
+                    connection.commit()
+                    message = 'Contraseña actualizada exitosamente.'
+                else:
+                    message = 'La contraseña antigua es incorrecta.'
+            else:
+                message = 'Estudiante no encontrado.'
+
+            cursor.close()
+            connection.close()
+
+    return render_template('./estudiante/e_contraseña.html', message=message)
