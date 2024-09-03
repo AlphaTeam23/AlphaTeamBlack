@@ -27,24 +27,24 @@
 
     <main class="cambio_contraseña">
     <h2>CAMBIO DE CONTRASEÑA</h2>
-    <form class="input_boton1" id="passwordForm" method="POST" action="/alphaTeam/estudiante/contraseña">
+    <form class="input_boton1" id="FormContraseña" method="POST" action="/alphaTeam/estudiante/contraseña">
         <figure class="reset">
             <img src="/static/imagenes/reset-password.png" alt="Reset Password">
         </figure>
 
-        <input type="password" id="oldPassword" name="oldPassword" class="botton1" placeholder="Contraseña Antigua" required maxlength="10" autofocus>
+        <input type="password" id="oldPassword" name="antigua" class="botton1" placeholder="Contraseña Antigua" required maxlength="10" autofocus>
         <div class="imagen1">
             <img src="/static/imagenes/bx-lock-alt.svg" alt="Old Password">
         </div>
-        <input type="password" id="newPassword" name="newPassword" class="botton3" placeholder="Nueva Contraseña" required maxlength="10">
+        <input type="password" id="newPassword" name="nueva" class="botton3" placeholder="Nueva Contraseña" required maxlength="10">
         <div class="imagen2">
             <img src="/static/imagenes/contrasena.png" alt="New Password">
         </div>
 
         <br>
-        <input type="password" id="confirmPassword" name="confirmPassword" class="botton2" placeholder="Confirmar Contraseña" required maxlength="10">
+        <input type="password" id="confirmPassword" name="confirmar" class="botton2" placeholder="Confirmar Contraseña" required maxlength="10">
         <div class="imagen">
-            <img src="/static/imagenes/confirmar.png" alt="Confirm Password">
+            <img src="/static/imagenes/confirmar.png" alt="confirmar">
         </div>
         <input type="submit" value="CAMBIAR CONTRASEÑA" class="enviar">
     </form>

@@ -388,12 +388,12 @@ def upload_image():
 def p_contraseña():
     mensaje = None
     if request.method == 'POST':
-        old_password = request.form['oldPassword']
-        new_password = request.form['newPassword']
-        confirm_password = request.form['confirmPassword']
+        antigua = request.form['antigua']
+        nueva = request.form['nueva']
+        confirmar = request.form['confirmar']
 
         # Verificar si las contraseñas nuevas coinciden
-        if new_password != confirm_password:
+        if nueva != confirmar:
             mensaje = "Las contraseñas nuevas no coinciden"
             return render_template('./profesor/p_contraseñaprofesor.html', mensaje=mensaje)
 
@@ -405,9 +405,9 @@ def p_contraseña():
         cursor.execute('SELECT contraseña FROM profesores WHERE id_profesor = %s', (session['usuario_id'],))
         profesor = cursor.fetchone()
 
-        if profesor and profesor[0] == old_password:
+        if profesor and profesor[0] == antigua:
             # Actualizar la contraseña en la base de datos
-            cursor.execute('UPDATE profesores SET contraseña = %s WHERE id_profesor = %s', (new_password, session['usuario_id']))
+            cursor.execute('UPDATE profesores SET contraseña = %s WHERE id_profesor = %s', (nueva, session['usuario_id']))
             conn.commit()
             mensaje = "Contraseña cambiada exitosamente"
         else:
@@ -619,16 +619,16 @@ def e_contraseña():
     mensaje_class = None
 
     if request.method == 'POST':
-        old_password = request.form.get('oldPassword')
-        new_password = request.form.get('newPassword')
-        confirm_password = request.form.get('confirmPassword')
+        antigua = request.form.get('antigua')
+        nueva = request.form.get('nueva')
+        confirmar = request.form.get('confirmar')
 
         estudiante_id = session.get('usuario_id', None)
 
         if estudiante_id is None:
             return redirect(url_for('index'))
 
-        if new_password != confirm_password:
+        if nueva != confirmar:
             mensaje = 'Las contraseñas nuevas no coinciden.'
             mensaje_class = 'error'
         else:
@@ -640,10 +640,10 @@ def e_contraseña():
             estudiante = cursor.fetchone()
 
             if estudiante:
-                current_password = estudiante[0]
-                if old_password == current_password:
+                actual = estudiante[0]
+                if antigua == actual:
                     # Actualiza la contraseña en la base de datos
-                    cursor.execute('UPDATE estudiante SET contraseña = %s WHERE id_estudiante = %s', (new_password, estudiante_id))
+                    cursor.execute('UPDATE estudiante SET contraseña = %s WHERE id_estudiante = %s', (nueva, estudiante_id))
                     connection.commit()
                     mensaje = 'Contraseña actualizada exitosamente.'
                     mensaje_class = 'exito'

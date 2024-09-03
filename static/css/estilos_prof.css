@@ -232,6 +232,7 @@ form {
     background-color: transparent;
     color: #fff;
     border: 1px solid #81e6ff63;
+    width: 16%;
 }
 
 .calificaciones_docente1 option {
@@ -256,8 +257,9 @@ label {
     font-family: miFuentePath;
     font-size: 16px;
     font-weight: normal;
+    margin: 0 auto;
     margin: 15px;
-    left: 10px;
+    left: 20px;
     width: 8%;
     top: -1%;
     position: relative;
@@ -359,8 +361,8 @@ table {
     color: #fff;
     font-family: miFuentePath;
     border: 1px solid #81e6ff;
-    width: 15%;
-    margin-left: 15.50%;
+    width: 20%;
+    margin-left: 45.50%;
     font-size: 16px;
     cursor: pointer;
 }
@@ -580,10 +582,10 @@ th:hover {
 
 .planificacion_docente {
     bottom: 390px;
-    left: 150px;
+    left: 180px;
     position: relative;
     cursor: pointer;
-    width: 58%;
+    width: 61%;
     margin: 0 auto;
 }
 
@@ -608,7 +610,6 @@ th:hover {
     position: relative;
     font-size: 10px;
     text-align: center;
-
 }
 
 .planif_fielsed {
@@ -642,17 +643,16 @@ th:hover {
 .tabla3 {
     color: #fff;
     font-family: miFuentePath;
-    left: 11%;
+    left: 13.20%;
     bottom: 410px;
     position: relative;
-    width: 58.60%;
+    width: 61.70%;
     border-radius: 1%;
     height: 40px;
-    overflow: hidden;
-    overflow-y: scroll;
     cursor: pointer;
     margin: 0 auto;
 }
+
 
 .tabla3 th {
     font-weight: normal;
@@ -670,6 +670,11 @@ th:hover {
     border-radius: 3px;
     width: 10%;
 }
+
+.tabla3::-webkit-scrollbar {
+    display: none;
+}
+
 /* Página ayuda */
 
 .preguntas h3 {
@@ -1345,10 +1350,10 @@ summary {
     /* Calificaciones */
 
     .tabla1 {
-        left: -55%;
+        left: -1%;
         top: 2px;
         position: relative;
-        width: 180%;
+        width: 177%;
         height: 340px;
     }
 
@@ -1472,9 +1477,8 @@ summary {
 
 /* Pagina Planificación Docente */
 .planificacion_docente {
-    left: -1px;
+    left: -89px;
     bottom: -60px;
-    width: 98%;
     position: relative;
     margin: 0 auto;
 }
@@ -1495,6 +1499,11 @@ summary {
 
 .planificacion_docente label {
     font-size: 17px;
+}
+
+.tabla3 {
+    top: 20px;
+    position: relative;
 }
 
 /* Página Ayuda */
@@ -1601,9 +1610,9 @@ summary {
     }
 
     .tabla1 {
-        width: 117%;
+        width: 176%;
         margin: 0 auto;
-        left: 8%;
+        left: -37.80%;
         position: relative;
     }
 
@@ -1683,6 +1692,13 @@ summary {
 
     .planificar {
         width: 130px;
+    }
+
+    .tabla3 {
+        width: 16%;
+        margin: 0 auto;
+        left: -37.80%;
+        position: relative;
     }
 
     /* Pagina Ayuda */
