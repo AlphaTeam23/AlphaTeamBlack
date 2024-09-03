@@ -873,6 +873,29 @@ summary {
    
 }
 
+.mensaje-exito {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #8ce9a2;
+    width: 99%;
+    padding: 10px;
+    bottom: 460px;
+    position: relative;
+    border-radius: 12px;
+    margin-left: 1%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+}
+
+
 .mensaje-error2 {
     background-color: #d4edda;
     color: #155724;
@@ -887,9 +910,11 @@ summary {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 
+
 .ocultar {
     display: none;
 } 
+
 
 /* Boton de regresar */
 .regresar {

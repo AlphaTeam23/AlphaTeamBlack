@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planificacion Docente</title>
+    <link rel="stylesheet" href="/static/css/estilos_admin.css">
+    <link rel="icon" href="/static/imagenes/logo.png">
+</head>
+<body>
+    <header>
+        <h1>ALPHA TEAM</h1>
+
+            <figure class="logo_pagina">
+                <img src="/static/imagenes/logo.png" alt="">
+            </figure>
+        </a>
+
+       
+
+        <nav> 
+          <ul>
+  
+              <li><img src="/static/imagenes/bxs-school(1).svg" alt="cursos">
+                  <a href="/alphaTeam/admin/cursos">ADMINISTRACION CURSOS
+              </a></li>
+  
+              <li><img src="/static/imagenes/bxs-pencil.svg" alt="inscripcion">
+                  <a href="/alphaTeam/admin/inscripcion">INSCRIPCION
+              </a></li>
+  
+              <li> <img src="/static/imagenes/bxs-book-content.svg" alt="planificacion">
+                  <a href="/alphaTeam/admin/planificacion">PLANIFICACION DOCENTE
+              </a></li>
+  
+              <li><img src="/static/imagenes/bx-file.svg" alt="record">
+                  <a href="/alphaTeam/admin/recordnota">RECORD DE NOTAS   
+              </a></li>
+                  
+              
+              <li><img src="/static/imagenes/bx-user.svg" alt="usuario">
+                  <a href="/alphaTeam/admin/usuarios">GESTION USUARIOS
+              </a></li> 
+  
+              <li><img src="/static/imagenes/bxs-log-out.svg" alt="cerrar">
+                  <a href="/alphaTeam/templates/cerrarsesion">CERRAR SESION
+              </a></li>
+  
+          </ul>
+          </nav>
+    </header>
+    <main>
+        <section>
+            <div class="tit_pagina">
+                <h4>REPORTES</h4>
+            
+
+            </div>
+
+           
+  
+        </section>
+    </main>
+
+    <table class="datosreporte" border="1">
+        <thead> 
+       
+          <tr>
+            <th>NO. REPORTE</th>
+            <th>MATRICULA</th>
+            <th>NOMBRE</th>
+            <th>PROBLEMA</th>
+          
+           
+          </tr>
+        </thead>
+        <tbody>
+          {% for reporte in reporte %}
+          
+          <tr>
+              <td>{{ reporte[0] }}</td>
+              <td>{{ reporte[1] }}</td>
+              <td>{{ reporte[2] }}</td>
+              <td>{{ reporte[3] }}</td>
+
+              
+              
+
+          </tr>
+          {% endfor %}
+        </tbody>
+        
+</body>
+</html>

@@ -406,7 +406,7 @@ def p_contraseña():
             conn.commit()
             mensaje = "Contraseña cambiada exitosamente"
         else:
-            mensaje= "La contraseña antigua es incorrecta"
+            mensaje = "La contraseña antigua es incorrecta"
 
         cursor.close()
         conn.close()
@@ -414,6 +414,7 @@ def p_contraseña():
         return render_template('./profesor/p_contraseñaprofesor.html', mensaje=mensaje)
 
     return render_template('./profesor/p_contraseñaprofesor.html')
+
 
 @app.route('/alphaTeam/templates/cerrarsesion')
 def p_cerrarsesion():
@@ -644,50 +645,49 @@ def upload_imageestuden():
 
 @app.route('/alphaTeam/estudiante/contraseña', methods=['GET', 'POST'])
 def e_contraseña():
-    message = None
+    mensaje = None
+    mensaje_class = None
 
     if request.method == 'POST':
         old_password = request.form.get('oldPassword')
         new_password = request.form.get('newPassword')
         confirm_password = request.form.get('confirmPassword')
 
-        student_id = session.get('usuario_id', None)
+        estudiante_id = session.get('usuario_id', None)
 
-        if student_id is None:
+        if estudiante_id is None:
             return redirect(url_for('index'))
 
         if new_password != confirm_password:
-            message = 'Las contraseñas nuevas no coinciden.'
+            mensaje = 'Las contraseñas nuevas no coinciden.'
+            mensaje_class = 'error'
         else:
             connection = mysql.connect()
             cursor = connection.cursor()
 
             # Obtiene la contraseña actual del estudiante
-            cursor.execute('SELECT contraseña FROM estudiante WHERE id_estudiante = %s', (student_id,))
-            student = cursor.fetchone()
+            cursor.execute('SELECT contraseña FROM estudiante WHERE id_estudiante = %s', (estudiante_id,))
+            estudiante = cursor.fetchone()
 
-            if student:
-                current_password = student[0]
+            if estudiante:
+                current_password = estudiante[0]
                 if old_password == current_password:
                     # Actualiza la contraseña en la base de datos
-                    cursor.execute('UPDATE estudiante SET contraseña = %s WHERE id_estudiante = %s', (new_password, student_id))
+                    cursor.execute('UPDATE estudiante SET contraseña = %s WHERE id_estudiante = %s', (new_password, estudiante_id))
                     connection.commit()
-                    message = 'Contraseña actualizada exitosamente.'
+                    mensaje = 'Contraseña actualizada exitosamente.'
+                    mensaje_class = 'exito'
                 else:
-                    message = 'La contraseña antigua es incorrecta.'
+                    mensaje = 'La contraseña antigua es incorrecta.'
+                    mensaje_class = 'error'
             else:
-                message = 'Estudiante no encontrado.'
+                mensaje = 'Estudiante no encontrado.'
+                mensaje_class = 'error'
 
             cursor.close()
             connection.close()
 
-    return render_template('./estudiante/e_contraseña.html', message=message)
-
-
-
-
-
-
+    return render_template('./estudiante/e_contraseña.html', mensaje=mensaje, mensaje_class=mensaje_class)
 
 
 
@@ -791,9 +791,7 @@ def inscripcion():
         conn.close()
 
         return f"Inscripción guardada con éxito. Matrícula: {matricula}, Contraseña: {contraseña}"
-    return render_template('inscripcion.html')
-
-        
+    return render_template('inscripcion.html')      
      
 
 @app.route('/alphaTeam/admin/planificacion')
@@ -842,11 +840,6 @@ def a_recordnota():
     return render_template('./admin/a_recordnota.html', calificaciones=calificaciones, estudiante=estudiante)
 
 
-
-
-
-
-
 @app.route('/alphaTeam/admin/usuarios', methods=['GET', 'POST'])
 def a_usuarios():
     
@@ -860,19 +853,19 @@ def a_usuarios():
 
         if tipo_usuario == '1':  # Administrador "
             cursor.execute("""
-                SELECT matricula, nombre, apellidos 
+                SELECT matricula, nombre, apellidos , contraseña
                 FROM administrador 
                 WHERE id_administrador = %s
             """, (id_usuario,))
         elif tipo_usuario == '2':  # Profesor
             cursor.execute("""
-                SELECT matricula, nombre, apellidos 
+                SELECT matricula, nombre, apellidos, contraseña 
                 FROM profesores 
                 WHERE id_profesor = %s
             """, (id_usuario,))
         elif tipo_usuario == '3':  # Estudiante
             cursor.execute("""
-                SELECT matricula, nombre_estudiante, apellidos
+                SELECT matricula, nombre_estudiante, apellidos, contraseña
                 FROM estudiante 
                 WHERE id_estudiante = %s
             """, (id_usuario,))
@@ -946,14 +939,26 @@ def a_crearusuarios():
         conn.commit()
         conn.close()
 
-        return f"Usuario creado con éxito. Matrícula: {matricula}"
+        return f"Usuario creado con éxito. Matrícula: {matricula} y contaseña: {contraseña}"
 
     return render_template('admin/a_crearusuario.html')
 
+@app.route('/alphaTeam/admin/reportes')
+def a_reportes():
+    
+    
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM reportes")
+    reporte = cursor.fetchall()
+    cursor.close()
+    conn.close()
+
+    return render_template('./admin/a_reportes.html', reporte = reporte)
 
     
 @app.route('/alphaTeam/templates/cerrarsesion')
-def p_cerrar():
+def a_cerrar():
     session.clear()
     return redirect('./index.html')
 

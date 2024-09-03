@@ -452,6 +452,25 @@ td {
     border: none;
 }
 
+.btreportes {
+    top: -620px;
+    height: 20px;
+    font-family: miFuentePath;
+    background-color: #f0e6e646;
+    font-size: 20px;
+    height: 25px;
+    width: 80px;
+    border-radius: 5px;
+    padding: 0;
+    bottom: -60px;
+    position: relative;
+    left: 1280px;
+    color: #000;
+    cursor: pointer;
+    border: none;
+}
+
+
 .btbuscarcurso {
     top: 0px;
     height: 20px;
@@ -735,7 +754,7 @@ legend {
     font-family: miFuentePath;
     font-weight: normal;
     overflow: hidden;   
-    overflow-y: scroll;
+    overflow-y: hidden;
     height: 440px;
     margin-left: 3px;
     margin-top: 400px
@@ -967,6 +986,20 @@ section {
     color: #0d0c0c;
     position: absolute;
     top: 252px;
+    left: 400px;
+    height: 20px;
+    width: 847px;
+    overflow: hidden;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+
+.datosreporte {
+    border-color: #979393;
+    background-color: #ffffff83;
+    color: #0d0c0c;
+    position: absolute;
+    top: 180px;
     left: 400px;
     height: 20px;
     width: 847px;
