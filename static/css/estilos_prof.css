@@ -589,6 +589,11 @@ th:hover {
     margin: 0 auto;
 }
 
+.planificacion_docente form {
+    width: 80%;
+    margin-left: -1%;
+}
+
 .planificacion_docente select {
     background-color: transparent;
     color: #fff;
@@ -640,17 +645,17 @@ th:hover {
     border: 1px solid #0077ff96;
 }
 
-.tabla3 {
+.planificacion_docente .tabla3 {
     color: #fff;
     font-family: miFuentePath;
-    left: 13.20%;
-    bottom: 410px;
+    margin-top: -2%;
+    right: 1%;
     position: relative;
-    width: 61.70%;
-    border-radius: 1%;
-    height: 40px;
-    cursor: pointer;
-    margin: 0 auto;
+    width: 94.65%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
 }
 
 
@@ -669,10 +674,6 @@ th:hover {
     text-align: center;
     border-radius: 3px;
     width: 10%;
-}
-
-.tabla3::-webkit-scrollbar {
-    display: none;
 }
 
 /* Página ayuda */

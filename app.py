@@ -418,6 +418,7 @@ def p_contraseña():
 
 @app.route('/alphaTeam/templates/cerrarsesion')
 def p_cerrarsesion():
+    session.clear()
     return render_template('./index.html')
 
 # Redireccionar a estudiante
