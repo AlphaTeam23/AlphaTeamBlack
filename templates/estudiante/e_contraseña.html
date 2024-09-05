@@ -51,9 +51,24 @@
 
     <!-- Mostrar el mensaje -->
     {% if mensaje %}
-    <p class="mensaje {{ mensaje_class }}">{{ mensaje }}</p>
+    <p class="mensaje {{ mensaje_class }}" id="alert-container">{{ mensaje }}</p>
     {% endif %}
 </main>
     
+
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var alertContainer = document.getElementById('alert-container');
+    
+    // Solo proceder si el contenedor de la alerta existe
+    if (alertContainer) {
+        // Cerrar el mensaje automáticamente después de 5 segundos (opcional)
+        setTimeout(function() {
+            alertContainer.style.display = 'none';
+        }, 5000); // 5000 ms = 5 segundos
+    }
+});
+</script>
+
 </body>
 </html>

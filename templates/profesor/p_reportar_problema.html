@@ -27,8 +27,8 @@
     <main>
          <main>
      <!-- Mostrar mensaje si está disponible -->
-     <div class="mensaje-error2 {% if not mensaje5 %} ocultar {% endif %}">
-        <div class="alert alert-success" role="alert">
+     <div class="mensaje-error2 {% if not mensaje5 %} ocultar {% endif %}" id="alert-container">
+        <div class="alert alert-success" role="alert" id="alert-container">
             <strong>{{ mensaje5 }}</strong>
         </div>
     </div>
@@ -45,5 +45,20 @@
 </form>
         </section>
     </main>
+
+     <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var alertContainer = document.getElementById('alert-container');
+    
+    // Solo proceder si el contenedor de la alerta existe
+    if (alertContainer) {
+        // Cerrar el mensaje automáticamente después de 5 segundos (opcional)
+        setTimeout(function() {
+            alertContainer.style.display = 'none';
+        }, 5000); // 5000 ms = 5 segundos
+    }
+});
+</script>
+
 </body>
 </html>

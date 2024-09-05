@@ -7,6 +7,20 @@
     <title>Reportar un problema</title>
     <link rel="stylesheet" href="/static/css/estudiante.css">
     <link rel="icon" href="/static/imagenes/pruebalogo__2_-removebg-preview.png">
+       <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var alertContainer = document.getElementById('alert-container');
+    
+    // Solo proceder si el contenedor de la alerta existe
+    if (alertContainer) {
+        // Cerrar el mensaje automáticamente después de 5 segundos (opcional)
+        setTimeout(function() {
+            alertContainer.style.display = 'none';
+        }, 5000); // 5000 ms = 5 segundos
+    }
+});
+</script>
+
 </head>
 <body>
     <header>
@@ -22,12 +36,12 @@
                 </figure>
             </div>
     </header>
-
-     <div class="mensaje-error2 {% if not mensaje4 %} ocultar {% endif %}">
-        <div class="alert alert-success" role="alert">
-            <strong>{{ mensaje4 }}</strong>
-        </div>
+<div class="mensaje-error2 {% if not mensaje4 %} ocultar {% endif %}" id="alert-container">
+    <div class="alert alert-success" role="alert">
+        <strong>{{ mensaje4 }}</strong>
     </div>
+</div>
+
 
     <main>
         <section class="reporte">
@@ -42,6 +56,5 @@
         </section>
     </main>
 
-   
 </body>
 </html>

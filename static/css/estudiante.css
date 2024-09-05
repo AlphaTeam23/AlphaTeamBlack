@@ -1364,6 +1364,27 @@ td{
     position: relative;
 }
 
+
+
+.alert-success{
+    padding: 5px;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #8ce9a2;
+    text-align: center;
+    width: 40%;
+    height: 40px;
+    position: relative;
+    left: 30%;
+    font-size: 23px;
+     border-radius: 12px;
+}
+
+.ocultar {
+    display: none;
+}
+
+
 /* Pagina ayuda */
 
 .preguntas h3 {
@@ -1825,6 +1846,30 @@ summary {
 
 
    /* pagina de resportar problema */
+   .reporte  h2 {
+    font-family: miFuentepath;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 360px;
+    right: 90%;
+    font-size: 23px;
+}
+
+.reporte {
+    position: relative;
+   top: 30px;
+    left: 20px;
+}
+
+.reporte img {
+    width: 50px;
+  margin: auto 20px;
+  position: relative;
+  top: 15px;
+}
+
    .reporte textarea {
     position: relative;
     right: 85%;
@@ -2129,16 +2174,41 @@ summary {
    }
 
    /* pagina de resportar problema */
+
+   .reporte  h2 {
+    font-family: miFuentepath;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 400px;
+    right: 60%;
+    font-size: 23px;
+}
+
+.reporte {
+    position: relative;
+   top: 30px;
+    left: 20px;
+}
+
+.reporte img {
+    width: 50px;
+  margin: auto 20px;
+  position: relative;
+  top: 15px;
+}
+
    .reporte textarea {
     position: relative;
     right: 55%;
     /* width: 420px; */
-    bottom: 60px;
+    bottom: 20px;
    }
 
    .reporte  input{
     position: relative;
-    bottom: 50px;
+    bottom: 20px;
    
    } 
 
@@ -2184,5 +2254,46 @@ summary {
        
          top: 480px; 
     }
+
+    /* pagina de resportar problema */
+
+   .reporte  h2 {
+    font-family: miFuentepath;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 400px;
+    right: 60%;
+    font-size: 23px;
+}
+
+.reporte {
+    position: relative;
+   top: 30px;
+    left: 40%;
+    
+}
+
+.reporte img {
+    width: 50px;
+  margin: auto 20px;
+  position: relative;
+  top: 15px;
+}
+
+   .reporte textarea {
+    position: relative;
+    right: 55%;
+    /* width: 420px; */
+    bottom: 20px;
+    
+   }
+
+   .reporte  input{
+    position: relative;
+    bottom: 20px;
+   
+   } 
 
 }

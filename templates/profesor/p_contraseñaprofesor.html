@@ -54,16 +54,26 @@
         </div>
     </div>
 
-    <div class="mensaje-exito {% if mensaje and 'exitosamente' in mensaje %} mostrar {% else %} ocultar {% endif %}">
-        <div class="alert alert-success" role="alert">
+    <div class="mensaje-exito {% if mensaje and 'exitosamente' in mensaje %} mostrar {% else %} ocultar {% endif %}" id="alert-container">
+        <div class="alert alert-success" role="alert" id="alert-container">
             <strong>{{ mensaje }}</strong>
         </div>
     </div>
 </main>
-
-
-        
         
     </main>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var alertContainer = document.getElementById('alert-container');
+    
+    // Solo proceder si el contenedor de la alerta existe
+    if (alertContainer) {
+        // Cerrar el mensaje automáticamente después de 5 segundos (opcional)
+        setTimeout(function() {
+            alertContainer.style.display = 'none';
+        }, 5000); // 5000 ms = 5 segundos
+    }
+});
+</script>
 </body>
 </html>
