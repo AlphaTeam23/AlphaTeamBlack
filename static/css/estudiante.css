@@ -1592,11 +1592,14 @@ summary {
         position: relative;
         top: 55%;
         margin-left: -20px;
+        width: 30%;
     }
 
-    .calificaciones .tabla {
-        width: 100%;
+    .calificaciones table {
+         width: 100%; 
     }
+
+    
 
 
     .calificaciones h2 {
@@ -2051,8 +2054,13 @@ summary {
         
     }
 
-    section .tabla {
-        width: 130%; 
+    .calificaciones table {
+         width: 120%; 
+    }
+
+
+    section table {
+        
         position: relative;
         left: 10%;
         right: 60%;
@@ -2225,11 +2233,14 @@ summary {
         gap: 20px;
     }
 
-    .calificaciones .tabla {
-        width: 100%; /
+    .calificaciones table {
+         width: 140%; 
+         position: relative;
+         right: 4%;
     }
 
     .seccion {
+        width: 100%;
         padding: 15px;
         margin: 0 auto;
         max-width: 1000px; 
