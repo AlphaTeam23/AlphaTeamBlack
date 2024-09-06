@@ -582,15 +582,14 @@ th:hover {
 
 .planificacion_docente {
     bottom: 390px;
-    left: 180px;
+    left: 450px;
     position: relative;
     cursor: pointer;
-    width: 61%;
     margin: 0 auto;
 }
 
 .planificacion_docente form {
-    width: 80%;
+    width: 60%;
     margin-left: -1%;
 }
 
@@ -609,12 +608,10 @@ th:hover {
 }
 
 .planificar {
-    width: 100px;
-    margin-left: 410px;
-    bottom: 40px;
+    width: 80px;
+    margin-left: 590px;
+    bottom: 42px;
     position: relative;
-    font-size: 10px;
-    text-align: center;
 }
 
 .planif_fielsed {
@@ -635,23 +632,19 @@ th:hover {
     color: #fff;
 }
 
-.cargar-plan {
-    margin-left: 250px;
-    bottom: 39px;
-    position: relative;
-} 
+
 
 .enviar_borrar:hover {
     border: 1px solid #0077ff96;
 }
 
-.planificacion_docente .tabla3 {
+.tabla3 {
     color: #fff;
     font-family: miFuentePath;
-    margin-top: -2%;
-    right: 1%;
+    margin-top: -1%;
+    right: 1.50%;
     position: relative;
-    width: 94.65%;
+    width: 61%;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -1121,7 +1114,7 @@ summary {
     }
 /* Titulo */
     h1 {
-        font-size: 5vh;
+        font-size: 150%;
         width: 60%;
         display: flex;
         justify-content: center;
@@ -1154,14 +1147,16 @@ summary {
         left: 32%;
         position: relative;
         padding: 5px;
-        width: 305px;
-        background-color: #000000;
-
+        width: 250px;
+        background-color: #ffffff;
+        height: 150%;
+        border-radius: 5px;
     }
 
     .cout li {
         text-align: left; 
-        background-color: #d9d9d900; 
+        background-color: #ffffff00;
+       
     }
 
     .container {
@@ -1172,10 +1167,22 @@ summary {
     }
 
     .cout li a{
-        color: white;
+        color: rgb(0, 0, 0);
         left: 50px;
         margin: -10px;
-    
+        font-size: 20px;
+        border-bottom: 1px solid #000; 
+        width: 60%;
+    }
+
+    .cout li img {
+        background-color: #000000c9;
+    }
+
+    .cout li a:hover {
+        background-color: #555555a8;
+        border-radius: 5px;
+        margin-left: 2%;
     }
 
     li {
@@ -1193,7 +1200,6 @@ summary {
         padding: 5px;
         width: 600px;
         height: 700px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }
 
@@ -1485,35 +1491,27 @@ summary {
 }
 
 /* Pagina Planificación Docente */
-.planificacion_docente {
-    left: -89px;
-    bottom: -60px;
+.planificacion_docente form {
     position: relative;
-    margin: 0 auto;
 }
 
-.planificacion_docente select {
-    width: 5%;
+.planificacion_docente {
+    left: 5%;
+    top: 60px;
+    position: relative;
+    width: 155%;
 }
 
-.cargar-plan {
-    display: none;
-}
+ .planificacion_docente select {
+    width: 6%;
+} 
 
 .planificar {
-    left: 13%;
-    margin-top: -5%;
+    width: 82.50px;
+    margin-left: 70%;
+    bottom: 40px;
     position: relative;
-}
-
-.planificacion_docente label {
-    font-size: 17px;
-}
-
-.tabla3 {
-    top: 20px;
-    position: relative;
-}
+} 
 
 /* Página Ayuda */
 .preguntas_container{
@@ -1684,29 +1682,23 @@ summary {
    }
 
     /* Pagina Planificacion docente */
-    .planificacion_docente {
-        bottom: 392px;
-        left: 150px;
+    .planificacion_docente form {
         position: relative;
-        margin: 0 auto;
+    }
+
+    .planificacion_docente {
+        margin-left: -85px;
+        width: 95%;
     }
 
     .planificacion_docente select {
-        width: 8%;
-    }
-
-    .cargar-plan {
-        margin-left: -5%;
+        width: 10%;
     }
 
     .planificar {
-        width: 130px;
-    }
-
-    .tabla3 {
-        width: 16%;
-        margin: 0 auto;
-        left: -37.80%;
+        width: 82.50px;
+        margin-left: 75%;
+        bottom: 40px;
         position: relative;
     }
 
