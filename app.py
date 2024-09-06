@@ -700,10 +700,18 @@ def e_cerrarsesion():
 # Redireccionar a administrador
 @app.route('/alphaTeam/admin')
 def a_alphaTeam():
+    
+    if 'usuario_id' not in session or session.get('role') != 'administrador':
+        return redirect('/')
+    
     return render_template('./admin/a_alphaTeam.html')
 
 @app.route('/alphaTeam/admin/cursos', methods=['GET', 'POST'])
 def a_cursos():
+    
+    if 'usuario_id' not in session or session.get('role') != 'administrador':
+        return redirect('/')
+    
     # Conectar a la base de datos
     conn = mysql.connect()
     cursor = conn.cursor()
@@ -733,10 +741,18 @@ def a_cursos():
 
 @app.route('/alphaTeam/admin/inscripcion')
 def a_inscripcion():
+    
+    if 'usuario_id' not in session or session.get('role') != 'administrador':
+        return redirect('/')
+    
     return render_template('./admin/a_inscripcion.html')
 
 @app.route('/alphaTeam/admin/inscripcion', methods=['GET', 'POST'])
 def inscripcion():
+    
+    if 'usuario_id' not in session or session.get('role') != 'administrador':
+        return redirect('/')
+    
     if request.method == 'POST':
         # Procesar el formulario
         nom = request.form['nom']
@@ -797,6 +813,9 @@ def inscripcion():
 
 @app.route('/alphaTeam/admin/planificacion')
 def a_planificacion():
+    
+    if 'usuario_id' not in session or session.get('role') != 'administrador':
+        return redirect('/')
 
     conn = mysql.connect() 
     cursor = conn.cursor()  
@@ -810,6 +829,10 @@ def a_planificacion():
 
 @app.route('/alphaTeam/admin/recordnota', methods=['GET', 'POST'])
 def a_recordnota():
+    
+    if 'usuario_id' not in session or session.get('role') != 'administrador':
+        return redirect('/')
+    
     calificaciones = []
     estudiante = None
     if request.method == 'POST':
@@ -843,6 +866,9 @@ def a_recordnota():
 
 @app.route('/alphaTeam/admin/usuarios', methods=['GET', 'POST'])
 def a_usuarios():
+    
+    if 'usuario_id' not in session or session.get('role') != 'administrador':
+        return redirect('/')
     
     usuario = []
     if request.method == 'POST':
@@ -882,6 +908,9 @@ def a_usuarios():
 @app.route('/alphaTeam/admin/estudiantes', methods=['GET', 'POST'])
 def a_estudiantes():
     
+    if 'usuario_id' not in session or session.get('role') != 'administrador':
+        return redirect('/')
+    
     conn = mysql.connect() 
     cursor = conn.cursor()  
     cursor.execute("SELECT *, tutor.nombre AS tnombre FROM estudiante JOIN tutor ON tutor.id_tutor = estudiante.id_tutor")  
@@ -892,6 +921,10 @@ def a_estudiantes():
 
 @app.route('/alphaTeam/admin/crearusuarios', methods=['GET', 'POST'])
 def a_crearusuarios():
+    
+    if 'usuario_id' not in session or session.get('role') != 'administrador':
+        return redirect('/')
+    
     if request.method == 'POST':
         # Procesar el formulario
         id_asignatura = request.form.get('materia')
@@ -947,6 +980,9 @@ def a_crearusuarios():
 @app.route('/alphaTeam/admin/reportes')
 def a_reportes():
     
+    if 'usuario_id' not in session or session.get('role') != 'administrador':
+        return redirect('/')
+    
     
     conn = mysql.connect()
     cursor = conn.cursor()
@@ -957,11 +993,11 @@ def a_reportes():
 
     return render_template('./admin/a_reportes.html', reporte = reporte)
 
-    
 @app.route('/alphaTeam/templates/cerrarsesion')
 def a_cerrar():
     session.clear()
-    return redirect('./index.html')
+    return redirect('/')  
+
 
 
 
