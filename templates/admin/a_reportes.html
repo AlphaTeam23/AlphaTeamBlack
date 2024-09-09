@@ -10,85 +10,71 @@
 <body>
     <header>
         <h1>ALPHA TEAM</h1>
-
-            <figure class="logo_pagina">
-                <img src="/static/imagenes/logo.png" alt="">
-            </figure>
-        </a>
-
-       
-
+        <figure class="logo_pagina">
+            <img src="/static/imagenes/logo.png" alt="">
+        </figure>
         <nav> 
-          <ul>
-  
-              <li><img src="/static/imagenes/bxs-school(1).svg" alt="cursos">
-                  <a href="/alphaTeam/admin/cursos">ADMINISTRACION CURSOS
-              </a></li>
-  
-              <li><img src="/static/imagenes/bxs-pencil.svg" alt="inscripcion">
-                  <a href="/alphaTeam/admin/inscripcion">INSCRIPCION
-              </a></li>
-  
-              <li> <img src="/static/imagenes/bxs-book-content.svg" alt="planificacion">
-                  <a href="/alphaTeam/admin/planificacion">PLANIFICACION DOCENTE
-              </a></li>
-  
-              <li><img src="/static/imagenes/bx-file.svg" alt="record">
-                  <a href="/alphaTeam/admin/recordnota">RECORD DE NOTAS   
-              </a></li>
-                  
-              
-              <li><img src="/static/imagenes/bx-user.svg" alt="usuario">
-                  <a href="/alphaTeam/admin/usuarios">GESTION USUARIOS
-              </a></li> 
-  
-              <li><img src="/static/imagenes/bxs-log-out.svg" alt="cerrar">
-                  <a href="/alphaTeam/templates/cerrarsesion">CERRAR SESION
-              </a></li>
-  
-          </ul>
-          </nav>
+            <ul>
+                <li><img src="/static/imagenes/bxs-school(1).svg" alt="cursos">
+                    <a href="/alphaTeam/admin/cursos">ADMINISTRACION CURSOS
+                </a></li>
+                <li><img src="/static/imagenes/bxs-pencil.svg" alt="inscripcion">
+                    <a href="/alphaTeam/admin/inscripcion">INSCRIPCION
+                </a></li>
+                <li> <img src="/static/imagenes/bxs-book-content.svg" alt="planificacion">
+                    <a href="/alphaTeam/admin/planificacion">PLANIFICACION DOCENTE
+                </a></li>
+                <li><img src="/static/imagenes/bx-file.svg" alt="record">
+                    <a href="/alphaTeam/admin/recordnota">RECORD DE NOTAS   
+                </a></li>
+                <li><img src="/static/imagenes/bx-user.svg" alt="usuario">
+                    <a href="/alphaTeam/admin/usuarios">GESTION USUARIOS
+                </a></li> 
+                <li><img src="/static/imagenes/bxs-log-out.svg" alt="cerrar">
+                    <a href="/alphaTeam/templates/cerrarsesion">CERRAR SESION
+                </a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section>
             <div class="tit_pagina">
                 <h4>REPORTES</h4>
-            
-
             </div>
-
-           
-  
         </section>
     </main>
 
     <table class="datosreporte" border="1">
         <thead> 
-       
-          <tr>
-            <th>NO. REPORTE</th>
-            <th>MATRICULA</th>
-            <th>NOMBRE</th>
-            <th>PROBLEMA</th>
-          
-           
-          </tr>
+            <tr>
+                <th>NO. REPORTE</th>
+                <th>MATRICULA</th>
+                <th>NOMBRE</th>
+                <th>PROBLEMA</th>
+                <th>ESTATUS</th>
+                <th>ACCIONES</th>
+            </tr>
         </thead>
         <tbody>
-          {% for reporte in reporte %}
-          
-          <tr>
-              <td>{{ reporte[0] }}</td>
-              <td>{{ reporte[1] }}</td>
-              <td>{{ reporte[2] }}</td>
-              <td>{{ reporte[3] }}</td>
-
-              
-              
-
-          </tr>
-          {% endfor %}
+            {% for reporte in reporte %}
+            <tr>
+                <td>{{ reporte[0] }}</td>
+                <td>{{ reporte[1] }}</td>
+                <td>{{ reporte[2] }}</td>
+                <td>{{ reporte[3] }}</td>
+                <td>{{ reporte[4] }}</td>
+                <td>
+                    {% if reporte[4] == 'pendiente' %}
+                        <form action="{{ url_for('resolver_reporte', reporte_id=reporte[0]) }}" method="post">
+                            <button type="submit">Marcar como Resuelto</button>
+                        </form>
+                    {% else %}
+                        <button disabled>Resuelto</button>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
         </tbody>
-        
+    </table>
 </body>
 </html>
