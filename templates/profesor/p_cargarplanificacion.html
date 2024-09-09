@@ -6,6 +6,11 @@
     <title>Planificacion Docente</title>
     <link rel="stylesheet" href="/static/css/estilos_prof.css">
     <link rel="icon" href="/static/imagenes/icono_pagina.png">
+     <script>
+        function confirmarEliminacion() {
+            return confirm('¿Estás seguro de que deseas eliminar todos los archivos?');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -62,69 +67,75 @@
     </div>
     <main>
         <section>
-            <div class="planificacion_docente">
-                <form action="/alphaTeam/profesor/planificacion" class="form-plani" method="POST" enctype="multipart/form-data">
-                    <fieldset class="planif_fielsed">
-                        <legend class="plan_docente">CARGAR PLANIFICACIÓN</legend>
+ <div class="planificacion_docente">
+        <form action="/alphaTeam/profesor/planificacion" class="form-plani" method="POST" enctype="multipart/form-data">
+            <fieldset class="planif_fielsed">
+                <legend class="plan_docente">CARGAR PLANIFICACIÓN</legend>
 
-                            <!-- NIVEL -->
-                            <label for="curso1">Nivel</label>
-                            <select name="curso1" id="curso1" required>
-                                <option value="">- Elija un curso -</option>
-                                <option value="1ro">1ro de secundaria</option>
-                                <option value="2do">2do de secundaria</option>
-                                <option value="3ro">3ro de secundaria</option>
-                                <option value="4to">4to de secundaria</option>
-                                <option value="5to">5to de secundaria</option>
-                                <option value="6to">6to de secundaria</option>
-                            </select>
+                <!-- NIVEL -->
+                <label for="curso1">Nivel</label>
+                <select name="curso1" id="curso1" required>
+                    <option value="">- Elija un curso -</option>
+                    <option value="1ro">1ro de secundaria</option>
+                    <option value="2do">2do de secundaria</option>
+                    <option value="3ro">3ro de secundaria</option>
+                    <option value="4to">4to de secundaria</option>
+                    <option value="5to">5to de secundaria</option>
+                    <option value="6to">6to de secundaria</option>
+                </select>
 
-                            <!-- MATERIAS -->
-                            <label for="asigL">Materia</label>
-                            <select name="asigL" id="asigL" required>
-                                <option value="">- Elija una materia -</option>
-                                <option value="1">Lengua Española</option>
-                                <option value="2">Matemáticas</option>
-                                <option value="3">Ciencias Sociales</option>
-                                <option value="4">Ciencias Naturales</option>
-                                <option value="5">Física</option>
-                                <option value="6">Educación Financiera</option>
-                                <option value="7">Inglés</option>
-                            </select>
+                <!-- MATERIAS -->
+                <label for="asigL">Materia</label>
+                <select name="asigL" id="asigL" required>
+                    <option value="">- Elija una materia -</option>
+                    <option value="1">Lengua Española</option>
+                    <option value="2">Matemáticas</option>
+                    <option value="3">Ciencias Sociales</option>
+                    <option value="4">Ciencias Naturales</option>
+                    <option value="5">Física</option>
+                    <option value="6">Educación Financiera</option>
+                    <option value="7">Inglés</option>
+                </select>
 
-                            <!-- PERIODOS -->
-                            <label for="period">Periodo</label>
-                            <select name="period" id="period" required>
-                                <option value="2024-2025" selected>2024-2025</option>
-                            </select>
+                <!-- PERIODOS -->
+                <label for="period">Periodo</label>
+                <select name="period" id="period" required>
+                    <option value="2024-2025" selected>2024-2025</option>
+                </select>
 
-                            <br><br>
-                            <label for="planificacion" class="cargar-plan"></label>
-                            <input type="file" id="planificacion" name="planificacion" class="planificar" required>
-                        </fieldset>
+                <br><br>
+                <label for="planificacion" class="cargar-plan"></label>
+                <input type="file" id="planificacion" name="planificacion" class="planificar" required>
+            </fieldset>
 
-                        <input class="enviar_borrar" type="submit" name="enviar" value="ENVIAR">
-                        <input class="enviar_borrar" type="reset" value="CANCELAR">
-                </form>
-                <div class="tabla3" >
-                    <table>
-                        <tr>
-                            <td>NIVEL</td>
-                            <td>MATERIA</td>
-                            <td>PERIODO</td>
-                            <td>ARCHIVOS ENVIADOS</td>
-                        </tr>
-                        {% for planificacion in planificaciones %}
-                        <tr>
-                            <td>{{ planificacion[1] }}</td>
-                            <td>{{ planificacion[3] }}</td>
-                            <td>{{ planificacion[4] }}</td>
-                            <td><a href="/static/uploads/{{ planificacion[5] }}" target="_blank">{{ planificacion[5] }}</a></td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-            </div>
+            <input class="enviar_borrar" type="submit" name="enviar" value="ENVIAR">
+            <input class="enviar_borrar" type="button" value="ELIMINAR TODO" onclick="if (confirmarEliminacion()) { document.getElementById('eliminar_todo_form').submit(); }">
+        </form>
+
+        <!-- Formulario para eliminar todos los archivos -->
+        <form id="eliminar_todo_form" action="/alphaTeam/profesor/eliminar_todo" method="POST" style="display:none;">
+            <input type="hidden" name="eliminar_todo" value="true">
+        </form>
+
+        <div class="tabla3">
+            <table>
+                <tr>
+                    <td>NIVEL</td>
+                    <td>MATERIA</td>
+                    <td>PERIODO</td>
+                    <td>ARCHIVOS ENVIADOS</td>
+                </tr>
+                {% for planificacion in planificaciones %}
+                <tr>
+                    <td>{{ planificacion[1] }}</td>
+                    <td>{{ planificacion[3] }}</td>
+                    <td>{{ planificacion[4] }}</td>
+                    <td><a href="/static/uploads/{{ planificacion[5] }}" target="_blank">{{ planificacion[5] }}</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
         </section>
     </main>
 </body>
