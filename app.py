@@ -84,30 +84,38 @@ def sesion():
 
 @app.route('/alphaTeam/profesor')
 def p_alphaTeam():
+    # Verifica si el usuario está autenticado y tiene el rol de 'profesor'
     if 'usuario_id' not in session or session.get('role') != 'profesor':
         return redirect('/')
     return render_template('./profesor/p_alphaTeam.html')
 
 # Página Calificaciones 
+# Ruta para gestionar las calificaciones de los estudiantes
 @app.route('/alphaTeam/profesor/calificaciones', methods=['GET', 'POST'])
 def p_calificaciones():
+    if 'usuario_id' not in session or session.get('role') != 'profesor':
+        return redirect('/')
+    
+    # Inicializa variables para el curso, asignatura, periodo y lista de estudiantes
     curso_id = None
     asignatura_id = None
     periodo = None
     estudiantes = []
 
     if request.method == 'POST':
+        # Acción tomada desde el formulario
         action = request.form.get('action')
 
         if action == 'CARGAR':
+            # Obtiene los datos del formulario para cargar las calificaciones
             curso_id = request.form.get('cur')
             asignatura_id = request.form.get('asig')
             periodo = request.form.get('period')
-
+             # Verifica que se hayan proporcionado todos los datos necesarios
             if not curso_id or not asignatura_id or not periodo:
                 return "No se proporcionaron todos los datos necesarios", 404
 
-            # Obtener los estudiantes que pertenecen al curso y asignatura seleccionados
+            # Conecta la base de datos y obtiene los estudiantes que pertenecen al curso y asignatura seleccionados
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute("""
@@ -123,20 +131,23 @@ def p_calificaciones():
             conn.close()
 
         elif action == 'Publicar Notas':
+            # Actualiza las calificaciones de los estudiantes en la base de datos
             conn = mysql.connect()
             cursor = conn.cursor()
             asignatura_id = request.form.get('asig')
             periodo = request.form.get('period')
 
+            # Verifica que se hayan proporcionado todos los datos necesarios
             if not asignatura_id or not periodo:
                 return "No se proporcionaron todos los datos necesarios", 404
 
+            # Obtiene los IDs de los estudiantes de los datos del formulario
             estudiantes_ids = [key.split('_')[2] for key in request.form.keys() if key.startswith('estudiante_id_')]
             # keys() devuelve una vista de las claves (nombres de campos) del formulario como una lista
             # startswith verifica si la clave comienza con el la cadena estudiante_id
             # divide la clave en una lista de subcadenas, usando el carácter de subrayado ('_') como delimitador para identificar el id del estudiante
 
-            # reacion de los periodos a las columnas de la tabla calificacion_final
+            # Pareo de los periodos a las columnas de la tabla calificacion_final
             periodo_column_map = {
                 '1': 'primer_periodo',
                 '2': 'segundo_periodo',
@@ -148,7 +159,7 @@ def p_calificaciones():
             }
 
             periodo_column = periodo_column_map.get(periodo)
-
+            # Repite sobre cada estudiante y actualiza sus calificaciones
             for estudiante_id in estudiantes_ids:
                 tareas = request.form.get(f'tareas_{estudiante_id}_{asignatura_id}', 0)
                 examenes = request.form.get(f'examenes_{estudiante_id}_{asignatura_id}', 0)
@@ -156,7 +167,7 @@ def p_calificaciones():
                 asistencia = request.form.get(f'asistencia_{estudiante_id}_{asignatura_id}', 0)
                 cali_final = request.form.get(f'cali_final_{estudiante_id}_{asignatura_id}', 0)
 
-                # Actualizar en la tabla `calificaciones`
+                # Actualiza la tabla `calificaciones` y `calificacion_final`
                 cursor.execute("""
                     UPDATE calificaciones
                     SET tareas = %s,
@@ -178,6 +189,7 @@ def p_calificaciones():
             cursor.close()
             conn.close()
 
+            # Redirige para actualizar la página con los nuevos datos
             return redirect(url_for('p_calificaciones'))
 
     return render_template('./profesor/p_calificaciones.html', estudiantes=estudiantes, selected_curso=curso_id, selected_asignatura=asignatura_id, selected_periodo=periodo)
@@ -188,19 +200,20 @@ def p_calificaciones():
 
 @app.route('/alphaTeam/profesor/ayuda')
 def p_ayuda():
+    if 'usuario_id' not in session or session.get('role') != 'profesor':
+        return redirect('/')
     return render_template('./profesor/p_ayuda.html')
 
-@app.route('/alphaTeam/profesor/horario')
-def p_horario():
-    return render_template('./profesor/p_horario.html')
 
 @app.route('/alphaTeam/profesor/planificacion', methods=['GET', 'POST'])
 def p_planificacion():
+    if 'usuario_id' not in session or session.get('role') != 'profesor':
+        return redirect('/')
     conn = mysql.connect()
     cursor = conn.cursor()
 
     if request.method == 'POST':
-        # Obtener los datos del formulario
+        # Obtener los datos del formulario para subir la planificacion
         curso = request.form['curso1']
         asignatura = request.form['asigL']
         periodo = request.form['period']
@@ -239,19 +252,49 @@ def p_planificacion():
     conn.close()
 
     return render_template('./profesor/p_cargarplanificacion.html', planificaciones=planificaciones)
+# Configuración de la carpeta de carga
+app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
 
 
- 
+@app.route('/alphaTeam/profesor/eliminar_todo', methods=['POST'])
+def eliminar_todo():
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    # Obtener todos los archivos
+    cursor.execute("SELECT archivo FROM planificacion")
+    archivos = cursor.fetchall()
+
+    # Eliminar archivos del servidor
+    upload_folder = os.path.join('static', 'uploads')
+    for archivo in archivos:
+        archivo_path = os.path.join(upload_folder, archivo[0])
+        if os.path.exists(archivo_path):
+            os.remove(archivo_path)
+
+    # Eliminar todas las entradas de la base de datos
+    cursor.execute("DELETE FROM planificacion")
+    conn.commit()
+
+    cursor.close()
+    conn.close()
+
+    return redirect(url_for('p_planificacion'))
+
+
 @app.route('/alphaTeam/profesor/informacion', methods=['GET', 'POST'])
 def p_informacion():
+    if 'usuario_id' not in session or session.get('role') != 'profesor':
+        return redirect('/')
     estudiantes = []
     selected_curso = None
     selected_asignatura = None
 
     if request.method == 'POST':
+        # Obtiene los datos del formulario para mostrar información de los estudiantes
         curso_id = request.form.get('curL')
         asignatura_id = request.form.get('asigL')
-
+        # Verifica que se hayan proporcionado todos los datos necesarios
         if not curso_id or not asignatura_id:
             return "No se proporcionaron todos los datos necesarios", 404
 
@@ -281,6 +324,8 @@ def p_informacion():
 
 @app.route('/alphaTeam/profesor/reportar')
 def p_reportar():
+    if 'usuario_id' not in session or session.get('role') != 'profesor':
+        return redirect('/')
     if 'usuario_id' not in session:
         return redirect('/')
     return render_template('./profesor/p_reportar_problema.html')
@@ -289,17 +334,17 @@ def p_reportar():
 def enviar_reporte():
     if 'usuario_id' not in session:
         return redirect('/')
-
+    # Obtiene el reporte enviado desde el formulario
     reporte = request.form.get('reportar')
     if not reporte or reporte.strip() == "":
         return render_template('./profesor/p_reportar_problema.html', mensaje="El reporte no puede estar vacío.")
-
+    # Obtiene información del usuario desde la sesión
     matricula = session.get('matricula')
     nombre = session.get('nombre')
 
     if not matricula or not nombre:
         return "Información del usuario no disponible", 404
-
+     # Conecta a la base de datos
     conn = mysql.connect()
     cursor = conn.cursor()
 
@@ -317,11 +362,13 @@ def enviar_reporte():
 
 @app.route('/alphaTeam/profesor/usuario', methods=['GET'])
 def p_profesor():
+    if 'usuario_id' not in session or session.get('role') != 'profesor':
+        return redirect('/')
     if 'usuario_id' not in session:
         return redirect(url_for('login'))
-
+    # Obtiene el ID del usuario desde la sesión
     usuario_id = session['usuario_id']
-
+    # Conecta a la base de datos y obtiene la información del profesor
     conn = mysql.connect()
     cursor = conn.cursor()
     query = """
@@ -334,6 +381,7 @@ def p_profesor():
     cursor.close()
     conn.close()
 
+    # Verifica si se encontró información del profesor
     if profesor:
         profesor_dict = {
             'nombre': profesor[0],
@@ -347,19 +395,22 @@ def p_profesor():
     else:
         return render_template('p_usuarioprofesor.html', profesor=None)
 
-
+# Configura la carpeta para la subida de imágenes de perfil
 UPLOAD_FOLDER_PROFESOR = 'static/upload_image'
 app.config['UPLOAD_FOLDER_PROFESOR'] = UPLOAD_FOLDER_PROFESOR
 
+# Ruta para procesar la subida de una imagen de perfil
 @app.route('/upload_image', methods=['POST'])
 def upload_image():
+    # Verifica si el usuario está autenticado
     if 'usuario_id' not in session:
         return redirect(url_for('login'))
-
+    # Obtiene el archivo de imagen del formulario
     file = request.files.get('image')
     if not file or file.filename == '':
         return redirect(url_for('p_profesor', error='No se ha seleccionado ningún archivo'))
 
+    # Verifica si el archivo es una imagen, genera un nombre seguro para el archivo y lo guarda en el servidor
     filename = secure_filename(file.filename)
     file_path = os.path.join(app.config['UPLOAD_FOLDER_PROFESOR'], filename)
     file.save(file_path)
@@ -367,6 +418,7 @@ def upload_image():
     if not os.path.isfile(file_path):
         return redirect(url_for('p_profesor', error='Error al guardar el archivo'))
 
+    # Actualiza la ruta de la imagen de perfil del usuario en la base de datos
     usuario_id = session['usuario_id']
     conn = mysql.connect()
     cursor = conn.cursor()
@@ -381,8 +433,11 @@ def upload_image():
 
 @app.route('/alphaTeam/profesor/contraseña', methods=['GET', 'POST'])
 def p_contraseña():
+    if 'usuario_id' not in session or session.get('role') != 'profesor':
+        return redirect('/')
     mensaje = None
     if request.method == 'POST':
+        # Obtiene las contraseñas antigua, nueva y confirmación del formulario
         antigua = request.form['antigua']
         nueva = request.form['nueva']
         confirmar = request.form['confirmar']
@@ -511,11 +566,6 @@ def e_reinscripcion():
     else:
         # Si no se encontró al estudiante, podrías redirigir o mostrar un error
         return "Estudiante no encontrado", 404
-
-
-
-
-
 
 @app.route('/alphaTeam/estudiante/e_informaciondocente')
 def e_info_docente():

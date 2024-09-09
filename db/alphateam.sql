@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-08-2024 a las 14:54:37
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 09-09-2024 a las 22:51:54
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 7.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `alphateam`
+-- Base de datos: `alphateam2`
 --
 
 -- --------------------------------------------------------
@@ -36,17 +37,17 @@ CREATE TABLE `administrador` (
   `correo` varchar(100) NOT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `cedula` varchar(20) DEFAULT NULL,
-  `direccion` text DEFAULT NULL,
-  `imagen_perfil` blob DEFAULT NULL,
+  `direccion` text,
+  `imagen_perfil` blob,
   `contraseña` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `administrador`
 --
 
 INSERT INTO `administrador` (`id_administrador`, `matricula`, `nombre`, `apellidos`, `fecha_nacimiento`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`, `contraseña`) VALUES
-(1, 'A00001', 'admin', 'administrador', '2023-11-08', 'josemiguelreyes03@gmail.com', '8293859649', '402256021414', 'Herradura', NULL, 'admin');
+(1, 'admin', 'admin', 'administrador', '2023-11-08', 'josemiguelreyes03@gmail.com', '8293859649', '402256021414', 'Herradura', NULL, 'admin');
 
 -- --------------------------------------------------------
 
@@ -57,7 +58,7 @@ INSERT INTO `administrador` (`id_administrador`, `matricula`, `nombre`, `apellid
 CREATE TABLE `asignatura` (
   `id_asignatura` int(5) NOT NULL,
   `id_profesor` int(5) NOT NULL,
-  `nom_asignatura` char(60) NOT NULL
+  `nom_asignatura` char(60) COLLATE utf32_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish2_ci;
 
 --
@@ -344,13 +345,13 @@ INSERT INTO `calificacion_final` (`id_calificacionFinal`, `id_asignatura`, `id_e
 (12, 5, 2, 0, 0, 0, 0, 0, 0, 0),
 (13, 6, 2, 0, 0, 0, 0, 0, 0, 0),
 (14, 7, 2, 0, 0, 0, 0, 0, 0, 0),
-(15, 1, 3, 0, 0, 0, 0, 0, 0, 0),
-(16, 2, 3, 0, 0, 0, 0, 0, 0, 0),
-(17, 3, 3, 0, 0, 0, 0, 0, 0, 0),
-(18, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-(19, 5, 3, 0, 0, 0, 0, 0, 0, 0),
-(20, 6, 3, 0, 0, 0, 0, 0, 0, 0),
-(21, 7, 3, 0, 0, 0, 0, 0, 0, 0),
+(15, 1, 3, 80, 90, 77, 89, 0, 0, 84),
+(16, 2, 3, 70, 98, 92, 93, 0, 0, 88),
+(17, 3, 3, 88, 96, 74, 95, 0, 0, 88),
+(18, 4, 3, 87, 85, 89, 90, 0, 0, 88),
+(19, 5, 3, 78, 93, 89, 91, 0, 0, 88),
+(20, 6, 3, 87, 83, 95, 95, 0, 0, 90),
+(21, 7, 3, 88, 84, 93, 98, 0, 0, 91),
 (22, 1, 4, 0, 0, 0, 0, 0, 0, 0),
 (23, 2, 4, 0, 0, 0, 0, 0, 0, 0),
 (24, 3, 4, 0, 0, 0, 0, 0, 0, 0),
@@ -551,7 +552,7 @@ CREATE TABLE `cursos` (
   `id_curso` int(5) NOT NULL,
   `nivel` varchar(20) NOT NULL,
   `total_est` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `cursos`
@@ -568,40 +569,18 @@ INSERT INTO `cursos` (`id_curso`, `nivel`, `total_est`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `dias`
---
-
-CREATE TABLE `dias` (
-  `id_dias` int(5) NOT NULL,
-  `dias` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Volcado de datos para la tabla `dias`
---
-
-INSERT INTO `dias` (`id_dias`, `dias`) VALUES
-(1, 'Lunes'),
-(2, 'Martes'),
-(3, 'Miércoles'),
-(4, 'Jueves'),
-(5, 'Viernes');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `estudiante`
 --
 
 CREATE TABLE `estudiante` (
   `id_estudiante` int(5) NOT NULL,
-  `matricula` varchar(7) NOT NULL,
-  `nombre_estudiante` varchar(30) NOT NULL,
-  `apellidos` varchar(30) DEFAULT NULL,
-  `sexo_estudiante` varchar(9) NOT NULL,
+  `matricula` varchar(7) COLLATE utf32_spanish2_ci NOT NULL,
+  `nombre_estudiante` varchar(30) COLLATE utf32_spanish2_ci NOT NULL,
+  `apellidos` varchar(30) COLLATE utf32_spanish2_ci DEFAULT NULL,
+  `sexo_estudiante` varchar(9) COLLATE utf32_spanish2_ci NOT NULL,
   `nacimiento_estudiante` date NOT NULL,
-  `imagen_perfil` varchar(300) NOT NULL,
-  `contraseña` varchar(60) NOT NULL,
+  `imagen_perfil` varchar(300) COLLATE utf32_spanish2_ci NOT NULL,
+  `contraseña` varchar(60) COLLATE utf32_spanish2_ci NOT NULL,
   `id_curso` int(5) NOT NULL,
   `id_profesor` int(5) NOT NULL,
   `id_tutor` int(5) NOT NULL
@@ -646,43 +625,6 @@ INSERT INTO `estudiante` (`id_estudiante`, `matricula`, `nombre_estudiante`, `ap
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `hora`
---
-
-CREATE TABLE `hora` (
-  `id_hora` int(5) NOT NULL,
-  `hora` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Volcado de datos para la tabla `hora`
---
-
-INSERT INTO `hora` (`id_hora`, `hora`) VALUES
-(1, '8:00-8:45 AM'),
-(2, '8:45-9:50 AM'),
-(3, '9:50-10:20 AM'),
-(4, '10:20-11:05 AM'),
-(5, '11:05-12:00 PM');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `horario`
---
-
-CREATE TABLE `horario` (
-  `id_horario` int(5) NOT NULL,
-  `id_profesor` int(5) NOT NULL,
-  `id_curso` int(5) NOT NULL,
-  `id_asignatura` int(5) NOT NULL,
-  `id_hora` int(5) NOT NULL,
-  `id_dias` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `planificacion`
 --
 
@@ -692,7 +634,14 @@ CREATE TABLE `planificacion` (
   `id_asignatura` int(5) NOT NULL,
   `periodo` varchar(20) NOT NULL,
   `archivo` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `planificacion`
+--
+
+INSERT INTO `planificacion` (`id_planificacion`, `id_curso`, `id_asignatura`, `periodo`, `archivo`) VALUES
+(60, 1, 1, '2024-2025', 'python redes (albiery).docx');
 
 -- --------------------------------------------------------
 
@@ -703,30 +652,44 @@ CREATE TABLE `planificacion` (
 CREATE TABLE `profesores` (
   `id_profesor` int(5) NOT NULL,
   `id_asignatura` int(5) NOT NULL,
-  `matricula` varchar(7) NOT NULL,
-  `nombre` varchar(60) NOT NULL,
-  `apellidos` varchar(60) NOT NULL,
+  `matricula` varchar(7) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `nombre` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `apellidos` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
   `fecha_nacimiento` date NOT NULL,
-  `correo` varchar(60) NOT NULL,
-  `telefono` char(12) NOT NULL,
-  `cedula` char(13) NOT NULL,
-  `direccion` text NOT NULL,
-  `imagen_perfil` varchar(300) NOT NULL,
-  `contraseña` varchar(20) NOT NULL
+  `genero` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `correo` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `telefono` char(12) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `cedula` char(13) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `direccion` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `imagen_perfil` varchar(300) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `contraseña` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `profesores`
 --
 
-INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `matricula`, `nombre`, `apellidos`, `fecha_nacimiento`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`, `contraseña`) VALUES
-(1, 3, 'p-00001', 'Eduardo Rafael', 'Rodríguez Domínguez', '1968-08-02', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30', '0', 'p12345'),
-(2, 1, 'p-00002', 'Hanyi Gersi', 'Castillo', '1990-08-16', 'hanyigc@gmail.com', '829-633-5649', '130-6575967-6', 'Los Castillos, #21', '0', 'p23456'),
-(3, 5, 'p-00003', 'Jose Luis Manuel', 'Alonzo', '1953-12-06', 'profjosealonzo@gmail.com', '829-55-6545', '046-2285963-6', 'Padre de Las Casas #30', '0', 'p34567'),
-(4, 6, 'p-00004', 'Ruddys', 'Ferreras', '1950-12-10', 'ruddysf@gmail.com', '849-578-8489', '046-2596451-2', 'Villa Olímpica, Calle principal #2', '0', 'p45678'),
-(5, 7, 'p-00005', 'Apolinar', 'Rivas Genao', '1960-04-15', 'apolinar@gmail.com', '829-565-3215', '130-5426315-6', 'La Barranquita, Avenida Olímpica, #12', '0', 'p56789'),
-(6, 4, 'p-00006', 'Jose', 'De La Cruz', '1950-01-16', 'delacruz@gmail.com', '849-424-2424', '046-5526321-6', 'Las Colinas #05', '0', 'p61234'),
-(7, 2, 'p-00007', 'Faustina', 'Rodriguez', '1979-05-04', 'fausrodriguez@gmail.com', '849-478-9863', '130-1548963-9', 'Los Jardines #40', '0', 'p71234');
+INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `matricula`, `nombre`, `apellidos`, `fecha_nacimiento`, `genero`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`, `contraseña`) VALUES
+(1, 3, 'p-00001', 'Eduardo Rafael', 'Rodríguez Domínguez', '1968-08-02', 'Masculino', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30', '0', 'maria'),
+(2, 1, 'p-00002', 'Hanyi Gersi', 'Castillo', '1990-08-16', 'Femenino', 'hanyigc@gmail.com', '829-633-5649', '130-6575967-6', 'Los Castillos, #21', '0', 'p23456'),
+(3, 5, 'p-00003', 'Jose Luis Manuel', 'Alonzo', '1953-12-06', 'Masculino', 'profjosealonzo@gmail.com', '829-55-6545', '046-2285963-6', 'Padre de Las Casas #30', '0', 'p34567'),
+(4, 6, 'p-00004', 'Ruddys', 'Ferreras', '1950-12-10', 'Masculino', 'ruddysf@gmail.com', '849-578-8489', '046-2596451-2', 'Villa Olímpica, Calle principal #2', '0', 'p45678'),
+(5, 7, 'p-00005', 'Apolinar', 'Rivas Genao', '1960-04-15', 'Masculino', 'apolinar@gmail.com', '829-565-3215', '130-5426315-6', 'La Barranquita, Avenida Olímpica, #12', '0', 'p56789'),
+(6, 4, 'p-00006', 'Jose', 'De La Cruz', '1950-01-16', 'Masculino', 'delacruz@gmail.com', '849-424-2424', '046-5526321-6', 'Las Colinas #05', '0', 'p61234'),
+(7, 2, 'p-00007', 'Faustina', 'Rodriguez', '1979-05-04', 'Femenino', 'fausrodriguez@gmail.com', '849-478-9863', '130-1548963-9', 'Los Jardines #40', '0', 'p71234');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reportes`
+--
+
+CREATE TABLE `reportes` (
+  `id_reporte` int(5) NOT NULL,
+  `matricula` varchar(7) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `reporte` varchar(5000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -736,7 +699,7 @@ INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `matricula`, `nombre`,
 
 CREATE TABLE `roles` (
   `id_roles` int(5) NOT NULL,
-  `tipo_rol` varchar(60) NOT NULL
+  `tipo_rol` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -756,14 +719,14 @@ INSERT INTO `roles` (`id_roles`, `tipo_rol`) VALUES
 
 CREATE TABLE `tutor` (
   `id_tutor` int(5) NOT NULL,
-  `nombre` varchar(60) NOT NULL,
-  `apellidos` varchar(60) NOT NULL,
-  `cedula` char(13) NOT NULL,
-  `telefono` char(12) NOT NULL,
-  `correo` varchar(60) NOT NULL,
-  `ocupacion` varchar(30) NOT NULL,
-  `parentesco` varchar(15) NOT NULL,
-  `direccion` text NOT NULL
+  `nombre` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `apellidos` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `cedula` char(13) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `telefono` char(12) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `correo` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `ocupacion` varchar(30) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `parentesco` varchar(15) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `direccion` text COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -801,28 +764,6 @@ INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellidos`, `cedula`, `telefono`, `c
 (28, 'Isabel', 'Castro', '40226272829', '8495550008', 'isabel.castro@example.com', 'Profesor', 'Tía', 'Calle de la Nube 456, Ciudad'),
 (29, 'Antonio', 'Gómez', '04630313233', '8295550009', 'antonio.gomez@example.com', 'Contador', 'Padre', 'Calle de la Estrella 789, Ciudad'),
 (30, 'Elena', 'Hernández', '13034353637', '8095550010', 'elena.hernandez@example.com', 'Psicóloga', 'Madre', 'Calle de la Luna 321, Ciudad');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `id_usuario` int(5) NOT NULL,
-  `matricula_usuario` varchar(10) NOT NULL,
-  `contraseña` varchar(15) NOT NULL,
-  `id_roles` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id_usuario`, `matricula_usuario`, `contraseña`, `id_roles`) VALUES
-(1, 'P00001', '', 2),
-(2, 'E00001', '', 3),
-(3, 'A00001', '', 1);
 
 --
 -- Índices para tablas volcadas
@@ -867,12 +808,6 @@ ALTER TABLE `cursos`
   ADD PRIMARY KEY (`id_curso`);
 
 --
--- Indices de la tabla `dias`
---
-ALTER TABLE `dias`
-  ADD PRIMARY KEY (`id_dias`);
-
---
 -- Indices de la tabla `estudiante`
 --
 ALTER TABLE `estudiante`
@@ -881,23 +816,6 @@ ALTER TABLE `estudiante`
   ADD KEY `id_tutor` (`id_tutor`),
   ADD KEY `Id_profesor` (`id_profesor`),
   ADD KEY `id_curso_2` (`id_curso`);
-
---
--- Indices de la tabla `hora`
---
-ALTER TABLE `hora`
-  ADD PRIMARY KEY (`id_hora`);
-
---
--- Indices de la tabla `horario`
---
-ALTER TABLE `horario`
-  ADD PRIMARY KEY (`id_horario`),
-  ADD KEY `id_profesor` (`id_profesor`),
-  ADD KEY `id_curso` (`id_curso`),
-  ADD KEY `id_asignatura` (`id_asignatura`),
-  ADD KEY `id_hora` (`id_hora`),
-  ADD KEY `id_dias` (`id_dias`);
 
 --
 -- Indices de la tabla `planificacion`
@@ -914,6 +832,12 @@ ALTER TABLE `profesores`
   ADD KEY `id_asignatura` (`id_asignatura`);
 
 --
+-- Indices de la tabla `reportes`
+--
+ALTER TABLE `reportes`
+  ADD PRIMARY KEY (`id_reporte`);
+
+--
 -- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
@@ -924,13 +848,6 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `tutor`
   ADD PRIMARY KEY (`id_tutor`);
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`),
-  ADD KEY `id_roles` (`id_roles`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -967,40 +884,28 @@ ALTER TABLE `cursos`
   MODIFY `id_curso` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de la tabla `dias`
---
-ALTER TABLE `dias`
-  MODIFY `id_dias` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
 -- AUTO_INCREMENT de la tabla `estudiante`
 --
 ALTER TABLE `estudiante`
   MODIFY `id_estudiante` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT de la tabla `hora`
---
-ALTER TABLE `hora`
-  MODIFY `id_hora` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de la tabla `horario`
---
-ALTER TABLE `horario`
-  MODIFY `id_horario` int(5) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `planificacion`
 --
 ALTER TABLE `planificacion`
-  MODIFY `id_planificacion` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id_planificacion` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `profesores`
 --
 ALTER TABLE `profesores`
   MODIFY `id_profesor` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `reportes`
+--
+ALTER TABLE `reportes`
+  MODIFY `id_reporte` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -1013,12 +918,6 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `tutor`
   MODIFY `id_tutor` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -1055,26 +954,10 @@ ALTER TABLE `estudiante`
   ADD CONSTRAINT `estudiante_ibfk_5` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`);
 
 --
--- Filtros para la tabla `horario`
---
-ALTER TABLE `horario`
-  ADD CONSTRAINT `horario_ibfk_1` FOREIGN KEY (`id_hora`) REFERENCES `hora` (`id_hora`),
-  ADD CONSTRAINT `horario_ibfk_2` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
-  ADD CONSTRAINT `horario_ibfk_3` FOREIGN KEY (`id_curso`) REFERENCES `cursos` (`id_curso`),
-  ADD CONSTRAINT `horario_ibfk_4` FOREIGN KEY (`id_asignatura`) REFERENCES `asignatura` (`id_asignatura`),
-  ADD CONSTRAINT `horario_ibfk_5` FOREIGN KEY (`id_dias`) REFERENCES `dias` (`id_dias`);
-
---
 -- Filtros para la tabla `profesores`
 --
 ALTER TABLE `profesores`
   ADD CONSTRAINT `profesores_ibfk_1` FOREIGN KEY (`id_asignatura`) REFERENCES `asignatura` (`id_asignatura`);
-
---
--- Filtros para la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_roles`) REFERENCES `roles` (`id_roles`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
