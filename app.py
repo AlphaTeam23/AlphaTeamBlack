@@ -1034,19 +1034,31 @@ def a_crearusuarios():
 
 @app.route('/alphaTeam/admin/reportes')
 def a_reportes():
-    
     if 'usuario_id' not in session or session.get('role') != 'administrador':
         return redirect('/')
     
-    
     conn = mysql.connect()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM reportes")
-    reporte = cursor.fetchall()
+    cursor.execute("SELECT id_reporte, matricula, nombre, reporte, estatus FROM reportes")
+    reportes = cursor.fetchall()
     cursor.close()
     conn.close()
 
-    return render_template('./admin/a_reportes.html', reporte = reporte)
+    return render_template('./admin/a_reportes.html', reporte=reportes)
+
+@app.route('/alphaTeam/admin/reportes/resolver/<int:reporte_id>', methods=['POST'])
+def resolver_reporte(reporte_id):
+    if 'usuario_id' not in session or session.get('role') != 'administrador':
+        return redirect('/')
+    
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE reportes SET estatus = 'resuelto' WHERE id_reporte = %s", (reporte_id,))
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    return redirect(url_for('a_reportes'))
 
 @app.route('/alphaTeam/templates/cerrarsesion')
 def a_cerrar():
