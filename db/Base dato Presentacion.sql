@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-09-2024 a las 22:10:55
+-- Tiempo de generación: 09-09-2024 a las 22:33:40
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -47,7 +47,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`id_administrador`, `matricula`, `nombre`, `apellidos`, `fecha_nacimiento`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`, `contraseña`) VALUES
-(1, 'A00001', 'admin', 'administrador', '2023-11-08', 'josemiguelreyes03@gmail.com', '8293859649', '402256021414', 'Herradura', NULL, 'admin');
+(1, 'admin', 'admin', 'administrador', '2023-11-08', 'josemiguelreyes03@gmail.com', '8293859649', '402256021414', 'Herradura', NULL, 'admin');
 
 -- --------------------------------------------------------
 
