@@ -1437,6 +1437,10 @@ summary {
      display: none; 
 }
 
+.nav1 {
+    margin-top: 120px;
+}
+
 
 @media  screen and (max-width: 600px) {
     .cout {
