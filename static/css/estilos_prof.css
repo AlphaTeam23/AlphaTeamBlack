@@ -529,7 +529,7 @@ th:hover {
 
 .enviar_borrar {
     font-family: miFuentePath;
-    width: 70px;
+    width: 80px;
     font-weight: normal;
     font-size: 16px;
     top: -30px;
@@ -541,8 +541,6 @@ th:hover {
     color: #fff;
 }
 
-
-
 .enviar_borrar:hover {
     border: 1px solid #0077ff96;
 }
@@ -550,21 +548,20 @@ th:hover {
 .tabla3 {
     color: #fff;
     font-family: miFuentePath;
-    margin-top: -1%;
-    right: 1.50%;
+    margin-top: -1.50%;
+    right: 1.30%;
     position: relative;
-    width: 61%;
+    width: 60.60%;
     display: flex;
     justify-content: center;
     align-content: center;
 
 }
 
-
 .tabla3 th {
     font-weight: normal;
     border: none;
-    background-color: #ffffff2f;
+    background-color: #0000002f;
     height: 40px;
     width: 5%;
 }
@@ -574,7 +571,6 @@ th:hover {
     background-color: #ffffff2f;
     height: 40px;
     text-align: center;
-    border-radius: 3px;
     width: 10%;
 }
 
@@ -1000,6 +996,7 @@ summary {
     border: 1px solid #0077ff96;
 }
 
+
 #nombre::placeholder {
     text-align: center;
 }
@@ -1040,6 +1037,19 @@ summary {
 
 
 /* Menu barra lateral izquierda */
+       li a {
+        color: #fff;
+        margin: 7%;
+        font-size: 3.50vh;
+        text-decoration: none;
+        position: relative;
+        justify-content: flex-start;
+        display: flex;
+        align-items: center;
+        left: 8%;
+        width: 100%;
+        padding: 5px;
+    }
     .cout {
         position: relative;
         display: inline-block;
@@ -1260,6 +1270,14 @@ summary {
         width: 30px;
         height: 30px;
         margin-top: -5px;
+        left: 2%;
+        position: relative;
+    }
+
+    .mensaje-error2 {
+        width: 300px;
+        margin: 0 auto;
+        top: 20px;
         left: 2%;
         position: relative;
     }
@@ -1599,5 +1617,20 @@ summary {
 
     .preguntas_container::-webkit-scrollbar {
         display: none;
+    }
+
+    /* Reportar */
+       .mensaje-error2 {
+        width: 400px;
+        margin: 0 auto;
+        top: 50px;
+        left: 10%;
+        position: relative;
+    }
+
+    .reporte h2 {
+        left: 10px;
+        position: relative;
+        text-align: center;
     }
 }
