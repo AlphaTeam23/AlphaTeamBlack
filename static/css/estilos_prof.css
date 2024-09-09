@@ -19,16 +19,6 @@
     src: url(../fuentes/PathwayGothicOne-Regular.ttf);
 }
 
-@font-face {
-    font-family: miPath2;
-    src: url(../fuentes/Pathway_Extreme.ttf);
-}
-
-@font-face {
-    font-family: miFuentePoppins;
-    src: url(../fuentes/Poppins..ttf);
-}
-
 body {
     background-image: url(../imagenes/imagendefondo.png);
     background-repeat: no-repeat;
@@ -373,17 +363,27 @@ table {
  
 /* Página información estudiante */
 
+.calificaciones_docente2 {
+    margin: 0 auto;
+    bottom: 390px;
+    left: 34%;
+    position: relative;
+    cursor: pointer;
+}
+
+.calificaciones_docente2 form {
+    width: 60%;
+    margin-left: -1%;
+}
+
+.calificaciones_docente2 fieldset {
+    height: 80px;
+}
+
 .calificaciones_docente2 select {
     background-color: transparent;
     color: #fff;
     border: 1px solid #81e6ff63;
-}
-
-.calificaciones_docente2 fieldset {
-    padding: -20%;
-    width: 87%;
-    margin-left: -17.20%;
-    height: 80px;
 }
 
 .calificaciones_docente2 option {
@@ -394,19 +394,13 @@ table {
     color: #000;
 }
 
-.calificaciones_docente2 {
-    bottom: 390px;
-    left: 10%;
-    position: relative;
-}
-
 .tabla2 {
     color: #fff;
     font-family: miFuentePath;
-    left: 10.70%;
+    left: 13%;
     bottom: 390px;
     position: relative;
-    width: 59%;
+    width: 60.50%;
     border-radius: 1%;
     height: 340px;
     overflow: hidden;
@@ -480,91 +474,6 @@ th:hover {
     text-align: center;
 }
 
-/* Página horario clases profesor */
-.horario_clases h6 {
-    color: #fff;
-    font-family: miFuentePath;
-    font-weight: normal;
-    font-size: 24px;
-    top: -450px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin-left: 200px;
-} 
-
-.horario_clases {
-    width: 90%;
-}
-
-.horario {
-    font-family: miFuentePath;
-    text-align: center;
-    margin-top: -390px;
-    margin-left: 440px;
-    cursor: pointer;
-    color: #fff;
-    font-weight: normal;
-
-}
-
-.horario-tablet {
-    background-color: gray;
-}
-
-.horario th {
-    background-color: #87ccdd46;
-    color: #ffffff;
-    font-family: miFuentePath;
-    font-size: 22px;
-    font-weight: normal;
-    height: 35px;
-    border-radius: 5px;
-}
-
-.horario-profesor {
-    border-spacing: 10px;
-    width: 100%;
-}
-
-.hora_entrada h2 {
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: normal;
-    text-align: center;
-}
-
-.horario-profesor .horas {
-    background-color: #87ccdd69;
-    color: #fff;
-}
-
-.horario td {
-    background-color: #ffffffbb;
-    color: #031D45;
-    font-size: 15px;
-    font-weight: normal;
-    border-radius: 5px;
-    padding: 12px; 
-}
-
-.boton-horario {
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #81e6ff;
-    font-family: miFuentePath;
-    font-weight: normal;
-    font-size: 16px;
-    width: 80px;
-    left: -70px;
-    position: relative;
-    cursor: pointer;
-}
-
-.boton-horario:hover {
-    border: 1px solid #0077ff96;
-}
-
 /* Página planificación docente  */
 
 .plan_docente {
@@ -582,15 +491,14 @@ th:hover {
 
 .planificacion_docente {
     bottom: 390px;
-    left: 180px;
+    left: 450px;
     position: relative;
     cursor: pointer;
-    width: 61%;
     margin: 0 auto;
 }
 
 .planificacion_docente form {
-    width: 80%;
+    width: 60%;
     margin-left: -1%;
 }
 
@@ -609,12 +517,10 @@ th:hover {
 }
 
 .planificar {
-    width: 100px;
-    margin-left: 410px;
-    bottom: 40px;
+    width: 80px;
+    margin-left: 590px;
+    bottom: 42px;
     position: relative;
-    font-size: 10px;
-    text-align: center;
 }
 
 .planif_fielsed {
@@ -635,23 +541,19 @@ th:hover {
     color: #fff;
 }
 
-.cargar-plan {
-    margin-left: 250px;
-    bottom: 39px;
-    position: relative;
-} 
+
 
 .enviar_borrar:hover {
     border: 1px solid #0077ff96;
 }
 
-.planificacion_docente .tabla3 {
+.tabla3 {
     color: #fff;
     font-family: miFuentePath;
-    margin-top: -2%;
-    right: 1%;
+    margin-top: -1%;
+    right: 1.50%;
     position: relative;
-    width: 94.65%;
+    width: 61%;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -1121,7 +1023,7 @@ summary {
     }
 /* Titulo */
     h1 {
-        font-size: 5vh;
+        font-size: 150%;
         width: 60%;
         display: flex;
         justify-content: center;
@@ -1154,14 +1056,16 @@ summary {
         left: 32%;
         position: relative;
         padding: 5px;
-        width: 305px;
-        background-color: #000000;
-
+        width: 250px;
+        background-color: #ffffff;
+        height: 150%;
+        border-radius: 5px;
     }
 
     .cout li {
         text-align: left; 
-        background-color: #d9d9d900; 
+        background-color: #ffffff00;
+       
     }
 
     .container {
@@ -1172,10 +1076,22 @@ summary {
     }
 
     .cout li a{
-        color: white;
+        color: rgb(0, 0, 0);
         left: 50px;
         margin: -10px;
-    
+        font-size: 20px;
+        border-bottom: 1px solid #0077ff96; 
+        width: 60%;
+    }
+
+    .cout li img {
+        background-color: #000000c9;
+    }
+
+    .cout li a:hover {
+        background-color: #555555a8;
+        border-radius: 5px;
+        margin-left: 2%;
     }
 
     li {
@@ -1193,7 +1109,6 @@ summary {
         padding: 5px;
         width: 600px;
         height: 700px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }
 
@@ -1371,6 +1286,9 @@ summary {
         position: relative;
     }
 
+    .calificaciones_docente1 legend {
+        font-size: 19px;    }
+
     .tabla1::-webkit-scrollbar {
         display: none;
     }
@@ -1383,7 +1301,7 @@ summary {
         
     }
 
-    .calificaciones_docente label {
+    .calificaciones_docente1 label {
         font-size: 17px;
     }
 
@@ -1410,52 +1328,22 @@ summary {
         width: 18%;
     }
 
-    /* Horario */
-
-    .horario-profesor {
-        top: 430px;
-        position: relative;
-        overflow-x: scroll;
-        margin: 0 auto;        
-    }
-    
-    .horario table {
-        border-spacing: 4px;
-        overflow: hidden;
-    }
-
-    .horario td {
-        font-size: 12px;
-        
-    }
-
-    .horario th {
-        font-size: 18px;
-    }
-
-    .horario {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        margin-left: 5%;
-    }
-
 /* Pagina Informacion Estudiante */
 .calificaciones_docente2 {
     top: 80px;
-    left: -9%;
+    left: 6%;
     position: relative;
     margin: 0 auto;
     
 }
 
 .calificaciones_docente2 form {
-    width: 100%;
+    width: 90%;
 }
 
 .tabla2 {
-    width: 88.50%;
-    left: 0.50%;
+    width: 91.50%;
+    left: 0.20%;
     top: 80px;
     position: relative;
     margin: 0 auto;
@@ -1465,6 +1353,9 @@ summary {
     display: none;
 }
 
+.calificaciones_docente2 legend {
+    font-size: 19px;
+}
 .calificaciones_docente2 label {
     font-size: 17px;
 }
@@ -1485,35 +1376,35 @@ summary {
 }
 
 /* Pagina Planificación Docente */
+.planificacion_docente form {
+    position: relative;
+}
+
+.planificacion_docente legend {
+    font-size: 19px;
+}
+
 .planificacion_docente {
-    left: -89px;
-    bottom: -60px;
+    left: 5%;
+    top: 60px;
     position: relative;
-    margin: 0 auto;
+    width: 155%;
 }
 
-.planificacion_docente select {
-    width: 5%;
-}
-
-.cargar-plan {
-    display: none;
-}
-
-.planificar {
-    left: 13%;
-    margin-top: -5%;
-    position: relative;
-}
+ .planificacion_docente select {
+    width: 6%;
+} 
 
 .planificacion_docente label {
     font-size: 17px;
 }
 
-.tabla3 {
-    top: 20px;
+.planificar {
+    width: 82.50px;
+    margin-left: 70%;
+    bottom: 40px;
     position: relative;
-}
+} 
 
 /* Página Ayuda */
 .preguntas_container{
@@ -1641,20 +1532,6 @@ summary {
         display: none;
     }
 
-    /* Pagina Horario */
-    .horario {
-        left: 25%;
-        bottom: 416px;
-        position: relative;
-        margin: 0 auto;
-        width: 70%;
-    }
-
-    .horario_clases h6 {
-        display: flex;
-        justify-content: center;
-    }
-
     /* Pagina Informacion de Estudiante */
    .calificaciones_docente2 {
         margin: 0 auto;
@@ -1662,7 +1539,7 @@ summary {
 
    .calificaciones_docente2 {
         bottom: 385px;
-        left: 17%;
+        left: 38%;
         position: relative;
         width: 100%;
    }
@@ -1673,10 +1550,10 @@ summary {
 
    .tabla2 {
         bottom: 385px;
-        left: 17.70%;
+        left: 17%;
         position: relative;
         margin: 0 auto;
-        width: 59%;
+        width: 61.10%;
    }
 
    .tabla2::-webkit-scrollbar {
@@ -1684,29 +1561,23 @@ summary {
    }
 
     /* Pagina Planificacion docente */
-    .planificacion_docente {
-        bottom: 392px;
-        left: 150px;
+    .planificacion_docente form {
         position: relative;
-        margin: 0 auto;
+    }
+
+    .planificacion_docente {
+        margin-left: -85px;
+        width: 95%;
     }
 
     .planificacion_docente select {
-        width: 8%;
-    }
-
-    .cargar-plan {
-        margin-left: -5%;
+        width: 10%;
     }
 
     .planificar {
-        width: 130px;
-    }
-
-    .tabla3 {
-        width: 16%;
-        margin: 0 auto;
-        left: -37.80%;
+        width: 82.50px;
+        margin-left: 75%;
+        bottom: 40px;
         position: relative;
     }
 
@@ -1729,7 +1600,4 @@ summary {
     .preguntas_container::-webkit-scrollbar {
         display: none;
     }
-
-
-
 }

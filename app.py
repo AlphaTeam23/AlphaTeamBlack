@@ -241,7 +241,7 @@ def p_planificacion():
     return render_template('./profesor/p_cargarplanificacion.html', planificaciones=planificaciones)
 
 
-
+ 
 @app.route('/alphaTeam/profesor/informacion', methods=['GET', 'POST'])
 def p_informacion():
     estudiantes = []
