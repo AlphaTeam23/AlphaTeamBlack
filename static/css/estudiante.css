@@ -1434,7 +1434,7 @@ summary {
 }
 
 .cout{
-    display: none;
+     display: none; 
 }
 
 
@@ -1445,26 +1445,52 @@ summary {
    
     }
 
+    .content ul li  img {
+        background-color: #000000c9;
+        
+    }
+
     .nav{
         display: none; 
     }
 
+    .nav1 {
+        display: flex;
+        margin-top: 40px;
+    }
+
+    
+
     .nav li a {
         padding: 0px;
         margin: 0px;
-        background-color: #000000;
+        /* background-color: #000000; */
     }
 
     .cout ul{
         margin-left: 220px;
         padding: 5px;
         width: 320px;
-        background-color: #000000;
+         height: 150%;
+      
 
     }
 
+    .content ul {
+        background-color: #ffffff;
+        height: 950%;
+        position: relative;
+        right: 25px;
+        top: -175px;
+        border-radius: 5px;
+
+    }
+
+    
+
     .cout li {
         text-align: left; 
+       
     }
 
 
@@ -1476,18 +1502,20 @@ summary {
     }
 
     .cout li a{
-        color: white;
+        color: rgb(0, 0, 0);
         left: 50px;
         margin: -10px;
+        
     
     }
 
     li {
-        background-color: #00000031; 
+        /* background-color: #00000031;  */
         margin: -5px;
         width: 310px;
         text-align: center;
-        border-radius: 10px;
+         /* border-radius: 10px; */
+        
     }
 
     .content {
@@ -1497,22 +1525,21 @@ summary {
         top: 19%;
         padding: 5px;
         width: 100%;
-        height: 100%;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        height: 300%;
+        /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
         z-index: 1;
     }
 
-
+    
     .content a {
         color: rgb(0, 0, 0);
         padding: 12px; 
         text-decoration: none;
         display: block;
+        font-size: 23px;
+        
     }
 
-    /* .content a:hover {
-    background-color: #ddd;
-    } */
 
     .cout:focus-within .content,
     .cout:active .content {
@@ -1531,8 +1558,8 @@ summary {
     }
 
     .menu-items {
-        margin-right: 50px;
-       
+        margin-right: 20px;
+       margin-top: 95px;
     }
 
     .body{
@@ -1545,43 +1572,30 @@ summary {
     .menu img{
         width: 20px;
         height: 20px;
-    }
-
-
-    .logo_pagina img{
-        width: 80px;
-        height: 50px;
         position: relative;
-        top: -90px;
-        left: 17%;
-        margin: 0;
-         padding: 0;
+        top: 50px;
     }
 
-    .logo_pagina figure {
-        padding: 0;
-        margin: 0;
-        width: 0;
-        height: 0;
-        z-index: -1;
+
+     .logo_pagina img{
+       
+         display: none;
     }
-    
-    
-   
 
     h1 {
         width: 400px;
-        font-size: 29px;
+        font-size: 25px;
         position: relative;
-        left: 23%;
+        left: 33%;
         top: 20px;
+        
     }
 
 
     .menu-btn  {
         position: relative;
         left: 80%;
-        top: -160px;
+        top: -110px;
     }
 
 
@@ -1821,15 +1835,15 @@ summary {
 
    .regresar {
     position: relative;
-    left: 10%;
+    left: -3%;
     bottom: 70px;
    }
 
 
    #back {
     position: relative;
-        left: 1%;
-        bottom: 70px;
+        right: 1%;
+        bottom: 20px;
    }
 
 
@@ -1855,7 +1869,7 @@ summary {
     color: #fff;
     text-align: center;
     position: relative;
-    top: 360px;
+    top: 399px;
     right: 90%;
     font-size: 23px;
 }
@@ -1877,7 +1891,7 @@ summary {
     position: relative;
     right: 85%;
     width: 420px;
-    bottom: 60px;
+    bottom: 40px;
    }
 
   
@@ -1885,12 +1899,28 @@ summary {
     position: relative;
     bottom: 50px;
     transform: translate(-350px);
-   } 
+   }
+   
+   .alert-success{
+    padding: 5px;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #8ce9a2;
+    text-align: center;
+    width: 70%;
+    height: 40px;
+    position: relative;
+    left: 20%;
+    font-size: 23px;
+     border-radius: 12px;
+}
 
 }
 
 
 /* responsive tablet */
+
+
 
 @media screen and (min-width: 601px) and (max-width: 900px) {
 
@@ -1903,6 +1933,12 @@ summary {
         .nav {
             display: none;
         }
+
+        .nav1 {
+        display: flex;
+        margin-top: 40px;
+    }
+
     
         .nav li a {
             padding: 0px;
@@ -1938,7 +1974,7 @@ summary {
         }
     
         li {
-            background-color: #00000031;
+            background-color: #d9d9d931; 
             margin: -5px;
             width: 310px;
             text-align: center;
@@ -2014,6 +2050,7 @@ summary {
         left: 17%;
         margin: 0;
          padding: 0;
+         display: none;
     }
 
     .logo_pagina figure {
@@ -2031,8 +2068,8 @@ summary {
         width: 400px;
         font-size: 29px;
         position: relative;
-        left: 20%;
-        top: 40px;
+        left: 36%;
+        top: 20px;
        
     }
 
@@ -2175,6 +2212,10 @@ summary {
 
     /* cambio de contraseña */
 
+    .cons h1 {
+       transform: translate(-75px);
+    }
+
     .cambio_contraseña {
     position: relative;
     right: 20%;
@@ -2196,8 +2237,8 @@ summary {
 
 .reporte {
     position: relative;
-   top: 30px;
-    left: 20px;
+   top: 60px;
+    left: -29px;
 }
 
 .reporte img {
@@ -2207,7 +2248,7 @@ summary {
   top: 15px;
 }
 
-   .reporte textarea {
+.reporte textarea {
     position: relative;
     right: 55%;
     /* width: 420px; */
@@ -2217,9 +2258,22 @@ summary {
    .reporte  input{
     position: relative;
     bottom: 20px;
-   
    } 
 
+   .alert-success{
+    padding: 5px;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #8ce9a2;
+    text-align: center;
+    width: 70%;
+    height: 40px;
+    position: relative;
+    left: 20%;
+    top: 20px;
+    font-size: 23px;
+     border-radius: 12px;
+   }
 }
 
 

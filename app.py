@@ -424,10 +424,15 @@ def p_cerrarsesion():
 # Redireccionar a estudiante
 @app.route('/alphaTeam/estudiante')
 def e_alphaTeam():
+    if 'usuario_id' not in session or session.get('role') != 'estudiante':
+        return redirect('/')
     return render_template('./estudiante/e_alphaTeam.html')
 
 @app.route('/alphaTeam/estudiante/calificaciones')
 def e_miscalificaciones():
+    
+    if 'usuario_id' not in session or session.get('role') != 'estudiante':
+        return redirect('/')
     estudiante_id = session.get('usuario_id')  
 
     if not estudiante_id:
