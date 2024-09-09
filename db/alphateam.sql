@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-09-2024 a las 22:51:54
+-- Tiempo de generación: 09-09-2024 a las 23:40:11
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `alphateam2`
+-- Base de datos: `alphateam`
 --
 
 -- --------------------------------------------------------
@@ -47,7 +47,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`id_administrador`, `matricula`, `nombre`, `apellidos`, `fecha_nacimiento`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`, `contraseña`) VALUES
-(1, 'admin', 'admin', 'administrador', '2023-11-08', 'josemiguelreyes03@gmail.com', '8293859649', '402256021414', 'Herradura', NULL, 'admin');
+(1, 'A00001', 'admin', 'administrador', '2023-11-08', 'josemiguelreyes03@gmail.com', '8293859649', '402256021414', 'Herradura', NULL, 'admin');
 
 -- --------------------------------------------------------
 
@@ -96,7 +96,7 @@ CREATE TABLE `calificaciones` (
 --
 
 INSERT INTO `calificaciones` (`id_calificaciones`, `id_asignatura`, `id_estudiante`, `tareas`, `examenes`, `participacion`, `asistencia`, `cali_final`) VALUES
-(1, 1, 1, 0, 0, 0, 0, 0),
+(1, 1, 1, 20, 20, 20, 25, 85),
 (2, 2, 1, 0, 0, 0, 0, 0),
 (3, 3, 1, 0, 0, 0, 0, 0),
 (4, 4, 1, 0, 0, 0, 0, 0),
@@ -173,7 +173,7 @@ INSERT INTO `calificaciones` (`id_calificaciones`, `id_asignatura`, `id_estudian
 (76, 5, 11, 0, 0, 0, 0, 0),
 (77, 6, 11, 0, 0, 0, 0, 0),
 (78, 7, 11, 0, 0, 0, 0, 0),
-(79, 1, 12, 0, 0, 0, 0, 0),
+(79, 1, 12, 25, 25, 10, 20, 80),
 (80, 2, 12, 0, 0, 0, 0, 0),
 (81, 3, 12, 0, 0, 0, 0, 0),
 (82, 4, 12, 0, 0, 0, 0, 0),
@@ -331,7 +331,7 @@ CREATE TABLE `calificacion_final` (
 --
 
 INSERT INTO `calificacion_final` (`id_calificacionFinal`, `id_asignatura`, `id_estudiante`, `primer_periodo`, `segundo_periodo`, `tercer_periodo`, `cuarto_periodo`, `completivo`, `extraordinario`, `final`) VALUES
-(1, 1, 1, 0, 0, 0, 0, 0, 0, 0),
+(1, 1, 1, 85, 0, 0, 0, 0, 0, 0),
 (2, 2, 1, 0, 0, 0, 0, 0, 0, 0),
 (3, 3, 1, 0, 0, 0, 0, 0, 0, 0),
 (4, 4, 1, 0, 0, 0, 0, 0, 0, 0),
@@ -345,13 +345,13 @@ INSERT INTO `calificacion_final` (`id_calificacionFinal`, `id_asignatura`, `id_e
 (12, 5, 2, 0, 0, 0, 0, 0, 0, 0),
 (13, 6, 2, 0, 0, 0, 0, 0, 0, 0),
 (14, 7, 2, 0, 0, 0, 0, 0, 0, 0),
-(15, 1, 3, 80, 90, 77, 89, 0, 0, 84),
-(16, 2, 3, 70, 98, 92, 93, 0, 0, 88),
-(17, 3, 3, 88, 96, 74, 95, 0, 0, 88),
-(18, 4, 3, 87, 85, 89, 90, 0, 0, 88),
-(19, 5, 3, 78, 93, 89, 91, 0, 0, 88),
-(20, 6, 3, 87, 83, 95, 95, 0, 0, 90),
-(21, 7, 3, 88, 84, 93, 98, 0, 0, 91),
+(15, 1, 3, 0, 0, 0, 0, 0, 0, 0),
+(16, 2, 3, 0, 0, 0, 0, 0, 0, 0),
+(17, 3, 3, 0, 0, 0, 0, 0, 0, 0),
+(18, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+(19, 5, 3, 0, 0, 0, 0, 0, 0, 0),
+(20, 6, 3, 0, 0, 0, 0, 0, 0, 0),
+(21, 7, 3, 0, 0, 0, 0, 0, 0, 0),
 (22, 1, 4, 0, 0, 0, 0, 0, 0, 0),
 (23, 2, 4, 0, 0, 0, 0, 0, 0, 0),
 (24, 3, 4, 0, 0, 0, 0, 0, 0, 0),
@@ -408,7 +408,7 @@ INSERT INTO `calificacion_final` (`id_calificacionFinal`, `id_asignatura`, `id_e
 (75, 5, 11, 0, 0, 0, 0, 0, 0, 0),
 (76, 6, 11, 0, 0, 0, 0, 0, 0, 0),
 (77, 7, 11, 0, 0, 0, 0, 0, 0, 0),
-(78, 1, 12, 0, 0, 0, 0, 0, 0, 0),
+(78, 1, 12, 80, 0, 0, 0, 0, 0, 0),
 (79, 2, 12, 0, 0, 0, 0, 0, 0, 0),
 (80, 3, 12, 0, 0, 0, 0, 0, 0, 0),
 (81, 4, 12, 0, 0, 0, 0, 0, 0, 0),
@@ -591,7 +591,7 @@ CREATE TABLE `estudiante` (
 --
 
 INSERT INTO `estudiante` (`id_estudiante`, `matricula`, `nombre_estudiante`, `apellidos`, `sexo_estudiante`, `nacimiento_estudiante`, `imagen_perfil`, `contraseña`, `id_curso`, `id_profesor`, `id_tutor`) VALUES
-(1, 'e-00001', 'Faury', 'García Rodríguez', 'Masculino', '2004-09-17', '', 'e101', 4, 4, 2),
+(1, 'e-00001', 'Faury', 'García Rodríguez', 'Masculino', '2004-09-17', '', 'hola', 4, 4, 2),
 (2, 'e-00002', 'Jose Miguel', 'Bello Acosta', 'Masculino', '2003-09-04', '', 'e102', 4, 4, 4),
 (3, 'e-00003', 'Jose Miguel', 'Reyes', 'Masculino', '1996-11-08', '', 'e103', 4, 4, 5),
 (4, 'e-00004', 'Massiel', 'Rodriguez Rodríguez', 'Femenino', '2004-01-04', '', 'e104', 4, 4, 8),
@@ -636,13 +636,6 @@ CREATE TABLE `planificacion` (
   `archivo` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `planificacion`
---
-
-INSERT INTO `planificacion` (`id_planificacion`, `id_curso`, `id_asignatura`, `periodo`, `archivo`) VALUES
-(60, 1, 1, '2024-2025', 'python redes (albiery).docx');
-
 -- --------------------------------------------------------
 
 --
@@ -670,7 +663,7 @@ CREATE TABLE `profesores` (
 --
 
 INSERT INTO `profesores` (`id_profesor`, `id_asignatura`, `matricula`, `nombre`, `apellidos`, `fecha_nacimiento`, `genero`, `correo`, `telefono`, `cedula`, `direccion`, `imagen_perfil`, `contraseña`) VALUES
-(1, 3, 'p-00001', 'Eduardo Rafael', 'Rodríguez Domínguez', '1968-08-02', 'Masculino', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30', '0', 'maria'),
+(1, 3, 'p-00001', 'Eduardo Rafael', 'Rodríguez Domínguez', '1968-08-02', 'Masculino', 'eduardo@gmail.com', '8294195674', '046-0024666-6', 'Los Llanos de La Herradura, Calle A, #30', '0', 'p12345'),
 (2, 1, 'p-00002', 'Hanyi Gersi', 'Castillo', '1990-08-16', 'Femenino', 'hanyigc@gmail.com', '829-633-5649', '130-6575967-6', 'Los Castillos, #21', '0', 'p23456'),
 (3, 5, 'p-00003', 'Jose Luis Manuel', 'Alonzo', '1953-12-06', 'Masculino', 'profjosealonzo@gmail.com', '829-55-6545', '046-2285963-6', 'Padre de Las Casas #30', '0', 'p34567'),
 (4, 6, 'p-00004', 'Ruddys', 'Ferreras', '1950-12-10', 'Masculino', 'ruddysf@gmail.com', '849-578-8489', '046-2596451-2', 'Villa Olímpica, Calle principal #2', '0', 'p45678'),
@@ -688,8 +681,17 @@ CREATE TABLE `reportes` (
   `id_reporte` int(5) NOT NULL,
   `matricula` varchar(7) NOT NULL,
   `nombre` varchar(20) NOT NULL,
-  `reporte` varchar(5000) NOT NULL
+  `reporte` varchar(5000) NOT NULL,
+  `estatus` varchar(20) DEFAULT 'pendiente'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `reportes`
+--
+
+INSERT INTO `reportes` (`id_reporte`, `matricula`, `nombre`, `reporte`, `estatus`) VALUES
+(115, 'e-00001', 'Faury', 'rgegegr', 'pendiente'),
+(116, 'e-00001', 'Faury', 'rgegegr', 'pendiente');
 
 -- --------------------------------------------------------
 
@@ -893,7 +895,7 @@ ALTER TABLE `estudiante`
 -- AUTO_INCREMENT de la tabla `planificacion`
 --
 ALTER TABLE `planificacion`
-  MODIFY `id_planificacion` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id_planificacion` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT de la tabla `profesores`
@@ -905,7 +907,7 @@ ALTER TABLE `profesores`
 -- AUTO_INCREMENT de la tabla `reportes`
 --
 ALTER TABLE `reportes`
-  MODIFY `id_reporte` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_reporte` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
