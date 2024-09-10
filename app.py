@@ -12,7 +12,6 @@ from flaskext.mysql import MySQL
 from datetime import datetime
 
 from werkzeug.utils import secure_filename
-import logging
 
 app=Flask(__name__)
 app.secret_key="alphateam"
