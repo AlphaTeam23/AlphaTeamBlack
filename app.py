@@ -662,14 +662,11 @@ app.config['UPLOAD_FOLDER_ESTUDIANTE'] = UPLOAD_FOLDER_ESTUDIANTE
 @app.route('/upload_imageestuden', methods=['POST'])
 def upload_imageestuden():
     if 'usuario_id' not in session:
-        return redirect(url_for('login'))
+        return redirect('/alphaTeam/estudiante')
 
     file = request.files.get('image')
-    if not file:
-        return redirect(url_for('e_estudiante', error='No se ha seleccionado ningún archivo'))
-
-    if file.filename == '':
-        return redirect(url_for('e_estudiante', error='No se ha seleccionado ningún archivo'))
+    if not file or file.filename == '':
+        return redirect('/alphaTeam/estudiante?error=No se ha seleccionado ningún archivo')
 
     filename = secure_filename(file.filename)
     file_path = os.path.join(app.config['UPLOAD_FOLDER_ESTUDIANTE'], filename)
@@ -677,21 +674,20 @@ def upload_imageestuden():
 
     # Verificar si el archivo se guardó correctamente
     if not os.path.isfile(file_path):
-        return redirect(url_for('e_estudiante', error='Error al guardar el archivo'))
+        return redirect('/alphaTeam/estudiante?error=Error al guardar el archivo')
 
-    # Inserta la ruta de la imagen en la base de datos
+    # Actualiza la base de datos con el nombre del archivo
     usuario_id = session['usuario_id']
     conn = mysql.connect()
     cursor = conn.cursor()
-
-    # Actualiza la base de datos con el nombre del archivo
     cursor.execute('UPDATE estudiante SET imagen_perfil = %s WHERE id_estudiante = %s', (filename, usuario_id))
     conn.commit()
-
     cursor.close()
     conn.close()
 
-    return redirect(url_for('e_estudiante'))
+    return redirect('/alphaTeam/estudiante')
+
+
 
 
 @app.route('/alphaTeam/estudiante/contraseña', methods=['GET', 'POST'])

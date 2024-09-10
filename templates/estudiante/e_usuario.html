@@ -25,15 +25,17 @@
     <main>
     <section class="inf_basica_estudiante">
         <h2>MI INFORMACIÓN BÁSICA PERSONAL</h2>
-         <form action="/alphaTeam/profesor/usuarioprofesor" method="POST" enctype="multipart/form-data" id="imageUploadForm">
-            <figure class="estudiante-img">
-                <img src="{{'/alphaTeam/profesor/usuarioprofesor'}}" alt="" id="imagenPrevia">
-                <img src="/static/imagenes/bx-trash.svg" alt="" class="borrar">
-                <label for="imageInput"></label>
-                <input type="file" name="image" id="imageInput">
-                <button type="submit" id="uploadButton">Subir</button>
-            </figure>
-        </form>
+        <form action="/upload_imageestuden" method="POST" enctype="multipart/form-data" id="imageUploadForm">
+        <figure class="estudiante-img">
+            <img src="/static/imagenes/logo.png" alt="Vista previa" id="imagenPrevia">
+            <img src="/static/imagenes/bx-trash.svg" alt="Borrar" class="borrar" onclick="clearImage()">
+            <label for="imageInput"></label>
+            <input type="file" name="image" id="imageInput" onchange="previewImage()">
+            <button type="submit" id="uploadButton">Subir</button>
+        </figure>
+    </form>
+
+
 <div class="titinfo">
 <h4>Nombre</h4><img src="/static/imagenes/bx-user copy.svg" alt="">
 <p>{{ estudiante.nombre if estudiante else 'No disponible' }}</p>
@@ -50,6 +52,48 @@
         </div>
     </section>
     </main>
-    <script src="/static/js/cambiofoto.js"></script>
+      <script>
+        // Función para mostrar la vista previa de la imagen
+        function previewImage() {
+            const fileInput = document.getElementById('imageInput');
+            const preview = document.getElementById('imagenPrevia');
+            
+            // Verifica si se ha seleccionado un archivo
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const imageDataUrl = e.target.result;
+                    preview.src = imageDataUrl; // Establece la URL del archivo en la vista previa
+
+                    // Guarda la imagen en localStorage
+                    localStorage.setItem('uploadedImage', imageDataUrl);
+                }
+
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+
+        // Función para borrar la imagen
+        function clearImage() {
+            const fileInput = document.getElementById('imageInput');
+            const preview = document.getElementById('imagenPrevia');
+
+            fileInput.value = ''; // Borra el archivo seleccionado
+            preview.src = ''; // Borra la vista previa
+
+            // Elimina la imagen de localStorage
+            localStorage.removeItem('uploadedImage');
+        }
+
+        // Cargar la imagen desde localStorage al cargar la página
+        window.onload = function() {
+            const savedImage = localStorage.getItem('uploadedImage');
+            if (savedImage) {
+                const preview = document.getElementById('imagenPrevia');
+                preview.src = savedImage;
+            }
+        }
+    </script>
 </body>
 </html>
