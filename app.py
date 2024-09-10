@@ -11,6 +11,7 @@ from flaskext.mysql import MySQL
 # Importar controlador del tiempo
 from datetime import datetime
 
+# Se utiliza para asegurar que los nombres de archivo sean seguros y no contengan caracteres problemáticos que podrían causar problemas en el sistema de archivos o en la aplicación web.
 from werkzeug.utils import secure_filename
 
 app=Flask(__name__)
