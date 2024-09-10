@@ -507,10 +507,14 @@ def e_miscalificaciones():
 
 @app.route('/alphaTeam/estudiante/ayuda')
 def e_ayuda():
+    if 'usuario_id' not in session or session.get('role') != 'estudiante':
+        return redirect('/')
     return render_template('./estudiante/e_ayuda.html')
 
 @app.route('/alphaTeam/estudiante/reinscripcion', methods=['GET', 'POST'])
 def e_reinscripcion():
+    if 'usuario_id' not in session or session.get('role') != 'estudiante':
+        return redirect('/')
     id_estudiante = session.get('usuario_id') 
 
     conn = mysql.connect()
@@ -554,10 +558,14 @@ def e_reinscripcion():
 
 @app.route('/alphaTeam/estudiante/e_informaciondocente')
 def e_info_docente():
+    if 'usuario_id' not in session or session.get('role') != 'estudiante':
+        return redirect('/')
     return render_template('./estudiante/e_informaciondocente.html')
 
 @app.route('/alphaTeam/estudiante/pago')
 def e_pago():
+    if 'usuario_id' not in session or session.get('role') != 'estudiante':
+        return redirect('/')
     return render_template('./estudiante/e_pago.html')
 
 @app.route('/alphaTeam/estudiante/reporte')
@@ -597,6 +605,8 @@ def enviar1_reporte():
 
 @app.route('/alphaTeam/estudiante/usuario')
 def e_usuario():
+    if 'usuario_id' not in session or session.get('role') != 'estudiante':
+        return redirect('/')
     if 'usuario_id' not in session:
         return redirect(url_for('login'))
 
@@ -686,6 +696,9 @@ def upload_imageestuden():
 
 @app.route('/alphaTeam/estudiante/contraseña', methods=['GET', 'POST'])
 def e_contraseña():
+    
+    if 'usuario_id' not in session or session.get('role') != 'estudiante':
+        return redirect('/')
     mensaje = None
     mensaje_class = None
 
