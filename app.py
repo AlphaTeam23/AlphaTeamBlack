@@ -12,7 +12,7 @@ from flaskext.mysql import MySQL
 from datetime import datetime
 
 from werkzeug.utils import secure_filename
-
+import logging
 
 app=Flask(__name__)
 app.secret_key="alphateam"
@@ -22,6 +22,7 @@ app.config['MYSQL_DATABASE_HOST']='localhost'
 app.config['MYSQL_DATABASE_USER']='root'
 app.config['MYSQL_DATABASE_PASSWORD']=''
 app.config['MYSQL_DATABASE_DB']='alphateam'
+app.config['UPLOAD_FOLDER'] = 'static/uploads'
 
 # Iniciar mysql
 mysql.init_app(app)
@@ -204,45 +205,57 @@ def p_ayuda():
         return redirect('/')
     return render_template('./profesor/p_ayuda.html')
 
-
 @app.route('/alphaTeam/profesor/planificacion', methods=['GET', 'POST'])
 def p_planificacion():
     if 'usuario_id' not in session or session.get('role') != 'profesor':
         return redirect('/')
+    
     conn = mysql.connect()
     cursor = conn.cursor()
 
     if request.method == 'POST':
-        # Obtener los datos del formulario para subir la planificacion
-        curso = request.form['curso1']
-        asignatura = request.form['asigL']
-        periodo = request.form['period']
-        archivo = request.files['planificacion']
-
-        # Guardar el archivo en el servidor dentro de la carpeta static/uploads
-        if archivo:
-            upload_folder = os.path.join('static', 'uploads')
-            if not os.path.exists(upload_folder):
-                os.makedirs(upload_folder)
+        if 'delete' in request.form:
+            # Eliminar archivo
+            id_planificacion = request.form['id_planificacion']
             
-            archivo_path = os.path.join(upload_folder, archivo.filename)
-            archivo.save(archivo_path)
-
-            # Guardar información en la base de datos
-            cursor.execute("""
-                INSERT INTO planificacion (id_curso, id_asignatura, periodo, archivo) 
-                VALUES (%s, %s, %s, %s)
-            """, (curso, asignatura, periodo, archivo.filename))
+            cursor.execute("SELECT archivo FROM planificacion WHERE id_planificacion = %s", (id_planificacion,))
+            archivo = cursor.fetchone()
+            if archivo:
+                archivo_path = os.path.join(app.config['UPLOAD_FOLDER'], archivo[0])
+                if os.path.exists(archivo_path):
+                    os.remove(archivo_path)
+            
+            cursor.execute("DELETE FROM planificacion WHERE id_planificacion = %s", (id_planificacion,))
             conn.commit()
+        else:
+            # Subir nuevo archivo
+            curso = request.form['curso1']
+            asignatura = request.form['asigL']
+            periodo = request.form['period']
+            archivo = request.files['planificacion']
 
-            # Redirigir al usuario para evitar duplicaciones
-            cursor.close()
-            conn.close()
-            return redirect(url_for('p_planificacion'))
+            if archivo:
+                filename = secure_filename(archivo.filename)
+                upload_folder = app.config['UPLOAD_FOLDER']
+                if not os.path.exists(upload_folder):
+                    os.makedirs(upload_folder)
+                
+                archivo_path = os.path.join(upload_folder, filename)
+                archivo.save(archivo_path)
+
+                cursor.execute("""
+                    INSERT INTO planificacion (id_curso, id_asignatura, periodo, archivo) 
+                    VALUES (%s, %s, %s, %s)
+                """, (curso, asignatura, periodo, filename))
+                conn.commit()
+
+        cursor.close()
+        conn.close()
+        return redirect(url_for('p_planificacion'))
 
     # Obtener los datos de la base de datos para mostrar
     cursor.execute("""
-        SELECT p.id_curso, c.nivel, p.id_asignatura, a.nom_asignatura, p.periodo, p.archivo
+        SELECT p.id_planificacion, p.id_curso, c.nivel, p.id_asignatura, a.nom_asignatura, p.periodo, p.archivo
         FROM planificacion p
         JOIN cursos c ON p.id_curso = c.id_curso
         JOIN asignatura a ON p.id_asignatura = a.id_asignatura
@@ -252,34 +265,6 @@ def p_planificacion():
     conn.close()
 
     return render_template('./profesor/p_cargarplanificacion.html', planificaciones=planificaciones)
-# Configuración de la carpeta de carga
-app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
-
-
-@app.route('/alphaTeam/profesor/eliminar_todo', methods=['POST'])
-def eliminar_todo():
-    conn = mysql.connect()
-    cursor = conn.cursor()
-
-    # Obtener todos los archivos
-    cursor.execute("SELECT archivo FROM planificacion")
-    archivos = cursor.fetchall()
-
-    # Eliminar archivos del servidor
-    upload_folder = os.path.join('static', 'uploads')
-    for archivo in archivos:
-        archivo_path = os.path.join(upload_folder, archivo[0])
-        if os.path.exists(archivo_path):
-            os.remove(archivo_path)
-
-    # Eliminar todas las entradas de la base de datos
-    cursor.execute("DELETE FROM planificacion")
-    conn.commit()
-
-    cursor.close()
-    conn.close()
-
-    return redirect(url_for('p_planificacion'))
 
 
 @app.route('/alphaTeam/profesor/informacion', methods=['GET', 'POST'])
