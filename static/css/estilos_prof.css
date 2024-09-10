@@ -545,6 +545,10 @@ th:hover {
     border: 1px solid #0077ff96;
 }
 
+.eliminar-a {
+    color: crimson;
+}
+
 .tabla3 {
     color: #fff;
     font-family: miFuentePath;

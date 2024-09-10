@@ -6,11 +6,6 @@
     <title>Planificacion Docente</title>
     <link rel="stylesheet" href="/static/css/estilos_prof.css">
     <link rel="icon" href="/static/imagenes/icono_pagina.png">
-     <script>
-        function confirmarEliminacion() {
-            return confirm('¿Estás seguro de que deseas eliminar todos los archivos?');
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -67,7 +62,7 @@
     </div>
     <main>
         <section>
- <div class="planificacion_docente">
+<div class="planificacion_docente">
         <form action="/alphaTeam/profesor/planificacion" class="form-plani" method="POST" enctype="multipart/form-data">
             <fieldset class="planif_fielsed">
                 <legend class="plan_docente">CARGAR PLANIFICACIÓN</legend>
@@ -109,12 +104,6 @@
             </fieldset>
 
             <input class="enviar_borrar" type="submit" name="enviar" value="ENVIAR">
-            <input class="enviar_borrar" type="button" value="ELIMINAR TODO" onclick="if (confirmarEliminacion()) { document.getElementById('eliminar_todo_form').submit(); }">
-        </form>
-
-        <!-- Formulario para eliminar todos los archivos -->
-        <form id="eliminar_todo_form" action="/alphaTeam/profesor/eliminar_todo" method="POST" style="display:none;">
-            <input type="hidden" name="eliminar_todo" value="true">
         </form>
 
         <div class="tabla3">
@@ -124,13 +113,20 @@
                     <td>MATERIA</td>
                     <td>PERIODO</td>
                     <td>ARCHIVOS ENVIADOS</td>
+                    <td>ACCIONES</td>
                 </tr>
                 {% for planificacion in planificaciones %}
                 <tr>
-                    <td>{{ planificacion[1] }}</td>
-                    <td>{{ planificacion[3] }}</td>
+                    <td>{{ planificacion[2] }}</td>
                     <td>{{ planificacion[4] }}</td>
-                    <td><a href="/static/uploads/{{ planificacion[5] }}" target="_blank">{{ planificacion[5] }}</a></td>
+                    <td>{{ planificacion[5] }}</td>
+                    <td><a href="/static/uploads/{{ planificacion[6] }}" target="_blank">{{ planificacion[6] }}</a></td>
+                    <td>
+                        <form action="/alphaTeam/profesor/planificacion" method="POST" style="display:inline;">
+                            <input type="hidden" name="id_planificacion" value="{{ planificacion[0] }}">
+                            <input type="submit" name="delete" class="eliminar-a" value="Eliminar">
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
             </table>
