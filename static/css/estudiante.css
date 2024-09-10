@@ -1437,6 +1437,10 @@ summary {
      display: none; 
 }
 
+.nav1 {
+    margin-top: 120px;
+}
+
 
 @media  screen and (max-width: 600px) {
     .cout {
@@ -1456,7 +1460,7 @@ summary {
 
     .nav1 {
         display: flex;
-        margin-top: 40px;
+        margin-top: 120px;
     }
 
     
