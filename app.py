@@ -553,8 +553,8 @@ def e_reinscripcion():
 
     # Obtener los datos del estudiante para mostrarlos en el formulario
     cursor.execute("""
-        SELECT e.nombre_estudiante, e.apellidos, e.sexo_estudiante, e.nacimiento_estudiante,
-               t.telefono, t.parentesco, t.direccion, t.correo
+        SELECT e.nombre_estudiante, e.apellidos, e.sexo_estudiante, e.nacimiento_estudiante, 
+               t.telefono, t.nombre, t.direccion, t.correo
         FROM estudiante e
         JOIN tutor t ON e.id_tutor = t.id_tutor
         WHERE e.id_estudiante = %s
