@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Pago - Colegio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(/static/imagenes/imagendefondo.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 900px;
+            overflow: hidden;
+            background-position-y: -129px;
+            object-fit: cover; 
+            color: #ffffff;
+        }
+
+        .regresar {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            top: 50px;
+            
+        }
+        
+        .regresar img {
+            width: 32px;
+            height: 32px;
+        }
+        .container {
+           
+            max-width: 750px;
+           position: relative;
+           bottom: 40px;
+            margin: 0 auto;
+            background-color: #fafafa10;
+            backdrop-filter: blur(0.9rem);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+
+       
+    
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .expiration-date {
+            display: flex;
+            gap: 10px;
+        }
+        .expiration-date select {
+            flex: 1;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        @media  screen and (max-width: 600px) {
+            .regresar {
+                display: flex;
+                justify-content: flex-end;
+                position: relative;
+             top: -30px;
+                left: 40px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="regresar" id="back">
+        <figure>
+            <a href="javascript:history.back()">
+                <img src="/static/imagenes/flecharegresar.png" alt=""></a>
+        </figure>
+    </div>
+    <div class="container">
+        <h1>Método de Pago - Colegio</h1>
+        <form id="paymentForm" action="#" method="post">
+            <label for="nombre_tutor">Nombre del Tutor:</label>
+            <input type="text" id="nombre_tutor" name="nombre_tutor" required>
+        
+            <label for="monto">Monto a Pagar:</label>
+            <input type="number" id="monto" name="monto" min="0" step="0.01" required>
+        
+            <label for="metodo">Método de Pago:</label>
+            <select id="metodo" name="metodo" required>
+                <option value="">Seleccione una opción</option>
+                <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                <option value="transferencia">Transferencia Bancaria</option>
+               
+            </select>
+        
+            <div id="tarjeta-section">
+                <label for="numero_tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="numero_tarjeta" name="numero_tarjeta" placeholder="1234 5678 9012 3456" maxlength="19">
+        
+                <label for="cvc">CVC:</label>
+                <input type="text" id="cvc" name="cvc" placeholder="123" maxlength="3">
+        
+                <label>Fecha de Expiración:</label>
+                <div class="expiration-date">
+                    <select id="mes_expiracion" name="mes_expiracion">
+                        <option value="">Mes</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">05</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <!-- Otros meses -->
+                    </select>
+                    <select id="anio_expiracion" name="anio_expiracion">
+                        <option value="">Año</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <!-- Otros años -->
+                    </select>
+                </div>
+            </div>
+        
+            <input type="submit" value="Realizar Pago">
+        </form>
+        
+        <p id="validationResult"></p>
+        
+    </div>
+
+    <script>
+        function validarTarjeta(numeroTarjeta) {
+            let tarjeta = numeroTarjeta.replace(/\D/g, ''); // Eliminar espacios y caracteres no numéricos
+            let suma = 0;
+            let alternar = false;
+        
+            // Aplicar el Algoritmo de Luhn
+            for (let i = tarjeta.length - 1; i >= 0; i--) {
+                let digito = parseInt(tarjeta[i]);
+        
+                if (alternar) {
+                    digito *= 2;
+                    if (digito > 9) digito -= 9;
+                }
+        
+                suma += digito;
+                alternar = !alternar;
+            }
+        
+            return (suma % 10) === 0;
+        }
+        
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            let numeroTarjeta = document.getElementById('numero_tarjeta').value;
+        
+            if (!validarTarjeta(numeroTarjeta)) {
+                event.preventDefault(); // Evita que el formulario se envíe
+                document.getElementById('validationResult').innerText = "Número de tarjeta inválido.";
+            } else {
+                document.getElementById('validationResult').innerText = "Número de tarjeta válido.";
+                alert("el pago se a enviando exitosamete Gracias")
+            }
+        });
+        </script>
+</body>
+</html>
