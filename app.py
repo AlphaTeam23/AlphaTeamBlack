@@ -824,11 +824,28 @@ def inscripcion():
         conn = mysql.connect()
         cursor = conn.cursor()
 
+        # Verificar si la cédula del tutor ya existe
+        cursor.execute("""
+            SELECT id_tutor FROM tutor WHERE cedula = %s
+        """, (cedula,))
+        tutor = cursor.fetchone()
+
+        if tutor:
+            # Si el tutor ya existe, obtener su ID
+            id_tutor = tutor[0]
+        else:
+            # Si el tutor no existe, insertar los datos y obtener su ID
+            cursor.execute("""
+                INSERT INTO tutor (nombre, apellidos, cedula, telefono, correo, ocupacion, parentesco, direccion)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """, (nomt, apet, cedula, telefono, correo, educ, ocup, direccion))
+            id_tutor = cursor.lastrowid
+
         # Inserción de datos en la tabla estudiante
         cursor.execute("""
             INSERT INTO estudiante (nombre_estudiante, apellidos, sexo_estudiante, nacimiento_estudiante, id_curso, id_profesor, id_tutor, contraseña)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-        """, (nom, ape, sexo, fecha, curso, prof, 1, contraseña))
+        """, (nom, ape, sexo, fecha, curso, prof, id_tutor, contraseña))
 
         # Obtener el ID del estudiante recién insertado
         id_estudiante = cursor.lastrowid
@@ -843,12 +860,6 @@ def inscripcion():
             WHERE id_estudiante = %s
         """, (matricula, id_estudiante))
 
-        # Inserción de datos en la tabla tutor
-        cursor.execute("""
-            INSERT INTO tutor (nombre, apellidos, cedula, telefono, correo, ocupacion, parentesco, direccion)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-        """, (nomt, apet, cedula, telefono, correo, educ, ocup, direccion))
-
         # Guardar cambios
         conn.commit()
 
@@ -857,7 +868,9 @@ def inscripcion():
         conn.close()
 
         return f"Inscripción guardada con éxito. Matrícula: {matricula}, Contraseña: {contraseña}"
-    return render_template('inscripcion.html')      
+    
+    return render_template('inscripcion.html')
+     
      
 
 @app.route('/alphaTeam/admin/planificacion')
