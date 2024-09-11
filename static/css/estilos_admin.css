@@ -932,10 +932,10 @@ section {
     font-weight: normal;
     overflow: hidden;   
     overflow-y: scroll;
-    height: 450px;
+    height: 300px;
     margin-left: 100px;
     margin-right: -90px;
-    top: 90px;
+    top: 60px;
     right: 100px;
     table-layout: fixed; /* Esto permite que los anchos de las columnas se respeten */
 }
@@ -948,10 +948,17 @@ section {
 .estudiantes th {
     width: 0px; /* Puedes ajustar este valor */
     height: 0px;
+    
 }
 
 .estudiantes td {
     width: 0px; /* Puedes ajustar este valor */
+    
+}
+
+.estudiantes tr {
+    margin: 0px; /* Puedes ajustar este valor */
+    
 }
 
 
