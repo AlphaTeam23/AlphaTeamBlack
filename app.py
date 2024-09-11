@@ -967,19 +967,36 @@ def a_usuarios():
     return render_template('./admin/a_usuarios.html', usuario=usuario)
 
 
-@app.route('/alphaTeam/admin/estudiantes', methods=['GET', 'POST'])
+@app.route('/alphaTeam/admin/estudiantes', methods=['GET'])
 def a_estudiantes():
-    
     if 'usuario_id' not in session or session.get('role') != 'administrador':
         return redirect('/')
-    
+
+    # Obtener el id_curso de los parámetros de la URL
+    id_curso = request.args.get('id_curso')
+
+    # Asegurarse de que se proporcione un ID de curso válido
+    if id_curso is None:
+        return redirect('/alphaTeam/admin/cursos')
+
     conn = mysql.connect() 
     cursor = conn.cursor()  
-    cursor.execute("SELECT *, tutor.nombre AS tnombre FROM estudiante JOIN tutor ON tutor.id_tutor = estudiante.id_tutor")  
-    estudiantes = cursor.fetchall() 
+
+    # Consulta para obtener los estudiantes del curso seleccionado
+    query = """
+    SELECT e.*, t.nombre AS tnombre, t.apellidos AS tapellidos, t.telefono AS ttelefono
+    FROM estudiante e
+    JOIN tutor t ON t.id_tutor = e.id_tutor
+    WHERE e.id_curso = %s
+    """
+    cursor.execute(query, (id_curso,))
+    estudiantes = cursor.fetchall()
+
     cursor.close()  
     conn.close() 
-    return render_template('./admin/a_estudiantes.html', estudiantes = estudiantes)
+
+    return render_template('./admin/a_estudiantes.html', estudiantes=estudiantes)
+
 
 @app.route('/alphaTeam/admin/crearusuarios', methods=['GET', 'POST'])
 def a_crearusuarios():
