@@ -99,8 +99,9 @@
                             <option value="6" {% if selected_periodo == '6' %}selected{% endif %}>Extraordinario</option>
                             <option value="7" {% if selected_periodo == '7' %}selected{% endif %}>Final</option>
                         </select>
-
+                        <input type="text" name="buscar" id="buscar" class="buscarb" placeholder="Buscar Estudiante">
                         <input type="submit" name="action" value="CARGAR" class="boton">
+                    
                         <br><br>
                     </fieldset>
 
@@ -119,7 +120,7 @@
                             </tr>
 
                             {% for estudiante in estudiantes %}
-                            <tr>
+                            <tr class="busqueda">
                                 <td>{{ estudiante[0] }}</td>  
                                 <td>{{ estudiante[1] }}</td>
                                 <td>{{ estudiante[2] }}</td> 
@@ -230,8 +231,7 @@
         
         
     </script>
-
-     <script src="/static/js/cambiofoto.js"></script>
+    <script src="/static/js/busqueda.js"></script>
 
 </body>
 </html>
