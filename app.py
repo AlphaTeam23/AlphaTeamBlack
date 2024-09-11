@@ -562,6 +562,21 @@ def e_info_docente():
         return redirect('/')
     return render_template('./estudiante/e_informaciondocente.html')
 
+
+@app.route('/alphaTeam/estudiante/e_metodopago', methods=['GET', 'POST'])
+def e_metodopago():
+    if 'usuario_id' not in session or session.get('role') != 'estudiante':
+        return redirect('/')
+    
+    if request.method == 'POST':
+        # Aquí puedes manejar los datos del formulario que se envían mediante POST
+        # por ejemplo, procesar el método de pago del estudiante.
+        pass
+
+    return render_template('estudiante/e_metodopago.html')
+
+
+
 @app.route('/alphaTeam/estudiante/pago')
 def e_pago():
     if 'usuario_id' not in session or session.get('role') != 'estudiante':
