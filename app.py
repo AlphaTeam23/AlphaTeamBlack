@@ -822,10 +822,11 @@ def a_inscripcion():
 
 @app.route('/alphaTeam/admin/inscripcion', methods=['GET', 'POST'])
 def inscripcion():
-    
     if 'usuario_id' not in session or session.get('role') != 'administrador':
         return redirect('/')
-    
+
+    mensaje = None
+
     if request.method == 'POST':
         # Procesar el formulario
         nom = request.form['nom']
@@ -891,9 +892,11 @@ def inscripcion():
         cursor.close()
         conn.close()
 
-        return f"Inscripción guardada con éxito. Matrícula: {matricula}, Contraseña: {contraseña}"
-    
-    return render_template('inscripcion.html')
+        # mensaje a mostrar
+        mensaje = f'Inscripción guardada con éxito. Matrícula: {matricula}, Contraseña: {contraseña}'
+
+    return render_template('./admin/a_inscripcion.html', mensaje=mensaje)
+
      
      
 @app.route('/alphaTeam/admin/planificacion', methods=['GET'])
