@@ -760,7 +760,10 @@ def a_cursos():
     
     if 'usuario_id' not in session or session.get('role') != 'administrador':
         return redirect('/')
-    
+
+    # Obtener el parámetro 'curso' de la solicitud GET
+    curso_id = request.args.get('curso')
+
     # Conectar a la base de datos
     conn = mysql.connect()
     cursor = conn.cursor()
@@ -778,7 +781,13 @@ def a_cursos():
     conn.commit()  
 
     # Recuperar los datos actualizados de la tabla cursos
-    cursor.execute("SELECT * FROM cursos")
+    if curso_id:
+        # Si se selecciona un curso, filtrar por ese curso
+        cursor.execute("SELECT * FROM cursos WHERE id_curso = %s", (curso_id,))
+    else:
+        # Si no se selecciona ningún curso, recuperar todos los cursos
+        cursor.execute("SELECT * FROM cursos")
+    
     cursos = cursor.fetchall()
 
     # Cerrar el cursor y la conexión
@@ -872,21 +881,45 @@ def inscripcion():
     return render_template('inscripcion.html')
      
      
-
-@app.route('/alphaTeam/admin/planificacion')
+@app.route('/alphaTeam/admin/planificacion', methods=['GET'])
 def a_planificacion():
     
     if 'usuario_id' not in session or session.get('role') != 'administrador':
         return redirect('/')
 
-    conn = mysql.connect() 
-    cursor = conn.cursor()  
-    cursor.execute("SELECT p.id_curso, c.nivel, p.id_asignatura, a.nom_asignatura, p.periodo, p.archivo FROM planificacion p JOIN cursos c ON p.id_curso = c.id_curso JOIN asignatura a ON p.id_asignatura = a.id_asignatura")  
-    planificacion = cursor.fetchall()  
-    cursor.close()  
-    conn.close()  
+    # Obtener los parámetros de la solicitud GET
+    materia_id = request.args.get('materia')
+    periodo = request.args.get('periodo')
 
-    return render_template('./admin/a_planificacion.html', planificacion = planificacion)
+    # Conectar a la base de datos
+    conn = mysql.connect() 
+    cursor = conn.cursor()
+
+    # Construir la consulta con filtros
+    query = """
+    SELECT p.id_curso, c.nivel, p.id_asignatura, a.nom_asignatura, p.periodo, p.archivo
+    FROM planificacion p
+    JOIN cursos c ON p.id_curso = c.id_curso
+    JOIN asignatura a ON p.id_asignatura = a.id_asignatura
+    WHERE 1=1
+    """
+    params = []
+
+    if materia_id:
+        query += " AND p.id_asignatura = %s"
+        params.append(materia_id)
+    if periodo:
+        query += " AND p.periodo = %s"
+        params.append(periodo)
+
+    cursor.execute(query, tuple(params))
+    planificacion = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    return render_template('./admin/a_planificacion.html', planificacion=planificacion)
+
 
 
 @app.route('/alphaTeam/admin/recordnota', methods=['GET', 'POST'])
