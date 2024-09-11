@@ -48,7 +48,7 @@
                         <a href="/alphaTeam/estudiante/pago">PAGO
                     </a></li>
                      <li><img src="/static/imagenes/bx-comment-error.svg" alt="graduacion">
-                    <a href="/alphaTeam/estudiante/reporte">Reportar problema
+                    <a href="/alphaTeam/estudiante/reporte">REPORTAR PROBLEMA
                 </a></li>
                     <li><img src="/static/imagenes/bx-help-circle.svg" alt="ayuda">
                         <a href="/alphaTeam/estudiante/ayuda">AYUDA
@@ -83,7 +83,7 @@
                     </a>
                 </li>
                  <li><img src="/static/imagenes/bx-comment-error.svg" alt="graduacion">
-                    <a href="/alphaTeam/estudiante/reporte">Reportar problema
+                    <a href="/alphaTeam/estudiante/reporte">REPORTAR PROBLEMA
                 </a></li>
                 <li><img src="/static/imagenes/bx-help-circle.svg" alt="ayuda">
                     <a href="/alphaTeam/estudiante/ayuda">AYUDA
@@ -104,20 +104,20 @@
                 <figure class="tarjeta">
                     <img src="/static/imagenes/bidencash-filtra-base-tarjetas-credito-debito (2).jpg" alt="">
                 </figure>
-                <form class="pay_form" id="paymentForm" method="post">
+                <form id="paymentForm" class="pay_form">
                     <h2>FORMAS DE PAGO</h2>
                     <p>Elije una opción de pago</p>
                     <div class="pagos">
-                        
-                        <br>
-                        <input type="radio" name="pay" value="paypal">PayPal<img src="/static/imagenes/paypal.png"  alt="">
-                        
-                    </div>
-
-                    <div class="pagar">
-                        <button onclick="handlePayment()">PAGAR</button>
-                    </div>
+                    <label>
+                        <input type="radio" name="pay" value="visa"> Visa <img src="/static/imagenes/visa.png"  alt="">
+                    </label>
+                    <label>
+                        <input type="radio" name="pay" value="paypal"> PayPal <img src="/static/imagenes/pagopaypal.svg"  alt="">
+                    </label>
+                    <button type="submit">Continuar</button>
+                </div>
                 </form>
+                
             </div>
         </section>
     </main>
@@ -126,25 +126,30 @@
     <script>
         document.getElementById('paymentForm').addEventListener('submit', function(event) {
             event.preventDefault();
+            
+            // Obtener todas las opciones de pago (radio buttons)
             const paymentOptions = document.getElementsByName('pay');
-            let selectedOption;
+            let selectedOption = null;
+        
+            // Recorrer las opciones y obtener la seleccionada
             for (const option of paymentOptions) {
                 if (option.checked) {
-                    selectedOption = option.value;
+                    selectedOption = option.value; // Guardar el valor de la opción seleccionada
                     break;
                 }
             }
-
+        
+            // Comprobar cuál opción fue seleccionada y redirigir
             if (selectedOption === 'visa') {
-                window.location.href = 'e_confirmacionpago.html';
+                window.location.href = '/alphaTeam/estudiante/e_metodopago'; // Redirigir a la ruta Flask para "Visa"
             } else if (selectedOption === 'paypal') {
-                window.location.href = 'https://www.paypal.com/signin';
+                window.location.href = 'https://www.paypal.com/signin'; // Redirigir a PayPal
             } else {
-                alert('Por favor, seleccione una opción de pago.');
-                return;
+                alert('Por favor, seleccione una opción de pago.'); // Mostrar alerta si no se seleccionó nada
             }
-            
         });
+        
+        
     </script>
 </body>
 </html>
