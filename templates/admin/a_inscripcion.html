@@ -157,6 +157,13 @@
     
             </form>
 
+                <script type="text/javascript">
+        // Verificar si hay un mensaje
+        {% if mensaje %}
+            alert("{{ mensaje }}");
+        {% endif %}
+    </script>
+
     </main>
 </body>
 </html>

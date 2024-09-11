@@ -737,8 +737,40 @@ legend {
     width: 847px;
 }
 
+
+
+
+
+        .alert {
+            display: none;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert.success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert.error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .alert .close-btn {
+            float: right;
+            font-size: 20px;
+            font-weight: bold;
+            color: inherit;
+            background: none;
+            border: none;
+        }
+    
+
+
 .curs{
-    margin-left: 120px;
+    margin-left: 200px;
 }
 
 .inscripcion {
